@@ -56,7 +56,7 @@ cd Skill-Cabinet
 npm start
 ```
 
-打开 **http://localhost:4173**。首次启动会自动加入本仓库的三份 Skill，之后的修改保存在当前浏览器。
+打开 [http://localhost:4173](http://localhost:4173)。首次启动会自动加入本仓库的三份 Skill，之后的修改保存在当前浏览器。
 
 ```bash
 # 运行核心行为测试
