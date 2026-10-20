@@ -37,6 +37,24 @@
         "updatedAt": "2026-10-20T06:42:21.252Z"
       }
     },
+    "jin10-breakfast": {
+      "fingerprint": "46c262fa55ca939a21772f81c17b5791e408b5b4975edecc7533a0876fc69a03",
+      "archiveSha256": "932f27b8b3f44ed7f3bd24637693cfd914caffe623cda6bb4086646827049825",
+      "archivePath": "skill-cabinet/archives/jin10-breakfast-932f27b8b3f44ed7f3bd24637693cfd914caffe623cda6bb4086646827049825.zip",
+      "metadata": {
+        "id": "cb74c834-6039-4693-bbc9-f30d860734c8",
+        "name": "金十财经早餐",
+        "slug": "jin10-breakfast",
+        "description": "获取金十数据全球财经早餐原文，生成浅米色完整阅读版，去除音频及其他配图，仅保留去掉底部 APP／二维码推广的原始收盘表。输出独立 HTML、TXT、JSON 和 PNG，不包含邮件推送或定时任务。",
+        "category": "新闻日报",
+        "tags": [],
+        "version": "1.0.0",
+        "author": "",
+        "favorite": true,
+        "createdAt": "2026-10-20T13:16:06.609Z",
+        "updatedAt": "2026-10-20T13:19:15.376Z"
+      }
+    },
     "shiguang-atlas": {
       "fingerprint": "88d108339608c64b0b6cd3b5457f7bfd3f1032019ca376ad7e27749de2f6fb5b",
       "archiveSha256": "d10ef9846b25d18662c028fa8a0a6e467ec14c7684bd76fba9ad725f11fe9849",
