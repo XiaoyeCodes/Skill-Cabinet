@@ -35,6 +35,14 @@
 
 </details>
 
+<details>
+<summary><strong>展开查看 · GitHub 云同步连接设置</strong></summary>
+
+<br>
+<img src="docs/screenshots/github-sync.jpg" alt="实际浏览器中的 GitHub 同步设置，尚未填写令牌，可设置仓库、分支、自动同步和会话凭据保存方式" width="100%" />
+
+</details>
+
 ## 能做什么
 
 | 收藏 | 整理 | 使用与迁移 |
