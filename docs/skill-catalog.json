@@ -1,0 +1,221 @@
+{
+  "schemaVersion": 1,
+  "note": "Assembled from complete source bundles; names and categories verified against the application. Browser-specific IDs and original edit timestamps are not exported.",
+  "skills": [
+    {
+      "slug": "shiguang-atlas",
+      "name": "拾光百科图文",
+      "category": "图像与设计",
+      "originalFileCount": 21,
+      "originalArchiveSha256": "0da6e912f973078e86d5060d7cf72975245f8996cc643aeeefc11b9435e71820",
+      "archive": "dist/assets/shiguang-atlas.zip",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "bytes": 4724,
+          "sha256": "6b3f611264e7f59db0214b7ce8431418d07a4ee954dcae5a328051541ed0165f"
+        },
+        {
+          "path": "assets/reference-images/bee.jpg",
+          "bytes": 351714,
+          "sha256": "e7b78ae8cca3dc70d9c6d815f595d84835b7c2caddf88427429996bef996885b"
+        },
+        {
+          "path": "assets/reference-images/checksums.json",
+          "bytes": 1318,
+          "sha256": "889bad87ea51219e0213c5bf91c383c32bedafd007ce8a43ef0ca53c4f21b463"
+        },
+        {
+          "path": "assets/reference-images/fruit.jpg",
+          "bytes": 352915,
+          "sha256": "9d463f548bc33731ffbc596d7b8a539e09078e2c5f5076257dc69b12f576b534"
+        },
+        {
+          "path": "assets/reference-images/jellyfish.jpg",
+          "bytes": 477493,
+          "sha256": "497fec54df8754cbb2a7ad55c2d574420dc8cb8ff2b21eab26e83154646eeb7f"
+        },
+        {
+          "path": "assets/reference-images/lobster.jpg",
+          "bytes": 371655,
+          "sha256": "b9dfe953d1d26aac873ad5b51091506ecc6cf746849b8c45011a20ca8be0508b"
+        },
+        {
+          "path": "assets/reference-images/mammoth-narrow.jpg",
+          "bytes": 369964,
+          "sha256": "762f3d2e9c8277b76bc08893493c9f15cf10c3d952f2cbb45f6779d9530933f9"
+        },
+        {
+          "path": "assets/reference-images/mammoth-wide.jpg",
+          "bytes": 460564,
+          "sha256": "eac4f36898747bcf95aacff8e0ca63a295ae42782fd8af22628db2ec0b0726b7"
+        },
+        {
+          "path": "assets/reference-images/tuna.jpg",
+          "bytes": 317158,
+          "sha256": "8988a0c0b7eed15f890a626040b137cf87c4cc993072f27fd08900b42788aa21"
+        },
+        {
+          "path": "assets/topics.snapshot.md",
+          "bytes": 6577,
+          "sha256": "6913415a7bfb55833da72a2eee7dce4e632c6bd837bac3bcbf84965d929530c4"
+        },
+        {
+          "path": "config.example.json",
+          "bytes": 619,
+          "sha256": "57af0c9dcb139662c45375f1a16aa5fe07124273fce19a1fbbbf82398627472c"
+        },
+        {
+          "path": "references/edit-base-line.txt",
+          "bytes": 305,
+          "sha256": "bea06ae2bdeff24c520d384f37bbc74be41b8f8017ba1f9173b3c11578474323"
+        },
+        {
+          "path": "references/image-and-copy.md",
+          "bytes": 3586,
+          "sha256": "32b5729df311340110fc77697248a21e20df84a269a47cde06b3faa277774bfe"
+        },
+        {
+          "path": "references/manifest-schema.md",
+          "bytes": 13182,
+          "sha256": "7bb10eff358d9d848e3cd746fb2854fca3a34f90b02a21e6e5be56a4196241bd"
+        },
+        {
+          "path": "references/prompt-prefix.txt",
+          "bytes": 257,
+          "sha256": "fc1197d15f34e8b8641ab03392b70f7578effab1485069bc09b2bb411458a6b8"
+        },
+        {
+          "path": "references/quality-and-delivery.md",
+          "bytes": 4076,
+          "sha256": "08ecb45f29bf1e9c6ef10f2ac87f053211aa086031f9cabeb16190d01dcf1b87"
+        },
+        {
+          "path": "references/reference-catalog.md",
+          "bytes": 2089,
+          "sha256": "da770f09854ba1e21c0b38267ce075fa575862401a84dddd182b7a1c1cd3e952"
+        },
+        {
+          "path": "references/workflow.md",
+          "bytes": 4005,
+          "sha256": "6367797e221bd2661063ec0b2f59f717ee69b85a2fe4a1d0f6c194c96f483f3d"
+        },
+        {
+          "path": "scripts/test_workflow.py",
+          "bytes": 19158,
+          "sha256": "3ea0663cb199799aa6911e15a2688516bf3cea30ee20be3cda35ac5659d9e3e9"
+        },
+        {
+          "path": "scripts/workflow.py",
+          "bytes": 42349,
+          "sha256": "028b9f1875bb43e4d4fba5933a2cdc785de64efc9918e930fc480a5732fcd0d2"
+        },
+        {
+          "path": "使用说明.md",
+          "bytes": 4486,
+          "sha256": "589f4167cca61044a043631f5c53c25f5682da297616eb66df8a4133a118b632"
+        }
+      ]
+    },
+    {
+      "slug": "aibase-daily",
+      "name": "AIBase 日报",
+      "category": "新闻日报",
+      "originalFileCount": 10,
+      "originalArchiveSha256": "763f1ce2711ec20d34d58ea375026fa72eee88272f3c31fc2ba0692e65d671d0",
+      "archive": "dist/assets/aibase-daily.zip",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "bytes": 4005,
+          "sha256": "d5983698c1c1a56312be0dd605ee4764aab032f391f039d6b5de5cfbf5ff9688"
+        },
+        {
+          "path": "assets/template.html",
+          "bytes": 4464,
+          "sha256": "7be0ef92a07da4e19cd34121a744cc62558c0db25b1e6b6b55ee90098c2bcf01"
+        },
+        {
+          "path": "references/browser-fallback.md",
+          "bytes": 5345,
+          "sha256": "bcc4c3bc3c74e40379baa5c4ce043a1b06d1f81f4afde5d14d1ddea4cb042b6f"
+        },
+        {
+          "path": "scripts/aibase_daily.py",
+          "bytes": 18155,
+          "sha256": "d43f23374b9e7a4d1ec99d11eb4c69b636d90a5c7d05746e6dc4f5ab334b4d95"
+        },
+        {
+          "path": "tests/test_aibase_daily.py",
+          "bytes": 6844,
+          "sha256": "2773fb6882e09c70d1b8bafe81f61bafaa58061df31c766d77fff6ec314d91b6"
+        },
+        {
+          "path": "使用说明.txt",
+          "bytes": 1377,
+          "sha256": "bda7f4cc2793355eaa8158d1f60c26ee8e52d7f453387231393b18ab4b9b3991"
+        },
+        {
+          "path": "测试记录.txt",
+          "bytes": 951,
+          "sha256": "41cc744dbfc681b951b25df6ff0368a1ca499ee529ed642e8e7a753e790cdfc9"
+        },
+        {
+          "path": "测试样例/AI日报-2026-10-19-历史样例.html",
+          "bytes": 15277,
+          "sha256": "fea779c820f6adae25d415d9688ba2a982d1c00bd1a8fba1a23f47845017fa90"
+        },
+        {
+          "path": "测试样例/AI日报-2026-10-19-历史样例.txt",
+          "bytes": 4649,
+          "sha256": "d7f5d4558f1495d6dfe6fc7c382fd5b8435fd1a97d7c2f9659c19f64eaea691e"
+        },
+        {
+          "path": "测试样例/AI日报-2026-10-19-历史样例.json",
+          "bytes": 10377,
+          "sha256": "cc1138650fe95da58bce4e8721c21d613ad9ae0c5bbe4ef5791fcc1a422988d2"
+        }
+      ]
+    },
+    {
+      "slug": "daily-60s-image",
+      "name": "每日 60 秒新闻图片",
+      "category": "新闻日报",
+      "originalFileCount": 6,
+      "originalArchiveSha256": "d45d8ceb62910496e02dd9c9b935a17e36e12496607b4c01748b4f58aa9eb3b9",
+      "archive": "dist/assets/daily-60s-image.zip",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "bytes": 4807,
+          "sha256": "a53cdbc26be103c81850451fda355be52e88ef6537a1a9f7409565345b15de80"
+        },
+        {
+          "path": "scripts/fetch_daily_image.py",
+          "bytes": 16864,
+          "sha256": "19ce33a53b7342ec4046c2653806bbfb3820e29660aadf1db987994af99f4c55"
+        },
+        {
+          "path": "tests/test_fetch_daily_image.py",
+          "bytes": 12968,
+          "sha256": "bd5a1d9213cbb030c71e708ec48925f592df9069594d111274ec7425615ac9a7"
+        },
+        {
+          "path": "使用说明.txt",
+          "bytes": 991,
+          "sha256": "e5873db55f4cd8eea472276bce941b8896b56ee603d79de8ce20858166c052c2"
+        },
+        {
+          "path": "测试记录.txt",
+          "bytes": 694,
+          "sha256": "1b28c894011882965ec8202deec660ce7c6b8733d63f5914534257950164fd9b"
+        },
+        {
+          "path": "测试样例/2026-10-20-真实新闻图片.png",
+          "bytes": 278198,
+          "sha256": "59be57147f287591e16d7dde0301a32a0e31743ab40688847cc975af7d4485a1"
+        }
+      ]
+    }
+  ]
+}

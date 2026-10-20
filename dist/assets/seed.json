@@ -1,0 +1,42 @@
+[
+  {
+    "id": "shiguang-atlas-seed",
+    "name": "拾光百科图文",
+    "slug": "shiguang-atlas",
+    "description": "把好奇心，变成值得收藏的知识。按主题队列制作小红书博物志图文，从真实参考图、完整文案到逐页质检，一次完成。",
+    "category": "图像与设计",
+    "tags": [
+      "科普图文",
+      "小红书",
+      "图像生成"
+    ],
+    "version": "1.0.0",
+    "author": "我的创作",
+    "favorite": false,
+    "archiveUrl": "./assets/shiguang-atlas.zip"
+  },
+  {
+    "id": "aibase-daily-seed",
+    "name": "AIBase 日报",
+    "slug": "aibase-daily",
+    "description": "从 AIBase 日报生成可直接打开的米白色 HTML 日报、原文纯文本和提取 JSON，逐条保留原标题及完整提要；不包含邮件推送或定时任务。",
+    "category": "新闻日报",
+    "tags": [],
+    "version": "1.0.0",
+    "author": "",
+    "favorite": false,
+    "archiveUrl": "./assets/aibase-daily.zip"
+  },
+  {
+    "id": "daily-60s-image-seed",
+    "name": "每日 60 秒新闻图片",
+    "slug": "daily-60s-image",
+    "description": "获取北京时间当天的「每日 60 秒读懂世界」新闻原图，校验日期与真实图片文件后直接交付图片；也支持用户明确指定日期的历史查询。不包含邮箱推送或定时任务。",
+    "category": "新闻日报",
+    "tags": [],
+    "version": "1.0.0",
+    "author": "",
+    "favorite": false,
+    "archiveUrl": "./assets/daily-60s-image.zip"
+  }
+]
