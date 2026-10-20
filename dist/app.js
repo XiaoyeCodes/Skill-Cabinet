@@ -41,7 +41,7 @@ function render(){
 async function refresh(){skills=await listSkills();render();}
 function reset(){category='';nav='all';query='';$('#search').value='';render();}
 function showEditor(s=null){
-  editorBaseRevision=s?.localRevision||null;
+  editorBaseRevision=s ? s.localRevision : null;
   const f=$('#editor-form');f.reset();$('#editor-error').textContent='';$('#editor-title').textContent=s?'打磨你的好方法。':'记录一种新能力。';
   $('#editor-category').innerHTML=categories().map(c=>`<option>${esc(c)}</option>`).join('');
   const defaults={name:'',slug:'',category:category||baseCategories[0],version:'1.0.0',description:'',tags:[],author:'',instructions:'',content:'# 我的 Skill\n\n## 功能\n\n描述这个 Skill 解决的问题。\n\n## 工作流程\n\n1. 理解用户的需求\n2. 执行任务\n3. 检查并交付结果'};
@@ -93,7 +93,7 @@ document.addEventListener('click',async e=>{
   const navBtn=e.target.closest('[data-nav]');if(navBtn){nav=navBtn.dataset.nav;category='';if(nav==='recent')$('#sort').value='updated';$('#sidebar').classList.remove('open');render();return;}
   const cat=e.target.closest('[data-category]');if(cat){category=cat.dataset.category;nav='category';$('#sidebar').classList.remove('open');render();return;}
   const filter=e.target.closest('[data-filter]');if(filter){category=filter.dataset.filter;if(nav==='category')nav='all';render();return;}
-  const fav=e.target.closest('[data-favorite]');if(fav){e.stopPropagation();const s=skills.find(s=>s.id===fav.dataset.favorite);if(!s)return;try{await saveSkill({...s,favorite:!s.favorite});await refresh();if($('#detail-dialog').open)showDetail(s.id,detailTab);}catch(err){toast(err.message,true);}return;}
+  const fav=e.target.closest('[data-favorite]');if(fav){e.stopPropagation();const s=skills.find(s=>s.id===fav.dataset.favorite);if(!s)return;try{await saveSkill({...s,favorite:!s.favorite},{expectedRevision:s.localRevision});await refresh();if($('#detail-dialog').open)showDetail(s.id,detailTab);}catch(err){toast(err.message,true);}return;}
   const detail=e.target.closest('[data-open]');if(detail){showDetail(detail.dataset.open);return;}
   if(e.target.closest('#add-card')){showImport();return;}
   if(e.target.closest('#empty-reset')){reset();return;}
