@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "entries": {
+    "aibase-daily": {
+      "fingerprint": "b4b94fcc207ed61cf654fdc518eb2a977255da6a44486c28a6a57895581488cc",
+      "archiveSha256": "eff9da7898838dcf33eb20c453e5b933680bcbe776d5d5c4b1f4f0e49e48dbf7",
+      "archivePath": "skill-cabinet/archives/aibase-daily-eff9da7898838dcf33eb20c453e5b933680bcbe776d5d5c4b1f4f0e49e48dbf7.zip",
+      "metadata": {
+        "id": "aibase-daily-seed",
+        "name": "AIBase 日报",
+        "slug": "aibase-daily",
+        "description": "从 AIBase 日报生成可直接打开的米白色 HTML 日报、原文纯文本和提取 JSON，逐条保留原标题及完整提要；不包含邮件推送或定时任务。",
+        "category": "新闻日报",
+        "tags": [],
+        "version": "1.0.0",
+        "author": "",
+        "favorite": false,
+        "createdAt": "2026-10-20T06:42:21.244Z",
+        "updatedAt": "2026-10-20T06:42:21.244Z"
+      }
+    },
+    "daily-60s-image": {
+      "fingerprint": "dffdfdb0b0019f4700b84a88a98cfbec0f33a98fdf582b67e27f12e0fa76ad3c",
+      "archiveSha256": "c1570e6512085273d44f55ee07beced81161d1ba204b70c84299ea904a18f357",
+      "archivePath": "skill-cabinet/archives/daily-60s-image-c1570e6512085273d44f55ee07beced81161d1ba204b70c84299ea904a18f357.zip",
+      "metadata": {
+        "id": "daily-60s-image-seed",
+        "name": "每日 60 秒新闻图片",
+        "slug": "daily-60s-image",
+        "description": "获取北京时间当天的「每日 60 秒读懂世界」新闻原图，校验日期与真实图片文件后直接交付图片；也支持用户明确指定日期的历史查询。不包含邮箱推送或定时任务。",
+        "category": "新闻日报",
+        "tags": [],
+        "version": "1.0.0",
+        "author": "",
+        "favorite": false,
+        "createdAt": "2026-10-20T06:42:21.252Z",
+        "updatedAt": "2026-10-20T06:42:21.252Z"
+      }
+    },
+    "shiguang-atlas": {
+      "fingerprint": "88d108339608c64b0b6cd3b5457f7bfd3f1032019ca376ad7e27749de2f6fb5b",
+      "archiveSha256": "d10ef9846b25d18662c028fa8a0a6e467ec14c7684bd76fba9ad725f11fe9849",
+      "archivePath": "skill-cabinet/archives/shiguang-atlas-d10ef9846b25d18662c028fa8a0a6e467ec14c7684bd76fba9ad725f11fe9849.zip",
+      "metadata": {
+        "id": "shiguang-atlas-seed",
+        "name": "拾光百科图文",
+        "slug": "shiguang-atlas",
+        "description": "把好奇心，变成值得收藏的知识。按主题队列制作小红书博物志图文，从真实参考图、完整文案到逐页质检，一次完成。",
+        "category": "图像与设计",
+        "tags": [
+          "科普图文",
+          "小红书",
+          "图像生成"
+        ],
+        "version": "1.0.0",
+        "author": "我的创作",
+        "favorite": false,
+        "createdAt": "2026-10-20T06:42:21.231Z",
+        "updatedAt": "2026-10-20T06:42:21.231Z"
+      }
+    }
+  }
+}
