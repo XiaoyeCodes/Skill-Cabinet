@@ -1,4 +1,5 @@
 import { initialize, listSkills, saveSkill, deleteSkill, importFiles, exportSkill, exportLibrary, formatBytes, getSkillContent } from './storage.js';
+import { initializeGitHubSync } from './sync-ui.js';
 
 const $ = (s,root=document)=>root.querySelector(s);
 const $$ = (s,root=document)=>[...root.querySelectorAll(s)];
@@ -8,7 +9,7 @@ function hydrateIcons(root=document){$$('i[data-icon]',root).forEach(el=>{if(!el
 const esc=(v)=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const baseCategories=['图像与设计','写作与内容','开发与工具','效率与工作','学习与研究'];
 let skills=[],nav='all',category='',query='',view='grid',currentDetail=null,detailTab='overview',fileUrl=null;
-let customCategories=[];
+let customCategories=[], editorBaseRevision=null, githubSync;
 try{const v=JSON.parse(localStorage.getItem('skill-cabinet-categories')||'[]');if(Array.isArray(v))customCategories=v.filter(x=>typeof x==='string'&&x.length<=30);}catch{}
 const categories=()=>[...new Set([...baseCategories,...customCategories,...skills.map(s=>s.category||'未分类')])];
 function toast(text,error=false){const node=document.createElement('div');node.className='toast'+(error?' error':'');node.textContent=text;$('#toasts').append(node);setTimeout(()=>node.remove(),4500);}
@@ -40,6 +41,7 @@ function render(){
 async function refresh(){skills=await listSkills();render();}
 function reset(){category='';nav='all';query='';$('#search').value='';render();}
 function showEditor(s=null){
+  editorBaseRevision=s?.localRevision||null;
   const f=$('#editor-form');f.reset();$('#editor-error').textContent='';$('#editor-title').textContent=s?'打磨你的好方法。':'记录一种新能力。';
   $('#editor-category').innerHTML=categories().map(c=>`<option>${esc(c)}</option>`).join('');
   const defaults={name:'',slug:'',category:category||baseCategories[0],version:'1.0.0',description:'',tags:[],author:'',instructions:'',content:'# 我的 Skill\n\n## 功能\n\n描述这个 Skill 解决的问题。\n\n## 工作流程\n\n1. 理解用户的需求\n2. 执行任务\n3. 检查并交付结果'};
@@ -83,7 +85,7 @@ $('#mobile-menu').onclick=()=>$('#sidebar').classList.toggle('open');
 $('#file-input').onchange=e=>importSelected(e.target.files);
 $('#drop-zone').onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();$('#file-input').click();}};
 $('#backup-button').onclick=async()=>{if(!skills.length)return toast('仓库还是空的，先收进一个 Skill 吧');const b=$('#backup-button');b.disabled=true;try{download(await exportLibrary(skills),`Skill-Cabinet-备份-${new Date().toLocaleDateString('en-CA')}.zip`);toast('仓库备份已开始下载');}catch(e){toast(e.message,true);}finally{b.disabled=false;}};
-$('#editor-form').onsubmit=async e=>{e.preventDefault();const f=e.target,values=Object.fromEntries(new FormData(f)),button=$('#save-button');$('#editor-error').textContent='';button.disabled=true;try{const existing=skills.find(s=>s.id===values.id);const slug=values.slug.trim();if(skills.some(s=>s.slug===slug&&s.id!==values.id))throw Error('这个技能标识已存在，请换一个标识。');const record={...existing,...values,id:existing?.id||crypto.randomUUID(),slug,name:values.name.trim(),description:values.description.trim(),tags:values.tags.split(/[,，]/).map(t=>t.trim()).filter(Boolean).slice(0,8),version:values.version.trim()||'1.0.0',files:existing?.files||[],favorite:existing?.favorite||false,createdAt:existing?.createdAt||new Date().toISOString(),updatedAt:new Date().toISOString()};if(!record.name||!record.description||!record.content.trim())throw Error('请填写名称、功能介绍和 SKILL.md 正文。');await saveSkill(record);await refresh();closeDialog($('#editor-dialog'));toast('好方法，已经收好了');showDetail(record.id);}catch(err){$('#editor-error').textContent=err.message;}finally{button.disabled=false;}};
+$('#editor-form').onsubmit=async e=>{e.preventDefault();const f=e.target,values=Object.fromEntries(new FormData(f)),button=$('#save-button');$('#editor-error').textContent='';button.disabled=true;try{const latest=await listSkills();const existing=latest.find(s=>s.id===values.id);if(values.id&&(!existing||existing.localRevision!==editorBaseRevision))throw Error('这个 Skill 在编辑期间已被其他页面或云端修改。当前输入已保留，请先复制文本，再关闭编辑并查看最新版本。');const slug=values.slug.trim();if(latest.some(s=>s.slug===slug&&s.id!==values.id))throw Error('这个技能标识已存在，请换一个标识。');const record={...existing,...values,id:existing?.id||crypto.randomUUID(),slug,name:values.name.trim(),description:values.description.trim(),tags:values.tags.split(/[,，]/).map(t=>t.trim()).filter(Boolean).slice(0,8),version:values.version.trim()||'1.0.0',files:existing?.files||[],favorite:existing?.favorite||false,createdAt:existing?.createdAt||new Date().toISOString(),updatedAt:new Date().toISOString()};if(!record.name||!record.description||!record.content.trim())throw Error('请填写名称、功能介绍和 SKILL.md 正文。');await saveSkill(record,{expectedRevision:editorBaseRevision});await refresh();closeDialog($('#editor-dialog'));toast('好方法，已经收好了');showDetail(record.id);}catch(err){$('#editor-error').textContent=err.message;}finally{button.disabled=false;}};
 $('#add-category').onclick=()=>{ $('#category-input').value='';$('#category-error').textContent='';openDialog('#category-dialog');};
 $('#category-form').onsubmit=e=>{e.preventDefault();const name=$('#category-input').value.trim();if(!name)return;if(categories().includes(name)){$('#category-error').textContent='这个分类已经存在。';return;}try{const next=[...customCategories,name];localStorage.setItem('skill-cabinet-categories',JSON.stringify(next));customCategories=next;render();closeDialog($('#category-dialog'));toast('已添加分类');}catch{$('#category-error').textContent='分类保存失败，请检查浏览器存储权限。';}};
 document.addEventListener('click',async e=>{
@@ -99,7 +101,7 @@ document.addEventListener('click',async e=>{
   const ex=e.target.closest('[data-export]');if(ex){ex.disabled=true;try{const s=skills.find(s=>s.id===ex.dataset.export);download(await exportSkill(s),`${s.slug}.zip`);toast('技能包已开始下载');}catch(err){toast(err.message,true);}finally{ex.disabled=false;}return;}
   const tab=e.target.closest('[data-tab]');if(tab){showDetail(currentDetail,tab.dataset.tab);return;}
   if(e.target.closest('#copy-content')){try{await navigator.clipboard.writeText(getSkillContent(skills.find(s=>s.id===currentDetail)));toast('完整指令已复制');}catch{toast('复制失败，请在编辑页面手动复制',true);}return;}
-  if(e.target.closest('#delete-current')){const s=skills.find(s=>s.id===currentDetail);$('#confirm-copy').textContent=`将从当前浏览器删除「${s.name}」及其文件。建议先导出一份备份。`;openDialog('#confirm-dialog');$('#confirm-action').onclick=async()=>{try{await deleteSkill(s.id);closeDialog($('#confirm-dialog'));closeDialog($('#detail-dialog'));await refresh();toast('已从书架移除');}catch(err){toast(err.message,true);}};return;}
+  if(e.target.closest('#delete-current')){const s=skills.find(s=>s.id===currentDetail);$('#confirm-copy').textContent=`将删除「${s.name}」及其文件。${githubSync?.isConnected()?'下次同步也会删除云端版本，并同步到其他设备。':''}建议先导出一份备份。`;openDialog('#confirm-dialog');$('#confirm-action').onclick=async()=>{try{await deleteSkill(s.id);closeDialog($('#confirm-dialog'));closeDialog($('#detail-dialog'));await refresh();toast('已从书架移除');}catch(err){toast(err.message,true);}};return;}
   const file=e.target.closest('[data-file]');if(file){const f=skills.find(s=>s.id===currentDetail).files[Number(file.dataset.file)];const body=$('.detail-body');body.innerHTML=`<button class="file-back" id="back-files">← 返回文件列表</button><div class="detail-slug">${esc(f.path)}</div>`;if(/\.(png|jpg|jpeg|gif|webp)$/i.test(f.path)){fileUrl=URL.createObjectURL(f.data);const img=document.createElement('img');img.className='file-preview-image';img.alt=f.path;img.src=fileUrl;body.append(img);}else if(/\.(md|txt|json|py|js|ts|html|css|csv|ya?ml|toml|sh)$/i.test(f.path)){if(f.data.size>1024*1024){const p=document.createElement('p');p.textContent='文件较大，请导出技能包后查看。';body.append(p);}else{const pre=document.createElement('pre');pre.className='file-content';const record=skills.find(s=>s.id===currentDetail);pre.textContent=/^SKILL\.md$/i.test(f.path)?getSkillContent(record):f.path==='使用说明.md'?record.instructions:await f.data.text();body.append(pre);}}else{const p=document.createElement('p');p.textContent='此类文件请导出技能包后查看。';body.append(p);}return;}
   if(e.target.closest('#back-files')){showDetail(currentDetail,'files');return;}
   if($('#sidebar').classList.contains('open')&&!e.target.closest('.sidebar')&&!e.target.closest('#mobile-menu'))$('#sidebar').classList.remove('open');
@@ -112,5 +114,5 @@ document.addEventListener('dragover',e=>{if(e.dataTransfer?.types.includes('File
 document.addEventListener('dragleave',()=>{dragDepth=Math.max(0,dragDepth-1);if(!dragDepth)$('#global-drop').hidden=true;});
 document.addEventListener('drop',e=>{if(!e.dataTransfer?.files.length)return;e.preventDefault();dragDepth=0;$('#global-drop').hidden=true;closeAll();showImport();importSelected(e.dataTransfer.files);});
 hydrateIcons();
-try{skills=await initialize();render();}catch(e){$('#skill-grid').innerHTML=`<div class="empty-state"><h3>暂时无法打开技能库</h3><p>${esc(e.message)}</p><p>请检查浏览器存储权限后刷新页面。</p></div>`;toast(e.message,true);}
+try{skills=await initialize();render();githubSync=initializeGitHubSync({toast,onRefresh:async()=>{await refresh();if($('#detail-dialog').open){if(skills.some(s=>s.id===currentDetail))showDetail(currentDetail,detailTab);else closeDialog($('#detail-dialog'));}}});}catch(e){$('#skill-grid').innerHTML=`<div class="empty-state"><h3>暂时无法打开技能库</h3><p>${esc(e.message)}</p><p>请检查浏览器存储权限后刷新页面。</p></div>`;toast(e.message,true);}
 

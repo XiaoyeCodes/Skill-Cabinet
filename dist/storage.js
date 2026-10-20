@@ -4,6 +4,40 @@ const MAX_FILE = 50 * 1024 * 1024;
 const MAX_TOTAL = 200 * 1024 * 1024;
 let databasePromise;
 let initializationPromise;
+const skillListeners = new Set();
+let changeChannel;
+const changeSender = globalThis.crypto?.randomUUID?.() || `${Date.now()}-${Math.random()}`;
+
+function dispatchChange(change) {
+  for (const listener of skillListeners) {
+    try { listener(change); } catch (error) { console.error('Skill change listener failed', error); }
+  }
+}
+
+function channel() {
+  // Node also exposes BroadcastChannel; opening one there would keep CLI tests alive.
+  if (!changeChannel && globalThis.window && globalThis.BroadcastChannel) {
+    try {
+      changeChannel = new BroadcastChannel(`${DB_NAME}:changes`);
+      changeChannel.onmessage = event => {
+        if (event.data?.sender !== changeSender && ['local', 'remote'].includes(event.data?.change?.source)) dispatchChange(event.data.change);
+      };
+    } catch { /* Local persistence remains usable when cross-tab messaging is unavailable. */ }
+  }
+  return changeChannel;
+}
+
+function emitChange(change) {
+  dispatchChange(change);
+  try { channel()?.postMessage({ sender: changeSender, change }); } catch { /* Optional cross-tab notification. */ }
+}
+
+export function onSkillsChanged(listener) {
+  if (typeof listener !== 'function') throw new TypeError('技能变更监听器必须是函数。');
+  skillListeners.add(listener);
+  channel();
+  return () => skillListeners.delete(listener);
+}
 
 const now = () => new Date().toISOString();
 const uuid = () => globalThis.crypto?.randomUUID?.() || `skill-${Date.now()}-${Math.random().toString(36).slice(2)}`;
@@ -139,6 +173,7 @@ function normalizeRecord(input, previous) {
     version: String(input.version || '1.0.0'), author: String(input.author || ''),
     instructions: String(input.instructions || ''), content, favorite: Boolean(input.favorite),
     createdAt: input.createdAt || previous?.createdAt || timestamp, updatedAt: input.updatedAt || timestamp, files,
+    localRevision: input.localRevision || previous?.localRevision,
   };
 }
 
@@ -146,17 +181,117 @@ export async function listSkills() {
   return operation('skills', 'readonly', store => store.getAll());
 }
 
-export async function saveSkill(input) {
+function localChanged(message = '同步期间本地技能发生变化，已保留本地内容，请重新同步。') {
+  const error = new Error(message);
+  error.code = 'LOCAL_CHANGED';
+  return error;
+}
+
+export async function saveSkill(input, options = {}) {
   const previous = input?.id ? await operation('skills', 'readonly', store => store.get(input.id)) : undefined;
   const record = normalizeRecord(input, previous);
+  record.localRevision = uuid();
   const duplicate = await operation('skills', 'readonly', store => store.index('slug').get(record.slug));
   if (duplicate && duplicate.id !== record.id) throw new Error(`已存在标识为「${record.slug}」的技能，未覆盖原有内容。`);
-  await operation('skills', 'readwrite', store => store.put(record));
+  if (Object.prototype.hasOwnProperty.call(options, 'expectedRevision')) {
+    const db = await database();
+    await new Promise((resolve, reject) => {
+      const tx = db.transaction('skills', 'readwrite');
+      const store = tx.objectStore('skills');
+      let failure;
+      const request = store.get(record.id);
+      request.onsuccess = () => {
+        const current = request.result;
+        const changed = options.expectedRevision === null ? Boolean(current) : !current || current.localRevision !== options.expectedRevision;
+        if (changed) {
+          failure = localChanged('这个技能在编辑期间已被修改或删除，已保留最新内容，请重新打开后再编辑。');
+          tx.abort();
+          return;
+        }
+        try { store.put(record); } catch (error) { failure = error; tx.abort(); }
+      };
+      tx.oncomplete = () => resolve();
+      tx.onabort = tx.onerror = () => reject(failure || new Error(`本地保存失败：${tx.error?.message || '浏览器存储空间不足或权限受限'}`));
+    });
+  } else await operation('skills', 'readwrite', store => store.put(record));
+  emitChange({ source: 'local', upserts: [{ id: record.id, slug: record.slug }], deletions: [] });
   return record;
 }
 
 export async function deleteSkill(id) {
+  const previous = await operation('skills', 'readonly', store => store.get(id));
   await operation('skills', 'readwrite', store => store.delete(id));
+  if (previous) emitChange({ source: 'local', upserts: [], deletions: [{ id, slug: previous.slug }] });
+}
+
+const syncMetaKey = key => {
+  if (typeof key !== 'string' || !key.trim()) throw new Error('同步配置标识不能为空。');
+  return `sync:${key}`;
+};
+
+export async function getSyncMeta(key) {
+  return (await operation('meta', 'readonly', store => store.get(syncMetaKey(key))))?.value;
+}
+
+export async function setSyncMeta(key, value) {
+  await operation('meta', 'readwrite', store => store.put({ key: syncMetaKey(key), value }));
+}
+
+// Every write through this module gets a fresh localRevision. Including the
+// remaining fields also guards snapshots from databases created before sync.
+function revisionStamp(record) {
+  return JSON.stringify([
+    record.id, record.localRevision, record.name, record.slug, record.description,
+    record.category, record.tags, record.version, record.author, record.instructions,
+    record.content, record.favorite, record.createdAt, record.updatedAt,
+    (record.files || []).map(file => [file.path, file.data?.size, file.data?.type]),
+  ]);
+}
+
+export async function applySyncChanges(upserts = [], deletions = [], options = {}) {
+  if (!Array.isArray(upserts) || !Array.isArray(deletions)) throw new Error('同步变更格式无效。');
+  const records = upserts.map(input => ({ ...normalizeRecord(input), localRevision: uuid() }));
+  const slugs = new Set();
+  const ids = new Set();
+  for (const record of records) {
+    if (slugs.has(record.slug) || ids.has(record.id)) throw new Error('同步数据包含重复技能 ID 或标识。');
+    slugs.add(record.slug); ids.add(record.id);
+  }
+  const removed = new Set(deletions.map(slug => {
+    if (typeof slug !== 'string' || !/^[a-z0-9][a-z0-9_-]*$/.test(slug)) throw new Error('删除的技能标识无效。');
+    return slug;
+  }));
+  const metaKey = options.metaKey === undefined ? undefined : syncMetaKey(options.metaKey);
+  if (options.expectedRecords !== undefined && !Array.isArray(options.expectedRecords)) throw new Error('同步快照格式无效。');
+  const expected = options.expectedRecords?.map(revisionStamp).sort();
+  const db = await database();
+  const applied = await new Promise((resolve, reject) => {
+    let failure;
+    let result;
+    const tx = db.transaction(['skills', 'meta'], 'readwrite');
+    const store = tx.objectStore('skills');
+    const request = store.getAll();
+    request.onsuccess = () => {
+      try {
+        const current = request.result;
+        if (expected && JSON.stringify(current.map(revisionStamp).sort()) !== JSON.stringify(expected)) {
+          throw localChanged();
+        }
+        const bySlug = new Map(current.map(record => [record.slug, record]));
+        const next = records.map(record => ({ ...record, id: bySlug.get(record.slug)?.id || record.id }));
+        const finalRecords = current.filter(record => !removed.has(record.slug) && !slugs.has(record.slug)).concat(next);
+        if (new Set(finalRecords.map(record => record.id)).size !== finalRecords.length) throw new Error('同步技能 ID 与本地其他技能冲突。');
+        for (const record of current) if (removed.has(record.slug) || slugs.has(record.slug)) store.delete(record.id);
+        for (const record of next) store.put(record);
+        if (metaKey !== undefined) tx.objectStore('meta').put({ key: metaKey, value: options.metaValue });
+        result = { upserts: next, deletions: current.filter(record => removed.has(record.slug) && !slugs.has(record.slug)).map(record => record.slug) };
+      } catch (error) { failure = error; tx.abort(); }
+    };
+    tx.oncomplete = () => resolve(result);
+    tx.onabort = tx.onerror = () => reject(failure || new Error(`同步保存失败：${tx.error?.message || '浏览器存储空间不足或权限受限'}`));
+  });
+  if (applied.upserts.length || applied.deletions.length) emitChange({ source: 'remote', upserts: applied.upserts.map(({ id, slug }) => ({ id, slug })), deletions: applied.deletions });
+  return applied;
 }
 
 async function loadZip(data) {
@@ -205,10 +340,15 @@ async function recordsFromZip(zip) {
     }
     const markdown = await decoded.get(root.entry.name).text();
     const parsed = parseSkillMarkdown(markdown);
-    const instructions = files.find(file => /(^|\/)使用说明\.md$/i.test(file.path));
+    const instructions = files.find(file => file.path === '使用说明.md') || files.find(file => /(^|\/)使用说明\.md$/i.test(file.path)) || files.find(file => /(^|\/)使用说明\.txt$/i.test(file.path));
     records.push(normalizeRecord({ ...parsed, files, instructions: instructions ? await instructions.data.text() : '' }));
   }
   return records;
+}
+
+export async function decodeSkillArchive(data) {
+  const zip = await loadZip(data);
+  return zip.file('library.json') ? unpackBackup(zip) : recordsFromZip(zip);
 }
 
 async function unpackBackup(zip) {
@@ -236,8 +376,7 @@ export async function importFiles(files) {
       if (file.size > MAX_TOTAL) throw new Error('导入文件超过 200 MB 限制。');
       let candidates;
       if (/\.zip$/i.test(name)) {
-        const zip = await loadZip(file);
-        candidates = zip.file('library.json') ? await unpackBackup(zip) : await recordsFromZip(zip);
+        candidates = await decodeSkillArchive(file);
       } else if (/\.md$/i.test(name)) {
         const text = await file.text();
         candidates = [normalizeRecord({ ...parseSkillMarkdown(text), files: [{ path: 'SKILL.md', data: file }] })];
@@ -279,7 +418,7 @@ export async function exportSkill(input) {
   const zip = new JSZip();
   for (const file of record.files) {
     const path = safePath(file.path);
-    if (path.toLowerCase() === 'skill.md' || path === '使用说明.md') continue;
+    if (path.toLowerCase() === 'skill.md' || path.toLowerCase() === '使用说明.md') continue;
     zip.file(path, await file.data.arrayBuffer());
   }
   zip.file('SKILL.md', getSkillContent(record));
@@ -299,7 +438,7 @@ export async function exportLibrary(records) {
     identifiers.add(record.id);
     const archivePath = safePath(`skills/${encodeURIComponent(record.id)}.zip`);
     zip.file(archivePath, await (await exportSkill(record)).arrayBuffer());
-    const { files, ...metadata } = record;
+    const { files, localRevision, ...metadata } = record;
     skills.push({ ...metadata, archivePath });
   }
   zip.file('library.json', JSON.stringify({ schemaVersion: 1, exportedAt: now(), skills }, null, 2));
