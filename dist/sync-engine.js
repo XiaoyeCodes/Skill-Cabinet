@@ -1,5 +1,6 @@
 import { getSkillContent } from './storage.js';
 import { sha256, safeMetadata, MAX_ARCHIVE_BYTES } from './github-client.js';
+import { mergeCategories } from './categories.js';
 
 const present = entry => entry && !entry.deleted ? entry.fingerprint : null;
 const own = (value, key) => Object.hasOwn(value || {}, key);
@@ -48,8 +49,9 @@ export class SyncEngine {
   async performSync(resolutions) {
     const storage = this.storage;
     const records = await storage.listSkills();
+    const localCategories = await storage.listCategories();
     const local = await indexSkills(records);
-    const signature = await localSignature(local);
+    const signature = await sha256(`${await localSignature(local)}:${JSON.stringify(localCategories)}`);
     const base = await storage.getSyncMeta(this.baseKey) || { entries: {}, seenManifest: false };
     const snapshot = await this.client.getSnapshot();
     if (!snapshot.manifest && base.seenManifest) throw new Error('远端同步清单已被删除。为防止覆盖，请先在 GitHub 恢复清单再同步。');
@@ -89,7 +91,8 @@ export class SyncEngine {
       selected.set(slug, side);
     }
     if (conflicts.length) return this.state('conflict', `发现 ${conflicts.length} 个冲突，请选择保留哪一份。`, { conflicts, conflictToken: token });
-    const next = { schemaVersion: 1, entries: Object.create(null) };
+    const categories = mergeCategories(localCategories, snapshot.manifest?.categories || []);
+    const next = { schemaVersion: 1, entries: Object.create(null), ...(categories.length || snapshot.manifest?.categories ? { categories } : {}) };
     const archives = new Map();
     const upserts = [];
     const deletions = [];
@@ -133,8 +136,8 @@ export class SyncEngine {
       }
     }
     const current = await indexSkills(await storage.listSkills());
-    if (await localSignature(current) !== signature) { const error = new Error('同步期间又有本机修改，已保留全部修改，请再次同步。'); error.code = 'LOCAL_CHANGED'; throw error; }
-    const changed = !snapshot.manifest || JSON.stringify(snapshot.manifest.entries) !== JSON.stringify(next.entries);
+    if (await sha256(`${await localSignature(current)}:${JSON.stringify(await storage.listCategories())}`) !== signature) { const error = new Error('同步期间又有本机修改，已保留全部修改，请再次同步。'); error.code = 'LOCAL_CHANGED'; throw error; }
+    const changed = !snapshot.manifest || JSON.stringify(snapshot.manifest.entries) !== JSON.stringify(next.entries) || JSON.stringify(snapshot.manifest.categories || []) !== JSON.stringify(categories);
     // Save a complete recovery ZIP before applying any remote edits or deletions.
     if (upserts.length || deletions.length) await storage.setSyncMeta(this.recoveryKey, { blob: await storage.exportLibrary(records), createdAt: stamp() });
     const written = changed ? await this.client.writeSnapshot(snapshot, next, archives) : { ...snapshot, manifest: next };
@@ -144,7 +147,7 @@ export class SyncEngine {
     // A failed apply must preserve the old baseline too: some remote edits have
     // not reached this device yet. Advancing it would misclassify their old local
     // copies as new edits during the next merge and could upload stale content.
-    await storage.applySyncChanges(upserts, deletions, { expectedRecords: records, metaKey: this.baseKey, metaValue: baseline });
+    await storage.applySyncChanges(upserts, deletions, { expectedRecords: records, expectedCategories: localCategories, categories, metaKey: this.baseKey, metaValue: baseline });
     return this.state('synced', '已与 GitHub 同步，可在其他设备连接同一仓库恢复。', { head: written.head, syncedAt: baseline.syncedAt, uploaded: archives.size, restored: upserts.length, deleted: deletions.length });
   }
 }

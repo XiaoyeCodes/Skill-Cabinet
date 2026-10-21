@@ -8,3 +8,5 @@
 .sidebar{overflow-y:auto;min-height:0}.sidebar>*{flex-shrink:0}.detail-slug{overflow-wrap:anywhere}.file-row span:first-child i{display:inline-flex;vertical-align:middle;margin-right:4px}.card-content h3{overflow-wrap:anywhere}.detail-actions .is-favorite{color:var(--accent)}
 @media(max-width:680px){.toolbar-controls select{display:block;width:83px;font-size:10px}.toolbar-controls{gap:7px}.search-wrap{min-width:130px}.search-wrap kbd{display:none}.sidebar{visibility:hidden}.sidebar.open{visibility:visible}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+.repository-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:-8px 0 18px;color:var(--muted,#817a6e);font-size:11px;line-height:1.7}.repository-bar .quiet-btn{flex-shrink:0;font-size:11px}.repository-bar [data-error]{color:var(--accent)}.repository-bar button:disabled{opacity:.5}

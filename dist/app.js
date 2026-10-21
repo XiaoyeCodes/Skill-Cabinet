@@ -1,5 +1,6 @@
-import { initialize, listSkills, saveSkill, deleteSkill, importFiles, exportSkill, exportLibrary, formatBytes, getSkillContent } from './storage.js';
+import { initialize, listSkills, saveSkill, deleteSkill, importFiles, exportSkill, exportLibrary, formatBytes, getSkillContent, listCategories, saveCategories, onSkillsChanged } from './storage.js';
 import { initializeGitHubSync } from './sync-ui.js';
+import { RepositoryLibrary } from './repository-library.js';
 
 const $ = (s,root=document)=>root.querySelector(s);
 const $$ = (s,root=document)=>[...root.querySelectorAll(s)];
@@ -10,7 +11,7 @@ const esc=(v)=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':
 const baseCategories=['图像与设计','写作与内容','开发与工具','效率与工作','学习与研究'];
 let skills=[],nav='all',category='',query='',view='grid',currentDetail=null,detailTab='overview',fileUrl=null;
 let customCategories=[], editorBaseRevision=null, githubSync;
-try{const v=JSON.parse(localStorage.getItem('skill-cabinet-categories')||'[]');if(Array.isArray(v))customCategories=v.filter(x=>typeof x==='string'&&x.length<=30);}catch{}
+try{const v=JSON.parse(localStorage.getItem('skill-cabinet-categories')||'[]');if(Array.isArray(v))customCategories=v.filter(x=>typeof x==='string'&&x.trim()&&x.length<=30&&!/[\u0000-\u001f]/.test(x));}catch{}
 const categories=()=>[...new Set([...baseCategories,...customCategories,...skills.map(s=>s.category||'未分类')])];
 function toast(text,error=false){const node=document.createElement('div');node.className='toast'+(error?' error':'');node.textContent=text;$('#toasts').append(node);setTimeout(()=>node.remove(),4500);}
 function openDialog(id){const dialog=$(id);if(!dialog.open)dialog.showModal();return dialog;}
@@ -38,7 +39,7 @@ function render(){
   else $('#skill-grid').innerHTML=filtered.map((s,i)=>`<article class="skill-card" tabindex="0" role="button" data-open="${esc(s.id)}" aria-label="查看 ${esc(s.name)}"><button class="favorite-btn ${s.favorite?'is-favorite':''}" data-favorite="${esc(s.id)}" aria-label="${s.favorite?'取消收藏':'收藏'} ${esc(s.name)}" aria-pressed="${!!s.favorite}">${icon('star')}</button><div class="card-art"><span class="art-number">NO. ${String(i+1).padStart(2,'0')}</span>${artwork(s)}<span class="art-caption">${s.slug==='shiguang-atlas'?'A FIELD GUIDE TO CURIOSITY':'IDEAS INTO PRACTICE'}</span></div><div class="card-content"><div class="card-eyebrow">${esc(s.category||'未分类')}</div><h3>${esc(s.name)}</h3><p>${esc(s.description)}</p><div class="card-tags">${(s.tags||[]).slice(0,3).map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div><div class="card-footer"><span class="version">v${esc(s.version||'1.0.0')}</span><span>·</span><span>${date(s.updatedAt)} 更新</span><span class="card-arrow">↗</span></div></div></article>`).join('')+addCard+(filtered.length===1?`<div class="shelf-note"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M50 17v66M17 50h66M27 27l46 46M27 73l46-46M38 20l24 60M20 38l60 24M20 62l60-24M38 80l24-60"/></svg><p>小小的技能，<br>大大的可能。</p><small>A GROWING COLLECTION</small></div>`:'');
   hydrateIcons();
 }
-async function refresh(){skills=await listSkills();render();}
+async function refresh(){[skills,customCategories]=await Promise.all([listSkills(),listCategories()]);render();}
 function reset(){category='';nav='all';query='';$('#search').value='';render();}
 function showEditor(s=null){
   editorBaseRevision=s ? s.localRevision : null;
@@ -87,7 +88,7 @@ $('#drop-zone').onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault(
 $('#backup-button').onclick=async()=>{if(!skills.length)return toast('仓库还是空的，先收进一个 Skill 吧');const b=$('#backup-button');b.disabled=true;try{download(await exportLibrary(skills),`Skill-Cabinet-备份-${new Date().toLocaleDateString('en-CA')}.zip`);toast('仓库备份已开始下载');}catch(e){toast(e.message,true);}finally{b.disabled=false;}};
 $('#editor-form').onsubmit=async e=>{e.preventDefault();const f=e.target,values=Object.fromEntries(new FormData(f)),button=$('#save-button');$('#editor-error').textContent='';button.disabled=true;try{const latest=await listSkills();const existing=latest.find(s=>s.id===values.id);if(values.id&&(!existing||existing.localRevision!==editorBaseRevision))throw Error('这个 Skill 在编辑期间已被其他页面或云端修改。当前输入已保留，请先复制文本，再关闭编辑并查看最新版本。');const slug=values.slug.trim();if(latest.some(s=>s.slug===slug&&s.id!==values.id))throw Error('这个技能标识已存在，请换一个标识。');const record={...existing,...values,id:existing?.id||crypto.randomUUID(),slug,name:values.name.trim(),description:values.description.trim(),tags:values.tags.split(/[,，]/).map(t=>t.trim()).filter(Boolean).slice(0,8),version:values.version.trim()||'1.0.0',files:existing?.files||[],favorite:existing?.favorite||false,createdAt:existing?.createdAt||new Date().toISOString(),updatedAt:new Date().toISOString()};if(!record.name||!record.description||!record.content.trim())throw Error('请填写名称、功能介绍和 SKILL.md 正文。');await saveSkill(record,{expectedRevision:editorBaseRevision});await refresh();closeDialog($('#editor-dialog'));toast('好方法，已经收好了');showDetail(record.id);}catch(err){$('#editor-error').textContent=err.message;}finally{button.disabled=false;}};
 $('#add-category').onclick=()=>{ $('#category-input').value='';$('#category-error').textContent='';openDialog('#category-dialog');};
-$('#category-form').onsubmit=e=>{e.preventDefault();const name=$('#category-input').value.trim();if(!name)return;if(categories().includes(name)){$('#category-error').textContent='这个分类已经存在。';return;}try{const next=[...customCategories,name];localStorage.setItem('skill-cabinet-categories',JSON.stringify(next));customCategories=next;render();closeDialog($('#category-dialog'));toast('已添加分类');}catch{$('#category-error').textContent='分类保存失败，请检查浏览器存储权限。';}};
+$('#category-form').onsubmit=async e=>{e.preventDefault();const name=$('#category-input').value.trim();if(!name)return;if(categories().includes(name)){$('#category-error').textContent='这个分类已经存在。';return;}const button=e.submitter;button.disabled=true;try{customCategories=await saveCategories([...customCategories,name]);render();closeDialog($('#category-dialog'));toast('已添加分类，正在保存到仓库');await checkRepository();}catch(error){$('#category-error').textContent=error.message||'分类保存失败，请检查浏览器存储权限。';}finally{button.disabled=false;}};
 document.addEventListener('click',async e=>{
   const close=e.target.closest('.close-dialog');if(close){closeDialog(close.closest('dialog'));return;}
   const navBtn=e.target.closest('[data-nav]');if(navBtn){nav=navBtn.dataset.nav;category='';if(nav==='recent')$('#sort').value='updated';$('#sidebar').classList.remove('open');render();return;}
@@ -114,5 +115,59 @@ document.addEventListener('dragover',e=>{if(e.dataTransfer?.types.includes('File
 document.addEventListener('dragleave',()=>{dragDepth=Math.max(0,dragDepth-1);if(!dragDepth)$('#global-drop').hidden=true;});
 document.addEventListener('drop',e=>{if(!e.dataTransfer?.files.length)return;e.preventDefault();dragDepth=0;$('#global-drop').hidden=true;closeAll();showImport();importSelected(e.dataTransfer.files);});
 hydrateIcons();
-try{skills=await initialize();render();githubSync=initializeGitHubSync({toast,onRefresh:async()=>{await refresh();if($('#detail-dialog').open){if(skills.some(s=>s.id===currentDetail))showDetail(currentDetail,detailTab);else closeDialog($('#detail-dialog'));}}});}catch(e){$('#skill-grid').innerHTML=`<div class="empty-state"><h3>暂时无法打开技能库</h3><p>${esc(e.message)}</p><p>请检查浏览器存储权限后刷新页面。</p></div>`;toast(e.message,true);}
+const repositoryLibrary = new RepositoryLibrary();
+let checkingRepository = false;
+async function refreshLibraryView() {
+  await refresh();
+  if ($('#detail-dialog').open) {
+    if (skills.some(s => s.id === currentDetail)) showDetail(currentDetail, detailTab);
+    else closeDialog($('#detail-dialog'));
+  }
+}
+async function checkRepository() {
+  if (checkingRepository) return;
+  checkingRepository = true;
+  const status = $('#repository-status'), button = $('#repository-refresh');
+  button.disabled = true;
+  try {
+    const result = await repositoryLibrary.refresh();
+    if (!result.available) {
+      await initialize();
+      status.textContent = '当前使用内置技能库；自动检查仓库更新';
+      await refreshLibraryView();
+    } else {
+      status.textContent = `本地仓库 ${result.count} 个 Skill · 每 5 秒检查更新${result.preserved.length ? ` · 已保留 ${result.preserved.length} 项本地差异` : ''}${result.categoriesOnDisk ? ' · 自定义分类已保存到仓库' : ' · 分类仅在浏览器保存，可连接 GitHub 同步'}`;
+      status.title = result.preserved.length ? `以下技能保留了浏览器中的修改或删除：${result.preserved.join('、')}` : 'git pull 后自动读取仓库的新内容，无需连接 GitHub。';
+      if (result.changed) await refreshLibraryView();
+    }
+    status.removeAttribute('data-error');
+  } catch (error) {
+    await refreshLibraryView();
+    status.textContent = `${error.message || '读取仓库失败'} 将自动重试。`;
+    status.setAttribute('data-error', 'true');
+  } finally {
+    checkingRepository = false;
+    button.disabled = false;
+  }
+}
+try {
+  skills = await initialize({ seed: false });
+  customCategories = await saveCategories(customCategories);
+  render();
+  onSkillsChanged(event => {
+    if (event.categoriesChanged) {
+      void refreshLibraryView();
+      if (event.source === 'local') void checkRepository();
+    }
+  });
+  await checkRepository();
+  githubSync = initializeGitHubSync({ toast, onRefresh: refreshLibraryView });
+  $('#repository-refresh').onclick = () => checkRepository();
+  setInterval(() => { if (!document.hidden) void checkRepository(); }, 5000);
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) void checkRepository(); });
+  window.addEventListener('focus', () => { void checkRepository(); });
+} catch(e) {
+  $('#skill-grid').innerHTML=`<div class="empty-state"><h3>暂时无法打开技能库</h3><p>${esc(e.message)}</p><p>请检查浏览器存储权限后刷新页面。</p></div>`;
+  toast(e.message,true);
+}
 

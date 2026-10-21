@@ -1,3 +1,5 @@
+import { normalizeCategories, mergeCategories } from './categories.js';
+
 const DB_NAME = 'personal-skill-library';
 const MAX_ENTRIES = 3000;
 const MAX_FILE = 50 * 1024 * 1024;
@@ -237,6 +239,14 @@ export async function setSyncMeta(key, value) {
   await operation('meta', 'readwrite', store => store.put({ key: syncMetaKey(key), value }));
 }
 
+export async function listCategories() {
+  return normalizeCategories(await getSyncMeta('categories') || []);
+}
+
+export async function saveCategories(names, { source = 'local' } = {}) {
+  return (await applySyncChanges([], [], { categories: names, source })).categories;
+}
+
 // Every write through this module gets a fresh localRevision. Including the
 // remaining fields also guards snapshots from databases created before sync.
 function revisionStamp(record) {
@@ -264,6 +274,8 @@ export async function applySyncChanges(upserts = [], deletions = [], options = {
   const metaKey = options.metaKey === undefined ? undefined : syncMetaKey(options.metaKey);
   if (options.expectedRecords !== undefined && !Array.isArray(options.expectedRecords)) throw new Error('同步快照格式无效。');
   const expected = options.expectedRecords?.map(revisionStamp).sort();
+  const incomingCategories = options.categories === undefined ? undefined : normalizeCategories(options.categories);
+  const expectedCategories = options.expectedCategories === undefined ? undefined : normalizeCategories(options.expectedCategories);
   const db = await database();
   const applied = await new Promise((resolve, reject) => {
     let failure;
@@ -285,12 +297,25 @@ export async function applySyncChanges(upserts = [], deletions = [], options = {
         for (const record of next) store.put(record);
         if (metaKey !== undefined) tx.objectStore('meta').put({ key: metaKey, value: options.metaValue });
         result = { upserts: next, deletions: current.filter(record => removed.has(record.slug) && !slugs.has(record.slug)).map(record => record.slug) };
+        if (incomingCategories !== undefined || expectedCategories !== undefined) {
+          const meta = tx.objectStore('meta');
+          const categoryRequest = meta.get(syncMetaKey('categories'));
+          categoryRequest.onsuccess = () => {
+            try {
+              const currentCategories = normalizeCategories(categoryRequest.result?.value || []);
+              if (expectedCategories && JSON.stringify(currentCategories) !== JSON.stringify(expectedCategories)) throw localChanged('同步期间本地分类发生变化，已保留新增分类，请重新同步。');
+              result.categories = mergeCategories(currentCategories, incomingCategories || []);
+              result.categoriesChanged = JSON.stringify(currentCategories) !== JSON.stringify(result.categories);
+              if (result.categoriesChanged) meta.put({ key: syncMetaKey('categories'), value: result.categories });
+            } catch (error) { failure = error; tx.abort(); }
+          };
+        }
       } catch (error) { failure = error; tx.abort(); }
     };
     tx.oncomplete = () => resolve(result);
     tx.onabort = tx.onerror = () => reject(failure || new Error(`同步保存失败：${tx.error?.message || '浏览器存储空间不足或权限受限'}`));
   });
-  if (applied.upserts.length || applied.deletions.length) emitChange({ source: 'remote', upserts: applied.upserts.map(({ id, slug }) => ({ id, slug })), deletions: applied.deletions });
+  if (applied.upserts.length || applied.deletions.length || applied.categoriesChanged) emitChange({ source: options.source === 'local' ? 'local' : 'remote', upserts: applied.upserts.map(({ id, slug }) => ({ id, slug })), deletions: applied.deletions, categoriesChanged: Boolean(applied.categoriesChanged) });
   return applied;
 }
 
@@ -445,7 +470,9 @@ export async function exportLibrary(records) {
   return new Blob([await zip.generateAsync({ type: 'uint8array', compression: 'DEFLATE' })], { type: 'application/zip' });
 }
 
-export async function initialize() {
+export async function initialize({ seed = true } = {}) {
+  // Local servers load the tracked repository library before considering seeds.
+  if (!seed) return listSkills();
   if (!initializationPromise) initializationPromise = (async () => {
     const initialized = await operation('meta', 'readonly', store => store.get('initialized'));
     if (!initialized) {

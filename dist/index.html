@@ -39,6 +39,7 @@
       </section>
       <section class="library" aria-labelledby="library-title">
         <div class="library-heading"><div class="section-title"><h2 id="library-title">我的技能库</h2><span id="result-count">0 个 Skill</span></div><span class="shelf-label">COLLECT. REFINE. REUSE.</span></div>
+        <div class="repository-bar"><span id="repository-status" role="status">正在读取本地仓库…</span><button class="quiet-btn" id="repository-refresh" type="button">检查仓库更新</button></div>
         <div class="toolbar"><div class="search-wrap"><i data-icon="search"></i><input id="search" type="search" placeholder="搜索名称、描述或标签…" aria-label="搜索 Skill"><kbd>/</kbd></div><div class="toolbar-controls"><select id="sort" aria-label="排序"><option value="updated">最近更新</option><option value="name">名称 A–Z</option><option value="created">最近添加</option></select><div class="view-toggle" role="group" aria-label="显示方式"><button class="icon-btn active" id="grid-button" aria-label="网格视图" aria-pressed="true"><i data-icon="grid"></i></button><button class="icon-btn" id="list-button" aria-label="列表视图" aria-pressed="false"><i data-icon="list"></i></button></div></div></div>
         <div class="filter-row"><div id="category-filters" class="filter-chips"></div><button class="text-btn" id="reset-filters" hidden>清除筛选</button></div>
         <div id="skill-grid" class="skill-grid" aria-live="polite"><div class="initial-loading">正在整理你的书架…</div></div>

@@ -6,6 +6,7 @@ import { webcrypto } from 'node:crypto';
 import { GitHubClient, validateManifest, sha256, MAX_ARCHIVE_BYTES } from '../dist/github-client.js';
 import { SyncEngine, fingerprintSkill } from '../dist/sync-engine.js';
 import { exportSkill, exportLibrary, decodeSkillArchive } from '../dist/storage.js';
+import { mergeCategories } from '../dist/categories.js';
 
 globalThis.crypto ||= webcrypto;
 const module = { exports: {} };
@@ -13,17 +14,22 @@ vm.runInNewContext(await readFile(new URL('../dist/vendor/jszip.min.js', import.
 globalThis.JSZip = module.exports;
 const A = 'a'.repeat(40), B = 'b'.repeat(40), C = 'c'.repeat(40), D = 'd'.repeat(40);
 const skill = (body = 'First', extra = {}) => ({ id: 'local-id', name: 'Test', slug: 'test', content: `# Test\n\n${body}`, description: 'Description', category: 'Tools', tags: ['tag'], version: '1.0', author: '', favorite: false, instructions: 'Read first', createdAt: '2026-10-20', updatedAt: '2026-10-20', files: [{ path: 'assets/picture.bin', data: new Blob([new Uint8Array([0, 128, 255])]) }], localRevision: 'initial', ...extra });
-function memoryStorage(initial = []) {
+function memoryStorage(initial = [], initialCategories = []) {
   let records = [...initial];
+  let categories = mergeCategories(initialCategories);
   const meta = new Map();
   let serial = 0;
   return {
     listSkills: async () => [...records], exportSkill, exportLibrary, decodeSkillArchive,
+    listCategories: async () => [...categories],
+    saveCategories: async names => { categories = mergeCategories(categories, names); return [...categories]; },
     getSyncMeta: async key => meta.get(key), setSyncMeta: async (key, value) => meta.set(key, value),
     async applySyncChanges(upserts, deletions, options) {
+      if (options.expectedCategories && JSON.stringify(categories) !== JSON.stringify(options.expectedCategories)) { const error = new Error('本地分类已变化'); error.code = 'LOCAL_CHANGED'; throw error; }
       if (JSON.stringify(records.map(r => [r.id, r.localRevision])) !== JSON.stringify(options.expectedRecords.map(r => [r.id, r.localRevision]))) { const error = new Error('本机数据已变化'); error.code = 'LOCAL_CHANGED'; throw error; }
       records = records.filter(record => !deletions.includes(record.slug));
       for (const record of upserts) { const previous = records.find(r => r.slug === record.slug); records = records.filter(r => r.slug !== record.slug); records.push({ ...record, id: previous?.id || record.id, localRevision: String(++serial) }); }
+      categories = mergeCategories(categories, options.categories || []);
       meta.set(options.metaKey, options.metaValue);
     },
     edit(record) { const previous = records.find(r => r.slug === record.slug); records = records.filter(r => r.slug !== record.slug); records.push({ ...record, id: previous?.id || record.id, localRevision: String(++serial) }); },
@@ -44,6 +50,40 @@ function remote(initialManifest = null) {
   };
 }
 const engine = (client, storage) => new SyncEngine({ client, storage });
+
+test('empty categories sync across devices, merge additions and do not create repeated commits', async () => {
+  const client = remote(), first = memoryStorage([], ['设备甲空分类']), second = memoryStorage([], ['设备乙空分类']);
+  await engine(client, first).sync();
+  assert.deepEqual((await client.getSnapshot()).manifest.categories, ['设备甲空分类']);
+  assert.equal(client.archives.size, 0);
+  await engine(client, second).sync();
+  await engine(client, first).sync();
+  assert.deepEqual(await first.listCategories(), mergeCategories(['设备甲空分类', '设备乙空分类']));
+  assert.deepEqual(await second.listCategories(), await first.listCategories());
+  const writes = client.writes;
+  await engine(client, second).sync();
+  await engine(client, first).sync();
+  assert.equal(client.writes, writes);
+});
+
+test('adding a category during GitHub upload preserves it and retries without advancing the baseline', async () => {
+  const client = remote(), storage = memoryStorage([], ['先添加的分类']);
+  client.beforeWrite = async () => { client.beforeWrite = null; await storage.saveCategories(['上传期间新增']); };
+  const sync = engine(client, storage);
+  await assert.rejects(sync.sync(), error => error.code === 'LOCAL_CHANGED');
+  assert.equal(await storage.getSyncMeta(sync.baseKey), undefined);
+  assert.ok((await storage.listCategories()).includes('上传期间新增'));
+  await sync.sync();
+  assert.deepEqual((await client.getSnapshot()).manifest.categories, await storage.listCategories());
+});
+
+test('manifest validates optional categories and remains compatible with older manifests', () => {
+  assert.deepEqual(validateManifest({ schemaVersion: 1, entries: {} }), { schemaVersion: 1, entries: Object.create(null) });
+  assert.deepEqual(validateManifest({ schemaVersion: 1, entries: {}, categories: [' 分类 ', '分类'] }).categories, ['分类']);
+  for (const categories of ['invalid', [null], [''], ['x'.repeat(31)]]) {
+    assert.throws(() => validateManifest({ schemaVersion: 1, entries: {}, categories }), /分类/);
+  }
+});
 
 test('canonical fingerprint survives export/import, dates and ids; binary or instructions edits differ', async () => {
   const record = skill();
@@ -185,9 +225,11 @@ test('GitHub commits use non-forced ref updates, reject stale refs, reconcile lo
       const json = url.includes('/git/trees') ? { sha: B } : url.includes('/git/commits') ? { sha: C } : { object: { sha: reconcile ? C : D } };
       return { ok: true, status: 200, json: async () => json };
     } });
-    const operation = client.writeSnapshot({ head: A, treeSha: B }, { schemaVersion: 1, entries: {} });
+    const operation = client.writeSnapshot({ head: A, treeSha: B }, { schemaVersion: 1, entries: {}, categories: ['空分类'] });
     if (reconcile) assert.equal((await operation).head, C); else await assert.rejects(operation, error => error.code === 'REMOTE_CHANGED' && !error.message.includes('never-log-token'));
     const update = calls.find(([, options]) => options.method === 'PATCH'); assert.equal(JSON.parse(update[1].body).force, false);
     const commit = calls.find(([url]) => url.includes('/git/commits')); assert.deepEqual(JSON.parse(commit[1].body).parents, [A]);
+    const tree = JSON.parse(calls.find(([url]) => url.includes('/git/trees'))[1].body);
+    assert.deepEqual(JSON.parse(tree.tree.find(entry => entry.path === 'skill-cabinet/manifest.json').content).categories, ['空分类']);
   }
 });

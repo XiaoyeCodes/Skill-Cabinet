@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import vm from 'node:vm';
+import { listCategories, saveCategories } from '../dist/storage.js';
 import { parseSkillMarkdown, formatBytes, getSkillContent, exportSkill, exportLibrary, importFiles, initialize, listSkills, saveSkill, deleteSkill, getSyncMeta, setSyncMeta, decodeSkillArchive, applySyncChanges, onSkillsChanged } from '../dist/storage.js';
 
 const zipModule = { exports: {} };
@@ -159,6 +160,13 @@ test('rejects traversal, empty names and malformed files while continuing the ba
   assert.equal(report.imported.length, 1);
   await assert.rejects(exportSkill({ name: '', content: '# Body' }), /名称不能为空/);
   await assert.rejects(exportSkill({ name: 'Empty', content: '' }), /内容不能为空/);
+});
+
+test('repository startup reads existing data without fetching or marking seeds initialized', async () => {
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async () => { throw new Error('Repository startup must not fetch seeds'); };
+  try { assert.deepEqual(await initialize({ seed: false }), await listSkills()); }
+  finally { globalThis.fetch = originalFetch; }
 });
 
 test('seed initialization imports the actual supplied package only once', async () => {
@@ -327,4 +335,35 @@ test('instruction filename casing roundtrips edited text and favors canonical ro
   zip.file('使用说明.md', 'Canonical instructions');
   const [canonical] = await decodeSkillArchive(await zip.generateAsync({ type: 'uint8array' }));
   assert.equal(canonical.instructions, 'Canonical instructions');
+});
+
+test('empty categories persist without skills, deduplicate and notify both local and remote listeners', async () => {
+  const changes = [], unsubscribe = onSkillsChanged(change => changes.push(change));
+  try {
+    const before = await listSkills();
+    await saveCategories([' 本机空分类 ', '本机空分类']);
+    assert.deepEqual(await listCategories(), ['本机空分类']);
+    assert.equal(changes.at(-1).source, 'local');
+    assert.equal(changes.at(-1).categoriesChanged, true);
+    const count = changes.length;
+    await saveCategories(['本机空分类']);
+    assert.equal(changes.length, count);
+    await applySyncChanges([], [], { categories: ['仓库空分类'], expectedCategories: ['本机空分类'] });
+    assert.deepEqual(await listCategories(), ['仓库空分类', '本机空分类']);
+    assert.equal(changes.at(-1).source, 'remote');
+    assert.deepEqual(await listSkills(), before);
+  } finally { unsubscribe(); }
+});
+
+test('category races roll back the skills and sync baseline in the same transaction', async () => {
+  const snapshot = await listCategories();
+  await saveCategories(['并发新增分类']);
+  const records = await listSkills();
+  await assert.rejects(applySyncChanges([{ id: 'category-rollback', name: 'Rollback', slug: 'category-rollback', content: '# Rollback' }], [], {
+    expectedCategories: snapshot, categories: ['云端空分类'], metaKey: 'category-rollback', metaValue: true,
+  }), error => error.code === 'LOCAL_CHANGED');
+  assert.deepEqual(await listSkills(), records);
+  assert.equal(await getSyncMeta('category-rollback'), undefined);
+  assert.ok(!(await listCategories()).includes('云端空分类'));
+  assert.ok((await listCategories()).includes('并发新增分类'));
 });

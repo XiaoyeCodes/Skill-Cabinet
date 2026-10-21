@@ -1,3 +1,5 @@
+import { normalizeCategories } from './categories.js';
+
 export const MANIFEST_PATH = 'skill-cabinet/manifest.json';
 export const MAX_ARCHIVE_BYTES = 45 * 1024 * 1024;
 const MAX_MANIFEST_BYTES = 2 * 1024 * 1024;
@@ -42,7 +44,7 @@ export function validateManifest(value) {
       entries[slug] = { fingerprint: entry.fingerprint, archiveSha256: entry.archiveSha256, archivePath: entry.archivePath, metadata: safeMetadata(entry.metadata, slug) };
     }
   }
-  return { schemaVersion: 1, entries };
+  return { schemaVersion: 1, entries, ...(value.categories === undefined ? {} : { categories: normalizeCategories(value.categories) }) };
 }
 export async function sha256(value) {
   const bytes = value instanceof Blob ? await value.arrayBuffer() : typeof value === 'string' ? encoder.encode(value) : value;
