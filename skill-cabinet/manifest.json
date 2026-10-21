@@ -94,9 +94,33 @@
         "createdAt": "2026-10-21T07:05:05.296Z",
         "updatedAt": "2026-10-21T07:06:51.278Z"
       }
+    },
+    "huashu-design": {
+      "fingerprint": "131ee657ebac2a889a93a4b75e67dd928a3f93f00522c94d817c9a48ae2ae872",
+      "archiveSha256": "a2dca6b71a5a4ea2a4ad4a011a59af2a26e81ce85c88a2af70525de21cf130cb",
+      "archivePath": "skill-cabinet/archives/huashu-design-a2dca6b71a5a4ea2a4ad4a011a59af2a26e81ce85c88a2af70525de21cf130cb.zip",
+      "metadata": {
+        "id": "0d75f482-412e-4463-aed0-d23b9f4cb7df",
+        "name": "Huashu Design · 花叔设计",
+        "slug": "huashu-design",
+        "description": "用 HTML 制作网页和 App 高保真交互原型、幻灯片、动画与信息图，包含设计方向探索、样式参考、专家评审及导出工具。",
+        "category": "图像与设计",
+        "tags": [
+          "网页设计",
+          "交互原型",
+          "幻灯片",
+          "动画"
+        ],
+        "version": "3.0.0",
+        "author": "花叔",
+        "favorite": false,
+        "createdAt": "2026-10-21T07:42:49.043Z",
+        "updatedAt": "2026-10-21T07:42:49.043Z"
+      }
     }
   },
   "categories": [
+    "图像与设计",
     "新闻日报"
   ]
 }

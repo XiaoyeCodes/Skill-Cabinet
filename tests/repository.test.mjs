@@ -65,7 +65,7 @@ function checkout() {
 }
 const library = (storage, source) => new RepositoryLibrary({ storage, fetchImpl: source.fetch.bind(source) });
 
-test('a fresh checkout loads all five real archives and migrates a one-skill browser without credentials', async t => {
+test('a fresh checkout loads all six real archives and migrates a one-skill browser without credentials', async t => {
   const server = createServer();
   await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
   t.after(() => { server.closeAllConnections(); server.close(); });
@@ -75,12 +75,20 @@ test('a fresh checkout loads all five real archives and migrates a one-skill bro
   const storage = memoryStorage([{ ...decoded, ...seeds[0], files: decoded.files, id: 'legacy-browser-id' }]);
   const client = new RepositoryLibrary({ storage, fetchImpl: (url, options) => fetch(new URL(url, base), options) });
   const result = await client.refresh();
-  assert.equal(result.count, 5);
+  assert.equal(result.count, 6);
   assert.deepEqual(result.preserved, []);
   const records = await storage.listSkills();
-  assert.deepEqual(records.map(record => record.slug).sort(), ['aibase-daily', 'daily-60s-image', 'jin10-breakfast', 'jin10-financial-daily', 'shiguang-atlas']);
+  assert.deepEqual(records.map(record => record.slug).sort(), ['aibase-daily', 'daily-60s-image', 'huashu-design', 'jin10-breakfast', 'jin10-financial-daily', 'shiguang-atlas']);
   assert.equal(records.find(record => record.slug === 'shiguang-atlas').id, 'legacy-browser-id');
   assert.ok(records.every(record => record.content && record.files.length > 0));
+  const design = records.find(record => record.slug === 'huashu-design');
+  assert.equal(design.category, '图像与设计');
+  assert.equal(design.version, '3.0.0');
+  assert.equal(design.author, '花叔');
+  assert.equal(design.files.length, 391);
+  const paths = new Set(design.files.map(file => file.path));
+  for (const file of ['LICENSE', 'README.md', 'package.json', 'assets/design_canvas.jsx', 'references/workflow.md', 'scripts/verify.py', 'demos/c1-ios-prototype.html', 'upstream/SKILL.original.md']) assert.ok(paths.has(file), file);
+  assert.match(await design.files.find(file => file.path === 'LICENSE').data.text(), /MIT License/);
   const manifestResponse = await fetch(new URL('skill-cabinet/manifest.json', base));
   assert.equal(manifestResponse.headers.get('cache-control'), 'no-store');
   for (const path of ['.git/config', 'README.md', 'skill-cabinet/other.json', 'skill-cabinet/archives/secret.zip', 'skill-cabinet/%2e%2e%2f.git/config']) {
