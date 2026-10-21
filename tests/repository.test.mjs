@@ -65,7 +65,7 @@ function checkout() {
 }
 const library = (storage, source) => new RepositoryLibrary({ storage, fetchImpl: source.fetch.bind(source) });
 
-test('a fresh checkout loads all four real archives and migrates a one-skill browser without credentials', async t => {
+test('a fresh checkout loads all five real archives and migrates a one-skill browser without credentials', async t => {
   const server = createServer();
   await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
   t.after(() => { server.closeAllConnections(); server.close(); });
@@ -75,10 +75,10 @@ test('a fresh checkout loads all four real archives and migrates a one-skill bro
   const storage = memoryStorage([{ ...decoded, ...seeds[0], files: decoded.files, id: 'legacy-browser-id' }]);
   const client = new RepositoryLibrary({ storage, fetchImpl: (url, options) => fetch(new URL(url, base), options) });
   const result = await client.refresh();
-  assert.equal(result.count, 4);
+  assert.equal(result.count, 5);
   assert.deepEqual(result.preserved, []);
   const records = await storage.listSkills();
-  assert.deepEqual(records.map(record => record.slug).sort(), ['aibase-daily', 'daily-60s-image', 'jin10-breakfast', 'shiguang-atlas']);
+  assert.deepEqual(records.map(record => record.slug).sort(), ['aibase-daily', 'daily-60s-image', 'jin10-breakfast', 'jin10-financial-daily', 'shiguang-atlas']);
   assert.equal(records.find(record => record.slug === 'shiguang-atlas').id, 'legacy-browser-id');
   assert.ok(records.every(record => record.content && record.files.length > 0));
   const manifestResponse = await fetch(new URL('skill-cabinet/manifest.json', base));

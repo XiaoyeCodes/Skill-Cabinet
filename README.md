@@ -64,7 +64,7 @@ cd Skill-Cabinet
 npm start
 ```
 
-打开 [http://localhost:4173](http://localhost:4173)。本地服务会直接读取仓库的 `skill-cabinet/manifest.json` 和完整 ZIP，当前包含四份 Skill（含「金十财经早餐」）。无需填写 GitHub Token，也无需手动导入备份；已经只保存了一份 Skill 的旧浏览器也会自动补齐。
+打开 [http://localhost:4173](http://localhost:4173)。本地服务会直接读取仓库的 `skill-cabinet/manifest.json` 和完整 ZIP，当前包含五份 Skill（含「金十财经早餐」和「每日财经日报」）。无需填写 GitHub Token，也无需手动导入备份；已经只保存了一份 Skill 的旧浏览器也会自动补齐。
 
 后续在项目目录执行 `git pull`，打开的页面会在约 **5 秒内**自动检查并显示新的技能数据；切回页面或点击「检查仓库更新」也会立即检查。服务按请求读取磁盘文件，技能数据更新无需重启；更新 `server.mjs` 等服务端代码后需重新运行 `npm start`。页面只读取本机已经拉取的内容，不会代你执行 `git pull`。
 
