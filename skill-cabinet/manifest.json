@@ -19,172 +19,27 @@
         "updatedAt": "2026-10-20T06:42:21.244Z"
       }
     },
-    "daily-60s-image": {
-      "fingerprint": "dffdfdb0b0019f4700b84a88a98cfbec0f33a98fdf582b67e27f12e0fa76ad3c",
-      "archiveSha256": "c1570e6512085273d44f55ee07beced81161d1ba204b70c84299ea904a18f357",
-      "archivePath": "skill-cabinet/archives/daily-60s-image-c1570e6512085273d44f55ee07beced81161d1ba204b70c84299ea904a18f357.zip",
+    "buffett-letters-skill": {
+      "fingerprint": "de396a16a77c09e40e6876a0e20c7ecc77293811021745249d7d74c5cb02fadd",
+      "archiveSha256": "bae8654acfcf44f325a86ca3a69c962972b52a89a021b2a39d06929bba437ebd",
+      "archivePath": "skill-cabinet/archives/buffett-letters-skill-bae8654acfcf44f325a86ca3a69c962972b52a89a021b2a39d06929bba437ebd.zip",
       "metadata": {
-        "id": "daily-60s-image-seed",
-        "name": "每日 60 秒新闻图片",
-        "slug": "daily-60s-image",
-        "description": "获取北京时间当天的「每日 60 秒读懂世界」新闻原图，校验日期与真实图片文件后直接交付图片；也支持用户明确指定日期的历史查询。不包含邮箱推送或定时任务。",
-        "category": "新闻日报",
-        "tags": [],
-        "version": "1.0.0",
-        "author": "",
-        "favorite": false,
-        "createdAt": "2026-10-20T06:42:21.252Z",
-        "updatedAt": "2026-10-20T06:42:21.252Z"
-      }
-    },
-    "jin10-breakfast": {
-      "fingerprint": "46c262fa55ca939a21772f81c17b5791e408b5b4975edecc7533a0876fc69a03",
-      "archiveSha256": "932f27b8b3f44ed7f3bd24637693cfd914caffe623cda6bb4086646827049825",
-      "archivePath": "skill-cabinet/archives/jin10-breakfast-932f27b8b3f44ed7f3bd24637693cfd914caffe623cda6bb4086646827049825.zip",
-      "metadata": {
-        "id": "cb74c834-6039-4693-bbc9-f30d860734c8",
-        "name": "金十财经早餐",
-        "slug": "jin10-breakfast",
-        "description": "获取金十数据全球财经早餐原文，生成浅米色完整阅读版，去除音频及其他配图，仅保留去掉底部 APP／二维码推广的原始收盘表。输出独立 HTML、TXT、JSON 和 PNG，不包含邮件推送或定时任务。",
-        "category": "新闻日报",
-        "tags": [],
-        "version": "1.0.0",
-        "author": "",
-        "favorite": true,
-        "createdAt": "2026-10-20T13:16:06.609Z",
-        "updatedAt": "2026-10-20T13:19:15.376Z"
-      }
-    },
-    "shiguang-atlas": {
-      "fingerprint": "88d108339608c64b0b6cd3b5457f7bfd3f1032019ca376ad7e27749de2f6fb5b",
-      "archiveSha256": "d10ef9846b25d18662c028fa8a0a6e467ec14c7684bd76fba9ad725f11fe9849",
-      "archivePath": "skill-cabinet/archives/shiguang-atlas-d10ef9846b25d18662c028fa8a0a6e467ec14c7684bd76fba9ad725f11fe9849.zip",
-      "metadata": {
-        "id": "shiguang-atlas-seed",
-        "name": "拾光百科图文",
-        "slug": "shiguang-atlas",
-        "description": "把好奇心，变成值得收藏的知识。按主题队列制作小红书博物志图文，从真实参考图、完整文案到逐页质检，一次完成。",
-        "category": "图像与设计",
+        "id": "40731b5c-216d-4881-b75b-976d7637f201",
+        "name": "巴菲特股东信 · 投资方法",
+        "slug": "buffett-letters-skill",
+        "description": "从巴菲特 1957—2023 年股东信提炼的 20 个投资子技能，涵盖能力圈、安全边际、经济护城河、复利、资本配置与风控；保留完整索引和原始模块。",
+        "category": "投资与金融",
         "tags": [
-          "科普图文",
-          "小红书",
-          "图像生成"
+          "巴菲特",
+          "价值投资",
+          "资本配置",
+          "风险管理"
         ],
         "version": "1.0.0",
-        "author": "我的创作",
+        "author": "袋鼠帝 kangarooking",
         "favorite": false,
-        "createdAt": "2026-10-20T06:42:21.231Z",
-        "updatedAt": "2026-10-20T06:42:21.231Z"
-      }
-    },
-    "jin10-financial-daily": {
-      "fingerprint": "c8d39f49913a7c960c6cf6a77ff9c140a29fa07956cf96276dc7576938e79427",
-      "archiveSha256": "23f1f14ee15b3541ec5e96a621a5828e0e169671a1cef8a12fd85511cb1ef109",
-      "archivePath": "skill-cabinet/archives/jin10-financial-daily-23f1f14ee15b3541ec5e96a621a5828e0e169671a1cef8a12fd85511cb1ef109.zip",
-      "metadata": {
-        "id": "4770d520-a1d2-4555-a223-3f3853b2c750",
-        "name": "每日财经日报",
-        "slug": "jin10-financial-daily",
-        "description": "从金十财经早餐栏目抓取最新一期原文，配合九项市场行情，生成暖白线条刊头、双栏正文的每日财经PDF。用于生成或重排这套财经日报、测试抓取与排版、维护其每日08:00推送；不用于AI日报或投资建议。",
-        "category": "新闻日报",
-        "tags": [],
-        "version": "1.0.0",
-        "author": "",
-        "favorite": false,
-        "createdAt": "2026-10-21T07:05:05.296Z",
-        "updatedAt": "2026-10-21T07:06:51.278Z"
-      }
-    },
-    "huashu-design": {
-      "fingerprint": "131ee657ebac2a889a93a4b75e67dd928a3f93f00522c94d817c9a48ae2ae872",
-      "archiveSha256": "a2dca6b71a5a4ea2a4ad4a011a59af2a26e81ce85c88a2af70525de21cf130cb",
-      "archivePath": "skill-cabinet/archives/huashu-design-a2dca6b71a5a4ea2a4ad4a011a59af2a26e81ce85c88a2af70525de21cf130cb.zip",
-      "metadata": {
-        "id": "0d75f482-412e-4463-aed0-d23b9f4cb7df",
-        "name": "Huashu Design · 花叔设计",
-        "slug": "huashu-design",
-        "description": "用 HTML 制作网页和 App 高保真交互原型、幻灯片、动画与信息图，包含设计方向探索、样式参考、专家评审及导出工具。",
-        "category": "图像与设计",
-        "tags": [
-          "网页设计",
-          "交互原型",
-          "幻灯片",
-          "动画"
-        ],
-        "version": "3.0.0",
-        "author": "花叔",
-        "favorite": false,
-        "createdAt": "2026-10-21T07:42:49.043Z",
-        "updatedAt": "2026-10-21T07:42:49.043Z"
-      }
-    },
-    "huashu-nuwa": {
-      "fingerprint": "36cc183eef747a1a63ff39b8edfd5f6ed0bff7545f79a621052d60d697049ed1",
-      "archiveSha256": "db755d8cd0758d6641934c642ed792eb6077151a972503bcda51d91b50dfc7e3",
-      "archivePath": "skill-cabinet/archives/huashu-nuwa-db755d8cd0758d6641934c642ed792eb6077151a972503bcda51d91b50dfc7e3.zip",
-      "metadata": {
-        "id": "863f040a-18ea-4ec2-8b4d-e0501d9e91f6",
-        "name": "女娲 · Skill造人术",
-        "slug": "huashu-nuwa",
-        "description": "通过人物资料调研，提炼心智模型、决策启发式和表达特征，生成可运行的人物思维 Skill；附带人物示例、研究框架和质量检查脚本。",
-        "category": "学习与研究",
-        "tags": [
-          "思维模型",
-          "人物研究",
-          "Skill生成"
-        ],
-        "version": "1.0.0",
-        "author": "花叔",
-        "favorite": false,
-        "createdAt": "2026-10-21T08:05:46.195Z",
-        "updatedAt": "2026-10-21T08:05:46.195Z"
-      }
-    },
-    "huashu-motion": {
-      "fingerprint": "6e3eeed604a34265c226d3ac4eec8eb8722bf0fcba4a2a615b8f5f4becffd495",
-      "archiveSha256": "b70e306632ad0d084f7f7f1d872970fa9ec7437c77d4c1dc0524688c3492fa42",
-      "archivePath": "skill-cabinet/archives/huashu-motion-b70e306632ad0d084f7f7f1d872970fa9ec7437c77d4c1dc0524688c3492fa42.zip",
-      "metadata": {
-        "id": "5412cea9-99b5-486b-913a-74da90571198",
-        "name": "Huashu Motion · 花叔动画",
-        "slug": "huashu-motion",
-        "description": "通过可编辑的 HTML 与 GSAP 制作产品宣传片、动效和解说视频，提供分镜与风格探索、配乐音效、逐帧批注修改及视频导出工具。",
-        "category": "图像与设计",
-        "tags": [
-          "动效设计",
-          "产品宣传片",
-          "视频制作",
-          "配乐音效"
-        ],
-        "version": "0.1.1",
-        "author": "花叔",
-        "favorite": false,
-        "createdAt": "2026-10-21T08:12:54.153Z",
-        "updatedAt": "2026-10-21T08:12:54.153Z"
-      }
-    },
-    "warm-paper-editorial": {
-      "fingerprint": "f8ebeca91c4eba25b84bf863bc00622d82329230e58d62977febb915794a3fc7",
-      "archiveSha256": "c68616a49c223efcfcc79b69cb11fc8f5935bd296157a19f322d4b0893fc1f22",
-      "archivePath": "skill-cabinet/archives/warm-paper-editorial-c68616a49c223efcfcc79b69cb11fc8f5935bd296157a19f322d4b0893fc1f22.zip",
-      "metadata": {
-        "id": "45610318-d623-4f50-861f-37369311518a",
-        "name": "暖纸编辑设计",
-        "slug": "warm-paper-editorial",
-        "description": "以暖白纸面、陶土色强调、衬线标题和原创细线图形，统一网页、项目界面、图片、Word 与 PDF 的视觉语言；附配色规范、排版指南、CSS、SVG 和质量检查方法。",
-        "category": "图像与设计",
-        "tags": [
-          "视觉设计",
-          "网页设计",
-          "文档排版",
-          "PDF",
-          "线稿插画"
-        ],
-        "version": "1.0.0",
-        "author": "我的创作",
-        "favorite": false,
-        "createdAt": "2026-10-21T09:09:06.173Z",
-        "updatedAt": "2026-10-21T09:09:06.173Z"
+        "createdAt": "2026-10-21T09:13:13.275Z",
+        "updatedAt": "2026-10-21T09:13:13.275Z"
       }
     },
     "cangjie-skill": {
@@ -210,50 +65,22 @@
         "updatedAt": "2026-10-21T09:13:12.372Z"
       }
     },
-    "poor-charlies-almanack-skill": {
-      "fingerprint": "a3c1fdc1d3c9d7e4e0d390a45cc8e986bab53dce8ae17c8552d2dc36a0593abc",
-      "archiveSha256": "f217aef430166df0923817879bfd02c927003a951687b612e69d9ecec783b7d7",
-      "archivePath": "skill-cabinet/archives/poor-charlies-almanack-skill-f217aef430166df0923817879bfd02c927003a951687b612e69d9ecec783b7d7.zip",
+    "daily-60s-image": {
+      "fingerprint": "dffdfdb0b0019f4700b84a88a98cfbec0f33a98fdf582b67e27f12e0fa76ad3c",
+      "archiveSha256": "c1570e6512085273d44f55ee07beced81161d1ba204b70c84299ea904a18f357",
+      "archivePath": "skill-cabinet/archives/daily-60s-image-c1570e6512085273d44f55ee07beced81161d1ba204b70c84299ea904a18f357.zip",
       "metadata": {
-        "id": "856ea500-71a1-4f68-9c27-0b50c801ed46",
-        "name": "穷查理宝典 · 思维与决策",
-        "slug": "poor-charlies-almanack-skill",
-        "description": "从《穷查理宝典》提炼的 12 个思维与决策子技能，涵盖逆向思考、多元思维模型、能力圈、激励分析和误判心理学；完整保留索引、案例、测试与审计资料。",
-        "category": "学习与研究",
-        "tags": [
-          "芒格",
-          "思维模型",
-          "决策方法",
-          "认知偏差"
-        ],
+        "id": "daily-60s-image-seed",
+        "name": "每日 60 秒新闻图片",
+        "slug": "daily-60s-image",
+        "description": "获取北京时间当天的「每日 60 秒读懂世界」新闻原图，校验日期与真实图片文件后直接交付图片；也支持用户明确指定日期的历史查询。不包含邮箱推送或定时任务。",
+        "category": "新闻日报",
+        "tags": [],
         "version": "1.0.0",
-        "author": "袋鼠帝 kangarooking",
+        "author": "",
         "favorite": false,
-        "createdAt": "2026-10-21T09:13:13.034Z",
-        "updatedAt": "2026-10-21T09:13:13.034Z"
-      }
-    },
-    "buffett-letters-skill": {
-      "fingerprint": "de396a16a77c09e40e6876a0e20c7ecc77293811021745249d7d74c5cb02fadd",
-      "archiveSha256": "bae8654acfcf44f325a86ca3a69c962972b52a89a021b2a39d06929bba437ebd",
-      "archivePath": "skill-cabinet/archives/buffett-letters-skill-bae8654acfcf44f325a86ca3a69c962972b52a89a021b2a39d06929bba437ebd.zip",
-      "metadata": {
-        "id": "40731b5c-216d-4881-b75b-976d7637f201",
-        "name": "巴菲特股东信 · 投资方法",
-        "slug": "buffett-letters-skill",
-        "description": "从巴菲特 1957—2023 年股东信提炼的 20 个投资子技能，涵盖能力圈、安全边际、经济护城河、复利、资本配置与风控；保留完整索引和原始模块。",
-        "category": "投资与金融",
-        "tags": [
-          "巴菲特",
-          "价值投资",
-          "资本配置",
-          "风险管理"
-        ],
-        "version": "1.0.0",
-        "author": "袋鼠帝 kangarooking",
-        "favorite": false,
-        "createdAt": "2026-10-21T09:13:13.275Z",
-        "updatedAt": "2026-10-21T09:13:13.275Z"
+        "createdAt": "2026-10-20T06:42:21.252Z",
+        "updatedAt": "2026-10-20T06:42:21.252Z"
       }
     },
     "fupeng-macro-framework": {
@@ -279,50 +106,154 @@
         "updatedAt": "2026-10-21T09:19:22.352Z"
       }
     },
-    "soros-reflexivity-framework": {
-      "fingerprint": "2ec89dcbeb5506334aa0ec844226ddec708d41a01d6e25dfd01e9df35d97cf47",
-      "archiveSha256": "0db544c0b072e20aafd2d6b9fa4a22e9197bed25e3a631847d0a9e1f38fad05e",
-      "archivePath": "skill-cabinet/archives/soros-reflexivity-framework-0db544c0b072e20aafd2d6b9fa4a22e9197bed25e3a631847d0a9e1f38fad05e.zip",
+    "huangzhizhong-communication": {
+      "fingerprint": "ca5b37fb452db141eef732dad802de2581a3cad37f13fb78c55edd4ff0119e88",
+      "archiveSha256": "f89fffd76aa6b1520662dce1e9535edda0c8948cfd52898ab434d02ca34985f3",
+      "archivePath": "skill-cabinet/archives/huangzhizhong-communication-f89fffd76aa6b1520662dce1e9535edda0c8948cfd52898ab434d02ca34985f3.zip",
       "metadata": {
-        "id": "9087b95f-30df-470f-a118-69a8cfb11b4e",
-        "name": "索罗斯 · 反身性与宏观对冲",
-        "slug": "soros-reflexivity-framework",
-        "description": "通过易错性、反身性、繁荣与萧条阶段和全球宏观交易框架分析市场认知与基本面的反馈关系，附参考文献、脚本与历史告警资料。",
-        "category": "投资与金融",
+        "id": "e81bb19d-0cae-4fb3-9e67-e9fedd977176",
+        "name": "黄执中 · 沟通与表达",
+        "slug": "huangzhizhong-communication",
+        "description": "以情绪先行、观念卡点、听众视角与场景化表达组织沟通、演讲、说服和辩论策略，附情绪沟通、表达、说服、辩论和场景话术指南。",
+        "category": "写作与内容",
         "tags": [
-          "索罗斯",
-          "反身性",
-          "宏观对冲",
-          "市场周期"
+          "黄执中",
+          "沟通表达",
+          "说服",
+          "辩论"
         ],
         "version": "1.0.0",
         "author": "xie-bros（整理）",
         "favorite": false,
-        "createdAt": "2026-10-21T09:19:22.449Z",
-        "updatedAt": "2026-10-21T09:19:22.449Z"
+        "createdAt": "2026-10-21T09:19:22.558Z",
+        "updatedAt": "2026-10-21T09:19:22.558Z"
       }
     },
-    "ray-dalio-framework": {
-      "fingerprint": "45863a520529db77e693ae910480302d177eef79fbbff6b884c0ec08cf304f11",
-      "archiveSha256": "9d81ea53195664c33db26f5b1ce622543dea387109137f307b8289b1b32d80c1",
-      "archivePath": "skill-cabinet/archives/ray-dalio-framework-9d81ea53195664c33db26f5b1ce622543dea387109137f307b8289b1b32d80c1.zip",
+    "huashu-design": {
+      "fingerprint": "131ee657ebac2a889a93a4b75e67dd928a3f93f00522c94d817c9a48ae2ae872",
+      "archiveSha256": "a2dca6b71a5a4ea2a4ad4a011a59af2a26e81ce85c88a2af70525de21cf130cb",
+      "archivePath": "skill-cabinet/archives/huashu-design-a2dca6b71a5a4ea2a4ad4a011a59af2a26e81ce85c88a2af70525de21cf130cb.zip",
       "metadata": {
-        "id": "a7135e92-01c8-43f5-8f9d-0b8d27e19a72",
-        "name": "达里奥 · 经济周期与债务危机",
-        "slug": "ray-dalio-framework",
-        "description": "围绕经济机器、短期与长期债务周期、债务危机模板、世界秩序、全天候配置和原则体系展开分析，附参考指南、数据脚本与示例表格。",
-        "category": "投资与金融",
+        "id": "0d75f482-412e-4463-aed0-d23b9f4cb7df",
+        "name": "Huashu Design · 花叔设计",
+        "slug": "huashu-design",
+        "description": "用 HTML 制作网页和 App 高保真交互原型、幻灯片、动画与信息图，包含设计方向探索、样式参考、专家评审及导出工具。",
+        "category": "图像与设计",
         "tags": [
-          "达里奥",
-          "债务周期",
-          "资产配置",
-          "决策原则"
+          "网页设计",
+          "交互原型",
+          "幻灯片",
+          "动画"
+        ],
+        "version": "3.0.0",
+        "author": "花叔",
+        "favorite": false,
+        "createdAt": "2026-10-21T07:42:49.043Z",
+        "updatedAt": "2026-10-21T07:42:49.043Z"
+      }
+    },
+    "huashu-motion": {
+      "fingerprint": "6e3eeed604a34265c226d3ac4eec8eb8722bf0fcba4a2a615b8f5f4becffd495",
+      "archiveSha256": "b70e306632ad0d084f7f7f1d872970fa9ec7437c77d4c1dc0524688c3492fa42",
+      "archivePath": "skill-cabinet/archives/huashu-motion-b70e306632ad0d084f7f7f1d872970fa9ec7437c77d4c1dc0524688c3492fa42.zip",
+      "metadata": {
+        "id": "5412cea9-99b5-486b-913a-74da90571198",
+        "name": "Huashu Motion · 花叔动画",
+        "slug": "huashu-motion",
+        "description": "通过可编辑的 HTML 与 GSAP 制作产品宣传片、动效和解说视频，提供分镜与风格探索、配乐音效、逐帧批注修改及视频导出工具。",
+        "category": "图像与设计",
+        "tags": [
+          "动效设计",
+          "产品宣传片",
+          "视频制作",
+          "配乐音效"
+        ],
+        "version": "0.1.1",
+        "author": "花叔",
+        "favorite": false,
+        "createdAt": "2026-10-21T08:12:54.153Z",
+        "updatedAt": "2026-10-21T08:12:54.153Z"
+      }
+    },
+    "huashu-nuwa": {
+      "fingerprint": "36cc183eef747a1a63ff39b8edfd5f6ed0bff7545f79a621052d60d697049ed1",
+      "archiveSha256": "db755d8cd0758d6641934c642ed792eb6077151a972503bcda51d91b50dfc7e3",
+      "archivePath": "skill-cabinet/archives/huashu-nuwa-db755d8cd0758d6641934c642ed792eb6077151a972503bcda51d91b50dfc7e3.zip",
+      "metadata": {
+        "id": "863f040a-18ea-4ec2-8b4d-e0501d9e91f6",
+        "name": "女娲 · Skill造人术",
+        "slug": "huashu-nuwa",
+        "description": "通过人物资料调研，提炼心智模型、决策启发式和表达特征，生成可运行的人物思维 Skill；附带人物示例、研究框架和质量检查脚本。",
+        "category": "学习与研究",
+        "tags": [
+          "思维模型",
+          "人物研究",
+          "Skill生成"
         ],
         "version": "1.0.0",
-        "author": "xie-bros（整理）",
+        "author": "花叔",
         "favorite": false,
-        "createdAt": "2026-10-21T09:19:22.528Z",
-        "updatedAt": "2026-10-21T09:19:22.528Z"
+        "createdAt": "2026-10-21T08:05:46.195Z",
+        "updatedAt": "2026-10-21T08:05:46.195Z"
+      }
+    },
+    "jin10-breakfast": {
+      "fingerprint": "46c262fa55ca939a21772f81c17b5791e408b5b4975edecc7533a0876fc69a03",
+      "archiveSha256": "932f27b8b3f44ed7f3bd24637693cfd914caffe623cda6bb4086646827049825",
+      "archivePath": "skill-cabinet/archives/jin10-breakfast-932f27b8b3f44ed7f3bd24637693cfd914caffe623cda6bb4086646827049825.zip",
+      "metadata": {
+        "id": "cb74c834-6039-4693-bbc9-f30d860734c8",
+        "name": "金十财经早餐",
+        "slug": "jin10-breakfast",
+        "description": "获取金十数据全球财经早餐原文，生成浅米色完整阅读版，去除音频及其他配图，仅保留去掉底部 APP／二维码推广的原始收盘表。输出独立 HTML、TXT、JSON 和 PNG，不包含邮件推送或定时任务。",
+        "category": "新闻日报",
+        "tags": [],
+        "version": "1.0.0",
+        "author": "",
+        "favorite": true,
+        "createdAt": "2026-10-20T13:16:06.609Z",
+        "updatedAt": "2026-10-20T13:19:15.376Z"
+      }
+    },
+    "jin10-financial-daily": {
+      "fingerprint": "c8d39f49913a7c960c6cf6a77ff9c140a29fa07956cf96276dc7576938e79427",
+      "archiveSha256": "23f1f14ee15b3541ec5e96a621a5828e0e169671a1cef8a12fd85511cb1ef109",
+      "archivePath": "skill-cabinet/archives/jin10-financial-daily-23f1f14ee15b3541ec5e96a621a5828e0e169671a1cef8a12fd85511cb1ef109.zip",
+      "metadata": {
+        "id": "4770d520-a1d2-4555-a223-3f3853b2c750",
+        "name": "每日财经日报",
+        "slug": "jin10-financial-daily",
+        "description": "从金十财经早餐栏目抓取最新一期原文，配合九项市场行情，生成暖白线条刊头、双栏正文的每日财经PDF。用于生成或重排这套财经日报、测试抓取与排版、维护其每日08:00推送；不用于AI日报或投资建议。",
+        "category": "新闻日报",
+        "tags": [],
+        "version": "1.0.0",
+        "author": "",
+        "favorite": false,
+        "createdAt": "2026-10-21T07:05:05.296Z",
+        "updatedAt": "2026-10-21T07:06:51.278Z"
+      }
+    },
+    "poor-charlies-almanack-skill": {
+      "fingerprint": "a3c1fdc1d3c9d7e4e0d390a45cc8e986bab53dce8ae17c8552d2dc36a0593abc",
+      "archiveSha256": "f217aef430166df0923817879bfd02c927003a951687b612e69d9ecec783b7d7",
+      "archivePath": "skill-cabinet/archives/poor-charlies-almanack-skill-f217aef430166df0923817879bfd02c927003a951687b612e69d9ecec783b7d7.zip",
+      "metadata": {
+        "id": "856ea500-71a1-4f68-9c27-0b50c801ed46",
+        "name": "穷查理宝典 · 思维与决策",
+        "slug": "poor-charlies-almanack-skill",
+        "description": "从《穷查理宝典》提炼的 12 个思维与决策子技能，涵盖逆向思考、多元思维模型、能力圈、激励分析和误判心理学；完整保留索引、案例、测试与审计资料。",
+        "category": "学习与研究",
+        "tags": [
+          "芒格",
+          "思维模型",
+          "决策方法",
+          "认知偏差"
+        ],
+        "version": "1.0.0",
+        "author": "袋鼠帝 kangarooking",
+        "favorite": false,
+        "createdAt": "2026-10-21T09:13:13.034Z",
+        "updatedAt": "2026-10-21T09:13:13.034Z"
       }
     },
     "qinxiaoming-finance-thinking": {
@@ -348,35 +279,104 @@
         "updatedAt": "2026-10-21T09:19:22.551Z"
       }
     },
-    "huangzhizhong-communication": {
-      "fingerprint": "ca5b37fb452db141eef732dad802de2581a3cad37f13fb78c55edd4ff0119e88",
-      "archiveSha256": "f89fffd76aa6b1520662dce1e9535edda0c8948cfd52898ab434d02ca34985f3",
-      "archivePath": "skill-cabinet/archives/huangzhizhong-communication-f89fffd76aa6b1520662dce1e9535edda0c8948cfd52898ab434d02ca34985f3.zip",
+    "ray-dalio-framework": {
+      "fingerprint": "45863a520529db77e693ae910480302d177eef79fbbff6b884c0ec08cf304f11",
+      "archiveSha256": "9d81ea53195664c33db26f5b1ce622543dea387109137f307b8289b1b32d80c1",
+      "archivePath": "skill-cabinet/archives/ray-dalio-framework-9d81ea53195664c33db26f5b1ce622543dea387109137f307b8289b1b32d80c1.zip",
       "metadata": {
-        "id": "e81bb19d-0cae-4fb3-9e67-e9fedd977176",
-        "name": "黄执中 · 沟通与表达",
-        "slug": "huangzhizhong-communication",
-        "description": "以情绪先行、观念卡点、听众视角与场景化表达组织沟通、演讲、说服和辩论策略，附情绪沟通、表达、说服、辩论和场景话术指南。",
-        "category": "写作与内容",
+        "id": "a7135e92-01c8-43f5-8f9d-0b8d27e19a72",
+        "name": "达里奥 · 经济周期与债务危机",
+        "slug": "ray-dalio-framework",
+        "description": "围绕经济机器、短期与长期债务周期、债务危机模板、世界秩序、全天候配置和原则体系展开分析，附参考指南、数据脚本与示例表格。",
+        "category": "投资与金融",
         "tags": [
-          "黄执中",
-          "沟通表达",
-          "说服",
-          "辩论"
+          "达里奥",
+          "债务周期",
+          "资产配置",
+          "决策原则"
         ],
         "version": "1.0.0",
         "author": "xie-bros（整理）",
         "favorite": false,
-        "createdAt": "2026-10-21T09:19:22.558Z",
-        "updatedAt": "2026-10-21T09:19:22.558Z"
+        "createdAt": "2026-10-21T09:19:22.528Z",
+        "updatedAt": "2026-10-21T09:19:22.528Z"
+      }
+    },
+    "shiguang-atlas": {
+      "fingerprint": "88d108339608c64b0b6cd3b5457f7bfd3f1032019ca376ad7e27749de2f6fb5b",
+      "archiveSha256": "d10ef9846b25d18662c028fa8a0a6e467ec14c7684bd76fba9ad725f11fe9849",
+      "archivePath": "skill-cabinet/archives/shiguang-atlas-d10ef9846b25d18662c028fa8a0a6e467ec14c7684bd76fba9ad725f11fe9849.zip",
+      "metadata": {
+        "id": "shiguang-atlas-seed",
+        "name": "拾光百科图文",
+        "slug": "shiguang-atlas",
+        "description": "把好奇心，变成值得收藏的知识。按主题队列制作小红书博物志图文，从真实参考图、完整文案到逐页质检，一次完成。",
+        "category": "图像与设计",
+        "tags": [
+          "科普图文",
+          "小红书",
+          "图像生成"
+        ],
+        "version": "1.0.0",
+        "author": "我的创作",
+        "favorite": false,
+        "createdAt": "2026-10-20T06:42:21.231Z",
+        "updatedAt": "2026-10-20T06:42:21.231Z"
+      }
+    },
+    "soros-reflexivity-framework": {
+      "fingerprint": "2ec89dcbeb5506334aa0ec844226ddec708d41a01d6e25dfd01e9df35d97cf47",
+      "archiveSha256": "0db544c0b072e20aafd2d6b9fa4a22e9197bed25e3a631847d0a9e1f38fad05e",
+      "archivePath": "skill-cabinet/archives/soros-reflexivity-framework-0db544c0b072e20aafd2d6b9fa4a22e9197bed25e3a631847d0a9e1f38fad05e.zip",
+      "metadata": {
+        "id": "9087b95f-30df-470f-a118-69a8cfb11b4e",
+        "name": "索罗斯 · 反身性与宏观对冲",
+        "slug": "soros-reflexivity-framework",
+        "description": "通过易错性、反身性、繁荣与萧条阶段和全球宏观交易框架分析市场认知与基本面的反馈关系，附参考文献、脚本与历史告警资料。",
+        "category": "投资与金融",
+        "tags": [
+          "索罗斯",
+          "反身性",
+          "宏观对冲",
+          "市场周期"
+        ],
+        "version": "1.0.0",
+        "author": "xie-bros（整理）",
+        "favorite": false,
+        "createdAt": "2026-10-21T09:19:22.449Z",
+        "updatedAt": "2026-10-21T09:19:22.449Z"
+      }
+    },
+    "warm-paper-editorial": {
+      "fingerprint": "f8ebeca91c4eba25b84bf863bc00622d82329230e58d62977febb915794a3fc7",
+      "archiveSha256": "c68616a49c223efcfcc79b69cb11fc8f5935bd296157a19f322d4b0893fc1f22",
+      "archivePath": "skill-cabinet/archives/warm-paper-editorial-c68616a49c223efcfcc79b69cb11fc8f5935bd296157a19f322d4b0893fc1f22.zip",
+      "metadata": {
+        "id": "45610318-d623-4f50-861f-37369311518a",
+        "name": "暖纸编辑设计",
+        "slug": "warm-paper-editorial",
+        "description": "以暖白纸面、陶土色强调、衬线标题和原创细线图形，统一网页、项目界面、图片、Word 与 PDF 的视觉语言；附配色规范、排版指南、CSS、SVG 和质量检查方法。",
+        "category": "图像与设计",
+        "tags": [
+          "视觉设计",
+          "网页设计",
+          "文档排版",
+          "PDF",
+          "线稿插画"
+        ],
+        "version": "1.0.0",
+        "author": "我的创作",
+        "favorite": false,
+        "createdAt": "2026-10-21T09:09:06.173Z",
+        "updatedAt": "2026-10-21T09:09:06.173Z"
       }
     }
   },
   "categories": [
+    "写作与内容",
     "图像与设计",
     "学习与研究",
-    "新闻日报",
     "投资与金融",
-    "写作与内容"
+    "新闻日报"
   ]
 }
