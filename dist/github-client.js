@@ -63,7 +63,7 @@ function decode64(value, max) {
 }
 
 export class GitHubClient {
-  constructor({ owner, repo, branch = 'main', token, fetchImpl = globalThis.fetch, timeoutMs = 45000 }) {
+  constructor({ owner, repo, branch = 'main', token, fetchImpl = globalThis.fetch.bind(globalThis), timeoutMs = 45000 }) {
     if (!/^[a-zA-Z0-9][a-zA-Z0-9-]{0,38}$/.test(owner || '') || !/^[a-zA-Z0-9_.-]{1,100}$/.test(repo || '') || ['.', '..'].includes(repo)) throw new Error('GitHub 仓库名称无效。');
     if (!branch || branch.length > 250 || /[\s~^:?*\[\\\u0000-\u001f]/.test(branch) || branch.includes('..') || branch.startsWith('/') || branch.endsWith('/')) throw new Error('GitHub 分支名称无效。');
     if (typeof token !== 'string' || !token.trim() || /\s/.test(token)) throw new Error('请填写有效的 GitHub Token。');

@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "projects": [
+    {
+      "owner": "mexicat",
+      "repo": "pdoom-video",
+      "id": "mexicat/pdoom-video",
+      "url": "https://github.com/mexicat/pdoom-video",
+      "name": "pdoom-video",
+      "description": "用代码生成歌词同步音乐视频：画面、逐词卡拉 OK 字幕和排版由时间驱动，支持浏览器实时预览及 1080p60 / 4K60 离线导出。",
+      "category": "设计与创作",
+      "tags": [
+        "TypeScript"
+      ],
+      "language": "TypeScript",
+      "stars": 3108,
+      "forks": 344,
+      "license": "MIT",
+      "homepage": "",
+      "readmeExcerpt": "I'm Upping My P(doom) — music video\n\nA generative, code-rendered music video with word-synced karaoke typography. Every frame is a deterministic function of song time, so the live preview in the browser and the offline 1080p60 (or 4K60) export are identical.\n\nWatch it in 4K on YouTube:\n\nThe YouTube upload is a slightly outdated render. For the latest and best-quality version, render it locally (see Render the video).\n\nThe video was made with Claude (Opus 5.5) in Claude Code: the concept and treatment, the lyric alignment and audio analysis, the renderer, every scene and the renders were all worked out in conversation with Claude.",
+      "readmeStatus": "read",
+      "repositoryUpdatedAt": "2026-10-05T21:26:25Z",
+      "archived": false,
+      "favorite": false,
+      "createdAt": "2026-10-21T15:13:39.845Z",
+      "updatedAt": "2026-10-21T15:13:39.845Z"
+    },
+    {
+      "owner": "Tunai-0511",
+      "repo": "meme67-art-history",
+      "id": "tunai-0511/meme67-art-history",
+      "url": "https://github.com/Tunai-0511/meme67-art-history",
+      "name": "meme67-art-history",
+      "description": "用 p5.js 与 p5.brush 逐帧绘制的艺术史动画，让网络迷因「67」穿越不同时代的艺术风格；画面与配乐均由程序生成。代码采用 MIT 协议，视频另保留版权。",
+      "category": "设计与创作",
+      "tags": [
+        "creative-coding",
+        "generative-art",
+        "meme",
+        "p5brush",
+        "p5js",
+        "procedural-animation",
+        "JavaScript"
+      ],
+      "language": "JavaScript",
+      "stars": 18,
+      "forks": 0,
+      "license": "MIT",
+      "homepage": "",
+      "readmeExcerpt": "67：一部藝術史 · 67 — A Brief History of Art\n\n> 網路迷因「67」（雙手掌心向上、左右交替，念 six… seven!）從洞穴壁畫一路「出現」在每個年代的藝術裡，直到 2025 的 TikTok。\n> 一本正經的博物館冷面笑話。全片由 JavaScript 用 p5.js + p5.brush 逐幀畫成，沒有任何外部圖片、影片素材。\n\n▶ 影片（原始檔）請見 Releases（1080p 107 MB、720p 24 MB、封面）。Release 說明內附 SHA-256，可用來辨識原始檔。\n\n內容\n82 秒、1920×1080、24 fps，120 BPM 全片同一個節拍；每一幕左上顯示年份、右下是一張博物館館藏標籤卡，幕間用百葉窗轉場加「年份計數器」。\n\n聲音全部程式合成：每個年代用該時代樂器演奏同一個兩音動機，疊上本機 Kokoro TTS 念的 six / seven（各年代套不同音效處理）。",
+      "readmeStatus": "read",
+      "repositoryUpdatedAt": "2026-10-06T15:59:42Z",
+      "archived": false,
+      "favorite": false,
+      "createdAt": "2026-10-21T15:13:39.842Z",
+      "updatedAt": "2026-10-21T15:13:39.843Z"
+    },
+    {
+      "owner": "Vincentwei1021",
+      "repo": "mg-styles-15",
+      "id": "vincentwei1021/mg-styles-15",
+      "url": "https://github.com/Vincentwei1021/mg-styles-15",
+      "name": "mg-styles-15",
+      "description": "15 种 MG 动态设计风格，每种配有一支 10 秒短片，包含风格说明、完整提示词和全部源码，便于参考、复现和制作自己的动效作品。",
+      "category": "设计与创作",
+      "tags": [
+        "Python"
+      ],
+      "language": "Python",
+      "stars": 1575,
+      "forks": 220,
+      "license": "MIT",
+      "homepage": "https://vincentwei1021.github.io/mg-styles-15/",
+      "readmeExcerpt": "Fifteen styles, one 10-second film each, all made by Claude Opus 5.5 writing code.\n15 种 MG 动态设计风格，每种一支 10 秒成片，全部由 Claude Opus 5.5 写代码做出来。\n\nEvery film comes with its style notes, its full prompt and its complete source.\n每支片都附风格说明、完整提示词和全部源码。\n\n▶ Watch all 15 films with sound · 在线观看\n\n> 中文用户请看这里：完整中文说明 README.zh-CN.md\n> English readers: keep reading below.\n\nFifteen 10-second motion-design films, one style each, from frame-by-frame cel animation to a 9:16 variety-show edit. Claude Opus 5.5 made every film by writing code from a prompt: the picture, the animation, the music and the sound effects. This repository publishes all of it, so you can watch a style, read how it was made, copy its prompt and make a film of your own.",
+      "readmeStatus": "read",
+      "repositoryUpdatedAt": "2026-10-05T11:23:17Z",
+      "archived": false,
+      "favorite": false,
+      "createdAt": "2026-10-21T15:13:40.307Z",
+      "updatedAt": "2026-10-21T15:13:40.307Z"
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 import { initialize, listSkills, saveSkill, deleteSkill, importFiles, exportSkill, exportLibrary, formatBytes, getSkillContent, listCategories, saveCategories, onSkillsChanged } from './storage.js';
 import { initializeGitHubSync } from './sync-ui.js';
 import { RepositoryLibrary } from './repository-library.js';
+import { initializeGitHubWorkspace } from './github-workspace.js';
 
 const $ = (s,root=document)=>root.querySelector(s);
 const $$ = (s,root=document)=>[...root.querySelectorAll(s)];
@@ -107,7 +108,7 @@ document.addEventListener('click',async e=>{
   if(e.target.closest('#back-files')){showDetail(currentDetail,'files');return;}
   if($('#sidebar').classList.contains('open')&&!e.target.closest('.sidebar')&&!e.target.closest('#mobile-menu'))$('#sidebar').classList.remove('open');
 });
-document.addEventListener('keydown',e=>{if(e.key==='/'&&!/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)&&!$('dialog[open]')){e.preventDefault();$('#search').focus();}if((e.key==='Enter'||e.key===' ')&&e.target.matches('.skill-card')){e.preventDefault();showDetail(e.target.dataset.open);}if(e.target.matches('.detail-tab')&&['ArrowLeft','ArrowRight','Home','End'].includes(e.key)){e.preventDefault();const tabs=$$('.detail-tab'),index=tabs.indexOf(e.target);const next=e.key==='Home'?0:e.key==='End'?tabs.length-1:(index+(e.key==='ArrowRight'?1:-1)+tabs.length)%tabs.length;const nextTab=tabs[next].dataset.tab;showDetail(currentDetail,nextTab);$(`[data-tab="${nextTab}"]`).focus();}});
+document.addEventListener('keydown',e=>{if(e.key==='/'&&!/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)&&!$('dialog[open]')){e.preventDefault();$(document.body.classList.contains('github-workspace') ? '#github-search' : '#search').focus();}if((e.key==='Enter'||e.key===' ')&&e.target.matches('.skill-card')){e.preventDefault();showDetail(e.target.dataset.open);}if(e.target.matches('.detail-tab')&&['ArrowLeft','ArrowRight','Home','End'].includes(e.key)){e.preventDefault();const tabs=$$('.detail-tab'),index=tabs.indexOf(e.target);const next=e.key==='Home'?0:e.key==='End'?tabs.length-1:(index+(e.key==='ArrowRight'?1:-1)+tabs.length)%tabs.length;const nextTab=tabs[next].dataset.tab;showDetail(currentDetail,nextTab);$(`[data-tab="${nextTab}"]`).focus();}});
 $$('dialog').forEach(d=>{d.addEventListener('click',e=>{if(e.target===d){const r=d.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)closeDialog(d);}});d.addEventListener('close',()=>{if(d.id==='detail-dialog'&&fileUrl){URL.revokeObjectURL(fileUrl);fileUrl=null;}});});
 let dragDepth=0;
 document.addEventListener('dragenter',e=>{if(e.dataTransfer?.types.includes('Files')){e.preventDefault();dragDepth++;$('#global-drop').hidden=false;}});
@@ -115,6 +116,7 @@ document.addEventListener('dragover',e=>{if(e.dataTransfer?.types.includes('File
 document.addEventListener('dragleave',()=>{dragDepth=Math.max(0,dragDepth-1);if(!dragDepth)$('#global-drop').hidden=true;});
 document.addEventListener('drop',e=>{if(!e.dataTransfer?.files.length)return;e.preventDefault();dragDepth=0;$('#global-drop').hidden=true;closeAll();showImport();importSelected(e.dataTransfer.files);});
 hydrateIcons();
+initializeGitHubWorkspace({ icon, hydrateIcons, toast, getToken: () => githubSync?.getReadToken() || '' });
 const repositoryLibrary = new RepositoryLibrary();
 let checkingRepository = false;
 async function refreshLibraryView() {

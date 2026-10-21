@@ -203,6 +203,16 @@ test('manifest rejects unsafe paths, unsupported schema and strips executable me
   assert.throws(() => validateManifest({ ...m, schemaVersion: 2 }), /版本/);
   assert.throws(() => validateManifest({ ...m, entries: { test: { ...m.entries.test, archivePath: '../secret' } } }), /路径/);
 });
+test('default GitHub fetch preserves the browser global receiver', async t => {
+  t.mock.method(globalThis, 'fetch', async function (url) {
+    // Browser fetch rejects a GitHubClient instance as its receiver.
+    if (this !== globalThis) throw new TypeError('Illegal invocation');
+    assert.equal(url, 'https://api.github.com/repos/owner/repo');
+    return Response.json({ full_name: 'owner/repo', default_branch: 'main' });
+  });
+  const client = new GitHubClient({ owner: 'owner', repo: 'repo', token: 'test-token' });
+  assert.equal((await client.getRepository()).full_name, 'owner/repo');
+});
 test('GitHub API pins reads to fixed host and commit, falls back to blobs and limits files', async () => {
   const seen = [];
   const client = new GitHubClient({ owner: 'owner', repo: 'repo', token: 'private-token', fetchImpl: async (url, options) => {

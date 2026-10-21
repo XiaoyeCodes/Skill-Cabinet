@@ -8,6 +8,7 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='9' fill='%23c16b50'/%3E%3Cpath d='M10 10v20h20M17 10v14M24 10v14M31 10v14' stroke='%23fff' stroke-width='3' fill='none'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="./sync.css">
+  <link rel="stylesheet" href="./github-workspace.css">
   <script src="./vendor/jszip.min.js" defer></script>
   <script type="module" src="./app.js"></script>
 </head>
@@ -15,7 +16,11 @@
   <a class="skip" href="#main">跳到内容</a>
   <aside class="sidebar" id="sidebar">
     <a class="brand" href="./" aria-label="Skill Cabinet 首页"><span class="brand-symbol">✳</span><span>Skill Cabinet<span class="brand-sub">个人技能库</span></span></a>
-    <div class="workspace-label"><span class="avatar">M</span><span>我的工作空间<small>Personal workspace</small></span><span class="local-dot" title="浏览器本地保存"></span></div>
+    <div class="workspace-switcher" aria-label="切换空间">
+      <button class="workspace-label active" data-workspace="skills" aria-pressed="true"><span class="avatar">S</span><span>我的 Skills 空间<small>Skills workspace</small></span><span class="local-dot"></span></button>
+      <button class="workspace-label" data-workspace="github" aria-pressed="false"><span class="avatar github-avatar">G</span><span>我的 GitHub 空间<small>GitHub workspace</small></span><span class="local-dot"></span></button>
+    </div>
+    <div id="skills-navigation">
     <div class="nav-caption">我的收藏室</div>
     <nav aria-label="仓库导航">
       <button class="nav-item active" data-nav="all"><i data-icon="library"></i>全部 Skill<span id="all-count" class="nav-count">0</span></button>
@@ -24,6 +29,8 @@
     </nav>
     <div class="nav-caption category-heading">按分类浏览<button class="icon-btn" id="add-category" aria-label="新建分类"><i data-icon="plus"></i></button></div>
     <nav id="category-nav" aria-label="Skill 分类"></nav>
+    </div>
+    <div id="github-navigation" hidden></div>
     <div class="sidebar-bottom">
       <div class="local-note"><span class="tiny-mark">✳</span><p>你的方法，值得好好收藏。<small>本机保存，GitHub 同步<br>让好方法，随你同行。</small></p></div>
       <button class="nav-item" id="help-button"><i data-icon="help"></i>使用指南<span class="external-arrow">↗</span></button>
@@ -32,7 +39,7 @@
   </aside>
   <main id="main">
     <header class="topbar"><div class="breadcrumb"><button id="mobile-menu" class="icon-btn" aria-label="展开导航"><i data-icon="menu"></i></button><span>工作空间</span><span class="slash">/</span><strong id="page-label">全部 Skill</strong></div><div class="top-actions"><span class="local-status"><span></span>本地保存</span><button class="quiet-btn" id="backup-button"><i data-icon="download"></i><span>导出仓库</span></button></div></header>
-    <div class="page-content">
+    <div class="page-content" id="skills-content">
       <section class="hero">
         <div class="hero-copy"><div class="eyebrow"><span></span>A LITTLE LIBRARY OF WHAT YOU CAN DO</div><h1>让好方法，<br>成为你的<span class="hero-accent">拿手好戏。</span></h1><p>给每一份灵感一个位置。<br class="mobile-break">收藏、整理和复用你的专属 Skill。</p><div class="hero-buttons"><button class="primary-btn" id="import-button"><i data-icon="upload"></i>导入 Skill</button><button class="outline-btn" id="new-button"><i data-icon="plus"></i>新建 Skill</button></div><div class="hero-formats">支持 ZIP 技能包、SKILL.md 与仓库备份</div></div>
         <div class="hero-art" aria-hidden="true"><svg viewBox="0 0 440 290" fill="none"><g stroke="#413f35" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M44 246h351M64 237h317v9H64zM78 130h39v107H78zM83 136h29v94H83zM89 145v48M97 146v48M92 214h11M119 100h47v137h-47zM125 109h35M125 119h35M128 220h28M141 132v63"/><path fill="#c87457" d="m174 107 38-9 31 130-38 9z"/><path d="m183 115 24-6M187 125l24-6M207 210l24-6M247 150h30v87h-30zM254 157v52M257 222h10"/><path fill="#e3e0d0" d="M281 120h48v117h-48z"/><path d="M288 131h34M288 139h34M298 158v37M290 223h30M333 166h34v71h-34zM340 172h20M340 179h20M340 223h20"/><path d="M247 113c-33-30-32-57-12-68 17 0 25 23 12 68Z"/><path d="M247 113c10-45 28-68 50-59 9 20-8 48-50 59ZM247 111c-14-40-8-72 17-77 20 14 12 46-17 77ZM246 114c-36-8-58-28-48-48 22-8 44 10 48 48Z"/><path d="m246 115 1-47M247 112l35-43M246 109l-33-30M249 110l12-53"/></g><path d="M348 72v29M334 86h29M338 76l20 21M338 97l20-21" stroke="#c16b50" stroke-width="2.5" stroke-linecap="round"/><circle cx="108" cy="63" r="3" fill="#918b74"/><path d="m82 79-4 8 8 4 4-8z" stroke="#918b74"/><text x="133" y="276" fill="#8b8679" font-size="10" letter-spacing="3" font-family="Georgia,serif">GOOD THINGS, WELL KEPT.</text></svg></div>
