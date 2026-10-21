@@ -348,7 +348,10 @@ async function readEntry(entry, budget) {
 
 async function recordsFromZip(zip) {
   const entries = Object.values(zip.files).filter(entry => !entry.dir);
-  const roots = entries.filter(entry => /(^|\/)SKILL\.md$/i.test(entry.name)).map(entry => ({ entry, base: entry.name.slice(0, -8) }));
+  const candidates = entries.filter(entry => /(^|\/)SKILL\.md$/i.test(entry.name)).map(entry => ({ entry, base: entry.name.slice(0, -8) }));
+  // A skill may ship examples that contain their own SKILL.md. Keep those inside
+  // the enclosing skill; only independent, outermost skill folders form a bundle.
+  const roots = candidates.filter(root => !candidates.some(parent => parent !== root && root.base.startsWith(parent.base)));
   if (!roots.length) throw new Error('ZIP 中未找到 SKILL.md。');
   const budget = { size: 0 };
   const decoded = new Map();

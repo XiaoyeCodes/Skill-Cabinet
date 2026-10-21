@@ -127,6 +127,33 @@ test('import divides multiple skill folders and preserves shared top-level instr
   assert.equal(duplicate.imported.length, 0);
 });
 
+test('nested example SKILL.md files remain attachments of their enclosing skill across export and backup', async () => {
+  for (const prefix of ['', 'nuwa/']) {
+    const zip = new JSZip();
+    zip.file(`${prefix}SKILL.md`, '---\nname: nested-examples\n---\n# Nuwa\nResearch workflow');
+    zip.file(`${prefix}examples/feynman/SKILL.md`, '---\nname: feynman\n---\n# Feynman\nExample only');
+    zip.file(`${prefix}examples/feynman/references/research.md`, 'Complete reference');
+    zip.file(`${prefix}LICENSE`, 'MIT');
+    const records = await decodeSkillArchive(await zip.generateAsync({ type: 'uint8array' }));
+    assert.equal(records.length, 1);
+    assert.equal(records[0].slug, 'nested-examples');
+    assert.equal(records[0].files.length, 4);
+    const roundtrip = await decodeSkillArchive(await exportSkill(records[0]));
+    assert.equal(roundtrip.length, 1);
+    assert.equal(await roundtrip[0].files.find(file => file.path === 'examples/feynman/SKILL.md').data.text(), '---\nname: feynman\n---\n# Feynman\nExample only');
+    const restored = await decodeSkillArchive(await exportLibrary(records));
+    assert.equal(restored.length, 1);
+    assert.ok(restored[0].files.some(file => file.path === 'examples/feynman/references/research.md'));
+  }
+  const siblings = new JSZip();
+  siblings.file('alpha/SKILL.md', '# Alpha\nParent');
+  siblings.file('alpha/examples/child/SKILL.md', '# Child\nExample');
+  siblings.file('beta/SKILL.md', '# Beta\nIndependent sibling');
+  const records = await decodeSkillArchive(await siblings.generateAsync({ type: 'uint8array' }));
+  assert.deepEqual(records.map(record => record.slug).sort(), ['alpha', 'beta']);
+  assert.ok(records.find(record => record.slug === 'alpha').files.some(file => file.path === 'examples/child/SKILL.md'));
+});
+
 test('backup restores editable metadata and attachments without overwriting duplicates', async () => {
   const original = await saveSkill({ name: 'Backup skill', slug: 'backup-skill', id: 'backup-id', content: markdown, favorite: true, category: '图像', tags: ['中文'], instructions: '说明', author: '作者', version: '3', createdAt: '2020-01-01', files: [{ path: 'references/a.md', data: new Blob(['Reference']) }] });
   const backup = await exportLibrary([original]);

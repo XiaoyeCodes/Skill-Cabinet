@@ -64,9 +64,21 @@ cd Skill-Cabinet
 npm start
 ```
 
-打开 [http://localhost:4173](http://localhost:4173)。本地服务会直接读取仓库的 `skill-cabinet/manifest.json` 和完整 ZIP，当前包含六份 Skill（含「金十财经早餐」「每日财经日报」及「Huashu Design · 花叔设计」）。无需填写 GitHub Token，也无需手动导入备份；已经只保存了一份 Skill 的旧浏览器也会自动补齐。
+打开 [http://localhost:4173](http://localhost:4173)。本地服务会直接读取仓库的 `skill-cabinet/manifest.json` 和完整 ZIP，当前包含十七份 Skill / 技能集，覆盖设计、写作、研究、新闻与投资金融。无需填写 GitHub Token，也无需手动导入备份；已经只保存了一份 Skill 的旧浏览器也会自动补齐。
 
 「Huashu Design · 花叔设计」归于「图像与设计」，版本为 3.0.0，来自 [alchaincyf/huashu-design](https://github.com/alchaincyf/huashu-design/tree/798c4235ebff03d5c45e3c8affdf5e9d18f9dfa7)。完整技能包保留上游 389 个文件及 MIT 许可证，另附使用说明和原始 `SKILL.md` 副本；素材、参考文档、脚本与演示均包含在内。
+
+「女娲 · Skill造人术」归于「学习与研究」，版本为 1.0.0，来自 [alchaincyf/nuwa-skill](https://github.com/alchaincyf/nuwa-skill/tree/7812110bf7e5a2b01b6aa5a738568044121bbfa2)。完整技能包保留上游 162 个文件、15 份人物示例及 MIT 许可证，另附使用说明和原始 `SKILL.md` 副本。
+
+「Huashu Motion · 花叔动画」归于「图像与设计」，版本为 0.1.1，来自 [alchaincyf/huashu-motion](https://github.com/alchaincyf/huashu-motion/tree/5f2608c2e12abcf518f74dde86093b19f7f88603)。技能包保留 282 个上游文件，包含 CLI、运行时、编辑器、字体、模板、示例及全部许可文件；另将 Skill 的参考文档和启动入口整理到包根目录，提供 Windows 启动入口与使用说明。8 个官网宣传 GIF 保留在原始克隆中，避免超过同步单包限制。实际执行需要 Node.js 22+、Chrome/Chromium/Edge 与 FFmpeg；第三方组件及演示角色的许可见包内 `THIRD_PARTY.md`。
+
+「暖纸编辑设计」归于「图像与设计」，版本为 1.0.0，是个人的跨媒介设计 Skill，适用于网页、图片、Word 和 PDF。完整包包含配色与排版规范、CSS、原创 SVG 线稿与标记、用户参考图、图像提示词指南和对比度检查脚本；另附使用说明及原始指令副本，共 16 个文件。
+
+「仓颉 · 知识蒸馏」归于「学习与研究」，版本为 2.5.0，来自 [kangarooking/cangjie-skill](https://github.com/kangarooking/cangjie-skill/tree/a28de55ba881b9928956a55048f743f7a9e3b23e)。完整保留 367 个上游文件，含方法论、提取器、模板、Python 工具链和示例；另附原始指令、使用说明和来源记录，共 370 个文件。
+
+「穷查理宝典 · 思维与决策」归于「学习与研究」，来自 [kangarooking/poor-charlies-almanack-skill](https://github.com/kangarooking/poor-charlies-almanack-skill/tree/d477e516920995b6e54d66c7441f17048188303a)，含 12 个子技能，完整保留 74 个上游文件，打包后共 77 个文件。「巴菲特股东信 · 投资方法」归于新建的「投资与金融」，来自 [kangarooking/buffett-letters-skill](https://github.com/kangarooking/buffett-letters-skill/tree/5b1fbe1d93f155fcf4acf236841bf8e1b5951c91)，含 20 个子技能，完整保留 54 个上游文件，打包后共 57 个文件。两套均按完整技能集展示，增加根目录导航入口；原始模块、索引、候选与淘汰记录、测试用例和 MIT 许可证保持原样。收藏入口版本为 1.0.0，上游未声明发布版本。
+
+[xie-bros/doubao-skills](https://github.com/xie-bros/doubao-skills/tree/f43f4118c5abb8403e6bb66efd3c4163a8f50f80) 的 master 分支导入为 5 个独立条目。「付鹏 · 宏观与大类资产」「索罗斯 · 反身性与宏观对冲」「达里奥 · 经济周期与债务危机」「秦小明 · 金融思维」归于「投资与金融」，「黄执中 · 沟通与表达」归于「写作与内容」。分别保留 66、62、11、1、6 个原始文件，各加原始指令副本、仓库说明、来源记录与使用说明，打包后为 70、66、15、5、10 个文件。付鹏与索罗斯指令的非标准元数据分隔符已在导入版规范化，原件保持原样。条目版本为 1.0.0，上游未标注版本；仓库没有许可证文件，不额外声明许可。历史告警和带日期的表格作为资料保留，导入不会启动监控或脚本。
 
 后续在项目目录执行 `git pull`，打开的页面会在约 **5 秒内**自动检查并显示新的技能数据；切回页面或点击「检查仓库更新」也会立即检查。服务按请求读取磁盘文件，技能数据更新无需重启；更新 `server.mjs` 等服务端代码后需重新运行 `npm start`。页面只读取本机已经拉取的内容，不会代你执行 `git pull`。
 
@@ -100,6 +112,8 @@ npm test
 ## 如何使用
 
 **导入** → 点击「导入 Skill」，或把完整 ZIP / SKILL.md 拖进页面。完整包中的图片和脚本会一起保存。
+
+一个 Skill 内的 `examples/` 等子目录即使包含 `SKILL.md`，也会作为该 Skill 的完整附件保留；ZIP 中多个并列、互不包含的 Skill 文件夹仍会分别导入。
 
 **整理** → 设置名称、功能介绍、使用说明、分类与标签。常用技能点击星标收藏，搜索框支持 `/` 快捷聚焦。
 

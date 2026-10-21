@@ -65,7 +65,7 @@ function checkout() {
 }
 const library = (storage, source) => new RepositoryLibrary({ storage, fetchImpl: source.fetch.bind(source) });
 
-test('a fresh checkout loads all six real archives and migrates a one-skill browser without credentials', async t => {
+test('a fresh checkout loads all bundled real archives and migrates a one-skill browser without credentials', async t => {
   const server = createServer();
   await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
   t.after(() => { server.closeAllConnections(); server.close(); });
@@ -75,10 +75,10 @@ test('a fresh checkout loads all six real archives and migrates a one-skill brow
   const storage = memoryStorage([{ ...decoded, ...seeds[0], files: decoded.files, id: 'legacy-browser-id' }]);
   const client = new RepositoryLibrary({ storage, fetchImpl: (url, options) => fetch(new URL(url, base), options) });
   const result = await client.refresh();
-  assert.equal(result.count, 6);
+  assert.equal(result.count, 17);
   assert.deepEqual(result.preserved, []);
   const records = await storage.listSkills();
-  assert.deepEqual(records.map(record => record.slug).sort(), ['aibase-daily', 'daily-60s-image', 'huashu-design', 'jin10-breakfast', 'jin10-financial-daily', 'shiguang-atlas']);
+  assert.deepEqual(records.map(record => record.slug).sort(), ['aibase-daily', 'buffett-letters-skill', 'cangjie-skill', 'daily-60s-image', 'fupeng-macro-framework', 'huangzhizhong-communication', 'huashu-design', 'huashu-motion', 'huashu-nuwa', 'jin10-breakfast', 'jin10-financial-daily', 'poor-charlies-almanack-skill', 'qinxiaoming-finance-thinking', 'ray-dalio-framework', 'shiguang-atlas', 'soros-reflexivity-framework', 'warm-paper-editorial']);
   assert.equal(records.find(record => record.slug === 'shiguang-atlas').id, 'legacy-browser-id');
   assert.ok(records.every(record => record.content && record.files.length > 0));
   const design = records.find(record => record.slug === 'huashu-design');
@@ -89,6 +89,55 @@ test('a fresh checkout loads all six real archives and migrates a one-skill brow
   const paths = new Set(design.files.map(file => file.path));
   for (const file of ['LICENSE', 'README.md', 'package.json', 'assets/design_canvas.jsx', 'references/workflow.md', 'scripts/verify.py', 'demos/c1-ios-prototype.html', 'upstream/SKILL.original.md']) assert.ok(paths.has(file), file);
   assert.match(await design.files.find(file => file.path === 'LICENSE').data.text(), /MIT License/);
+  const nuwa = records.find(record => record.slug === 'huashu-nuwa');
+  assert.equal(nuwa.category, '学习与研究');
+  assert.equal(nuwa.version, '1.0.0');
+  assert.equal(nuwa.files.length, 164);
+  assert.equal(nuwa.files.filter(file => /^examples\/.+\/SKILL\.md$/.test(file.path)).length, 15);
+  for (const file of ['LICENSE', 'references/extraction-framework.md', 'scripts/quality_check.py', 'examples/feynman-perspective/SKILL.md', 'upstream/SKILL.original.md']) assert.ok(nuwa.files.some(item => item.path === file), file);
+  const motion = records.find(record => record.slug === 'huashu-motion');
+  assert.equal(motion.category, '图像与设计');
+  assert.equal(motion.version, '0.1.1');
+  assert.equal(motion.files.length, 327);
+  const motionFiles = new Map(motion.files.map(file => [file.path, file.data]));
+  for (const file of ['LICENSE', 'THIRD_PARTY.md', 'cli/om.js', 'runtime/om-engine.js', 'fonts/LICENSES.md', 'templates/blank/index.html', 'skills/huashu-motion/SKILL.md', 'references/director.md', 'bin/om', 'bin/om.cmd']) assert.ok(motionFiles.has(file), file);
+  assert.equal(await motionFiles.get('references/director.md').text(), await motionFiles.get('skills/huashu-motion/references/director.md').text());
+  assert.match(await motionFiles.get('bin/om').text(), /DIR\/\.\.\/cli\/om\.js/);
+  assert.match(await motionFiles.get('bin/om.cmd').text(), /cli\\om\.js/);
+  const paper = records.find(record => record.slug === 'warm-paper-editorial');
+  assert.equal(paper.name, '暖纸编辑设计');
+  assert.equal(paper.category, '图像与设计');
+  assert.equal(paper.version, '1.0.0');
+  for (const file of ['assets/tokens.json', 'assets/paper.css', 'assets/line-art.svg', 'assets/folio-mark.svg', 'assets/reference.png', 'references/web.md', 'references/documents-pdf.md', 'references/image-prompts.md', 'references/quality-check.md', 'scripts/check_palette.py', 'agents/openai.yaml', 'upstream/SKILL.original.md']) assert.ok(paper.files.some(item => item.path === file), file);
+  const cangjie = records.find(record => record.slug === 'cangjie-skill');
+  assert.equal(cangjie.category, '学习与研究');
+  assert.equal(cangjie.version, '2.5.0');
+  assert.equal(cangjie.files.length, 370);
+  for (const file of ['LICENSE', 'README.zh-CN.md', 'scripts/cangjie.py', 'methodology/00-overview.md', 'upstream/SKILL.original.md', 'CABINET_SOURCE.json']) assert.ok(cangjie.files.some(item => item.path === file), file);
+  for (const [slug, category, modules, fileCount] of [['poor-charlies-almanack-skill', '学习与研究', 12, 77], ['buffett-letters-skill', '投资与金融', 20, 57]]) {
+    const collection = records.find(record => record.slug === slug);
+    assert.equal(collection.category, category);
+    assert.equal(collection.files.length, fileCount);
+    assert.equal(collection.files.filter(file => /^[^/]+\/SKILL\.md$/.test(file.path)).length, modules);
+    for (const file of ['INDEX.md', 'BOOK_OVERVIEW.md', 'LICENSE', 'verified.md', 'circle-of-competence/SKILL.md', 'circle-of-competence/test-prompts.json', 'CABINET_SOURCE.json']) assert.ok(collection.files.some(item => item.path === file), `${slug}/${file}`);
+    assert.ok(collection.files.some(file => file.path.startsWith('candidates/')));
+    assert.ok(collection.files.some(file => file.path.startsWith('rejected/')));
+  }
+  assert.ok((await storage.listCategories()).includes('投资与金融'));
+  for (const [slug, category, count] of [['fupeng-macro-framework', '投资与金融', 70], ['soros-reflexivity-framework', '投资与金融', 66], ['ray-dalio-framework', '投资与金融', 15], ['qinxiaoming-finance-thinking', '投资与金融', 5], ['huangzhizhong-communication', '写作与内容', 10]]) {
+    const entry = records.find(record => record.slug === slug);
+    assert.equal(entry.category, category);
+    assert.equal(entry.files.length, count);
+    for (const file of ['upstream/SKILL.original.md', 'upstream/README.md', 'CABINET_SOURCE.json', '使用说明.md']) assert.ok(entry.files.some(item => item.path === file), `${slug}/${file}`);
+    assert.match(entry.content, /^---\n/);
+    assert.doesNotMatch(entry.content, /\n\n(?:name|description): /);
+    if (['fupeng-macro-framework', 'soros-reflexivity-framework'].includes(slug)) assert.match(await entry.files.find(file => file.path === 'upstream/SKILL.original.md').data.text(), /^\*\*\*/);
+  }
+  const dalio = records.find(record => record.slug === 'ray-dalio-framework');
+  assert.ok(dalio.files.some(file => file.path === 'scripts/dalio_economic_indicators_20260909.xlsx' && file.data.size > 0));
+  const huang = records.find(record => record.slug === 'huangzhizhong-communication');
+  assert.equal(huang.files.filter(file => file.path.startsWith('references/')).length, 5);
+  assert.ok((await storage.listCategories()).includes('写作与内容'));
   const manifestResponse = await fetch(new URL('skill-cabinet/manifest.json', base));
   assert.equal(manifestResponse.headers.get('cache-control'), 'no-store');
   for (const path of ['.git/config', 'README.md', 'skill-cabinet/other.json', 'skill-cabinet/archives/secret.zip', 'skill-cabinet/%2e%2e%2f.git/config']) {
