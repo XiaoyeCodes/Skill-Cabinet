@@ -65,7 +65,7 @@
 
 GitHub 项目收藏单独保存在当前浏览器，**不包含在 Skills 的 ZIP 备份或云同步中**。换设备时使用「导出项目」与「恢复备份」。凭据只用于固定的 GitHub API 请求，不进入项目资料或 JSON 备份。
 
-已加入用户指定的 `mexicat/pdoom-video`、`Tunai-0511/meme67-art-history`、`Vincentwei1021/mg-styles-15`，均归于「设计与创作」。初始资料位于 `dist/assets/github-projects.json`；首次读取时加入浏览器，保留已有修改，主动移除后刷新不会重新补回。
+已加入用户指定的 `mexicat/pdoom-video`、`Tunai-0511/meme67-art-history`、`Vincentwei1021/mg-styles-15`、`lemomo-ai/lemo-opuscar`，均归于「设计与创作」。Lemo-Opuscar 是代码驱动的影片风格工具箱，提供 59 种现成风格、风格提示词和演示短片，支持定制自己的风格。初始资料位于 `dist/assets/github-projects.json`；首次读取时加入浏览器，保留已有修改，主动移除后刷新不会重新补回。
 
 ## 快速开始
 

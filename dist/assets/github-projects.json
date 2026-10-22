@@ -78,6 +78,34 @@
       "favorite": false,
       "createdAt": "2026-10-21T15:13:40.307Z",
       "updatedAt": "2026-10-21T15:13:40.307Z"
+    },
+    {
+      "owner": "lemomo-ai",
+      "repo": "lemo-opuscar",
+      "id": "lemomo-ai/lemo-opuscar",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar",
+      "name": "lemo-opuscar",
+      "description": "用代码制作影片的风格工具箱，提供 59 种现成风格、风格提示词与演示短片，可配合编码智能体制作和定制影片的画面、旁白、音乐与渲染流程。",
+      "category": "设计与创作",
+      "tags": [
+        "filmmaking",
+        "creative-coding",
+        "motion-graphics",
+        "prompt-library",
+        "JavaScript"
+      ],
+      "language": "JavaScript",
+      "stars": 5358,
+      "forks": 578,
+      "license": "MIT",
+      "homepage": "https://lemomo-ai.github.io/lemo-opuscar/",
+      "readmeExcerpt": "Lemo-Opuscar\n\n一套用代码做片的风格工具箱，提供 59 种现成风格，也可以定制或从零创建自己的风格。每种风格配有风格提示词与代码制作的演示短片，支持带入自己的故事，由编码智能体完成制作。\n\n提供 Claude Code 插件与 Skill 入口，包含导演、技术和风格指南，覆盖逐帧画面渲染、配乐、旁白与混音。\n\n仓库说明：代码和文档采用 MIT 协议；演示影片和静帧采用 CC BY 4.0，第三方素材及部分声音有独立授权说明。",
+      "readmeStatus": "read",
+      "repositoryUpdatedAt": "2026-10-22T07:07:05Z",
+      "archived": false,
+      "favorite": false,
+      "createdAt": "2026-10-22T15:09:59.453Z",
+      "updatedAt": "2026-10-22T15:09:59.454Z"
     }
   ]
 }

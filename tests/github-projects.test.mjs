@@ -112,12 +112,12 @@ test('corrupt saved data is never silently replaced', () => {
 });
 
 // Starter projects are explicit user additions; removing one must survive reloads.
-test('the three requested GitHub projects load once with complete names, purposes and categories', async () => {
+test('the requested GitHub projects load once with complete names, purposes and categories', async () => {
   const { readFile } = await import('node:fs/promises');
   const catalog = JSON.parse(await readFile(new URL('../dist/assets/github-projects.json', import.meta.url), 'utf8'));
   const storage = memoryStorage(), store = new ProjectStore(storage);
-  assert.equal(store.seedCatalog(catalog), 3);
-  assert.deepEqual(new Set(store.list().map(item => item.id)), new Set(['mexicat/pdoom-video', 'tunai-0511/meme67-art-history', 'vincentwei1021/mg-styles-15']));
+  assert.equal(store.seedCatalog(catalog), 4);
+  assert.deepEqual(new Set(store.list().map(item => item.id)), new Set(['mexicat/pdoom-video', 'tunai-0511/meme67-art-history', 'vincentwei1021/mg-styles-15', 'lemomo-ai/lemo-opuscar']));
   assert.ok(store.list().every(item => item.category === '设计与创作' && item.description.length > 30 && item.readmeStatus === 'read'));
   const before = storage.getItem(PROJECTS_KEY);
   assert.equal(store.seedCatalog(catalog), 0);
