@@ -42,6 +42,24 @@
         "updatedAt": "2026-10-21T09:13:13.275Z"
       }
     },
+    "build-jin10-breakfast": {
+      "fingerprint": "5aad965a4ac80c513cd2576f564c780e52c457e64f1e9f393421c539e07981a2",
+      "archiveSha256": "ede642632774d3ab25ffc3f06553305f5a9d4172b88fdbee254353a70e5f22e9",
+      "archivePath": "skill-cabinet/archives/build-jin10-breakfast-ede642632774d3ab25ffc3f06553305f5a9d4172b88fdbee254353a70e5f22e9.zip",
+      "metadata": {
+        "id": "6bb6f1ac-8829-4132-81eb-fa1d12432683",
+        "name": "金十财经早餐",
+        "slug": "build-jin10-breakfast",
+        "description": "生成金十财经早餐完整原文与九项核验行情，沿用浅米色邮件排版和无衬线数字，输出独立HTML、邮件HTML、TXT和审计JSON，可选导出中文文本PDF。用于按当天源文生成或显式历史演示，不负责发邮件或创建定时任务。",
+        "category": "新闻日报",
+        "tags": [],
+        "version": "1.0.0",
+        "author": "",
+        "favorite": true,
+        "createdAt": "2026-10-22T06:07:33.927Z",
+        "updatedAt": "2026-10-22T06:08:12.526Z"
+      }
+    },
     "cangjie-skill": {
       "fingerprint": "cc7d6f450ed98c34b75b17bbba9ade5e81e6e5ec67ab4c6a857cb572a160bba6",
       "archiveSha256": "e47a860bcb829b1302dab7957b8992d27c7aa2fc0bb30bac39529de5d3fd0554",
@@ -90,6 +108,24 @@
         "favorite": false,
         "createdAt": "2026-10-21T09:19:22.352Z",
         "updatedAt": "2026-10-21T09:19:22.352Z"
+      }
+    },
+    "generate-daily60-digest": {
+      "fingerprint": "6c4ed587ef5397b5611454e737ac08910be9fb9b8ada550b7350c094aeb1bcbc",
+      "archiveSha256": "4b09281d432dc4b9891e84b2fce6ff66cdbec8e05da4a5f6a7a0d99baf9453cb",
+      "archivePath": "skill-cabinet/archives/generate-daily60-digest-4b09281d432dc4b9891e84b2fce6ff66cdbec8e05da4a5f6a7a0d99baf9453cb.zip",
+      "metadata": {
+        "id": "022ad83f-b981-4a2f-83b2-9d69745c9f26",
+        "name": "每日60秒文字日报",
+        "slug": "generate-daily60-digest",
+        "description": "Generate the Daily60 Chinese news digest from same-date JSON as selectable-text beige HTML, TXT and JSON, with the source daily tip and verified Gregorian, weekday and lunar dates; optionally export PDF. Use for Daily60 reports, not AIBase or financial digests.",
+        "category": "新闻日报",
+        "tags": [],
+        "version": "1.0.0",
+        "author": "",
+        "favorite": true,
+        "createdAt": "2026-10-22T06:07:29.386Z",
+        "updatedAt": "2026-10-22T06:08:19.842Z"
       }
     },
     "huangzhizhong-communication": {
@@ -341,42 +377,6 @@
         "favorite": false,
         "createdAt": "2026-10-21T09:09:06.173Z",
         "updatedAt": "2026-10-21T09:09:06.173Z"
-      }
-    },
-    "generate-daily60-digest": {
-      "fingerprint": "6c4ed587ef5397b5611454e737ac08910be9fb9b8ada550b7350c094aeb1bcbc",
-      "archiveSha256": "4b09281d432dc4b9891e84b2fce6ff66cdbec8e05da4a5f6a7a0d99baf9453cb",
-      "archivePath": "skill-cabinet/archives/generate-daily60-digest-4b09281d432dc4b9891e84b2fce6ff66cdbec8e05da4a5f6a7a0d99baf9453cb.zip",
-      "metadata": {
-        "id": "022ad83f-b981-4a2f-83b2-9d69745c9f26",
-        "name": "每日60秒文字日报",
-        "slug": "generate-daily60-digest",
-        "description": "Generate the Daily60 Chinese news digest from same-date JSON as selectable-text beige HTML, TXT and JSON, with the source daily tip and verified Gregorian, weekday and lunar dates; optionally export PDF. Use for Daily60 reports, not AIBase or financial digests.",
-        "category": "新闻日报",
-        "tags": [],
-        "version": "1.0.0",
-        "author": "",
-        "favorite": true,
-        "createdAt": "2026-10-22T06:07:29.386Z",
-        "updatedAt": "2026-10-22T06:08:19.842Z"
-      }
-    },
-    "build-jin10-breakfast": {
-      "fingerprint": "5aad965a4ac80c513cd2576f564c780e52c457e64f1e9f393421c539e07981a2",
-      "archiveSha256": "ede642632774d3ab25ffc3f06553305f5a9d4172b88fdbee254353a70e5f22e9",
-      "archivePath": "skill-cabinet/archives/build-jin10-breakfast-ede642632774d3ab25ffc3f06553305f5a9d4172b88fdbee254353a70e5f22e9.zip",
-      "metadata": {
-        "id": "6bb6f1ac-8829-4132-81eb-fa1d12432683",
-        "name": "金十财经早餐",
-        "slug": "build-jin10-breakfast",
-        "description": "生成金十财经早餐完整原文与九项核验行情，沿用浅米色邮件排版和无衬线数字，输出独立HTML、邮件HTML、TXT和审计JSON，可选导出中文文本PDF。用于按当天源文生成或显式历史演示，不负责发邮件或创建定时任务。",
-        "category": "新闻日报",
-        "tags": [],
-        "version": "1.0.0",
-        "author": "",
-        "favorite": true,
-        "createdAt": "2026-10-22T06:07:33.927Z",
-        "updatedAt": "2026-10-22T06:08:12.526Z"
       }
     }
   },
