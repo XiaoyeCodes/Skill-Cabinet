@@ -78,9 +78,16 @@ test('a fresh checkout loads all bundled real archives and migrates a one-skill 
   assert.equal(result.count, 17);
   assert.deepEqual(result.preserved, []);
   const records = await storage.listSkills();
-  assert.deepEqual(records.map(record => record.slug).sort(), ['aibase-daily', 'buffett-letters-skill', 'cangjie-skill', 'daily-60s-image', 'fupeng-macro-framework', 'huangzhizhong-communication', 'huashu-design', 'huashu-motion', 'huashu-nuwa', 'jin10-breakfast', 'jin10-financial-daily', 'poor-charlies-almanack-skill', 'qinxiaoming-finance-thinking', 'ray-dalio-framework', 'shiguang-atlas', 'soros-reflexivity-framework', 'warm-paper-editorial']);
+  assert.deepEqual(records.map(record => record.slug).sort(), ['aibase-daily', 'buffett-letters-skill', 'build-jin10-breakfast', 'cangjie-skill', 'fupeng-macro-framework', 'generate-daily60-digest', 'huangzhizhong-communication', 'huashu-design', 'huashu-motion', 'huashu-nuwa', 'jin10-financial-daily', 'poor-charlies-almanack-skill', 'qinxiaoming-finance-thinking', 'ray-dalio-framework', 'shiguang-atlas', 'soros-reflexivity-framework', 'warm-paper-editorial']);
   assert.equal(records.find(record => record.slug === 'shiguang-atlas').id, 'legacy-browser-id');
   assert.ok(records.every(record => record.content && record.files.length > 0));
+  for (const [slug, name, fileCount] of [['aibase-daily', 'AIBase 日报 · V7', 18], ['generate-daily60-digest', '每日60秒文字日报', 36], ['build-jin10-breakfast', '金十财经早餐', 53]]) {
+    const news = records.find(record => record.slug === slug);
+    assert.equal(news.name, name);
+    assert.equal(news.category, '新闻日报');
+    assert.equal(news.favorite, true);
+    assert.equal(news.files.length, fileCount);
+  }
   const design = records.find(record => record.slug === 'huashu-design');
   assert.equal(design.category, '图像与设计');
   assert.equal(design.version, '3.0.0');
@@ -140,6 +147,8 @@ test('a fresh checkout loads all bundled real archives and migrates a one-skill 
   assert.ok((await storage.listCategories()).includes('写作与内容'));
   const manifestResponse = await fetch(new URL('skill-cabinet/manifest.json', base));
   assert.equal(manifestResponse.headers.get('cache-control'), 'no-store');
+  const updatedManifest = await manifestResponse.json();
+  for (const oldSlug of ['daily-60s-image', 'jin10-breakfast']) assert.equal(updatedManifest.entries[oldSlug].deleted, true);
   for (const path of ['.git/config', 'README.md', 'skill-cabinet/other.json', 'skill-cabinet/archives/secret.zip', 'skill-cabinet/%2e%2e%2f.git/config']) {
     assert.equal((await fetch(new URL(path, base))).status, 404, path);
   }

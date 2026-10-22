@@ -2,21 +2,21 @@
   "schemaVersion": 1,
   "entries": {
     "aibase-daily": {
-      "fingerprint": "b4b94fcc207ed61cf654fdc518eb2a977255da6a44486c28a6a57895581488cc",
-      "archiveSha256": "eff9da7898838dcf33eb20c453e5b933680bcbe776d5d5c4b1f4f0e49e48dbf7",
-      "archivePath": "skill-cabinet/archives/aibase-daily-eff9da7898838dcf33eb20c453e5b933680bcbe776d5d5c4b1f4f0e49e48dbf7.zip",
+      "fingerprint": "13dc49c00eb5f5d827ba1e89bff4c06e035a88a00a186223b5a96c6654210226",
+      "archiveSha256": "f9d270c0a7e46071120eb20e2fe24b79285558aaeaa2ba0d9f7c1381b687cd59",
+      "archivePath": "skill-cabinet/archives/aibase-daily-f9d270c0a7e46071120eb20e2fe24b79285558aaeaa2ba0d9f7c1381b687cd59.zip",
       "metadata": {
-        "id": "aibase-daily-seed",
-        "name": "AIBase 日报",
+        "id": "cf34f2a8-0351-4698-ada9-9c2b10e38f96",
+        "name": "AIBase 日报 · V7",
         "slug": "aibase-daily",
-        "description": "从 AIBase 日报生成可直接打开的米白色 HTML 日报、原文纯文本和提取 JSON，逐条保留原标题及完整提要；不包含邮件推送或定时任务。",
+        "description": "从 AIBase 当日日报逐字保留全部原标题和提要，生成 V7 米白机器人版式的独立 HTML、TXT、JSON，并可选导出 PDF；适用于日报文件生成，不执行邮件推送或定时任务。",
         "category": "新闻日报",
         "tags": [],
         "version": "1.0.0",
         "author": "",
-        "favorite": false,
-        "createdAt": "2026-10-20T06:42:21.244Z",
-        "updatedAt": "2026-10-20T06:42:21.244Z"
+        "favorite": true,
+        "createdAt": "2026-10-22T06:07:36.487Z",
+        "updatedAt": "2026-10-22T06:08:05.303Z"
       }
     },
     "buffett-letters-skill": {
@@ -66,22 +66,8 @@
       }
     },
     "daily-60s-image": {
-      "fingerprint": "dffdfdb0b0019f4700b84a88a98cfbec0f33a98fdf582b67e27f12e0fa76ad3c",
-      "archiveSha256": "c1570e6512085273d44f55ee07beced81161d1ba204b70c84299ea904a18f357",
-      "archivePath": "skill-cabinet/archives/daily-60s-image-c1570e6512085273d44f55ee07beced81161d1ba204b70c84299ea904a18f357.zip",
-      "metadata": {
-        "id": "daily-60s-image-seed",
-        "name": "每日 60 秒新闻图片",
-        "slug": "daily-60s-image",
-        "description": "获取北京时间当天的「每日 60 秒读懂世界」新闻原图，校验日期与真实图片文件后直接交付图片；也支持用户明确指定日期的历史查询。不包含邮箱推送或定时任务。",
-        "category": "新闻日报",
-        "tags": [],
-        "version": "1.0.0",
-        "author": "",
-        "favorite": false,
-        "createdAt": "2026-10-20T06:42:21.252Z",
-        "updatedAt": "2026-10-20T06:42:21.252Z"
-      }
+      "deleted": true,
+      "updatedAt": "2026-10-22T06:08:19.842Z"
     },
     "fupeng-macro-framework": {
       "fingerprint": "7eefb0926d2fd888424545f22fff9c205a8cf5a38462b43db71b51f0a656bcea",
@@ -198,22 +184,8 @@
       }
     },
     "jin10-breakfast": {
-      "fingerprint": "46c262fa55ca939a21772f81c17b5791e408b5b4975edecc7533a0876fc69a03",
-      "archiveSha256": "932f27b8b3f44ed7f3bd24637693cfd914caffe623cda6bb4086646827049825",
-      "archivePath": "skill-cabinet/archives/jin10-breakfast-932f27b8b3f44ed7f3bd24637693cfd914caffe623cda6bb4086646827049825.zip",
-      "metadata": {
-        "id": "cb74c834-6039-4693-bbc9-f30d860734c8",
-        "name": "金十财经早餐",
-        "slug": "jin10-breakfast",
-        "description": "获取金十数据全球财经早餐原文，生成浅米色完整阅读版，去除音频及其他配图，仅保留去掉底部 APP／二维码推广的原始收盘表。输出独立 HTML、TXT、JSON 和 PNG，不包含邮件推送或定时任务。",
-        "category": "新闻日报",
-        "tags": [],
-        "version": "1.0.0",
-        "author": "",
-        "favorite": true,
-        "createdAt": "2026-10-20T13:16:06.609Z",
-        "updatedAt": "2026-10-20T13:19:15.376Z"
-      }
+      "deleted": true,
+      "updatedAt": "2026-10-22T06:08:12.526Z"
     },
     "jin10-financial-daily": {
       "fingerprint": "c8d39f49913a7c960c6cf6a77ff9c140a29fa07956cf96276dc7576938e79427",
@@ -369,6 +341,42 @@
         "favorite": false,
         "createdAt": "2026-10-21T09:09:06.173Z",
         "updatedAt": "2026-10-21T09:09:06.173Z"
+      }
+    },
+    "generate-daily60-digest": {
+      "fingerprint": "6c4ed587ef5397b5611454e737ac08910be9fb9b8ada550b7350c094aeb1bcbc",
+      "archiveSha256": "4b09281d432dc4b9891e84b2fce6ff66cdbec8e05da4a5f6a7a0d99baf9453cb",
+      "archivePath": "skill-cabinet/archives/generate-daily60-digest-4b09281d432dc4b9891e84b2fce6ff66cdbec8e05da4a5f6a7a0d99baf9453cb.zip",
+      "metadata": {
+        "id": "022ad83f-b981-4a2f-83b2-9d69745c9f26",
+        "name": "每日60秒文字日报",
+        "slug": "generate-daily60-digest",
+        "description": "Generate the Daily60 Chinese news digest from same-date JSON as selectable-text beige HTML, TXT and JSON, with the source daily tip and verified Gregorian, weekday and lunar dates; optionally export PDF. Use for Daily60 reports, not AIBase or financial digests.",
+        "category": "新闻日报",
+        "tags": [],
+        "version": "1.0.0",
+        "author": "",
+        "favorite": true,
+        "createdAt": "2026-10-22T06:07:29.386Z",
+        "updatedAt": "2026-10-22T06:08:19.842Z"
+      }
+    },
+    "build-jin10-breakfast": {
+      "fingerprint": "5aad965a4ac80c513cd2576f564c780e52c457e64f1e9f393421c539e07981a2",
+      "archiveSha256": "ede642632774d3ab25ffc3f06553305f5a9d4172b88fdbee254353a70e5f22e9",
+      "archivePath": "skill-cabinet/archives/build-jin10-breakfast-ede642632774d3ab25ffc3f06553305f5a9d4172b88fdbee254353a70e5f22e9.zip",
+      "metadata": {
+        "id": "6bb6f1ac-8829-4132-81eb-fa1d12432683",
+        "name": "金十财经早餐",
+        "slug": "build-jin10-breakfast",
+        "description": "生成金十财经早餐完整原文与九项核验行情，沿用浅米色邮件排版和无衬线数字，输出独立HTML、邮件HTML、TXT和审计JSON，可选导出中文文本PDF。用于按当天源文生成或显式历史演示，不负责发邮件或创建定时任务。",
+        "category": "新闻日报",
+        "tags": [],
+        "version": "1.0.0",
+        "author": "",
+        "favorite": true,
+        "createdAt": "2026-10-22T06:07:33.927Z",
+        "updatedAt": "2026-10-22T06:08:12.526Z"
       }
     }
   },
