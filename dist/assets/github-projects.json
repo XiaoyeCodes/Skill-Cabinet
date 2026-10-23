@@ -6,7 +6,7 @@
       "repo": "pdoom-video",
       "id": "mexicat/pdoom-video",
       "url": "https://github.com/mexicat/pdoom-video",
-      "name": "pdoom-video",
+      "name": "克劳德科幻介绍视频",
       "description": "用代码生成歌词同步音乐视频：画面、逐词卡拉 OK 字幕和排版由时间驱动，支持浏览器实时预览及 1080p60 / 4K60 离线导出。",
       "category": "设计与创作",
       "tags": [
@@ -23,14 +23,14 @@
       "archived": false,
       "favorite": false,
       "createdAt": "2026-10-21T15:13:39.845Z",
-      "updatedAt": "2026-10-21T15:13:39.845Z"
+      "updatedAt": "2026-10-23T02:45:46.785Z"
     },
     {
       "owner": "Tunai-0511",
       "repo": "meme67-art-history",
       "id": "tunai-0511/meme67-art-history",
       "url": "https://github.com/Tunai-0511/meme67-art-history",
-      "name": "meme67-art-history",
+      "name": "穿越不同时期的艺术风格",
       "description": "用 p5.js 与 p5.brush 逐帧绘制的艺术史动画，让网络迷因「67」穿越不同时代的艺术风格；画面与配乐均由程序生成。代码采用 MIT 协议，视频另保留版权。",
       "category": "设计与创作",
       "tags": [
@@ -53,14 +53,14 @@
       "archived": false,
       "favorite": false,
       "createdAt": "2026-10-21T15:13:39.842Z",
-      "updatedAt": "2026-10-21T15:13:39.843Z"
+      "updatedAt": "2026-10-23T02:45:15.621Z"
     },
     {
       "owner": "Vincentwei1021",
       "repo": "mg-styles-15",
       "id": "vincentwei1021/mg-styles-15",
       "url": "https://github.com/Vincentwei1021/mg-styles-15",
-      "name": "mg-styles-15",
+      "name": "科幻地球锁定",
       "description": "15 种 MG 动态设计风格，每种配有一支 10 秒短片，包含风格说明、完整提示词和全部源码，便于参考、复现和制作自己的动效作品。",
       "category": "设计与创作",
       "tags": [
@@ -77,14 +77,14 @@
       "archived": false,
       "favorite": false,
       "createdAt": "2026-10-21T15:13:40.307Z",
-      "updatedAt": "2026-10-21T15:13:40.307Z"
+      "updatedAt": "2026-10-23T02:43:22.140Z"
     },
     {
       "owner": "lemomo-ai",
       "repo": "lemo-opuscar",
       "id": "lemomo-ai/lemo-opuscar",
       "url": "https://github.com/lemomo-ai/lemo-opuscar",
-      "name": "lemo-opuscar",
+      "name": "克劳德视频生成提示词",
       "description": "用代码制作影片的风格工具箱，提供 59 种现成风格、风格提示词与演示短片，可配合编码智能体制作和定制影片的画面、旁白、音乐与渲染流程。",
       "category": "设计与创作",
       "tags": [
@@ -105,7 +105,7 @@
       "archived": false,
       "favorite": false,
       "createdAt": "2026-10-22T15:09:59.453Z",
-      "updatedAt": "2026-10-22T15:09:59.454Z"
+      "updatedAt": "2026-10-23T02:43:53.396Z"
     }
   ]
 }
