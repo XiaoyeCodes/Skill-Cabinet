@@ -77,7 +77,7 @@ cd Skill-Cabinet
 npm start
 ```
 
-打开 [http://localhost:4173](http://localhost:4173)。本地服务会直接读取仓库的 `skill-cabinet/manifest.json` 和完整 ZIP，当前包含十七份 Skill / 技能集，覆盖设计、写作、研究、新闻与投资金融。无需填写 GitHub Token，也无需手动导入备份；已经只保存了一份 Skill 的旧浏览器也会自动补齐。
+打开 [http://localhost:4173](http://localhost:4173)。本地服务会直接读取仓库的 `skill-cabinet/manifest.json` 和完整 ZIP，当前包含十八份 Skill / 技能集，覆盖设计、产品、写作、研究、新闻与投资金融。无需填写 GitHub Token，也无需手动导入备份；已经只保存了一份 Skill 的旧浏览器也会自动补齐。
 
 「Huashu Design · 花叔设计」归于「图像与设计」，版本为 3.0.0，来自 [alchaincyf/huashu-design](https://github.com/alchaincyf/huashu-design/tree/798c4235ebff03d5c45e3c8affdf5e9d18f9dfa7)。完整技能包保留上游 389 个文件及 MIT 许可证，另附使用说明和原始 `SKILL.md` 副本；素材、参考文档、脚本与演示均包含在内。
 
@@ -94,6 +94,8 @@ npm start
 [xie-bros/doubao-skills](https://github.com/xie-bros/doubao-skills/tree/f43f4118c5abb8403e6bb66efd3c4163a8f50f80) 的 master 分支导入为 5 个独立条目。「付鹏 · 宏观与大类资产」「索罗斯 · 反身性与宏观对冲」「达里奥 · 经济周期与债务危机」「秦小明 · 金融思维」归于「投资与金融」，「黄执中 · 沟通与表达」归于「写作与内容」。分别保留 66、62、11、1、6 个原始文件，各加原始指令副本、仓库说明、来源记录与使用说明，打包后为 70、66、15、5、10 个文件。付鹏与索罗斯指令的非标准元数据分隔符已在导入版规范化，原件保持原样。条目版本为 1.0.0，上游未标注版本；仓库没有许可证文件，不额外声明许可。历史告警和带日期的表格作为资料保留，导入不会启动监控或脚本。
 
 2026-10-22 同步了浏览器中更新的三份新闻 Skill：「AIBase 日报 · V7」（`aibase-daily`，18 个文件）、「每日60秒文字日报」（`generate-daily60-digest`，36 个文件）和「金十财经早餐」（`build-jin10-breakfast`，53 个文件）。正文、使用说明、完整附件与收藏状态随仓库保存。每日60秒和金十早餐使用新的技能标识，旧标识保留删除记录，避免换设备后重新出现旧条目；仓库仍为 17 个有效条目。下方「技能收藏」中的三份 ZIP 是原始初始包，当前内容以同步清单为准。
+
+2026-10-23 新增「资深产品经理」（`senior-product-manager`），沿用上传时的「开发与工具」分类。完整包保留指令、Agent 配置、澄清与决策参考、产品设计书结构与质量标准，以及导出的使用说明，共 5 个文件；用于需求梳理、方案取舍和 PRD 交付。
 
 后续在项目目录执行 `git pull`，打开的页面会在约 **5 秒内**自动检查并显示新的技能数据；切回页面或点击「检查仓库更新」也会立即检查。服务按请求读取磁盘文件，技能数据更新无需重启；更新 `server.mjs` 等服务端代码后需重新运行 `npm start`。页面只读取本机已经拉取的内容，不会代你执行 `git pull`。
 

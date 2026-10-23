@@ -378,6 +378,24 @@
         "createdAt": "2026-10-21T09:09:06.173Z",
         "updatedAt": "2026-10-21T09:09:06.173Z"
       }
+    },
+    "senior-product-manager": {
+      "fingerprint": "8dc3a8934096d3dacc6dbcb8cf779c419f8490fc72812684183e8048065c64d3",
+      "archiveSha256": "1282eebd81f6efa51c8bee72df0b50bd8f2468766b6d21d1490858d23ed7e563",
+      "archivePath": "skill-cabinet/archives/senior-product-manager-1282eebd81f6efa51c8bee72df0b50bd8f2468766b6d21d1490858d23ed7e563.zip",
+      "metadata": {
+        "id": "a92de0e2-3bff-4d2f-bb7d-549658a2cf08",
+        "name": "资深产品经理",
+        "slug": "senior-product-manager",
+        "description": "以资深产品经理角色澄清模糊想法、统筹零散需求、提出方案与优化建议，并交付含业务规则、交互流程及验收标准的商业级产品设计书（PRD）。用于产品规划、需求梳理、完整产品或重要功能设计，以及已有设计书的续写与修订；普通产品知识问答、纯视觉设计或直接编码不默认启动完整流程。",
+        "category": "开发与工具",
+        "tags": [],
+        "version": "1.0.0",
+        "author": "",
+        "favorite": false,
+        "createdAt": "2026-10-23T07:38:53.096Z",
+        "updatedAt": "2026-10-23T07:38:53.096Z"
+      }
     }
   },
   "categories": [
@@ -385,6 +403,7 @@
     "图像与设计",
     "学习与研究",
     "投资与金融",
-    "新闻日报"
+    "新闻日报",
+    "开发与工具"
   ]
 }

@@ -75,12 +75,18 @@ test('a fresh checkout loads all bundled real archives and migrates a one-skill 
   const storage = memoryStorage([{ ...decoded, ...seeds[0], files: decoded.files, id: 'legacy-browser-id' }]);
   const client = new RepositoryLibrary({ storage, fetchImpl: (url, options) => fetch(new URL(url, base), options) });
   const result = await client.refresh();
-  assert.equal(result.count, 17);
+  assert.equal(result.count, 18);
   assert.deepEqual(result.preserved, []);
   const records = await storage.listSkills();
-  assert.deepEqual(records.map(record => record.slug).sort(), ['aibase-daily', 'buffett-letters-skill', 'build-jin10-breakfast', 'cangjie-skill', 'fupeng-macro-framework', 'generate-daily60-digest', 'huangzhizhong-communication', 'huashu-design', 'huashu-motion', 'huashu-nuwa', 'jin10-financial-daily', 'poor-charlies-almanack-skill', 'qinxiaoming-finance-thinking', 'ray-dalio-framework', 'shiguang-atlas', 'soros-reflexivity-framework', 'warm-paper-editorial']);
+  assert.deepEqual(records.map(record => record.slug).sort(), ['aibase-daily', 'buffett-letters-skill', 'build-jin10-breakfast', 'cangjie-skill', 'fupeng-macro-framework', 'generate-daily60-digest', 'huangzhizhong-communication', 'huashu-design', 'huashu-motion', 'huashu-nuwa', 'jin10-financial-daily', 'poor-charlies-almanack-skill', 'qinxiaoming-finance-thinking', 'ray-dalio-framework', 'senior-product-manager', 'shiguang-atlas', 'soros-reflexivity-framework', 'warm-paper-editorial']);
   assert.equal(records.find(record => record.slug === 'shiguang-atlas').id, 'legacy-browser-id');
   assert.ok(records.every(record => record.content && record.files.length > 0));
+  const productManager = records.find(record => record.slug === 'senior-product-manager');
+  assert.equal(productManager.name, '资深产品经理');
+  assert.equal(productManager.category, '开发与工具');
+  assert.equal(productManager.files.length, 5);
+  for (const file of ['agents/openai.yaml', 'references/clarification.md', 'references/product-design-book.md', '使用说明.md']) assert.ok(productManager.files.some(item => item.path === file), file);
+  assert.ok((await storage.listCategories()).includes('开发与工具'));
   for (const [slug, name, fileCount] of [['aibase-daily', 'AIBase 日报 · V7', 18], ['generate-daily60-digest', '每日60秒文字日报', 36], ['build-jin10-breakfast', '金十财经早餐', 53]]) {
     const news = records.find(record => record.slug === slug);
     assert.equal(news.name, name);
