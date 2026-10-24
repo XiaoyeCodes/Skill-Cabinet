@@ -43,12 +43,12 @@
       }
     },
     "build-jin10-breakfast": {
-      "fingerprint": "5aad965a4ac80c513cd2576f564c780e52c457e64f1e9f393421c539e07981a2",
-      "archiveSha256": "ede642632774d3ab25ffc3f06553305f5a9d4172b88fdbee254353a70e5f22e9",
-      "archivePath": "skill-cabinet/archives/build-jin10-breakfast-ede642632774d3ab25ffc3f06553305f5a9d4172b88fdbee254353a70e5f22e9.zip",
+      "fingerprint": "30d6c50d599116c1b108f6d5f78c7689298d700c203648a352ef18533898156e",
+      "archiveSha256": "25cfc3f75cb25d77c8f5e84c2f7e9401c380031b3600c7cb546d11cdff5bd81d",
+      "archivePath": "skill-cabinet/archives/build-jin10-breakfast-25cfc3f75cb25d77c8f5e84c2f7e9401c380031b3600c7cb546d11cdff5bd81d.zip",
       "metadata": {
         "id": "6bb6f1ac-8829-4132-81eb-fa1d12432683",
-        "name": "金十财经早餐",
+        "name": "每日财经日报HTML版",
         "slug": "build-jin10-breakfast",
         "description": "生成金十财经早餐完整原文与九项核验行情，沿用浅米色邮件排版和无衬线数字，输出独立HTML、邮件HTML、TXT和审计JSON，可选导出中文文本PDF。用于按当天源文生成或显式历史演示，不负责发邮件或创建定时任务。",
         "category": "新闻日报",
@@ -57,7 +57,7 @@
         "author": "",
         "favorite": true,
         "createdAt": "2026-10-22T06:07:33.927Z",
-        "updatedAt": "2026-10-22T06:08:12.526Z"
+        "updatedAt": "2026-10-24T03:43:24.924Z"
       }
     },
     "cangjie-skill": {
