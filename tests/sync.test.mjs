@@ -7,6 +7,9 @@ import { GitHubClient, validateManifest, sha256, MAX_ARCHIVE_BYTES } from '../di
 import { SyncEngine, fingerprintSkill } from '../dist/sync-engine.js';
 import { exportSkill, exportLibrary, decodeSkillArchive } from '../dist/storage.js';
 import { mergeCategories } from '../dist/categories.js';
+import { ProjectStore, sanitizeProject } from '../dist/github-projects.js';
+import { fingerprintProject } from '../dist/project-sync.js';
+import { compareSyncItems, inspectLocalSync } from '../dist/sync-status.js';
 
 globalThis.crypto ||= webcrypto;
 const module = { exports: {} };
@@ -50,6 +53,141 @@ function remote(initialManifest = null) {
   };
 }
 const engine = (client, storage) => new SyncEngine({ client, storage });
+const project = (extra = {}) => sanitizeProject({ url: 'https://github.com/ink/paper', name: '项目原名', description: '我的项目收藏', category: '开发工具', createdAt: '2026-10-24', updatedAt: '2026-10-24', repositoryUpdatedAt: '2026-10-24', ...extra });
+function projectStorage(initial = []) {
+  const values = new Map();
+  const local = { fail: false, getItem: key => values.get(key) ?? null, setItem(key, value) { if (this.fail) throw Error('disk full'); values.set(key, value); } };
+  const store = new ProjectStore(local);
+  for (const record of initial) store.add(record);
+  return { store, local };
+}
+const combinedEngine = (client, storage, projectStore) => new SyncEngine({ client, storage, projectStore });
+
+test('renaming a skill changes its cloud metadata and complete ZIP, then restores on another device', async () => {
+  const cloud = remote(), local = memoryStorage([skill()]), sync = engine(cloud, local);
+  await sync.sync();
+  local.edit({ ...(await local.listSkills())[0], name: '每日财经日报PDF报纸版' });
+  const before = await inspectLocalSync({ records: await local.listSkills(), baseline: await local.getSyncMeta(sync.baseKey) });
+  assert.equal(before.skills.items.get('test'), 'pending');
+  await sync.sync();
+  const entry = (await cloud.getSnapshot()).manifest.entries.test;
+  assert.equal(entry.metadata.name, '每日财经日报PDF报纸版');
+  const [decoded] = await decodeSkillArchive(await cloud.archives.get(entry.archivePath));
+  assert.equal(decoded.name, entry.metadata.name);
+  const second = memoryStorage(); await engine(cloud, second).sync();
+  assert.equal((await second.listSkills())[0].name, entry.metadata.name);
+});
+
+test('both spaces sync in one commit, project rename and favorite restore on another device without credentials', async () => {
+  const cloud = remote(), first = projectStorage([project()]), second = projectStorage();
+  const skillsA = memoryStorage([skill()]), skillsB = memoryStorage();
+  const a = combinedEngine(cloud, skillsA, first.store), b = combinedEngine(cloud, skillsB, second.store);
+  await a.sync(); assert.equal(cloud.writes, 1);
+  first.store.update('ink/paper', { name: '新的中文名', favorite: true }); await a.sync();
+  await b.sync();
+  assert.equal((await skillsB.listSkills()).length, 1);
+  assert.equal(second.store.list()[0].name, '新的中文名'); assert.equal(second.store.list()[0].favorite, true);
+  const manifest = validateManifest((await cloud.getSnapshot()).manifest);
+  assert.equal(manifest.projects['ink/paper'].record.name, '新的中文名');
+  assert.equal(JSON.stringify(manifest).includes('token'), false);
+  const writes = cloud.writes; await a.sync(); await b.sync(); assert.equal(cloud.writes, writes);
+});
+
+test('project deletions sync as tombstones and catalog initialization cannot resurrect them', async () => {
+  const cloud = remote(), first = projectStorage([project()]), second = projectStorage();
+  const a = combinedEngine(cloud, memoryStorage(), first.store), b = combinedEngine(cloud, memoryStorage(), second.store);
+  await a.sync(); await b.sync(); first.store.remove('ink/paper');
+  const dirty = compareSyncItems([], first.store.getSyncBaseline(cloud.repoKey)); assert.equal(dirty.deleted, 1);
+  await a.sync(); await b.sync();
+  assert.equal((await cloud.getSnapshot()).manifest.projects['ink/paper'].deleted, true);
+  assert.deepEqual(second.store.list(), []);
+  assert.equal(second.store.seedCatalog({ schemaVersion: 1, projects: [project()] }), 0);
+  assert.deepEqual(second.store.list(), []);
+  assert.equal(second.store.getSyncBaseline(cloud.repoKey).recovery.length, 1);
+});
+
+test('project edit conflicts require explicit choices and stale choices cannot overwrite newer edits', async () => {
+  const cloud = remote(), first = projectStorage([project()]), second = projectStorage();
+  const a = combinedEngine(cloud, memoryStorage(), first.store), b = combinedEngine(cloud, memoryStorage(), second.store);
+  await a.sync(); await b.sync();
+  first.store.update('ink/paper', { name: '甲的改名' }); second.store.update('ink/paper', { name: '乙的改名' }); await a.sync();
+  const conflict = await b.sync(); assert.equal(conflict.status, 'conflict'); assert.equal(conflict.conflicts[0].slug, 'project:ink/paper');
+  second.store.update('ink/paper', { description: '冲突后继续修改' });
+  const resolution = { token: conflict.conflictToken, projectToken: conflict.projectToken, choices: { 'project:ink/paper': 'remote' } };
+  await assert.rejects(b.sync({ resolutions: resolution }), /项目已变化/);
+  const current = await b.sync();
+  await b.sync({ resolutions: { token: current.conflictToken, projectToken: current.projectToken, choices: resolution.choices } });
+  assert.equal(second.store.list()[0].name, '甲的改名');
+});
+
+test('project edits during upload and storage failures preserve data and do not advance the project baseline', async () => {
+  const cloud = remote(), initial = projectStorage([project()]), sync = combinedEngine(cloud, memoryStorage(), initial.store);
+  cloud.beforeWrite = () => { cloud.beforeWrite = null; initial.store.update('ink/paper', { name: '上传期间的修改' }); };
+  await assert.rejects(sync.sync(), error => error.code === 'LOCAL_CHANGED');
+  assert.equal(initial.store.list()[0].name, '上传期间的修改'); assert.equal(initial.store.getSyncBaseline(cloud.repoKey), undefined);
+  const conflict = await sync.sync();
+  await sync.sync({ resolutions: { token: conflict.conflictToken, projectToken: conflict.projectToken, choices: { 'project:ink/paper': 'local' } } });
+  const second = projectStorage(), restored = combinedEngine(cloud, memoryStorage(), second.store);
+  second.local.fail = true; await assert.rejects(restored.sync(), /浏览器空间不足/);
+  assert.deepEqual(second.store.list(), []); assert.equal(second.store.getSyncBaseline(cloud.repoKey), undefined);
+  second.local.fail = false; await restored.sync(); assert.equal(second.store.list()[0].name, '上传期间的修改');
+});
+
+test('offline project changes remain pending after reopening and sync later; skill-only clients preserve projects', async () => {
+  const cloud = remote(), first = projectStorage([project()]), sync = combinedEngine(cloud, memoryStorage(), first.store);
+  await sync.sync(); first.store.update('ink/paper', { name: '离线修改' }); cloud.offline = true;
+  await assert.rejects(sync.sync(), /offline/);
+  const reopened = new ProjectStore(first.local), baseline = reopened.getSyncBaseline(cloud.repoKey);
+  assert.equal(compareSyncItems([{ id: 'ink/paper', fingerprint: await fingerprintProject(reopened.list()[0]) }], baseline).items.get('ink/paper'), 'pending');
+  cloud.offline = false; await sync.sync();
+  const before = structuredClone((await cloud.getSnapshot()).manifest.projects);
+  await engine(cloud, memoryStorage([skill()])).sync();
+  assert.deepEqual((await cloud.getSnapshot()).manifest.projects, before);
+});
+
+test('project content validation rejects tampering and missing cloud collections before changing local data', async () => {
+  const cloud = remote(), first = projectStorage([project()]), sync = combinedEngine(cloud, memoryStorage(), first.store);
+  await sync.sync();
+  const saved = (await cloud.getSnapshot()).manifest;
+  saved.projects['ink/paper'].record.name = '篡改内容';
+  const tampered = remote(saved), empty = projectStorage();
+  await assert.rejects(combinedEngine(tampered, memoryStorage(), empty.store).sync(), /校验值不一致/);
+  assert.deepEqual(empty.store.list(), []);
+  cloud.eraseManifest(); await assert.rejects(sync.sync(), /项目同步清单已被移除/);
+});
+
+test('status comparisons distinguish unconfirmed local data, pending edits and invisible pending deletions', () => {
+  assert.equal(compareSyncItems([]).confirmed, false);
+  assert.equal(compareSyncItems([{ id: 'new', fingerprint: 'a' }]).items.get('new'), 'local');
+  const result = compareSyncItems([{ id: 'same', fingerprint: 'a' }, { id: 'edit', fingerprint: 'new' }, { id: 'add', fingerprint: 'c' }], { entries: { same: 'a', edit: 'old', removed: 'b', alreadyDeleted: null } });
+  assert.equal(result.items.get('same'), 'synced'); assert.equal(result.items.get('edit'), 'pending'); assert.equal(result.items.get('add'), 'pending');
+  assert.equal(result.pending, 3); assert.equal(result.deleted, 1);
+});
+
+test('a failed skill apply does not roll back confirmed project changes or advance the skill baseline', async () => {
+  const cloud = remote(), first = projectStorage([project()]), source = combinedEngine(cloud, memoryStorage([skill()]), first.store);
+  await source.sync();
+  const target = memoryStorage(), projects = projectStorage(), sync = combinedEngine(cloud, target, projects.store);
+  const apply = target.applySyncChanges;
+  target.applySyncChanges = async () => { const error = Error('保存期间技能已修改'); error.code = 'LOCAL_CHANGED'; throw error; };
+  await assert.rejects(sync.sync(), error => error.code === 'LOCAL_CHANGED');
+  assert.equal(projects.store.list()[0].name, project().name);
+  assert.ok(projects.store.getSyncBaseline(cloud.repoKey));
+  assert.equal(await target.getSyncMeta(sync.baseKey), undefined);
+  target.applySyncChanges = apply; await sync.sync();
+  assert.equal((await target.listSkills()).length, 1);
+  assert.equal(projects.store.list()[0].name, project().name);
+});
+
+test('a fresh device with a deleted seed project must resolve it rather than silently restoring it', async () => {
+  const cloud = remote(), first = projectStorage([project()]), source = combinedEngine(cloud, memoryStorage(), first.store);
+  await source.sync(); first.store.remove('ink/paper'); await source.sync();
+  const second = projectStorage([project()]), target = combinedEngine(cloud, memoryStorage(), second.store);
+  const before = cloud.writes, conflict = await target.sync();
+  assert.equal(conflict.status, 'conflict'); assert.equal(cloud.writes, before);
+  await target.sync({ resolutions: { token: conflict.conflictToken, projectToken: conflict.projectToken, choices: { 'project:ink/paper': 'remote' } } });
+  assert.deepEqual(second.store.list(), []);
+});
 
 test('empty categories sync across devices, merge additions and do not create repeated commits', async () => {
   const client = remote(), first = memoryStorage([], ['设备甲空分类']), second = memoryStorage([], ['设备乙空分类']);

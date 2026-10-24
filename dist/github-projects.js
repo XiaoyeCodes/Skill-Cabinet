@@ -1,4 +1,7 @@
 export const PROJECTS_KEY = 'skill-cabinet-github-projects-v1';
+const projectListeners = new Set();
+export function onProjectsChanged(listener) { projectListeners.add(listener); return () => projectListeners.delete(listener); }
+function notifyProjects(source) { for (const listener of projectListeners) { try { listener({ source }); } catch (error) { console.error('Project change listener failed', error); } } }
 export const PROJECT_CATEGORIES = ['AI 与智能体', '开发工具', '网站与应用', '数据与分析', '设计与创作', '自动化工具', '金融与投资', '学习与资料', '其他项目'];
 const text = (value, max = 2000) => typeof value === 'string' ? value.trim().slice(0, max) : '';
 
@@ -111,20 +114,37 @@ export class ProjectStore {
   constructor(storage = globalThis.localStorage) { this.storage = storage; }
   readState() {
     const raw = this.storage.getItem(PROJECTS_KEY);
-    if (!raw) return { projects: [], seededIds: [] };
+    if (!raw) return { projects: [], seededIds: [], sync: {} };
     let value;
     try { value = JSON.parse(raw); } catch { throw Error('项目收藏读取失败，已有数据仍保留在浏览器中。'); }
     if (value.schemaVersion !== 1 || !Array.isArray(value.projects) || value.projects.length > 1000) throw Error('项目收藏格式不受支持，已有数据已保留。');
     const seededIds = value.seededIds || [];
     if (!Array.isArray(seededIds) || seededIds.length > 1000 || seededIds.some(id => typeof id !== 'string' || parseRepositoryUrl(id).id !== id)) throw Error('项目初始化记录无效，已有收藏已保留。');
-    return { projects: value.projects.map(sanitizeProject), seededIds };
+    if (value.sync !== undefined && (!value.sync || typeof value.sync !== 'object' || Array.isArray(value.sync))) throw Error('项目同步记录无效，已有收藏已保留。');
+    return { projects: value.projects.map(sanitizeProject), seededIds, sync: value.sync || {} };
   }
   list() { return this.readState().projects; }
-  write(projects, seededIds = this.readState().seededIds) {
+  write(projects, seededIds = this.readState().seededIds, { sync = this.readState().sync, source = 'local' } = {}) {
     if (projects.length > 1000) throw Error('项目收藏已达到 1000 个，请先导出备份再整理。');
-    const serialized = JSON.stringify({ schemaVersion: 1, projects, seededIds });
+    const serialized = JSON.stringify({ schemaVersion: 1, projects, seededIds, sync });
     if (serialized.length > 3 * 1024 * 1024) throw Error('项目资料较多，请先导出备份再整理。');
     try { this.storage.setItem(PROJECTS_KEY, serialized); } catch { throw Error('浏览器空间不足或禁止保存，项目尚未保存，请先导出已有收藏。'); }
+    notifyProjects(source);
+  }
+  snapshot() { return this.storage.getItem(PROJECTS_KEY); }
+  getSyncBaseline(repoKey) { return this.readState().sync[repoKey]; }
+  assertSnapshot(expected) {
+    if (this.snapshot() !== expected) { const error = new Error('同步期间项目收藏又有修改，已保留本机数据，请重新同步。'); error.code = 'LOCAL_CHANGED'; throw error; }
+  }
+  applyCloud(plan, repoKey, head) {
+    this.assertSnapshot(plan.expected);
+    const state = this.readState();
+    const baseline = { seenManifest: true, entries: plan.fingerprints, head, syncedAt: new Date().toISOString() };
+    if (plan.restored || plan.deleted) baseline.recovery = state.projects;
+    else if (state.sync[repoKey]?.recovery) baseline.recovery = state.sync[repoKey].recovery;
+    // Projects, seed deletion markers and the confirmed baseline persist together.
+    const seededIds = [...new Set([...state.seededIds, ...Object.keys(plan.entries)])];
+    this.write(plan.records, seededIds, { sync: { ...state.sync, [repoKey]: baseline }, source: 'remote' });
   }
   add(record) {
     const project = sanitizeProject(record), projects = this.list();
@@ -160,6 +180,23 @@ export class ProjectStore {
     this.write(current); return added;
   }
   exportBackup() { return { schemaVersion: 1, type: 'skill-cabinet-github-projects', exportedAt: new Date().toISOString(), projects: this.list() }; }
+}
+
+export function validateProjectEntries(value) {
+  if (!value || typeof value !== 'object' || Array.isArray(value) || Object.keys(value).length > 1000) throw Error('云端项目清单格式无效或超过限制。');
+  const entries = Object.create(null);
+  for (const [id, entry] of Object.entries(value)) {
+    if (parseRepositoryUrl(id).id !== id || !entry || typeof entry !== 'object') throw Error('云端项目标识无效。');
+    if (entry.deleted === true) {
+      if (typeof entry.updatedAt !== 'string' || Number.isNaN(Date.parse(entry.updatedAt))) throw Error('云端项目删除记录无效。');
+      entries[id] = { deleted: true, updatedAt: entry.updatedAt };
+    } else {
+      if (!/^[a-f0-9]{64}$/.test(entry.fingerprint || '') || entry.record?.id !== id || !entry.record?.name) throw Error('云端项目说明或校验值无效。');
+      for (const field of ['createdAt', 'updatedAt', 'repositoryUpdatedAt']) if (typeof entry.record[field] !== 'string' || Number.isNaN(Date.parse(entry.record[field]))) throw Error('云端项目日期无效。');
+      entries[id] = { fingerprint: entry.fingerprint, record: sanitizeProject(entry.record) };
+    }
+  }
+  return entries;
 }
 
 export async function loadProjectCatalog(store, { fetchImpl = (...args) => globalThis.fetch(...args) } = {}) {

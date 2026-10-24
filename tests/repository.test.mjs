@@ -71,6 +71,7 @@ test('a fresh checkout loads all bundled real archives and migrates a one-skill 
   t.after(() => { server.closeAllConnections(); server.close(); });
   const base = `http://127.0.0.1:${server.address().port}/`;
   const seeds = JSON.parse(await readFile(new URL('../dist/assets/seed.json', import.meta.url), 'utf8'));
+  const manifest = JSON.parse(await readFile(new URL('../skill-cabinet/manifest.json', import.meta.url), 'utf8'));
   const [decoded] = await decodeSkillArchive(await readFile(new URL('../dist/assets/shiguang-atlas.zip', import.meta.url)));
   const storage = memoryStorage([{ ...decoded, ...seeds[0], files: decoded.files, id: 'legacy-browser-id' }]);
   const client = new RepositoryLibrary({ storage, fetchImpl: (url, options) => fetch(new URL(url, base), options) });
@@ -87,9 +88,10 @@ test('a fresh checkout loads all bundled real archives and migrates a one-skill 
   assert.equal(productManager.files.length, 5);
   for (const file of ['agents/openai.yaml', 'references/clarification.md', 'references/product-design-book.md', '使用说明.md']) assert.ok(productManager.files.some(item => item.path === file), file);
   assert.ok((await storage.listCategories()).includes('开发与工具'));
-  for (const [slug, name, fileCount] of [['aibase-daily', 'AIBase 日报 · V7', 18], ['generate-daily60-digest', '每日60秒文字日报', 36], ['build-jin10-breakfast', '金十财经早餐', 53]]) {
+  for (const [slug, fileCount] of [['aibase-daily', 18], ['generate-daily60-digest', 36], ['build-jin10-breakfast', 53]]) {
     const news = records.find(record => record.slug === slug);
-    assert.equal(news.name, name);
+    // Display names can be edited and synced independently of the stable slug.
+    assert.equal(news.name, manifest.entries[slug].metadata.name);
     assert.equal(news.category, '新闻日报');
     assert.equal(news.favorite, true);
     assert.equal(news.files.length, fileCount);

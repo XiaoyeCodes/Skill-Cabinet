@@ -143,7 +143,7 @@ test('starter project records and initialization markers commit together or pres
   const storage = memoryStorage(), store = new ProjectStore(storage);
   storage.setItem = () => { throw Error('quota'); };
   assert.throws(() => store.seedCatalog({ schemaVersion: 1, projects: [project()] }), /尚未保存/);
-  assert.deepEqual(store.readState(), { projects: [], seededIds: [] });
+  assert.deepEqual(store.readState(), { projects: [], seededIds: [], sync: {} });
   assert.throws(() => store.seedCatalog({ schemaVersion: 1, projects: [project(), { url: 'https://evil.example/project' }] }));
-  assert.deepEqual(store.readState(), { projects: [], seededIds: [] });
+  assert.deepEqual(store.readState(), { projects: [], seededIds: [], sync: {} });
 });

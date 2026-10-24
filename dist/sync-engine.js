@@ -1,6 +1,7 @@
 import { getSkillContent } from './storage.js';
 import { sha256, safeMetadata, MAX_ARCHIVE_BYTES } from './github-client.js';
 import { mergeCategories } from './categories.js';
+import { prepareProjectSync } from './project-sync.js';
 
 const present = entry => entry && !entry.deleted ? entry.fingerprint : null;
 const own = (value, key) => Object.hasOwn(value || {}, key);
@@ -29,8 +30,8 @@ const fingerprints = index => Object.fromEntries([...index].map(([slug, value]) 
 async function localSignature(index) { return sha256(JSON.stringify(Object.entries(fingerprints(index)).sort(([a], [b]) => a.localeCompare(b)))); }
 
 export class SyncEngine {
-  constructor({ client, storage, onState = () => {} }) {
-    this.client = client; this.storage = storage; this.onState = onState;
+  constructor({ client, storage, projectStore, onState = () => {} }) {
+    this.client = client; this.storage = storage; this.projectStore = projectStore; this.onState = onState;
     this.baseKey = `baseline:${client.repoKey}`;
     this.recoveryKey = `recovery:${client.repoKey}`;
     this.running = false;
@@ -39,7 +40,7 @@ export class SyncEngine {
   async sync({ resolutions } = {}) {
     if (this.running) return this.state('pending', '同步正在进行，稍后会检查新修改。');
     this.running = true;
-    this.state('syncing', '正在安全比对本机与 GitHub 技能…');
+    this.state('syncing', '正在读取 GitHub，比较两个空间的修改…');
     try { return await this.performSync(resolutions); }
     catch (error) {
       this.state(error.code === 'LOCAL_CHANGED' ? 'pending' : 'error', error.message || '同步失败，本机数据已保留。', { code: error.code });
@@ -54,6 +55,7 @@ export class SyncEngine {
     const signature = await sha256(`${await localSignature(local)}:${JSON.stringify(localCategories)}`);
     const base = await storage.getSyncMeta(this.baseKey) || { entries: {}, seenManifest: false };
     const snapshot = await this.client.getSnapshot();
+    const projects = this.projectStore ? await prepareProjectSync(this.projectStore, this.client.repoKey, snapshot.manifest, snapshot.head, resolutions) : null;
     if (!snapshot.manifest && base.seenManifest) throw new Error('远端同步清单已被删除。为防止覆盖，请先在 GitHub 恢复清单再同步。');
     const remote = snapshot.manifest?.entries || Object.create(null);
     const remoteRecords = new Map();
@@ -90,9 +92,10 @@ export class SyncEngine {
       else side = l !== b ? 'local' : 'remote';
       selected.set(slug, side);
     }
-    if (conflicts.length) return this.state('conflict', `发现 ${conflicts.length} 个冲突，请选择保留哪一份。`, { conflicts, conflictToken: token });
+    conflicts.push(...(projects?.conflicts || []));
+    if (conflicts.length) return this.state('conflict', `发现 ${conflicts.length} 个冲突，请选择保留哪一份。`, { conflicts, conflictToken: token, projectToken: projects?.token });
     const categories = mergeCategories(localCategories, snapshot.manifest?.categories || []);
-    const next = { schemaVersion: 1, entries: Object.create(null), ...(categories.length || snapshot.manifest?.categories ? { categories } : {}) };
+    const next = { schemaVersion: 1, entries: Object.create(null), ...(categories.length || snapshot.manifest?.categories ? { categories } : {}), ...(projects ? { projects: projects.entries } : snapshot.manifest?.projects === undefined ? {} : { projects: snapshot.manifest.projects }) };
     const archives = new Map();
     const upserts = [];
     const deletions = [];
@@ -136,18 +139,21 @@ export class SyncEngine {
       }
     }
     const current = await indexSkills(await storage.listSkills());
+    if (projects) this.projectStore.assertSnapshot(projects.expected);
     if (await sha256(`${await localSignature(current)}:${JSON.stringify(await storage.listCategories())}`) !== signature) { const error = new Error('同步期间又有本机修改，已保留全部修改，请再次同步。'); error.code = 'LOCAL_CHANGED'; throw error; }
-    const changed = !snapshot.manifest || JSON.stringify(snapshot.manifest.entries) !== JSON.stringify(next.entries) || JSON.stringify(snapshot.manifest.categories || []) !== JSON.stringify(categories);
+    const changed = !snapshot.manifest || JSON.stringify(snapshot.manifest.entries) !== JSON.stringify(next.entries) || JSON.stringify(snapshot.manifest.categories || []) !== JSON.stringify(categories) || JSON.stringify(snapshot.manifest.projects) !== JSON.stringify(next.projects);
     // Save a complete recovery ZIP before applying any remote edits or deletions.
     if (upserts.length || deletions.length) await storage.setSyncMeta(this.recoveryKey, { blob: await storage.exportLibrary(records), createdAt: stamp() });
+    this.state('syncing', changed ? `正在上传 ${archives.size} 个技能包${projects ? `、${projects.uploaded} 项项目变更` : ''}，等待 GitHub 确认…` : '正在确认本机与 GitHub 内容一致…');
     const written = changed ? await this.client.writeSnapshot(snapshot, next, archives) : { ...snapshot, manifest: next };
-    const baseline = { seenManifest: true, head: written.head, syncedAt: stamp(), entries: Object.fromEntries(Object.entries(next.entries).map(([slug, entry]) => [slug, present(entry)])) };
+    if (projects) this.projectStore.applyCloud(projects, this.client.repoKey, written.head);
+    const baseline = { seenManifest: true, head: written.head, syncedAt: stamp(), categories, entries: Object.fromEntries(Object.entries(next.entries).map(([slug, entry]) => [slug, present(entry)])) };
     // The storage transaction checks every localRevision, including unchanged records.
     // A device edit during upload can therefore never be overwritten by a pull.
     // A failed apply must preserve the old baseline too: some remote edits have
     // not reached this device yet. Advancing it would misclassify their old local
     // copies as new edits during the next merge and could upload stale content.
     await storage.applySyncChanges(upserts, deletions, { expectedRecords: records, expectedCategories: localCategories, categories, metaKey: this.baseKey, metaValue: baseline });
-    return this.state('synced', '已与 GitHub 同步，可在其他设备连接同一仓库恢复。', { head: written.head, syncedAt: baseline.syncedAt, uploaded: archives.size, restored: upserts.length, deleted: deletions.length });
+    return this.state('synced', changed ? `GitHub 已确认保存：上传 ${archives.size} 个技能包${projects ? `、${projects.uploaded} 项项目变更` : ''}。云端修改与删除已合并。` : '已检查 GitHub，两个空间均无新增差异。', { head: written.head, syncedAt: baseline.syncedAt, uploaded: archives.size, restored: upserts.length, deleted: deletions.length, changed, projects: projects && { uploaded: projects.uploaded, restored: projects.restored, deleted: projects.deleted } });
   }
 }

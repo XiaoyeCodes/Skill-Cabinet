@@ -2,6 +2,7 @@ import { initialize, listSkills, saveSkill, deleteSkill, importFiles, exportSkil
 import { initializeGitHubSync } from './sync-ui.js';
 import { RepositoryLibrary } from './repository-library.js';
 import { initializeGitHubWorkspace } from './github-workspace.js';
+import { syncBadge } from './sync-status.js';
 
 const $ = (s,root=document)=>root.querySelector(s);
 const $$ = (s,root=document)=>[...root.querySelectorAll(s)];
@@ -37,7 +38,7 @@ function render(){
   $('#grid-button').classList.toggle('active',view==='grid');$('#list-button').classList.toggle('active',view==='list');$('#grid-button').setAttribute('aria-pressed',view==='grid');$('#list-button').setAttribute('aria-pressed',view==='list');
   const addCard=`<button class="add-card" id="add-card"><span class="add-mark">＋</span><h3>下一种能力，由你定义。</h3><p>把亲手打磨的方法收进来，<br>让每一次好想法都有迹可循。</p><span class="add-link">导入你的 Skill ↗</span></button>`;
   if(!filtered.length&&(query||category||nav==='favorites'))$('#skill-grid').innerHTML=`<div class="empty-state"><span style="font-size:35px;color:#bda98e">✳</span><h3>${nav==='favorites'?'留一个位置，给常用的好方法。':'还没有找到这份灵感。'}</h3><p>${nav==='favorites'?'点击 Skill 卡片右上角的星标，即可收藏。':'试试其他关键词，或者清除筛选看看。'}</p><button class="outline-btn" id="empty-reset">查看全部 Skill</button></div>`;
-  else $('#skill-grid').innerHTML=filtered.map((s,i)=>`<article class="skill-card" tabindex="0" role="button" data-open="${esc(s.id)}" aria-label="查看 ${esc(s.name)}"><button class="favorite-btn ${s.favorite?'is-favorite':''}" data-favorite="${esc(s.id)}" aria-label="${s.favorite?'取消收藏':'收藏'} ${esc(s.name)}" aria-pressed="${!!s.favorite}">${icon('star')}</button><div class="card-art"><span class="art-number">NO. ${String(i+1).padStart(2,'0')}</span>${artwork(s)}<span class="art-caption">${s.slug==='shiguang-atlas'?'A FIELD GUIDE TO CURIOSITY':'IDEAS INTO PRACTICE'}</span></div><div class="card-content"><div class="card-eyebrow">${esc(s.category||'未分类')}</div><h3>${esc(s.name)}</h3><p>${esc(s.description)}</p><div class="card-tags">${(s.tags||[]).slice(0,3).map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div><div class="card-footer"><span class="version">v${esc(s.version||'1.0.0')}</span><span>·</span><span>${date(s.updatedAt)} 更新</span><span class="card-arrow">↗</span></div></div></article>`).join('')+addCard+(filtered.length===1?`<div class="shelf-note"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M50 17v66M17 50h66M27 27l46 46M27 73l46-46M38 20l24 60M20 38l60 24M20 62l60-24M38 80l24-60"/></svg><p>小小的技能，<br>大大的可能。</p><small>A GROWING COLLECTION</small></div>`:'');
+  else $('#skill-grid').innerHTML=filtered.map((s,i)=>`<article class="skill-card" tabindex="0" role="button" data-open="${esc(s.id)}" aria-label="查看 ${esc(s.name)}"><button class="favorite-btn ${s.favorite?'is-favorite':''}" data-favorite="${esc(s.id)}" aria-label="${s.favorite?'取消收藏':'收藏'} ${esc(s.name)}" aria-pressed="${!!s.favorite}">${icon('star')}</button><div class="card-art"><span class="art-number">NO. ${String(i+1).padStart(2,'0')}</span>${artwork(s)}<span class="art-caption">${s.slug==='shiguang-atlas'?'A FIELD GUIDE TO CURIOSITY':'IDEAS INTO PRACTICE'}</span></div><div class="card-content"><div class="card-meta"><div class="card-eyebrow">${esc(s.category||'未分类')}</div>${syncBadge('skills',s.slug)}</div><h3>${esc(s.name)}</h3><p>${esc(s.description)}</p><div class="card-tags">${(s.tags||[]).slice(0,3).map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div><div class="card-footer"><span class="version">v${esc(s.version||'1.0.0')}</span><span>·</span><span>${date(s.updatedAt)} 更新</span><span class="card-arrow">↗</span></div></div></article>`).join('')+addCard+(filtered.length===1?`<div class="shelf-note"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M50 17v66M17 50h66M27 27l46 46M27 73l46-46M38 20l24 60M20 38l60 24M20 62l60-24M38 80l24-60"/></svg><p>小小的技能，<br>大大的可能。</p><small>A GROWING COLLECTION</small></div>`:'');
   hydrateIcons();
 }
 async function refresh(){[skills,customCategories]=await Promise.all([listSkills(),listCategories()]);render();}
@@ -116,7 +117,7 @@ document.addEventListener('dragover',e=>{if(e.dataTransfer?.types.includes('File
 document.addEventListener('dragleave',()=>{dragDepth=Math.max(0,dragDepth-1);if(!dragDepth)$('#global-drop').hidden=true;});
 document.addEventListener('drop',e=>{if(!e.dataTransfer?.files.length)return;e.preventDefault();dragDepth=0;$('#global-drop').hidden=true;closeAll();showImport();importSelected(e.dataTransfer.files);});
 hydrateIcons();
-initializeGitHubWorkspace({ icon, hydrateIcons, toast, getToken: () => githubSync?.getReadToken() || '' });
+const githubWorkspace = initializeGitHubWorkspace({ icon, hydrateIcons, toast, getToken: () => githubSync?.getReadToken() || '' });
 const repositoryLibrary = new RepositoryLibrary();
 let checkingRepository = false;
 async function refreshLibraryView() {
@@ -126,11 +127,12 @@ async function refreshLibraryView() {
     else closeDialog($('#detail-dialog'));
   }
 }
-async function checkRepository() {
+async function checkRepository({ manual = false } = {}) {
   if (checkingRepository) return;
   checkingRepository = true;
   const status = $('#repository-status'), button = $('#repository-refresh');
   button.disabled = true;
+  if (manual) { button.textContent = '正在检查…'; status.textContent = '正在读取本机仓库中的技能清单…'; }
   try {
     const result = await repositoryLibrary.refresh();
     if (!result.available) {
@@ -143,13 +145,15 @@ async function checkRepository() {
       if (result.changed) await refreshLibraryView();
     }
     status.removeAttribute('data-error');
+    if (manual) toast(result.changed ? '本机仓库的新内容已加载；上传修改请点击「同步到 GitHub」' : '已检查本机仓库，没有新的变化；此按钮不会拉取 GitHub');
   } catch (error) {
     await refreshLibraryView();
     status.textContent = `${error.message || '读取仓库失败'} 将自动重试。`;
     status.setAttribute('data-error', 'true');
+    if (manual) toast(error.message || '读取本机仓库失败', true);
   } finally {
     checkingRepository = false;
-    button.disabled = false;
+    button.disabled = false; button.textContent = '刷新本机仓库';
   }
 }
 try {
@@ -163,8 +167,8 @@ try {
     }
   });
   await checkRepository();
-  githubSync = initializeGitHubSync({ toast, onRefresh: refreshLibraryView });
-  $('#repository-refresh').onclick = () => checkRepository();
+  githubSync = initializeGitHubSync({ toast, onRefresh: refreshLibraryView, projectStore: githubWorkspace.store, projectsReady: githubWorkspace.ready });
+  $('#repository-refresh').onclick = () => checkRepository({ manual: true });
   setInterval(() => { if (!document.hidden) void checkRepository(); }, 5000);
   document.addEventListener('visibilitychange', () => { if (!document.hidden) void checkRepository(); });
   window.addEventListener('focus', () => { void checkRepository(); });

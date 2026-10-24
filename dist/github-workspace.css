@@ -9,7 +9,7 @@
 .workspace-switcher .workspace-label small{font-size:8px;font-weight:400;margin-top:2px}
 .workspace-switcher .local-dot{width:5px;height:5px;flex:0 0 5px;visibility:hidden}
 .workspace-switcher .active .local-dot{visibility:visible}
-.github-workspace .sync-status,.github-workspace .sync-settings-link{display:none}
+/* Cloud sync is shared by both workspaces. */
 .project-hero{display:flex;align-items:center;justify-content:space-between;gap:25px;min-height:325px;padding:35px 0 24px}
 .project-hero-copy h1{font-size:37px;font-family:var(--serif);font-weight:400;line-height:1.5;margin:18px 0 13px;letter-spacing:.4px}
 .project-hero-copy>p{font-size:12px;line-height:1.95;color:var(--muted);margin:0}
