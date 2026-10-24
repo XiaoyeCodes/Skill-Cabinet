@@ -2,12 +2,12 @@
   "schemaVersion": 1,
   "entries": {
     "aibase-daily": {
-      "fingerprint": "13dc49c00eb5f5d827ba1e89bff4c06e035a88a00a186223b5a96c6654210226",
-      "archiveSha256": "f9d270c0a7e46071120eb20e2fe24b79285558aaeaa2ba0d9f7c1381b687cd59",
-      "archivePath": "skill-cabinet/archives/aibase-daily-f9d270c0a7e46071120eb20e2fe24b79285558aaeaa2ba0d9f7c1381b687cd59.zip",
+      "fingerprint": "570a0aa13abaadec53579cc58ad2eae085040e13d9f90f201e85518eadbeedcf",
+      "archiveSha256": "73b3cdb9fe655368211001a2fbf114c4f7241438c582a1f4bcafa068d47b7eeb",
+      "archivePath": "skill-cabinet/archives/aibase-daily-73b3cdb9fe655368211001a2fbf114c4f7241438c582a1f4bcafa068d47b7eeb.zip",
       "metadata": {
-        "id": "cf34f2a8-0351-4698-ada9-9c2b10e38f96",
-        "name": "AIBase 日报 · V7",
+        "id": "aibase-daily-seed",
+        "name": "AIBase 日报",
         "slug": "aibase-daily",
         "description": "从 AIBase 当日日报逐字保留全部原标题和提要，生成 V7 米白机器人版式的独立 HTML、TXT、JSON，并可选导出 PDF；适用于日报文件生成，不执行邮件推送或定时任务。",
         "category": "新闻日报",
@@ -16,7 +16,7 @@
         "author": "",
         "favorite": true,
         "createdAt": "2026-10-22T06:07:36.487Z",
-        "updatedAt": "2026-10-22T06:08:05.303Z"
+        "updatedAt": "2026-10-24T03:42:33.423Z"
       }
     },
     "buffett-letters-skill": {
