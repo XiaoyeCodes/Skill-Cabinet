@@ -224,12 +224,12 @@
       "updatedAt": "2026-10-22T06:08:12.526Z"
     },
     "jin10-financial-daily": {
-      "fingerprint": "c8d39f49913a7c960c6cf6a77ff9c140a29fa07956cf96276dc7576938e79427",
-      "archiveSha256": "23f1f14ee15b3541ec5e96a621a5828e0e169671a1cef8a12fd85511cb1ef109",
-      "archivePath": "skill-cabinet/archives/jin10-financial-daily-23f1f14ee15b3541ec5e96a621a5828e0e169671a1cef8a12fd85511cb1ef109.zip",
+      "fingerprint": "ed062f28c4a00b3aa9b841dc9437a8768985cbd13db88945f51b2e0cd1fd8e27",
+      "archiveSha256": "f30c7c87ca19a373b5de6a88e2666faaea43997ef23f9656974977dab2573faf",
+      "archivePath": "skill-cabinet/archives/jin10-financial-daily-f30c7c87ca19a373b5de6a88e2666faaea43997ef23f9656974977dab2573faf.zip",
       "metadata": {
         "id": "4770d520-a1d2-4555-a223-3f3853b2c750",
-        "name": "每日财经日报",
+        "name": "每日财经日报PDF报纸版",
         "slug": "jin10-financial-daily",
         "description": "从金十财经早餐栏目抓取最新一期原文，配合九项市场行情，生成暖白线条刊头、双栏正文的每日财经PDF。用于生成或重排这套财经日报、测试抓取与排版、维护其每日08:00推送；不用于AI日报或投资建议。",
         "category": "新闻日报",
@@ -238,7 +238,7 @@
         "author": "",
         "favorite": false,
         "createdAt": "2026-10-21T07:05:05.296Z",
-        "updatedAt": "2026-10-21T07:06:51.278Z"
+        "updatedAt": "2026-10-24T03:26:17.124Z"
       }
     },
     "poor-charlies-almanack-skill": {
