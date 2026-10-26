@@ -80,7 +80,7 @@ cd Skill-Cabinet
 npm start
 ```
 
-打开 [http://localhost:4173](http://localhost:4173)。本地服务会直接读取仓库的 `skill-cabinet/manifest.json` 和完整 ZIP，当前包含十九份 Skill / 技能集，覆盖设计、产品、写作、研究、新闻与投资金融。无需填写 GitHub Token，也无需手动导入备份；已经只保存了一份 Skill 的旧浏览器也会自动补齐。
+打开 [http://localhost:4173](http://localhost:4173)。本地服务会直接读取仓库的 `skill-cabinet/manifest.json` 和完整 ZIP，当前包含二十一份 Skill / 技能集，覆盖设计、产品、写作、研究、新闻与投资金融。无需填写 GitHub Token，也无需手动导入备份；已经只保存了一份 Skill 的旧浏览器也会自动补齐。
 
 「Huashu Design · 花叔设计」归于「图像与设计」，版本为 3.0.0，来自 [alchaincyf/huashu-design](https://github.com/alchaincyf/huashu-design/tree/798c4235ebff03d5c45e3c8affdf5e9d18f9dfa7)。完整技能包保留上游 389 个文件及 MIT 许可证，另附使用说明和原始 `SKILL.md` 副本；素材、参考文档、脚本与演示均包含在内。
 
@@ -128,6 +128,13 @@ npm test
 原始 ZIP 保持原样；`skills/` 中的可读版本同步了展示名称和分类。压缩包外层的使用说明、测试记录和样例也保留在对应目录中。原始文件校验值见 [技能目录清单](docs/skill-catalog.json)。
 
 **新收录：[UI/UX Pro Max · 网站设计](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)**（v2.15.0，图像与设计）。用于网站、落地页、后台与组件的 UI/UX 设计，覆盖设计系统、风格、配色、字体、响应式布局、交互及无障碍检查。[下载完整技能包](skill-cabinet/archives/ui-ux-pro-max-45bd941a6ab00cdcfcef83e9d8025698198bb3246f0ee0559176b3c57715a741.zip)，共 80 个文件，含上游核心技能的全部 73 个文件，以及许可证、说明和来源记录。来源提交为 `1f8857914da3c723d58dab1d609dd0d55a86bf51`；包内保留原始指令，浏览器仅作保存、预览与导出。
+
+以下两个设计 Skill 均归入「图像与设计」，各自是一个独立条目：
+
+- **[DESIGN.md · 网站设计风格库](skills/awesome-design-md/SKILL.md)**：把 [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md) 包装为一个 Skill，84 份完整设计规范收在包内参考目录。用户可指定风格；未指定时，由 AI 询问用户或推荐 2–3 个候选后选择。附离线检索及不覆盖已有文件的导出工具。[下载完整包](skill-cabinet/archives/awesome-design-md-f868088ecf51fae43c972747bef0b15492af7a04ae29cd2fab800f92c02baa28.zip)。
+- **[克劳德设计](skills/claude-design/SKILL.md)**：基于 [getdesign.md 的 Claude 设计分析](https://getdesign.md/claude/design-md)，将奶油底、陶土强调、衬线标题与深色产品区域用于自有网站。随包保留原文，并提供中文字体回退、可访问色值与命名空间 CSS，不依赖安装其他 Skill。[下载完整包](skill-cabinet/archives/claude-design-be30a35a9598548334529a2fcae321c0bdfa4d94c7d7ae5b6791008c2d072c10.zip)。
+
+这两份 Skill 的可编辑来源保存在 `skills/`，上游快照提交为 `3b605329240ce735b510037cca322f1831fdd7f8`，来源和校验值见各包 `source.json`。它们使用 MIT 许可的第三方分析资料，不代表参考品牌的官方规范；实际网页使用用户自己的内容、标识与可用字体。
 
 > Skill Cabinet 负责管理文件。实际调用这些 Skill 时，仍需要能理解 Skill 指令的 AI 工具，以及对应技能声明的运行环境。图像生成等能力由调用宿主提供。
 

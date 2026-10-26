@@ -1,0 +1,1134 @@
+{
+  "schemaVersion": 1,
+  "note": "One skill with 84 internal design references. Select one primary reference after asking the user or recommending options; do not import these as separate skills.",
+  "designs": [
+    {
+      "id": "1win",
+      "name": "1win",
+      "category": "Media & Consumer Tech",
+      "description": "Crypto casino and sportsbook. Near-black canvas, vivid green action color, dense game-tile rails",
+      "keywords": [
+        "媒体",
+        "消费科技"
+      ],
+      "path": "library/1win/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/1win/DESIGN.md",
+      "sha256": "64d02d344cb16d68b6882054f35e3bfb7241ad60dc8b7f84f6636a7d1379496a"
+    },
+    {
+      "id": "airbnb",
+      "name": "Airbnb",
+      "category": "E-commerce & Retail",
+      "description": "Travel marketplace. Warm coral accent, photography-driven, rounded UI",
+      "keywords": [
+        "电商",
+        "零售",
+        "旅行",
+        "摄影",
+        "珊瑚"
+      ],
+      "path": "library/airbnb/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/airbnb/DESIGN.md",
+      "sha256": "add34130d67209ad105346d60fe2b290728b9711683969db4b7760e29477a5fe"
+    },
+    {
+      "id": "airtable",
+      "name": "Airtable",
+      "category": "Design & Creative Tools",
+      "description": "Spreadsheet-database hybrid. Colorful, friendly, structured data aesthetic",
+      "keywords": [
+        "设计",
+        "创意"
+      ],
+      "path": "library/airtable/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/airtable/DESIGN.md",
+      "sha256": "1d225e511213044d3c705bde50265ad010932bfd8a15740a144dd4f480128889"
+    },
+    {
+      "id": "aljazeera",
+      "name": "Al Jazeera",
+      "category": "Media & Consumer Tech",
+      "description": "Global news network. Flat white paper, dense Roboto headlines, orange signature and live red",
+      "keywords": [
+        "媒体",
+        "消费科技"
+      ],
+      "path": "library/aljazeera/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/aljazeera/DESIGN.md",
+      "sha256": "37614fc72658ffa30faca01049bd1efa8a9baafa4750501405eeea66f149466a"
+    },
+    {
+      "id": "apple",
+      "name": "Apple",
+      "category": "Media & Consumer Tech",
+      "description": "Consumer electronics. Premium white space, SF Pro, cinematic imagery",
+      "keywords": [
+        "媒体",
+        "消费科技",
+        "极简",
+        "留白",
+        "产品展示"
+      ],
+      "path": "library/apple/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/apple/DESIGN.md",
+      "sha256": "83fbc614443a9b3d7569e9956a43e7b8740f9d0f939f58b8154f7a7cec3002b2"
+    },
+    {
+      "id": "binance",
+      "name": "Binance",
+      "category": "Fintech & Crypto",
+      "description": "Crypto exchange. Bold Binance Yellow on monochrome, trading-floor urgency",
+      "keywords": [
+        "金融",
+        "支付"
+      ],
+      "path": "library/binance/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/binance/DESIGN.md",
+      "sha256": "378ff97d568ccbc316519b9d45a29d6649ed8961c9c486c3ed4cea7501d72371"
+    },
+    {
+      "id": "bmw",
+      "name": "BMW",
+      "category": "Automotive",
+      "description": "Luxury automotive. Dark premium surfaces, precise German engineering aesthetic",
+      "keywords": [
+        "汽车",
+        "产品展示"
+      ],
+      "path": "library/bmw/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/bmw/DESIGN.md",
+      "sha256": "b7268279e7c98e85fb80890e06765f4ee8340ba1ea1ccb5a8a5b134de43dac3e"
+    },
+    {
+      "id": "bmw-m",
+      "name": "BMW M",
+      "category": "Automotive",
+      "description": "Performance automotive. Motorsport-inspired contrast, M color accents, precision-driven layout",
+      "keywords": [
+        "汽车",
+        "产品展示"
+      ],
+      "path": "library/bmw-m/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/bmw-m/DESIGN.md",
+      "sha256": "824a1707c0a8d1609d72477d0fa211b9ebe4bdeb3e1fd701790af7b7bb669a4a"
+    },
+    {
+      "id": "bugatti",
+      "name": "Bugatti",
+      "category": "Automotive",
+      "description": "Luxury hypercar. Cinema-black canvas, monochrome austerity, monumental display type",
+      "keywords": [
+        "汽车",
+        "产品展示"
+      ],
+      "path": "library/bugatti/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/bugatti/DESIGN.md",
+      "sha256": "375f0a20ada88cdee5e995ca7edcfbd584ddf5f887024deebd1bc75bfd55b1bc"
+    },
+    {
+      "id": "cal",
+      "name": "Cal.com",
+      "category": "Productivity & SaaS",
+      "description": "Open-source scheduling. Clean neutral UI, developer-oriented simplicity",
+      "keywords": [
+        "效率",
+        "软件服务"
+      ],
+      "path": "library/cal/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/cal/DESIGN.md",
+      "sha256": "8cd21b7d67e94c899843d517f4b426e4fee33d47354a433d6a63ebcf79d5a654"
+    },
+    {
+      "id": "claude",
+      "name": "Claude",
+      "category": "AI & LLM Platforms",
+      "description": "Anthropic's AI assistant. Warm terracotta accent, clean editorial layout",
+      "keywords": [
+        "人工智能",
+        "科技",
+        "克劳德",
+        "暖白",
+        "陶土",
+        "衬线",
+        "编辑",
+        "人文科技"
+      ],
+      "path": "library/claude/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/claude/DESIGN.md",
+      "sha256": "3d972f34f8d4f33b442fa28220cf3b7ca2f13c0a97c468e3988148f82521f9df"
+    },
+    {
+      "id": "clay",
+      "name": "Clay",
+      "category": "Design & Creative Tools",
+      "description": "Creative agency. Organic shapes, soft gradients, art-directed layout",
+      "keywords": [
+        "设计",
+        "创意"
+      ],
+      "path": "library/clay/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/clay/DESIGN.md",
+      "sha256": "1abd803a207fbe950a06e155adcd6013c2e149b13e7b88844f5069f9d3d99eb3"
+    },
+    {
+      "id": "clickhouse",
+      "name": "ClickHouse",
+      "category": "Backend, Database & DevOps",
+      "description": "Fast analytics database. Yellow-accented, technical documentation style",
+      "keywords": [
+        "数据库",
+        "开发者"
+      ],
+      "path": "library/clickhouse/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/clickhouse/DESIGN.md",
+      "sha256": "50987e29b603cc7503ebe724af810fcf43845e96fdd4083e0fbe5fe00d2cdd2e"
+    },
+    {
+      "id": "cohere",
+      "name": "Cohere",
+      "category": "AI & LLM Platforms",
+      "description": "Enterprise AI platform. Vibrant gradients, data-rich dashboard aesthetic",
+      "keywords": [
+        "人工智能",
+        "科技"
+      ],
+      "path": "library/cohere/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/cohere/DESIGN.md",
+      "sha256": "1c49a5a5f88d43841d4f4afa33831328d47a5715048700a3b75086a822575883"
+    },
+    {
+      "id": "coinbase",
+      "name": "Coinbase",
+      "category": "Fintech & Crypto",
+      "description": "Crypto exchange. Clean blue identity, trust-focused, institutional feel",
+      "keywords": [
+        "金融",
+        "支付"
+      ],
+      "path": "library/coinbase/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/coinbase/DESIGN.md",
+      "sha256": "c8c67800dd7f58fcc87ed7d267a3bba862e3419e499e8a66d67731a69d2de1d6"
+    },
+    {
+      "id": "composio",
+      "name": "Composio",
+      "category": "Backend, Database & DevOps",
+      "description": "Tool integration platform. Modern dark with colorful integration icons",
+      "keywords": [
+        "数据库",
+        "开发者"
+      ],
+      "path": "library/composio/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/composio/DESIGN.md",
+      "sha256": "e7db886dabecca61f29b83e8f46d7a1e8a43889d30b81bc6e48162ccaafcbb2f"
+    },
+    {
+      "id": "cursor",
+      "name": "Cursor",
+      "category": "Developer Tools & IDEs",
+      "description": "AI-first code editor. Sleek dark interface, gradient accents",
+      "keywords": [
+        "开发工具",
+        "编程",
+        "深色",
+        "开发者",
+        "代码"
+      ],
+      "path": "library/cursor/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/cursor/DESIGN.md",
+      "sha256": "a3db9b3019dc2f514fdee7cd0ca0a5232c0bd0119e23178e8eebaf6916258d9d"
+    },
+    {
+      "id": "dell-1996",
+      "name": "Dell (1996)",
+      "category": "Retro Web · DESIGN.md Nostalgia",
+      "description": "Catalog-era enterprise web. Literal black page frame, flat color-block \"ribbon cards\", chunky Helvetica-Black titles over Times Roman body, and hand-cut GIF stickers (NEW! bursts, award seals, beveled product photos).",
+      "keywords": [],
+      "path": "library/dell-1996/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/dell-1996/DESIGN.md",
+      "sha256": "e186c614b1223fe7015670472ac6bc84b5b3fdd5de5325b3ce5bfb7fbe9c8d6e"
+    },
+    {
+      "id": "dji",
+      "name": "DJI",
+      "category": "Media & Consumer Tech",
+      "description": "Drone and camera maker. Studio product tiles, engineering-blue pills, tight Open Sans",
+      "keywords": [
+        "媒体",
+        "消费科技"
+      ],
+      "path": "library/dji/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/dji/DESIGN.md",
+      "sha256": "c8a57520b87286869a88cdd2c07f21080ebda9fb3eee315b11d95c752582c1a9"
+    },
+    {
+      "id": "elevenlabs",
+      "name": "ElevenLabs",
+      "category": "AI & LLM Platforms",
+      "description": "AI voice platform. Dark cinematic UI, audio-waveform aesthetics",
+      "keywords": [
+        "人工智能",
+        "科技"
+      ],
+      "path": "library/elevenlabs/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/elevenlabs/DESIGN.md",
+      "sha256": "3b359acfaafadbb499c7ed3eebe813a76e0be497a7157b77de207fe275068a66"
+    },
+    {
+      "id": "expo",
+      "name": "Expo",
+      "category": "Developer Tools & IDEs",
+      "description": "React Native platform. Dark theme, tight letter-spacing, code-centric",
+      "keywords": [
+        "开发工具",
+        "编程"
+      ],
+      "path": "library/expo/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/expo/DESIGN.md",
+      "sha256": "1be7e129b6f75afaa12318a7c51ab22f6f74a214dec22c4827cecc519f112363"
+    },
+    {
+      "id": "ferrari",
+      "name": "Ferrari",
+      "category": "Automotive",
+      "description": "Luxury automotive. Chiaroscuro black-white editorial, Ferrari Red with extreme sparseness",
+      "keywords": [
+        "汽车",
+        "产品展示"
+      ],
+      "path": "library/ferrari/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/ferrari/DESIGN.md",
+      "sha256": "1199e2832641cac7e384aaf3b1f3db87f992240cea5d3d1eee04d9dc00acb17c"
+    },
+    {
+      "id": "figma",
+      "name": "Figma",
+      "category": "Design & Creative Tools",
+      "description": "Collaborative design tool. Vibrant multi-color, playful yet professional",
+      "keywords": [
+        "设计",
+        "创意",
+        "设计工具",
+        "多彩",
+        "创意"
+      ],
+      "path": "library/figma/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/figma/DESIGN.md",
+      "sha256": "716ce8431f47eb8b8135552710e3c4d538bccccf1202e4ceac5428c9aada9972"
+    },
+    {
+      "id": "framer",
+      "name": "Framer",
+      "category": "Design & Creative Tools",
+      "description": "Website builder. Bold black and blue, motion-first, design-forward",
+      "keywords": [
+        "设计",
+        "创意"
+      ],
+      "path": "library/framer/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/framer/DESIGN.md",
+      "sha256": "a5d47dddacf5a04577cec0be6fe0fc53b7402254c7686874af3e59bcc7588cb4"
+    },
+    {
+      "id": "hashicorp",
+      "name": "HashiCorp",
+      "category": "Backend, Database & DevOps",
+      "description": "Infrastructure automation. Enterprise-clean, black and white",
+      "keywords": [
+        "数据库",
+        "开发者"
+      ],
+      "path": "library/hashicorp/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/hashicorp/DESIGN.md",
+      "sha256": "d2df9be72d867e48d318fd18db04e60a78357c27e392ab921fc2ba7f46951442"
+    },
+    {
+      "id": "hp",
+      "name": "HP",
+      "category": "Media & Consumer Tech",
+      "description": "PC and printer maker. Pure white canvas, HP Electric Blue signal CTA, geometric Forma DJR Micro, blue chevron decorations",
+      "keywords": [
+        "媒体",
+        "消费科技"
+      ],
+      "path": "library/hp/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/hp/DESIGN.md",
+      "sha256": "4c9a248046684bdde5311a0c9881814f50e2381c2b0f3c75b02a35fc64bc8bb8"
+    },
+    {
+      "id": "ibm",
+      "name": "IBM",
+      "category": "Media & Consumer Tech",
+      "description": "Enterprise technology. Carbon design system, structured blue palette",
+      "keywords": [
+        "媒体",
+        "消费科技"
+      ],
+      "path": "library/ibm/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/ibm/DESIGN.md",
+      "sha256": "46f6fd65b5e7524fed1133b9b3c0dd619f9a0f145fbb2b87f3675c701a88f3bd"
+    },
+    {
+      "id": "intercom",
+      "name": "Intercom",
+      "category": "Productivity & SaaS",
+      "description": "Customer messaging. Friendly blue palette, conversational UI patterns",
+      "keywords": [
+        "效率",
+        "软件服务"
+      ],
+      "path": "library/intercom/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/intercom/DESIGN.md",
+      "sha256": "962be23cd947e87a86b2ffbc0440e9d0808243a6ef3af2aa04e8e7cc04d48ba3"
+    },
+    {
+      "id": "jobright",
+      "name": "Jobright",
+      "category": "AI & LLM Platforms",
+      "description": "AI job-hunting platform. Spring-mint green, black pill buttons, condensed Titillium headlines",
+      "keywords": [
+        "人工智能",
+        "科技"
+      ],
+      "path": "library/jobright/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/jobright/DESIGN.md",
+      "sha256": "9e682194e3f846915164189538741133ab1e2779730677e92d28f873f782999b"
+    },
+    {
+      "id": "kraken",
+      "name": "Kraken",
+      "category": "Fintech & Crypto",
+      "description": "Crypto trading platform. Purple-accented dark UI, data-dense dashboards",
+      "keywords": [
+        "金融",
+        "支付"
+      ],
+      "path": "library/kraken/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/kraken/DESIGN.md",
+      "sha256": "41bcbd5642c926a549f0d50f1151484c5776b4536233240c8415cfb79bcf1f38"
+    },
+    {
+      "id": "lamborghini",
+      "name": "Lamborghini",
+      "category": "Automotive",
+      "description": "Luxury automotive. True black cathedral, gold accent, LamboType custom Neo-Grotesk",
+      "keywords": [
+        "汽车",
+        "产品展示"
+      ],
+      "path": "library/lamborghini/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/lamborghini/DESIGN.md",
+      "sha256": "9aa68c53b481a0befdf72859db5625f85454122294509989aa58414aaee04b34"
+    },
+    {
+      "id": "linear.app",
+      "name": "Linear",
+      "category": "Productivity & SaaS",
+      "description": "Project management for engineers. Ultra-minimal, precise, purple accent",
+      "keywords": [
+        "效率",
+        "软件服务",
+        "极简",
+        "深色",
+        "项目管理",
+        "精致"
+      ],
+      "path": "library/linear.app/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/linear.app/DESIGN.md",
+      "sha256": "30bd30e72c48a16e4bdbd010f2d1c85fab657c6fae3cc85389399aab10f9cb5f"
+    },
+    {
+      "id": "lovable",
+      "name": "Lovable",
+      "category": "Developer Tools & IDEs",
+      "description": "AI full-stack builder. Playful gradients, friendly dev aesthetic",
+      "keywords": [
+        "开发工具",
+        "编程"
+      ],
+      "path": "library/lovable/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/lovable/DESIGN.md",
+      "sha256": "92790895c833104072643929ba56ebbf42c8f88ffb7bff1926462545d0ace6c7"
+    },
+    {
+      "id": "mastercard",
+      "name": "Mastercard",
+      "category": "Fintech & Crypto",
+      "description": "Global payments network. Warm cream canvas, orbital pill shapes, editorial warmth",
+      "keywords": [
+        "金融",
+        "支付"
+      ],
+      "path": "library/mastercard/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/mastercard/DESIGN.md",
+      "sha256": "e76ceaa187f43bd24b8338d2b2314e71e9225b36492e40f32a55782281a10437"
+    },
+    {
+      "id": "mercury",
+      "name": "Mercury",
+      "category": "Fintech & Crypto",
+      "description": "Startup banking platform. Ink-violet night world, indigo action pill, light custom sans",
+      "keywords": [
+        "金融",
+        "支付"
+      ],
+      "path": "library/mercury/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/mercury/DESIGN.md",
+      "sha256": "dabb3683422a9841369b0db53ff13ed375b0b6f019157a5c90e9fca165cc111f"
+    },
+    {
+      "id": "meta",
+      "name": "Meta",
+      "category": "E-commerce & Retail",
+      "description": "Tech retail store. Photography-first, binary light/dark surfaces, Meta Blue CTAs",
+      "keywords": [
+        "电商",
+        "零售"
+      ],
+      "path": "library/meta/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/meta/DESIGN.md",
+      "sha256": "306dfad97c006d47b134fb0dbd55ff68d3baa526844d6eb37346373c9ef35339"
+    },
+    {
+      "id": "minimax",
+      "name": "Minimax",
+      "category": "AI & LLM Platforms",
+      "description": "AI model provider. Bold dark interface with neon accents",
+      "keywords": [
+        "人工智能",
+        "科技"
+      ],
+      "path": "library/minimax/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/minimax/DESIGN.md",
+      "sha256": "2658b96488bb629749259b152c5ba2912a0e8feb6a03477e265879abd9264c50"
+    },
+    {
+      "id": "mintlify",
+      "name": "Mintlify",
+      "category": "Productivity & SaaS",
+      "description": "Documentation platform. Clean, green-accented, reading-optimized",
+      "keywords": [
+        "效率",
+        "软件服务"
+      ],
+      "path": "library/mintlify/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/mintlify/DESIGN.md",
+      "sha256": "754ffcf35dcd39ef8aef450085ce936aaca5b872ff92caa66be99e91a5c3d5ec"
+    },
+    {
+      "id": "miro",
+      "name": "Miro",
+      "category": "Design & Creative Tools",
+      "description": "Visual collaboration. Bright yellow accent, infinite canvas aesthetic",
+      "keywords": [
+        "设计",
+        "创意"
+      ],
+      "path": "library/miro/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/miro/DESIGN.md",
+      "sha256": "87c71f76297277d64f9679e015a50da88e72d86d7b41badf8733eae1e4cde335"
+    },
+    {
+      "id": "mistral.ai",
+      "name": "Mistral AI",
+      "category": "AI & LLM Platforms",
+      "description": "Open-weight LLM provider. French-engineered minimalism, purple-toned",
+      "keywords": [
+        "人工智能",
+        "科技"
+      ],
+      "path": "library/mistral.ai/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/mistral.ai/DESIGN.md",
+      "sha256": "40e2c692d72c54bae1e43446e2d059b71d773668d39d71ccb7ededa9fa07d145"
+    },
+    {
+      "id": "mongodb",
+      "name": "MongoDB",
+      "category": "Backend, Database & DevOps",
+      "description": "Document database. Green leaf branding, developer documentation focus",
+      "keywords": [
+        "数据库",
+        "开发者"
+      ],
+      "path": "library/mongodb/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/mongodb/DESIGN.md",
+      "sha256": "4523f10efd5ccd46f9aeac3b98626e24bcf907bc0c1e46500cb0e3920f932e71"
+    },
+    {
+      "id": "mydealz",
+      "name": "mydealz",
+      "category": "E-commerce & Retail",
+      "description": "German deals community. Dense white-card feed, hot and cold voting pill, brand green",
+      "keywords": [
+        "电商",
+        "零售"
+      ],
+      "path": "library/mydealz/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/mydealz/DESIGN.md",
+      "sha256": "598698a1bd0824260d57eb21f728b79cd702916f918de2b6f39b3720ba727872"
+    },
+    {
+      "id": "nerdwallet",
+      "name": "NerdWallet",
+      "category": "Fintech & Crypto",
+      "description": "Personal finance comparison platform. Deep spruce green, mint washes, near-square corners",
+      "keywords": [
+        "金融",
+        "支付"
+      ],
+      "path": "library/nerdwallet/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/nerdwallet/DESIGN.md",
+      "sha256": "478475273beb642f0661fb1aef7107bac5cde69250794bc148b28ee2c61960c7"
+    },
+    {
+      "id": "nike",
+      "name": "Nike",
+      "category": "E-commerce & Retail",
+      "description": "Athletic retail. Monochrome UI, massive uppercase Futura, full-bleed photography",
+      "keywords": [
+        "电商",
+        "零售"
+      ],
+      "path": "library/nike/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/nike/DESIGN.md",
+      "sha256": "d2a3d363665839e2ddc15c91b8a9f3e92b1962ff55a7ca5d964ab3bb88b8186c"
+    },
+    {
+      "id": "nintendo-2001",
+      "name": "Nintendo.com (2001)",
+      "category": "Retro Web · DESIGN.md Nostalgia",
+      "description": "Y2K \"console chrome\" web. Brushed-periwinkle beveled metal panels, a halftone-dotted carbon nav glowing amber, outlined Arial-Black box-art wordmarks over circuit-board hero fields, and a pixel Mario welcome bubble.",
+      "keywords": [],
+      "path": "library/nintendo-2001/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/nintendo-2001/DESIGN.md",
+      "sha256": "9630af17090d5c39ba9d8b5915a597a96c7552efe1422b3b8c3f31fb3e636716"
+    },
+    {
+      "id": "notion",
+      "name": "Notion",
+      "category": "Productivity & SaaS",
+      "description": "All-in-one workspace. Warm minimalism, serif headings, soft surfaces",
+      "keywords": [
+        "效率",
+        "软件服务",
+        "暖白",
+        "文档",
+        "知识库",
+        "极简"
+      ],
+      "path": "library/notion/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/notion/DESIGN.md",
+      "sha256": "fa9d6e78216d8f3e5d3990709ca2de6bc2e268e945bb94f255fd1bfb15455266"
+    },
+    {
+      "id": "nvidia",
+      "name": "NVIDIA",
+      "category": "Media & Consumer Tech",
+      "description": "GPU computing. Green-black energy, technical power aesthetic",
+      "keywords": [
+        "媒体",
+        "消费科技"
+      ],
+      "path": "library/nvidia/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/nvidia/DESIGN.md",
+      "sha256": "d649be85daf075c98a17071e707e3901c6e19150044a81716acd01ef1169cc83"
+    },
+    {
+      "id": "ollama",
+      "name": "Ollama",
+      "category": "AI & LLM Platforms",
+      "description": "Run LLMs locally. Terminal-first, monochrome simplicity",
+      "keywords": [
+        "人工智能",
+        "科技"
+      ],
+      "path": "library/ollama/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/ollama/DESIGN.md",
+      "sha256": "3f36f897e5aad870344dd97e282c8f125ad208dc99449bb08dd38b9259d2f451"
+    },
+    {
+      "id": "opencode.ai",
+      "name": "OpenCode AI",
+      "category": "AI & LLM Platforms",
+      "description": "AI coding platform. Developer-centric dark theme",
+      "keywords": [
+        "人工智能",
+        "科技"
+      ],
+      "path": "library/opencode.ai/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/opencode.ai/DESIGN.md",
+      "sha256": "d1a8893c4b8ac90b1e86230eee2effa8bd15add3582853477920e32432336dda"
+    },
+    {
+      "id": "oracle",
+      "name": "Oracle",
+      "category": "Backend, Database & DevOps",
+      "description": "Enterprise cloud and database software. Warm neutral ladder, charcoal-only actions, red saved for the wordmark",
+      "keywords": [
+        "数据库",
+        "开发者"
+      ],
+      "path": "library/oracle/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/oracle/DESIGN.md",
+      "sha256": "23f03014c1654ff72e9a2185f1c3d1f3b51eabc8124c14f6ddd51b17a36a85a6"
+    },
+    {
+      "id": "oura",
+      "name": "Oura",
+      "category": "Media & Consumer Tech",
+      "description": "Smart ring wellness brand. Warm paper cream, editorial serif, earth-tone accents",
+      "keywords": [
+        "媒体",
+        "消费科技",
+        "暖白",
+        "健康",
+        "衬线",
+        "编辑"
+      ],
+      "path": "library/oura/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/oura/DESIGN.md",
+      "sha256": "8674dbeb48bf7e3ff5271e79a6222084118ba1630db4a2199d1492568850fa08"
+    },
+    {
+      "id": "pinterest",
+      "name": "Pinterest",
+      "category": "Media & Consumer Tech",
+      "description": "Visual discovery platform. Red accent, masonry grid, image-first",
+      "keywords": [
+        "媒体",
+        "消费科技"
+      ],
+      "path": "library/pinterest/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/pinterest/DESIGN.md",
+      "sha256": "26a202fd244e9213d5e2475d81581828da1dd97e089e44639d9783d04f96e4a8"
+    },
+    {
+      "id": "playstation",
+      "name": "PlayStation",
+      "category": "Media & Consumer Tech",
+      "description": "Gaming console retail. Three-surface channel layout, cyan hover-scale interaction",
+      "keywords": [
+        "媒体",
+        "消费科技"
+      ],
+      "path": "library/playstation/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/playstation/DESIGN.md",
+      "sha256": "2a56c109af6cb847fa091b768f719b498ac56b582d010860e73ea5fb72a1590d"
+    },
+    {
+      "id": "posthog",
+      "name": "PostHog",
+      "category": "Backend, Database & DevOps",
+      "description": "Product analytics. Playful hedgehog branding, developer-friendly dark UI",
+      "keywords": [
+        "数据库",
+        "开发者"
+      ],
+      "path": "library/posthog/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/posthog/DESIGN.md",
+      "sha256": "01f497f751d56296bfcd5eb8806325a4bb4786d364941ec6e65c65fa9ee6d362"
+    },
+    {
+      "id": "raycast",
+      "name": "Raycast",
+      "category": "Developer Tools & IDEs",
+      "description": "Productivity launcher. Sleek dark chrome, vibrant gradient accents",
+      "keywords": [
+        "开发工具",
+        "编程"
+      ],
+      "path": "library/raycast/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/raycast/DESIGN.md",
+      "sha256": "6e2c5137e4d914b70996d589688374a801b6f29a35c9c019c22abb5e0170bda3"
+    },
+    {
+      "id": "renault",
+      "name": "Renault",
+      "category": "Automotive",
+      "description": "French automotive. Vivid aurora gradients, NouvelR proprietary typeface, zero-radius buttons",
+      "keywords": [
+        "汽车",
+        "产品展示"
+      ],
+      "path": "library/renault/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/renault/DESIGN.md",
+      "sha256": "b343df9a67e57f248e9eee704f52b17dff9cf6a46d1dc9f8d7ab36741940db59"
+    },
+    {
+      "id": "replicate",
+      "name": "Replicate",
+      "category": "AI & LLM Platforms",
+      "description": "Run ML models via API. Clean white canvas, code-forward",
+      "keywords": [
+        "人工智能",
+        "科技"
+      ],
+      "path": "library/replicate/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/replicate/DESIGN.md",
+      "sha256": "c22062d7b4174bf9ced7bc61c48389086cf6eed96a958e098ee70389893b0a15"
+    },
+    {
+      "id": "resend",
+      "name": "Resend",
+      "category": "Productivity & SaaS",
+      "description": "Email API for developers. Minimal dark theme, monospace accents",
+      "keywords": [
+        "效率",
+        "软件服务"
+      ],
+      "path": "library/resend/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/resend/DESIGN.md",
+      "sha256": "99536f1b2380511a539f7f3466d46d351e4bf35a5af0c0df395bdc20af05c9be"
+    },
+    {
+      "id": "revolut",
+      "name": "Revolut",
+      "category": "Fintech & Crypto",
+      "description": "Digital banking. Sleek dark interface, gradient cards, fintech precision",
+      "keywords": [
+        "金融",
+        "支付"
+      ],
+      "path": "library/revolut/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/revolut/DESIGN.md",
+      "sha256": "b7fa8473315541f5d7e7d76f68a77105d255e6dae00d31d5eb34621d1d52de59"
+    },
+    {
+      "id": "runwayml",
+      "name": "Runway",
+      "category": "AI & LLM Platforms",
+      "description": "AI creative-tools platform with an editorial film-festival aesthetic — cinematic dark heroes, paper-white reading bands, single proprietary sans, and pure black pill CTAs.",
+      "keywords": [
+        "人工智能",
+        "科技"
+      ],
+      "path": "library/runwayml/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/runwayml/DESIGN.md",
+      "sha256": "b0e69bf643f89bb57ac0b82a3bf025e59ff1478c244cb0528ad1e38b3f80dac9"
+    },
+    {
+      "id": "sanity",
+      "name": "Sanity",
+      "category": "Backend, Database & DevOps",
+      "description": "Headless content platform with a dark-first editorial marketing surface — 112px display type, IBM Plex Mono technical eyebrows, and a single coral-red accent reserved for the highest-priority CTA.",
+      "keywords": [
+        "数据库",
+        "开发者"
+      ],
+      "path": "library/sanity/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/sanity/DESIGN.md",
+      "sha256": "ea1c442de2b23443f79af46524a81f33951606c8ff043ea9c25ba886264fbdd8"
+    },
+    {
+      "id": "sap",
+      "name": "SAP",
+      "category": "Productivity & SaaS",
+      "description": "Enterprise business software. White canvas, flat blue bands, application-frame chrome",
+      "keywords": [
+        "效率",
+        "软件服务"
+      ],
+      "path": "library/sap/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/sap/DESIGN.md",
+      "sha256": "f14c951d6112efce488f56d189b9bcdf58f5b9f87ae1e2ee68f062e6a6967d97"
+    },
+    {
+      "id": "sentry",
+      "name": "Sentry",
+      "category": "Backend, Database & DevOps",
+      "description": "Error monitoring. Dark dashboard, data-dense, pink-purple accent",
+      "keywords": [
+        "数据库",
+        "开发者"
+      ],
+      "path": "library/sentry/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/sentry/DESIGN.md",
+      "sha256": "655c91d7d23b5e869a966b7f1b63ae650567ad5d69003cfc64b0ee62c8e02c1f"
+    },
+    {
+      "id": "shopify",
+      "name": "Shopify",
+      "category": "E-commerce & Retail",
+      "description": "E-commerce platform. Dark-first cinematic, neon green accent, ultra-light display type",
+      "keywords": [
+        "电商",
+        "零售",
+        "电商",
+        "绿色",
+        "深色"
+      ],
+      "path": "library/shopify/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/shopify/DESIGN.md",
+      "sha256": "495e89b8d0a1848ded013c040f7a2ae62077e9d87fc4385350e25dee02ccdb38"
+    },
+    {
+      "id": "slack",
+      "name": "slack",
+      "category": "Other",
+      "description": "An inspired interpretation of Slacc's design language — a workplace messaging brand built on a deep aubergine primary, with cream-lavender hero gradients, blue inline links, and pill CTAs. The system pairs a proprietary humanist sans for display with a separate utility sans for body, and stages product UI mockups inside soft pastel-mesh hero composites that act as both decoration and feature explanation.",
+      "keywords": [],
+      "path": "library/slack/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/slack/DESIGN.md",
+      "sha256": "03cb243015a2e11d0faf05caba7f3d0c7fda6839b1f5ce707a23e8d46d1a11bd"
+    },
+    {
+      "id": "spacex",
+      "name": "SpaceX",
+      "category": "Media & Consumer Tech",
+      "description": "Space technology. Stark black and white, full-bleed imagery, futuristic",
+      "keywords": [
+        "媒体",
+        "消费科技"
+      ],
+      "path": "library/spacex/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/spacex/DESIGN.md",
+      "sha256": "495450c79faab54d12d677649ca0a2c30a60f64f536a802e945ad54185c5baad"
+    },
+    {
+      "id": "spotify",
+      "name": "Spotify",
+      "category": "Media & Consumer Tech",
+      "description": "Music streaming. Vibrant green on dark, bold type, album-art-driven",
+      "keywords": [
+        "媒体",
+        "消费科技",
+        "绿色",
+        "音乐",
+        "深色"
+      ],
+      "path": "library/spotify/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/spotify/DESIGN.md",
+      "sha256": "72e964a6cf551d0603f9854f2f42ee08e97ad4d9e17e037f50f6233508288295"
+    },
+    {
+      "id": "starbucks",
+      "name": "Starbucks",
+      "category": "E-commerce & Retail",
+      "description": "Coffee retail flagship. Four-tier earth-green system, warm cream canvas, proprietary SoDoSans typography",
+      "keywords": [
+        "电商",
+        "零售"
+      ],
+      "path": "library/starbucks/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/starbucks/DESIGN.md",
+      "sha256": "e20338ee10226c63cf2588207288c08e12d60754a53f681657adaf364dfe8fa7"
+    },
+    {
+      "id": "stripe",
+      "name": "Stripe",
+      "category": "Fintech & Crypto",
+      "description": "Payment infrastructure. Signature purple gradients, weight-300 elegance",
+      "keywords": [
+        "金融",
+        "支付",
+        "渐变",
+        "紫色",
+        "支付"
+      ],
+      "path": "library/stripe/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/stripe/DESIGN.md",
+      "sha256": "5c8806b7dd3e0c2554ccba9d1e2a7c78e7c6e50e44fcf6ff5daea6026f8a9ed9"
+    },
+    {
+      "id": "supabase",
+      "name": "Supabase",
+      "category": "Backend, Database & DevOps",
+      "description": "Open-source Firebase alternative. Dark emerald theme, code-first",
+      "keywords": [
+        "数据库",
+        "开发者",
+        "绿色",
+        "开发者",
+        "数据库"
+      ],
+      "path": "library/supabase/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/supabase/DESIGN.md",
+      "sha256": "f57287d7f44d59e8169dc4b4304ff03c1a2efb37f5433b9c04460caae7710880"
+    },
+    {
+      "id": "superhuman",
+      "name": "Superhuman",
+      "category": "Developer Tools & IDEs",
+      "description": "Fast email client. Premium dark UI, keyboard-first, purple glow",
+      "keywords": [
+        "开发工具",
+        "编程"
+      ],
+      "path": "library/superhuman/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/superhuman/DESIGN.md",
+      "sha256": "3640298bd2957aee80ce88eb465a7541ba835ec105cba364a6a621d885c7f34f"
+    },
+    {
+      "id": "tesla",
+      "name": "Tesla",
+      "category": "Automotive",
+      "description": "Electric vehicles. Radical subtraction, cinematic full-viewport photography, Universal Sans",
+      "keywords": [
+        "汽车",
+        "产品展示"
+      ],
+      "path": "library/tesla/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/tesla/DESIGN.md",
+      "sha256": "19f2f7e6073d708f46d2512e6bab3c7c417cf2b4d9f57ff6ec6f2e056ea942b0"
+    },
+    {
+      "id": "theverge",
+      "name": "The Verge",
+      "category": "Media & Consumer Tech",
+      "description": "Tech editorial media. Acid-mint and ultraviolet accents, Manuka display type",
+      "keywords": [
+        "媒体",
+        "消费科技"
+      ],
+      "path": "library/theverge/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/theverge/DESIGN.md",
+      "sha256": "5da2c3116e6845826b043ac115a80896a399efda2cebc0188981fba2ef9bb526"
+    },
+    {
+      "id": "together.ai",
+      "name": "Together AI",
+      "category": "AI & LLM Platforms",
+      "description": "Open-source AI infrastructure. Technical, blueprint-style design",
+      "keywords": [
+        "人工智能",
+        "科技"
+      ],
+      "path": "library/together.ai/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/together.ai/DESIGN.md",
+      "sha256": "aee472c583f55a2f2c7ee1c403a96dddadb3ff6dc518335451f431e313bf43cf"
+    },
+    {
+      "id": "uber",
+      "name": "Uber",
+      "category": "Media & Consumer Tech",
+      "description": "Mobility platform. Bold black and white, tight type, urban energy",
+      "keywords": [
+        "媒体",
+        "消费科技"
+      ],
+      "path": "library/uber/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/uber/DESIGN.md",
+      "sha256": "f30d2257d2d090790332d00ccb16cd2516c3c6008be61ad2ce83c4e991bcc803"
+    },
+    {
+      "id": "vercel",
+      "name": "Vercel",
+      "category": "Developer Tools & IDEs",
+      "description": "Frontend deployment platform. Black and white precision, Geist font",
+      "keywords": [
+        "开发工具",
+        "编程",
+        "黑白",
+        "开发者",
+        "极简"
+      ],
+      "path": "library/vercel/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/vercel/DESIGN.md",
+      "sha256": "d0951b93c2b4ce9840c715c9f9b3e58a386c6c58ae5cc0f804dec3b116b95bd8"
+    },
+    {
+      "id": "vodafone",
+      "name": "Vodafone",
+      "category": "Media & Consumer Tech",
+      "description": "Global telecom brand. Monumental uppercase display, Vodafone Red chapter bands",
+      "keywords": [
+        "媒体",
+        "消费科技"
+      ],
+      "path": "library/vodafone/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/vodafone/DESIGN.md",
+      "sha256": "293a40951e654283978fa744b24177a159d8f2a60f402bc735bf081618af0ef6"
+    },
+    {
+      "id": "voltagent",
+      "name": "VoltAgent",
+      "category": "AI & LLM Platforms",
+      "description": "AI agent framework. Void-black canvas, emerald accent, terminal-native",
+      "keywords": [
+        "人工智能",
+        "科技"
+      ],
+      "path": "library/voltagent/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/voltagent/DESIGN.md",
+      "sha256": "4457887741ae5e965e205282b03c4bff83e47dd7a03cd7f38c64623a17569fcd"
+    },
+    {
+      "id": "warp",
+      "name": "Warp",
+      "category": "Developer Tools & IDEs",
+      "description": "Modern terminal. Dark IDE-like interface, block-based command UI",
+      "keywords": [
+        "开发工具",
+        "编程"
+      ],
+      "path": "library/warp/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/warp/DESIGN.md",
+      "sha256": "5b1201f7b1b4e72570d148d1f980fd1cb35e6e4122d48dd271787aa3538a25ad"
+    },
+    {
+      "id": "webflow",
+      "name": "Webflow",
+      "category": "Design & Creative Tools",
+      "description": "Visual web builder. Blue-accented, polished marketing site aesthetic",
+      "keywords": [
+        "设计",
+        "创意"
+      ],
+      "path": "library/webflow/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/webflow/DESIGN.md",
+      "sha256": "9230c7b3951371fc2edc04958962e32bb7ec9a9b703aa6b72eaf5c7991b7c984"
+    },
+    {
+      "id": "wired",
+      "name": "WIRED",
+      "category": "Media & Consumer Tech",
+      "description": "Tech magazine. Paper-white broadsheet density, custom serif, ink-blue links",
+      "keywords": [
+        "媒体",
+        "消费科技"
+      ],
+      "path": "library/wired/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/wired/DESIGN.md",
+      "sha256": "eb439dcc573401dc30583f40e7eef8a60b769232da59e524de6dce56d5c3593e"
+    },
+    {
+      "id": "wise",
+      "name": "Wise",
+      "category": "Fintech & Crypto",
+      "description": "International money transfer. Bright green accent, friendly and clear",
+      "keywords": [
+        "金融",
+        "支付"
+      ],
+      "path": "library/wise/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/wise/DESIGN.md",
+      "sha256": "442df0ad7380efd8712f5574bdca34a73cfb41a2a43454ff459863a6258af547"
+    },
+    {
+      "id": "x.ai",
+      "name": "xAI",
+      "category": "AI & LLM Platforms",
+      "description": "Elon Musk's AI lab. Stark monochrome, futuristic minimalism",
+      "keywords": [
+        "人工智能",
+        "科技"
+      ],
+      "path": "library/x.ai/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/x.ai/DESIGN.md",
+      "sha256": "9c9ef45d8c0c3b9a7622833cdff8bd125ed6bf296a82cc7274215276706e52eb"
+    },
+    {
+      "id": "zapier",
+      "name": "Zapier",
+      "category": "Productivity & SaaS",
+      "description": "Automation platform. Warm orange, friendly illustration-driven",
+      "keywords": [
+        "效率",
+        "软件服务"
+      ],
+      "path": "library/zapier/DESIGN.md",
+      "source": "https://github.com/VoltAgent/awesome-design-md/blob/3b605329240ce735b510037cca322f1831fdd7f8/design-md/zapier/DESIGN.md",
+      "sha256": "9aee43ba8ece1b4fd0753b4cad0a29f3497331882fa376f0dd4fea8a018c32fc"
+    }
+  ]
+}

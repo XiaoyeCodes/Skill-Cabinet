@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "page": "https://getdesign.md/claude/design-md",
+  "document": "https://getdesign.md/design-md/claude/DESIGN.md",
+  "capturedAt": "2026-10-26T08:47:38.789Z",
+  "sha256": "3d972f34f8d4f33b442fa28220cf3b7ca2f13c0a97c468e3988148f82521f9df",
+  "repository": "https://github.com/VoltAgent/awesome-design-md",
+  "commit": "3b605329240ce735b510037cca322f1831fdd7f8",
+  "repositoryDocument": "design-md/claude/DESIGN.md",
+  "repositoryDocumentSha256": "3d972f34f8d4f33b442fa28220cf3b7ca2f13c0a97c468e3988148f82521f9df",
+  "matchesRepositoryAfterNewlineNormalization": true,
+  "upstreamLicense": "MIT",
+  "adaptations": [
+    "Chinese typography and font fallbacks",
+    "Accessible foreground/background pairs",
+    "44px controls and keyboard focus",
+    "Independent user branding"
+  ]
+}

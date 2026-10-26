@@ -421,6 +421,54 @@
         "createdAt": "2026-10-26T08:31:37.914Z",
         "updatedAt": "2026-10-26T08:31:37.914Z"
       }
+    },
+    "awesome-design-md": {
+      "fingerprint": "1da311b162274f8105d431069f200bacc56259ddbe8bc45839993dda1250077a",
+      "archiveSha256": "f868088ecf51fae43c972747bef0b15492af7a04ae29cd2fab800f92c02baa28",
+      "archivePath": "skill-cabinet/archives/awesome-design-md-f868088ecf51fae43c972747bef0b15492af7a04ae29cd2fab800f92c02baa28.zip",
+      "metadata": {
+        "name": "DESIGN.md · 网站设计风格库",
+        "slug": "awesome-design-md",
+        "description": "一个 Skill 内收录 84 份成熟网站的 DESIGN.md 设计规范。用户可指定参考风格，也可让 AI 根据网站需求推荐并询问选择；附离线检索与单份规范导出工具，支持配色、排版、组件和响应式设计。",
+        "category": "图像与设计",
+        "version": "1.0.0",
+        "author": "个人整理 · 来源 VoltAgent / getdesign.md",
+        "tags": [
+          "网站设计",
+          "设计规范",
+          "风格选型",
+          "DESIGN.md",
+          "离线参考"
+        ],
+        "id": "awesome-design-md-seed",
+        "favorite": false,
+        "createdAt": "2026-10-26T08:49:03.164Z",
+        "updatedAt": "2026-10-26T08:49:03.164Z"
+      }
+    },
+    "claude-design": {
+      "fingerprint": "f7454771e5c8b1e36ab8d66e97175d7dde06c9a0edbee7914abc64c6a6759fc5",
+      "archiveSha256": "be30a35a9598548334529a2fcae321c0bdfa4d94c7d7ae5b6791008c2d072c10",
+      "archivePath": "skill-cabinet/archives/claude-design-be30a35a9598548334529a2fcae321c0bdfa4d94c7d7ae5b6791008c2d072c10.zip",
+      "metadata": {
+        "name": "克劳德设计",
+        "slug": "claude-design",
+        "description": "参考 Claude 官网的奶油底、陶土色强调、衬线标题与深色产品演示，为自有品牌设计网站。含完整原始设计分析、中文排版与可访问性适配、语义色值和 CSS 起点。",
+        "category": "图像与设计",
+        "version": "1.0.0",
+        "author": "个人整理 · 来源 VoltAgent / getdesign.md",
+        "tags": [
+          "网站设计",
+          "Claude风格",
+          "暖白纸面",
+          "陶土色",
+          "衬线排版"
+        ],
+        "id": "claude-design-seed",
+        "favorite": false,
+        "createdAt": "2026-10-26T08:49:03.412Z",
+        "updatedAt": "2026-10-26T08:49:51.289Z"
+      }
     }
   },
   "categories": [
