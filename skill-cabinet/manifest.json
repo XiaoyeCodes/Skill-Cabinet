@@ -661,13 +661,13 @@
       }
     },
     "vincentwei1021/mg-styles-15": {
-      "fingerprint": "3acbe1099eb78b094a32af0f53c9151e51b65a639c885df50205538aab52c14c",
+      "fingerprint": "8ae21bc374f2d3596de7fb3f25a0b0ab431f4c9a773b1d4bde845a09bb75696c",
       "record": {
         "owner": "Vincentwei1021",
         "repo": "mg-styles-15",
         "id": "vincentwei1021/mg-styles-15",
         "url": "https://github.com/Vincentwei1021/mg-styles-15",
-        "name": "mg-styles-15",
+        "name": "15 种 MG 动态设计风格",
         "description": "15 种 MG 动态设计风格，每种配有一支 10 秒短片，包含风格说明、完整提示词和全部源码，便于参考、复现和制作自己的动效作品。",
         "category": "设计与创作",
         "tags": [
@@ -684,7 +684,7 @@
         "archived": false,
         "favorite": false,
         "createdAt": "2026-10-21T15:13:40.307Z",
-        "updatedAt": "2026-10-21T15:13:40.307Z"
+        "updatedAt": "2026-10-26T13:43:35.882Z"
       }
     }
   }
