@@ -80,7 +80,7 @@ cd Skill-Cabinet
 npm start
 ```
 
-打开 [http://localhost:4173](http://localhost:4173)。本地服务会直接读取仓库的 `skill-cabinet/manifest.json` 和完整 ZIP，当前包含十八份 Skill / 技能集，覆盖设计、产品、写作、研究、新闻与投资金融。无需填写 GitHub Token，也无需手动导入备份；已经只保存了一份 Skill 的旧浏览器也会自动补齐。
+打开 [http://localhost:4173](http://localhost:4173)。本地服务会直接读取仓库的 `skill-cabinet/manifest.json` 和完整 ZIP，当前包含十九份 Skill / 技能集，覆盖设计、产品、写作、研究、新闻与投资金融。无需填写 GitHub Token，也无需手动导入备份；已经只保存了一份 Skill 的旧浏览器也会自动补齐。
 
 「Huashu Design · 花叔设计」归于「图像与设计」，版本为 3.0.0，来自 [alchaincyf/huashu-design](https://github.com/alchaincyf/huashu-design/tree/798c4235ebff03d5c45e3c8affdf5e9d18f9dfa7)。完整技能包保留上游 389 个文件及 MIT 许可证，另附使用说明和原始 `SKILL.md` 副本；素材、参考文档、脚本与演示均包含在内。
 
@@ -126,6 +126,8 @@ npm test
 **一次收好全部三份：** [下载初始技能库备份](backups/skill-cabinet-starter.zip)，在页面中点击「导入 Skill」选择该 ZIP，即可加入三份技能。已存在的标识会跳过，并提示保留已有内容。
 
 原始 ZIP 保持原样；`skills/` 中的可读版本同步了展示名称和分类。压缩包外层的使用说明、测试记录和样例也保留在对应目录中。原始文件校验值见 [技能目录清单](docs/skill-catalog.json)。
+
+**新收录：[UI/UX Pro Max · 网站设计](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)**（v2.15.0，图像与设计）。用于网站、落地页、后台与组件的 UI/UX 设计，覆盖设计系统、风格、配色、字体、响应式布局、交互及无障碍检查。[下载完整技能包](skill-cabinet/archives/ui-ux-pro-max-45bd941a6ab00cdcfcef83e9d8025698198bb3246f0ee0559176b3c57715a741.zip)，共 80 个文件，含上游核心技能的全部 73 个文件，以及许可证、说明和来源记录。来源提交为 `1f8857914da3c723d58dab1d609dd0d55a86bf51`；包内保留原始指令，浏览器仅作保存、预览与导出。
 
 > Skill Cabinet 负责管理文件。实际调用这些 Skill 时，仍需要能理解 Skill 指令的 AI 工具，以及对应技能声明的运行环境。图像生成等能力由调用宿主提供。
 

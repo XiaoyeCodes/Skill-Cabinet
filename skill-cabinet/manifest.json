@@ -396,6 +396,31 @@
         "createdAt": "2026-10-21T09:09:06.173Z",
         "updatedAt": "2026-10-21T09:09:06.173Z"
       }
+    },
+    "ui-ux-pro-max": {
+      "fingerprint": "905d3f5bb0a3b5d66dc20141509c8ff3fa243869134f8725260b64d3692c0612",
+      "archiveSha256": "45bd941a6ab00cdcfcef83e9d8025698198bb3246f0ee0559176b3c57715a741",
+      "archivePath": "skill-cabinet/archives/ui-ux-pro-max-45bd941a6ab00cdcfcef83e9d8025698198bb3246f0ee0559176b3c57715a741.zip",
+      "metadata": {
+        "name": "UI/UX Pro Max · 网站设计",
+        "slug": "ui-ux-pro-max",
+        "description": "专注网站与界面设计的 UI/UX 技能，支持落地页、后台、仪表盘和组件设计；提供风格检索、配色、字体搭配、响应式布局、交互与无障碍建议，可按需求生成设计系统。附完整本地设计数据、检索脚本与多技术栈指南。",
+        "category": "图像与设计",
+        "version": "2.15.0",
+        "author": "NextLevelBuilder",
+        "tags": [
+          "网站设计",
+          "UI/UX",
+          "设计系统",
+          "响应式布局",
+          "配色排版",
+          "无障碍"
+        ],
+        "id": "ui-ux-pro-max-seed",
+        "favorite": false,
+        "createdAt": "2026-10-26T08:31:37.914Z",
+        "updatedAt": "2026-10-26T08:31:37.914Z"
+      }
     }
   },
   "categories": [
