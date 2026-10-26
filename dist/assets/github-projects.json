@@ -106,6 +106,35 @@
       "favorite": false,
       "createdAt": "2026-10-22T15:09:59.453Z",
       "updatedAt": "2026-10-23T02:43:53.396Z"
+    },
+    {
+      "owner": "heygen-com",
+      "repo": "hyperframes",
+      "id": "heygen-com/hyperframes",
+      "url": "https://github.com/heygen-com/hyperframes",
+      "name": "面向 AI 编程助手的视频制作框架",
+      "description": "利用 Claude、Codex 等 AI 编程助手生成视频。",
+      "category": "设计与创作",
+      "tags": [
+        "视频生成",
+        "AI编程",
+        "Claude",
+        "Codex",
+        "HTML",
+        "TypeScript"
+      ],
+      "language": "TypeScript",
+      "stars": 72500,
+      "forks": 6547,
+      "license": "Apache-2.0",
+      "homepage": "https://hyperframes.heygen.com/",
+      "readmeExcerpt": "Write HTML. Render video. Built for agents.\n\nStudio |\n  Quickstart |\n  Showcase |\n  Playground |\n  Catalog |\n  Docs |\n  Discord\n\nHyperFrames is an open-source framework for turning HTML, CSS, media, and seekable animations into deterministic MP4 videos. Use it locally with the CLI, from AI coding agents with skills, or as the rendering core behind hosted authoring workflows.\n\nUsing Claude Code, Codex, Cursor, or another coding agent? Run npx hyperframes skills update once, then ask your agent to make a video.\n\nFor Claude Code, install the versioned plugin:",
+      "readmeStatus": "read",
+      "repositoryUpdatedAt": "2026-10-26T08:55:28Z",
+      "archived": false,
+      "favorite": false,
+      "createdAt": "2026-10-26T08:57:01.864Z",
+      "updatedAt": "2026-10-26T08:57:01.864Z"
     }
   ]
 }
