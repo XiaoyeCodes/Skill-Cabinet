@@ -70,6 +70,8 @@ GitHub 项目收藏先保存在当前浏览器，**现已与 Skills 共用 GitHu
 
 已加入用户指定的 `mexicat/pdoom-video`、`Tunai-0511/meme67-art-history`、`Vincentwei1021/mg-styles-15`、`lemomo-ai/lemo-opuscar`、`heygen-com/hyperframes` 和 `remotion-dev/remotion`，均归于「设计与创作」。Lemo-Opuscar 提供影片风格提示词与演示短片；HyperFrames 面向 AI 编程助手制作视频；Remotion 以 React 和 TypeScript 编程制作视频，支持组件、播放器、批量渲染及视频应用开发。Remotion 的完整名称、用途、标签和指纹同时写入初始目录与同步清单。初始资料位于 `dist/assets/github-projects.json`；首次读取时加入浏览器，保留已有修改，主动移除后刷新不会重新补回。
 
+已收录 [VoiceStudio](https://github.com/debpalash/VoiceStudio)，名称为「VoiceStudio · 本地 AI 语音工作站」，归于「AI 与智能体」。用途涵盖语音克隆、音色设计、视频配音、听写、转写和有声书制作，并提供本地模型管理、API 与 MCP 集成；同样保存在初始项目目录与云同步清单中。
+
 ## 快速开始
 
 需要 **Node.js 20 或更新版本**。
@@ -80,7 +82,7 @@ cd Skill-Cabinet
 npm start
 ```
 
-打开 [http://localhost:4173](http://localhost:4173)。本地服务会直接读取仓库的 `skill-cabinet/manifest.json` 和完整 ZIP，当前包含二十二份 Skill / 技能集，覆盖设计、视频、产品、写作、研究、新闻与投资金融。无需填写 GitHub Token，也无需手动导入备份；已经只保存了一份 Skill 的旧浏览器也会自动补齐。
+打开 [http://localhost:4173](http://localhost:4173)。本地服务会直接读取仓库的 `skill-cabinet/manifest.json` 和完整 ZIP，当前包含二十三份 Skill / 技能集，覆盖设计、视频、产品、写作、研究、新闻与投资金融。无需填写 GitHub Token，也无需手动导入备份；已经只保存了一份 Skill 的旧浏览器也会自动补齐。
 
 「Huashu Design · 花叔设计」归于「图像与设计」，版本为 3.0.0，来自 [alchaincyf/huashu-design](https://github.com/alchaincyf/huashu-design/tree/798c4235ebff03d5c45e3c8affdf5e9d18f9dfa7)。完整技能包保留上游 389 个文件及 MIT 许可证，另附使用说明和原始 `SKILL.md` 副本；素材、参考文档、脚本与演示均包含在内。
 
@@ -101,6 +103,8 @@ npm start
 2026-10-23 新增「资深产品经理」（`senior-product-manager`），沿用上传时的「开发与工具」分类。完整包保留指令、Agent 配置、澄清与决策参考、产品设计书结构与质量标准，以及导出的使用说明，共 5 个文件；用于需求梳理、方案取舍和 PRD 交付。
 
 2026-10-26 收录本机上传的「趣味科普动画视频」（`animated-explainer-video`），归于「图像与设计」。原始 `animated-explainer-video-skill.zip` 完整保存在同步归档中，SHA-256 为 `babafbe671d301b39ed0aa68ae7157161783664e626b6a8143b6794d0557a335`。包内共 41 个文件，保留土豆历史横屏案例、通用横竖屏模板、MoviePy/Pillow/NumPy 与 FFmpeg 制作脚本、Noto Sans SC 中文字体及 OFL 许可、19 段配音缓存和完整参考文档。用于制作带中文配音、字幕、配乐和原创动画的科普 MP4，并交付封面、分镜、SRT 与可编辑源码；实际制作需 Python、FFmpeg，生成新配音还需联网使用 edge-tts。
+
+2026-10-26 收录「Vibe 知识短片 · 无旁白科普」（`vibe-knowledge-film`），归于「图像与设计」，来源为 [HeyChengC/vibe-knowledge-film](https://github.com/HeyChengC/vibe-knowledge-film/tree/62d51508aad00003dc6209afa80c4b5dc540de59)。它用 Canvas、JavaScript、Playwright 和 FFmpeg 制作无旁白的 16:9 横屏字幕知识短片，提供夜曲与寓言两套外观、讲解设计、分镜、逐帧渲染和音效流程。收藏包共 43 个文件，保留引擎、方法章节、作者自有题目示例与完整许可证；34 个未改动文件逐项核对了上游 Git blob 摘要。上游许可证排除的第三方字幕、画面记录、`stim_B` / `info_C` 复刻工程及截图改用原始链接；两张大型演示 GIF 也保留源链接。改动范围与来源记录见包内 `CABINET_SOURCE.json`，原始 `SKILL.md` 单独保留；首次制作仍需按上游流程准备 Python、Chrome、FFmpeg 并下载字体。
 
 后续在项目目录执行 `git pull`，打开的页面会在约 **5 秒内**自动检查并显示新的技能数据；切回页面或点击「刷新本机仓库」也会立即检查并显示检查结果。这个按钮只读取本机已经拉取的技能内容，不会执行 `git pull` 或上传浏览器里的修改。**与 GitHub 云端交换数据请点击「同步到 GitHub」**，未连接时会打开设置。服务按请求读取磁盘文件，技能数据更新无需重启；修改前端代码后刷新页面，更新 `server.mjs` 等服务端代码后需重新运行 `npm start`。
 

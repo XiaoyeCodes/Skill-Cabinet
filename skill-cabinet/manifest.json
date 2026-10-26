@@ -494,6 +494,31 @@
         "createdAt": "2026-10-21T09:09:06.173Z",
         "updatedAt": "2026-10-21T09:09:06.173Z"
       }
+    },
+    "vibe-knowledge-film": {
+      "fingerprint": "ee67edb6add2723a6409bff474b39e3a0de3a65214924530daba09566b91da04",
+      "archiveSha256": "81f14f849a118000ad790df54fba65a8a90e251ec7075205ea8bcb08c9930f47",
+      "archivePath": "skill-cabinet/archives/vibe-knowledge-film-81f14f849a118000ad790df54fba65a8a90e251ec7075205ea8bcb08c9930f47.zip",
+      "metadata": {
+        "id": "vibe-knowledge-film-seed",
+        "name": "Vibe 知识短片 · 无旁白科普",
+        "slug": "vibe-knowledge-film",
+        "description": "用 Canvas 和 JavaScript 制作 16:9 横屏、无旁白的字幕知识短片，提供夜曲与寓言两套外观、分镜方法、逐帧渲染引擎和音效流程；保留可分发的引擎、方法文档与作者示例，受限参考片材料按源链接查阅。",
+        "category": "图像与设计",
+        "tags": [
+          "知识短片",
+          "无旁白",
+          "字幕科普",
+          "Canvas",
+          "JavaScript",
+          "分镜设计"
+        ],
+        "version": "1.0.0",
+        "author": "HeyChengC",
+        "favorite": false,
+        "createdAt": "2026-10-26T15:04:06.156Z",
+        "updatedAt": "2026-10-26T15:04:06.156Z"
+      }
     }
   },
   "categories": [
@@ -685,6 +710,40 @@
         "favorite": false,
         "createdAt": "2026-10-21T15:13:40.307Z",
         "updatedAt": "2026-10-26T13:43:35.882Z"
+      }
+    },
+    "debpalash/voicestudio": {
+      "fingerprint": "03b2f18915ce9675d2d6801e96808c505200ad43fe0f0e0ce58039d7d1845223",
+      "record": {
+        "owner": "debpalash",
+        "repo": "VoiceStudio",
+        "id": "debpalash/voicestudio",
+        "url": "https://github.com/debpalash/VoiceStudio",
+        "name": "VoiceStudio · 本地 AI 语音工作站",
+        "description": "可在本机运行的 AI 语音工作站，支持语音克隆、音色设计、视频配音、语音听写、转写与有声书制作，提供模型管理、本地 API 和 MCP 集成，远程服务可按需选用。",
+        "category": "AI 与智能体",
+        "tags": [
+          "语音合成",
+          "语音克隆",
+          "视频配音",
+          "音色设计",
+          "有声书",
+          "本地AI",
+          "MCP",
+          "Python"
+        ],
+        "language": "Python",
+        "stars": 88249,
+        "forks": 9731,
+        "license": "AGPL-3.0",
+        "homepage": "https://voicestudio.sh/",
+        "readmeExcerpt": "VoiceStudio 将语音克隆、音色设计、视频配音、听写、转写和有声书流程放在同一个桌面工作站中。可管理多种本地语音模型，并通过本地 API、MCP、批量任务和可复用工作流与其他工具连接。官方说明本地工作流在自己的硬件上运行，远程服务为可选功能。\n\n应用采用 AGPL-3.0 许可；模型与声音素材的许可另有说明，详见原仓库。",
+        "readmeStatus": "read",
+        "repositoryUpdatedAt": "2026-10-26T14:31:38Z",
+        "archived": false,
+        "favorite": false,
+        "createdAt": "2026-10-26T14:57:18.880Z",
+        "updatedAt": "2026-10-26T14:57:18.880Z"
       }
     }
   }

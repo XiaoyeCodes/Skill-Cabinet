@@ -76,12 +76,26 @@ test('a fresh checkout loads all bundled real archives and migrates a one-skill 
   const storage = memoryStorage([{ ...decoded, ...seeds[0], files: decoded.files, id: 'legacy-browser-id' }]);
   const client = new RepositoryLibrary({ storage, fetchImpl: (url, options) => fetch(new URL(url, base), options) });
   const result = await client.refresh();
-  assert.equal(result.count, 22);
+  assert.equal(result.count, 23);
   assert.deepEqual(result.preserved, []);
   const records = await storage.listSkills();
-  assert.deepEqual(records.map(record => record.slug).sort(), ['aibase-daily', 'animated-explainer-video', 'awesome-design-md', 'buffett-letters-skill', 'build-jin10-breakfast', 'cangjie-skill', 'claude-design', 'fupeng-macro-framework', 'generate-daily60-digest', 'huangzhizhong-communication', 'huashu-design', 'huashu-motion', 'huashu-nuwa', 'jin10-financial-daily', 'poor-charlies-almanack-skill', 'qinxiaoming-finance-thinking', 'ray-dalio-framework', 'senior-product-manager', 'shiguang-atlas', 'soros-reflexivity-framework', 'ui-ux-pro-max', 'warm-paper-editorial']);
+  assert.deepEqual(records.map(record => record.slug).sort(), ['aibase-daily', 'animated-explainer-video', 'awesome-design-md', 'buffett-letters-skill', 'build-jin10-breakfast', 'cangjie-skill', 'claude-design', 'fupeng-macro-framework', 'generate-daily60-digest', 'huangzhizhong-communication', 'huashu-design', 'huashu-motion', 'huashu-nuwa', 'jin10-financial-daily', 'poor-charlies-almanack-skill', 'qinxiaoming-finance-thinking', 'ray-dalio-framework', 'senior-product-manager', 'shiguang-atlas', 'soros-reflexivity-framework', 'ui-ux-pro-max', 'vibe-knowledge-film', 'warm-paper-editorial']);
   assert.equal(records.find(record => record.slug === 'shiguang-atlas').id, 'legacy-browser-id');
   assert.ok(records.every(record => record.content && record.files.length > 0));
+  const vibe = records.find(record => record.slug === 'vibe-knowledge-film');
+  assert.equal(vibe.name, 'Vibe 知识短片 · 无旁白科普');
+  assert.equal(vibe.category, '图像与设计');
+  assert.equal(vibe.files.length, 43);
+  for (const file of ['engine/vk.js', 'engine/vk-kit.js', 'engine/render.py', 'engine/audio.py', 'engine/get_fonts.py', 'scripts/new_film.py', 'requirements.txt', 'references/engine.md', 'references/visualization.md', 'references/prompts.md', 'references/analysis.md', 'examples/fold_C/film.js', 'examples/pigeon_B/film.js', 'examples/kit_gallery/film.js', 'LICENSE', 'upstream/SKILL.original.md', '使用说明.md', 'CABINET_SOURCE.json']) assert.ok(vibe.files.some(item => item.path === file), file);
+  assert.ok(vibe.files.every(file => !/^examples\/(stim_B|info_C)\//.test(file.path) && !file.path.endsWith('.gif')));
+  const vibeSource = JSON.parse(await vibe.files.find(file => file.path === 'CABINET_SOURCE.json').data.text());
+  assert.equal(vibeSource.commit, '62d51508aad00003dc6209afa80c4b5dc540de59');
+  const { createHash } = await import('node:crypto');
+  for (const file of vibeSource.unchangedFiles) {
+    const data = new Uint8Array(await vibe.files.find(item => item.path === file).data.arrayBuffer());
+    assert.equal(createHash('sha1').update(`blob ${data.byteLength}\0`).update(data).digest('hex'), vibeSource.sourceFiles.find(item => item.path === file).sha, file);
+  }
+  assert.match(await vibe.files.find(file => file.path === 'references/analysis.md').data.text(), /不复制该材料/);
   const animated = records.find(record => record.slug === 'animated-explainer-video');
   assert.equal(animated.name, '趣味科普动画视频');
   assert.equal(animated.category, '图像与设计');
