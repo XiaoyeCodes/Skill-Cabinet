@@ -5,6 +5,6 @@
   "type": "module",
   "scripts": {
     "start": "node server.mjs",
-    "test": "node --test tests/storage.test.mjs tests/sync.test.mjs tests/repository.test.mjs tests/github-projects.test.mjs"
+    "test": "node --test tests/storage.test.mjs tests/sync.test.mjs tests/repository.test.mjs tests/github-projects.test.mjs tests/prompts.test.mjs"
   }
 }

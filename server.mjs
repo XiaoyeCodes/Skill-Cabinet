@@ -4,13 +4,34 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { normalizeCategories } from './dist/categories.js';
 import { writeRepositoryCategories } from './repository-categories.mjs';
+import { readPrompts, writePrompts } from './repository-prompts.mjs';
 const root = path.resolve(fileURLToPath(new URL('./dist/', import.meta.url)));
 const repository = path.resolve(root, '..');
 const types = {'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.json':'application/json; charset=utf-8','.zip':'application/zip','.jpg':'image/jpeg','.svg':'image/svg+xml'};
 export function createServer({ repositoryRoot = repository } = {}) {
  let categoryWrites = Promise.resolve();
+ let promptWrites = Promise.resolve();
  return http.createServer(async(req,res)=>{
   try {
+    if (req.url === '/api/prompts') {
+      const respond = (status, value) => res.writeHead(status, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff' }).end(JSON.stringify(value));
+      const host = req.headers.host || '';
+      if (!/^(localhost|127\.0\.0\.1)(:\d+)?$/.test(host) || req.headers['sec-fetch-site'] === 'cross-site' || req.headers.origin && req.headers.origin !== `http://${host}`) { respond(403, { error: 'Forbidden' }); return; }
+      try {
+        if (req.method === 'GET') { respond(200, await readPrompts(repositoryRoot)); return; }
+        if (req.method !== 'PUT') { res.setHeader('Allow', 'GET, PUT'); respond(405, { error: 'Method not allowed' }); return; }
+        if (req.headers['content-type']?.split(';')[0] !== 'application/json') { respond(415, { error: 'JSON required' }); return; }
+        const chunks = []; let size = 0;
+        for await (const chunk of req) { size += chunk.length; if (size > 8 * 1024 * 1024) { respond(413, { error: '提示词备份过大。' }); return; } chunks.push(chunk); }
+        let value;
+        try { value = JSON.parse(Buffer.concat(chunks).toString('utf8')); }
+        catch { respond(400, { error: '无效的 JSON。' }); return; }
+        const pending = promptWrites.then(() => writePrompts(repositoryRoot, value));
+        promptWrites = pending.catch(() => {});
+        const result = await pending; respond(result.conflict ? 409 : 200, result);
+      } catch (error) { respond(error.code ? 500 : 400, { error: error.code ? '提示词仓库读写失败，已有数据已保留。' : error.message }); }
+      return;
+    }
     if (req.url === '/api/categories') {
       if (req.method !== 'PUT') { res.writeHead(405, { Allow: 'PUT' }).end(); return; }
       const host = req.headers.host || '';

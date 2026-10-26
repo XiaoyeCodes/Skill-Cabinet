@@ -1,0 +1,66 @@
+.workspace-switcher .prompts-avatar{background:#ead9cd;color:#925238}
+.prompts-workspace .sync-activity,.prompts-workspace .sync-status,.prompts-workspace .sync-settings-link{display:none}
+.prompt-hero{display:flex;align-items:center;justify-content:space-between;gap:28px;padding:37px 0 32px;min-height:340px;border-bottom:1px solid var(--line)}
+.prompt-hero h1{font-size:39px;margin:19px 0 13px}
+.prompt-hero p{font-size:12px;line-height:1.95;color:#777062;margin:0 0 23px}
+.prompt-hero-art{width:34%;max-width:325px;color:#797461}
+.prompt-hero-art svg{display:block;width:100%;height:auto}
+.prompt-library{padding:29px 0 30px}
+.prompt-save-bar{display:flex;gap:16px;align-items:center;justify-content:space-between;border:1px solid #ddd7c9;background:#eeece2;border-radius:5px;padding:10px 13px;margin-bottom:21px}
+#prompt-save-status{font-size:10px;line-height:1.8;color:#566344;overflow-wrap:anywhere}
+#prompt-save-status[data-error]{color:#954333}
+.prompt-save-bar .text-btn{font-size:10px;flex-shrink:0;color:#974d37}
+.prompt-conflict{padding:15px;background:#f2e6da;border:1px solid #be9278;border-radius:5px;margin-bottom:20px;font-size:12px;color:#624739}
+.prompt-conflict p{margin:0 0 12px;overflow-wrap:anywhere}
+.prompt-conflict>div{display:flex;gap:8px;flex-wrap:wrap}
+.prompt-library .search-wrap{flex:1;max-width:470px}
+.prompt-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.prompt-card{min-width:0;border:1px solid #dcd5c8;border-radius:6px;background:var(--paper);padding:15px 21px 0;display:flex;flex-direction:column;transition:border-color .2s,transform .2s}
+.prompt-card:hover{border-color:#af9a81;transform:translateY(-2px)}
+.prompt-card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.prompt-number{font:10px Georgia,serif;letter-spacing:1.2px;color:#81745f}
+.prompt-star{margin-right:-6px;color:#8b806b}
+.prompt-star.is-favorite{color:#a75035}
+.prompt-star.is-favorite svg{fill:#bf6b5020}
+.prompt-card .card-eyebrow{color:#766650}
+.prompt-card h3{font:400 23px/1.5 var(--serif);margin:10px 0 8px;overflow-wrap:anywhere}
+.prompt-card h3 button{font:inherit;text-align:left;color:#403c32;width:100%}
+.prompt-card h3 button:hover{color:#a4563b}
+.prompt-description{font-size:11px;line-height:1.9;color:#756c5c;margin:0 0 15px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere}
+.prompt-excerpt{position:relative;background:#f0ede4;border-left:2px solid #c29074;min-height:112px;padding:15px 13px 15px 25px;margin-bottom:2px;color:#686052}
+.prompt-excerpt>span{position:absolute;left:8px;top:7px;font:26px Georgia,serif;color:#ab6a4d}
+.prompt-excerpt p{font:11px/1.9 var(--sans);margin:0;white-space:pre-wrap;overflow-wrap:anywhere;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.prompt-card .card-tags{margin:15px 0 20px}
+.prompt-card .tag{color:#736752}
+.prompt-card-footer{margin-top:auto;border-top:1px solid var(--line);display:flex;align-items:center;gap:10px;padding:12px 0;font-size:9px;color:#7d715c;flex-wrap:wrap}
+.prompt-card-footer>.text-btn{margin-left:auto;font-size:10px;color:#8f4d35}
+.prompt-copy{display:inline-flex;gap:6px;align-items:center;border:1px solid #d8cfbe;border-radius:4px;padding:7px 9px;font-size:10px;color:#645540}
+.prompt-copy:hover{background:#eae2d5;border-color:#b5a58d}
+.prompt-copy i svg{width:13px;height:13px}
+.prompt-empty{grid-column:1/-1;min-height:325px;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;border:1px dashed #cfc6b4;border-radius:6px;padding:28px 20px;background:#f2efe72e}
+.prompt-empty-mark{font:54px/1 Georgia,serif;color:#b07859;letter-spacing:7px}
+.prompt-empty .eyebrow{font-size:7px;margin-top:12px}
+.prompt-empty h3{font:400 25px/1.5 var(--serif);color:#675a47;margin:16px 0 10px}
+.prompt-empty p{font-size:12px;line-height:1.9;color:#81745e;margin:0 0 20px}
+.prompt-storage-note{font-size:10px;line-height:1.9;color:#777061;margin:23px 0 0}
+.prompt-editor{width:min(730px,calc(100% - 28px))}
+.prompt-editor .prompt-content-input{font:12px/1.9 var(--sans);min-height:230px}
+.prompt-detail{width:min(800px,calc(100% - 28px))}
+.prompt-detail h2{overflow-wrap:anywhere}
+.prompt-detail-description{font-size:12px;line-height:1.9;color:#716552;white-space:pre-wrap;overflow-wrap:anywhere}
+.prompt-variables{border:1px solid #d8cfbe;border-radius:5px;background:#efebdf;padding:17px 19px;margin:21px 0}
+.prompt-variables h3{font:400 18px var(--serif);margin:0 0 8px}
+.prompt-variables p{font-size:11px;color:#75634c;margin:0 0 16px}
+.prompt-body-label{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:10px;color:#7c6b54;margin-top:22px}
+.prompt-body-label .text-btn{display:flex;align-items:center;gap:6px}
+.prompt-body-label svg{width:14px;height:14px}
+.prompt-full-content{margin:10px 0 16px;background:#eeebe2;border:1px solid #ddd6c8;border-radius:5px;padding:20px;font:13px/2 var(--sans);white-space:pre-wrap;overflow-wrap:anywhere;max-height:45vh;overflow-y:auto;color:#51493c;user-select:text}
+.prompt-source{font-size:11px;color:#98503a;overflow-wrap:anywhere}
+.prompt-detail-footer{flex-wrap:wrap;gap:8px}
+.prompt-remove{margin-right:auto;display:flex;align-items:center;gap:5px;color:#9a4937}
+.prompt-remove svg{width:14px;height:14px}
+.prompt-card button:focus-visible,.prompts-workspace button:focus-visible{outline:2px solid #a5573d;outline-offset:3px}
+@media(min-width:1500px){.prompt-hero{min-height:370px}.prompt-hero h1{font-size:44px}.prompt-card{padding:18px 24px 0}}
+@media(max-width:1150px){.prompt-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.prompt-hero h1{font-size:34px}}
+@media(max-width:850px){.prompt-grid{grid-template-columns:1fr}.prompt-hero h1{font-size:30px}.prompt-hero-art{width:32%}.prompt-hero p{font-size:11px}.prompt-card{padding-inline:20px}.prompt-library .toolbar{flex-wrap:wrap}.prompt-library .search-wrap{max-width:none}.prompt-save-bar{align-items:flex-start}.prompt-save-bar .text-btn{font-size:9px}}
+@media(max-width:680px){.prompt-hero{min-height:320px;position:relative;overflow:hidden;padding:28px 0;gap:0}.prompt-hero>div:first-child{position:relative;z-index:1}.prompt-hero h1{font-size:32px}.prompt-hero p{max-width:255px;font-size:11px}.prompt-hero-art{position:absolute;right:-65px;bottom:39px;width:195px;opacity:.35}.prompt-hero .hero-buttons{flex-wrap:wrap}.prompt-grid{grid-template-columns:1fr;gap:17px}.prompt-card{padding:18px 22px 0}.prompt-card h3{font-size:24px}.prompt-description,.prompt-excerpt p{font-size:12px}.prompt-save-bar{flex-wrap:wrap;gap:4px;padding:10px 12px}.prompt-save-bar .text-btn{padding:4px 0;min-height:32px}#prompt-save-status{font-size:10px}.prompt-empty{padding:28px 17px}.prompt-empty h3{font-size:23px}.prompt-empty .eyebrow{font-size:6px;letter-spacing:1px}.prompt-empty p{font-size:11px}.prompt-detail-footer .primary-btn{width:100%;margin-top:5px}.prompt-body-label{flex-wrap:wrap}.prompt-detail .modal-footer .outline-btn{padding:8px 10px;font-size:11px}.prompt-storage-note{font-size:9px}.prompt-library .toolbar-controls{max-width:100%;flex-wrap:wrap}.prompt-copy{min-height:38px}.prompt-card h3 button{min-height:44px}.prompt-variables{padding:15px}}

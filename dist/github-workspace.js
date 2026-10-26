@@ -1,5 +1,6 @@
 import { PROJECTS_KEY, PROJECT_CATEGORIES, ProjectStore, inspectRepository, parseRepositoryUrl, loadProjectCatalog, onProjectsChanged } from './github-projects.js';
 import { syncBadge } from './sync-status.js';
+import { switchWorkspace } from './workspaces.js';
 const $ = (selector, root = document) => root.querySelector(selector);
 const esc = value => String(value ?? '').replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[character]));
 const number = value => new Intl.NumberFormat('en', { notation: 'compact', maximumFractionDigits: 1 }).format(value);
@@ -19,15 +20,13 @@ export function initializeGitHubWorkspace({ icon, hydrateIcons, toast, getToken 
   exportButton.className = 'quiet-btn'; exportButton.id = 'project-export'; exportButton.hidden = true;
   exportButton.innerHTML = `${icon('download')}<span>导出项目</span>`; $('.top-actions').append(exportButton);
   const pageLabel = document.createElement('strong'); pageLabel.id = 'github-page-label'; pageLabel.hidden = true; pageLabel.textContent = '全部项目'; $('#page-label').after(pageLabel);
-  const localNote = $('.local-note small'), skillsNote = localNote.innerHTML;
-  const localCaption = $('.local-note p').firstChild, skillsCaption = localCaption.textContent;
   const helpStep = document.createElement('div'); helpStep.innerHTML = '<span>04</span><h3>收藏你的 GitHub 项目</h3><p>切换到「我的 GitHub 空间」，粘贴项目仓库链接，即可自动读取名称、用途和分类。识别结果可以编辑。项目收藏先保存在当前浏览器；连接 GitHub 云同步后，两个空间的修改会一起上传。也可以导出项目备份。</p>'; $('.help-steps').append(helpStep);
   const dialog = document.createElement('dialog'); dialog.className = 'modal project-dialog'; dialog.id = 'project-dialog'; document.body.append(dialog);
   const editor = document.createElement('dialog'); editor.className = 'modal project-editor'; editor.id = 'project-editor'; document.body.append(editor);
   const confirmDialog = document.createElement('dialog'); confirmDialog.className = 'modal confirm-modal'; confirmDialog.id = 'project-confirm'; document.body.append(confirmDialog);
   for (const modal of [dialog, editor, confirmDialog]) modal.addEventListener('click', event => { if (event.target === modal) { const rect = modal.getBoundingClientRect(); if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) modal.close(); } });
 
-  let store, projects = [], nav = 'all', category = '', query = '', active = false, pending, currentId;
+  let store, projects = [], nav = 'all', category = '', query = '', pending, currentId;
   const status = $('#project-add-status');
   try { store = new ProjectStore(); projects = store.list(); } catch (error) { status.textContent = error.message; status.className = 'form-error'; }
   const categories = () => [...new Set([...PROJECT_CATEGORIES, ...projects.map(project => project.category)])];
@@ -46,20 +45,6 @@ export function initializeGitHubWorkspace({ icon, hydrateIcons, toast, getToken 
     $('#project-reset').hidden = !(query || category || nav !== 'all');
     $('#project-grid').innerHTML = filtered.length ? filtered.map(project => `<article class="project-card" role="button" tabindex="0" data-project-open="${esc(project.id)}" aria-label="查看项目 ${esc(project.name)}"><div class="project-card-top"><span class="project-code-mark" aria-hidden="true">&lt;/&gt;</span><span class="project-owner">${esc(project.owner)}</span><button class="icon-btn project-favorite ${project.favorite ? 'is-favorite' : ''}" data-project-favorite="${esc(project.id)}" aria-label="${project.favorite ? '取消收藏' : '收藏'} ${esc(project.name)}" aria-pressed="${project.favorite}">${icon('star')}</button></div><div class="card-meta"><div class="card-eyebrow">${esc(project.category)}${project.archived ? ' · 已归档' : ''}</div>${syncBadge('projects', project.id)}</div><h3>${esc(project.name)}</h3><p class="project-description">${esc(project.description || '还没有用途说明，点击项目可以补充。')}</p><div class="card-tags">${project.tags.slice(0, 3).map(tag => `<span class="tag">${esc(tag)}</span>`).join('')}</div><div class="project-card-footer"><span>${project.language ? `<span class="project-language-dot"></span>${esc(project.language)}` : 'GitHub 项目'}</span><span class="project-stars">${icon('star')}${number(project.stars)}</span><span class="card-arrow" aria-hidden="true">↗</span></div></article>`).join('') : `<div class="project-empty">${projects.length ? icon('search') : '<span class="project-empty-mark" aria-hidden="true">{ }</span>'}<div class="eyebrow">${projects.length ? 'A LITTLE MORE EXPLORING' : 'YOUR NEXT IDEA STARTS HERE'}</div><h3>${projects.length ? '换个关键词，再找找。' : '好项目，值得留一个位置。'}</h3><p>${projects.length ? '试试项目名、作者或用途，也可以清除当前筛选。' : '把第一个 GitHub 链接粘贴到上方，<br>让散落的项目，成为随时可用的灵感。'}</p>${projects.length ? '<button class="outline-btn" data-project-reset>查看全部项目</button>' : '<button class="outline-btn" id="project-focus-url">添加第一个项目 ↗</button>'}</div>`;
     hydrateIcons($('#github-navigation')); hydrateIcons(content);
-  }
-  function switchWorkspace(workspace) {
-    active = workspace === 'github'; document.body.classList.toggle('github-workspace', active);
-    document.title = active ? 'Skill Cabinet · 我的 GitHub 空间' : 'Skill Cabinet · 我的 Skills 空间';
-    localNote.innerHTML = active ? '项目先保存到本机<br>连接 GitHub，两个空间一起同步。' : skillsNote;
-    localCaption.textContent = active ? '你的项目，值得好好收藏。' : skillsCaption;
-    $('#skills-content').hidden = active; $('#github-content').hidden = !active;
-    $('#skills-navigation').hidden = active; $('#github-navigation').hidden = !active;
-    $('#page-label').hidden = active; $('#github-page-label').hidden = !active;
-    $('#backup-button').hidden = active; exportButton.hidden = !active;
-    $('.breadcrumb > span:not(.slash)').textContent = active ? 'GitHub 空间' : 'Skills 空间';
-    for (const button of document.querySelectorAll('[data-workspace]')) { const selected = button.dataset.workspace === workspace; button.classList.toggle('active', selected); button.setAttribute('aria-pressed', String(selected)); }
-    $('#sidebar').classList.remove('open');
-    try { localStorage.setItem('skill-cabinet-active-workspace', workspace); } catch {}
   }
   function showDetail(id) {
     const project = projects.find(item => item.id === id); if (!project) return;
@@ -137,7 +122,5 @@ export function initializeGitHubWorkspace({ icon, hydrateIcons, toast, getToken 
   render(); hydrateIcons(content); hydrateIcons(exportButton);
   const ready = store ? loadProjectCatalog(store).then(() => reload()).catch(() => { status.className = 'form-error'; status.textContent = '预置项目暂未加载，刷新页面后可重试。已有收藏已保留。'; }) : Promise.resolve();
   onProjectsChanged(() => { if (store) reload(); });
-  let initial = 'skills'; try { initial = localStorage.getItem('skill-cabinet-active-workspace') === 'github' ? 'github' : 'skills'; } catch {}
-  switchWorkspace(initial);
   return { store, ready, refresh: reload };
 }

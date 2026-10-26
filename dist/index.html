@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="./sync.css">
   <link rel="stylesheet" href="./github-workspace.css">
+  <link rel="stylesheet" href="./prompts-workspace.css">
   <script src="./vendor/jszip.min.js" defer></script>
   <script type="module" src="./app.js"></script>
 </head>
@@ -18,6 +19,7 @@
     <a class="brand" href="./" aria-label="Skill Cabinet 首页"><span class="brand-symbol">✳</span><span>Skill Cabinet<span class="brand-sub">个人技能库</span></span></a>
     <div class="workspace-switcher" aria-label="切换空间">
       <button class="workspace-label active" data-workspace="skills" aria-pressed="true"><span class="avatar">S</span><span>我的 Skills 空间<small>Skills workspace</small></span><span class="local-dot"></span></button>
+      <button class="workspace-label" data-workspace="prompts" aria-pressed="false"><span class="avatar prompts-avatar">P</span><span>提示词收录<small>Prompt collection</small></span><span class="local-dot"></span></button>
       <button class="workspace-label" data-workspace="github" aria-pressed="false"><span class="avatar github-avatar">G</span><span>我的 GitHub 空间<small>GitHub workspace</small></span><span class="local-dot"></span></button>
     </div>
     <div id="skills-navigation">
@@ -31,6 +33,7 @@
     <nav id="category-nav" aria-label="Skill 分类"></nav>
     </div>
     <div id="github-navigation" hidden></div>
+    <div id="prompts-navigation" hidden></div>
     <div class="sidebar-bottom">
       <div class="local-note"><span class="tiny-mark">✳</span><p>你的方法，值得好好收藏。<small>本机保存，GitHub 同步<br>让好方法，随你同行。</small></p></div>
       <button class="nav-item" id="help-button"><i data-icon="help"></i>使用指南<span class="external-arrow">↗</span></button>
