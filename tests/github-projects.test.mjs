@@ -116,8 +116,8 @@ test('the requested GitHub projects load once with complete names, purposes and 
   const { readFile } = await import('node:fs/promises');
   const catalog = JSON.parse(await readFile(new URL('../dist/assets/github-projects.json', import.meta.url), 'utf8'));
   const storage = memoryStorage(), store = new ProjectStore(storage);
-  assert.equal(store.seedCatalog(catalog), 5);
-  assert.deepEqual(new Set(store.list().map(item => item.id)), new Set(['mexicat/pdoom-video', 'tunai-0511/meme67-art-history', 'vincentwei1021/mg-styles-15', 'lemomo-ai/lemo-opuscar', 'heygen-com/hyperframes']));
+  assert.equal(store.seedCatalog(catalog), 6);
+  assert.deepEqual(new Set(store.list().map(item => item.id)), new Set(['mexicat/pdoom-video', 'tunai-0511/meme67-art-history', 'vincentwei1021/mg-styles-15', 'lemomo-ai/lemo-opuscar', 'heygen-com/hyperframes', 'remotion-dev/remotion']));
   assert.ok(store.list().every(item => item.category === '设计与创作' && item.description.length > 0 && item.readmeStatus === 'read'));
   const hyperframes = store.list().find(item => item.id === 'heygen-com/hyperframes');
   assert.equal(hyperframes.name, '面向 AI 编程助手的视频制作框架');
@@ -126,6 +126,9 @@ test('the requested GitHub projects load once with complete names, purposes and 
   const { fingerprintProject } = await import('../dist/project-sync.js');
   assert.deepEqual(manifest.projects[hyperframes.id].record, hyperframes);
   assert.equal(manifest.projects[hyperframes.id].fingerprint, await fingerprintProject(hyperframes));
+  const remotion = store.list().find(item => item.id === 'remotion-dev/remotion');
+  assert.deepEqual(manifest.projects[remotion.id].record, remotion);
+  assert.equal(manifest.projects[remotion.id].fingerprint, await fingerprintProject(remotion));
   const before = storage.getItem(PROJECTS_KEY);
   assert.equal(store.seedCatalog(catalog), 0);
   assert.equal(storage.getItem(PROJECTS_KEY), before);

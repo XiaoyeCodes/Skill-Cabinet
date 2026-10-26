@@ -135,6 +135,35 @@
       "favorite": false,
       "createdAt": "2026-10-26T08:57:01.864Z",
       "updatedAt": "2026-10-26T08:57:01.864Z"
+    },
+    {
+      "owner": "remotion-dev",
+      "repo": "remotion",
+      "id": "remotion-dev/remotion",
+      "url": "https://github.com/remotion-dev/remotion",
+      "name": "Remotion · React 视频制作框架",
+      "description": "用 React 和 TypeScript 通过代码制作视频，支持动画、字幕、转场、数据驱动内容和批量渲染，可嵌入播放器或搭建视频编辑应用，并提供 AI 编程助手工作流。",
+      "category": "设计与创作",
+      "tags": [
+        "视频制作",
+        "React",
+        "TypeScript",
+        "视频渲染",
+        "动画",
+        "视频自动化"
+      ],
+      "language": "TypeScript",
+      "stars": 67643,
+      "forks": 5467,
+      "license": "Remotion License",
+      "homepage": "https://remotion.dev/",
+      "readmeExcerpt": "Remotion 使用 React 代码描述视频内容，支持通过编程、交互编辑或编码智能体创建视频。提供动画、字幕、转场、播放器和编辑器相关组件，以及 Node.js、云端和浏览器渲染入口，可用于批量生成视频及构建视频应用。\n\n项目采用 Remotion 专用许可证，授权详情见仓库 LICENSE.md。",
+      "readmeStatus": "read",
+      "repositoryUpdatedAt": "2026-10-25T17:03:50Z",
+      "archived": false,
+      "favorite": false,
+      "createdAt": "2026-10-26T10:56:14.883Z",
+      "updatedAt": "2026-10-26T10:56:14.883Z"
     }
   ]
 }
