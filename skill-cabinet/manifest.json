@@ -569,13 +569,13 @@
       }
     },
     "mexicat/pdoom-video": {
-      "fingerprint": "d983b93e5cd8190461656be0035a8068b0ecd38f4e04c4c1099a950f5dafcefc",
+      "fingerprint": "6cc74c88439f976bc412cf7f5d081b18a53cb5fb96e3462eb1722bd8bcf27df3",
       "record": {
         "owner": "mexicat",
         "repo": "pdoom-video",
         "id": "mexicat/pdoom-video",
         "url": "https://github.com/mexicat/pdoom-video",
-        "name": "pdoom-video",
+        "name": "比较不错的，带着节奏的ai视频效果",
         "description": "用代码生成歌词同步音乐视频：画面、逐词卡拉 OK 字幕和排版由时间驱动，支持浏览器实时预览及 1080p60 / 4K60 离线导出。",
         "category": "设计与创作",
         "tags": [
@@ -592,7 +592,7 @@
         "archived": false,
         "favorite": false,
         "createdAt": "2026-10-21T15:13:39.845Z",
-        "updatedAt": "2026-10-21T15:13:39.845Z"
+        "updatedAt": "2026-10-26T13:44:28.916Z"
       }
     },
     "remotion-dev/remotion": {
@@ -628,13 +628,13 @@
       }
     },
     "tunai-0511/meme67-art-history": {
-      "fingerprint": "2563b491d246b090f25f0d3a6f806f360bba2bb12209587d60dc271330d55dfb",
+      "fingerprint": "52c4c37f78dbe594c746414d0fefc9760de82c524ebf44952e9262e38ee3a37c",
       "record": {
         "owner": "Tunai-0511",
         "repo": "meme67-art-history",
         "id": "tunai-0511/meme67-art-history",
         "url": "https://github.com/Tunai-0511/meme67-art-history",
-        "name": "meme67-art-history",
+        "name": "穿越不同时代的艺术风格",
         "description": "用 p5.js 与 p5.brush 逐帧绘制的艺术史动画，让网络迷因「67」穿越不同时代的艺术风格；画面与配乐均由程序生成。代码采用 MIT 协议，视频另保留版权。",
         "category": "设计与创作",
         "tags": [
@@ -657,7 +657,7 @@
         "archived": false,
         "favorite": false,
         "createdAt": "2026-10-21T15:13:39.842Z",
-        "updatedAt": "2026-10-21T15:13:39.843Z"
+        "updatedAt": "2026-10-26T13:43:49.253Z"
       }
     },
     "vincentwei1021/mg-styles-15": {
