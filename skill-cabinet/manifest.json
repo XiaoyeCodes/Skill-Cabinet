@@ -19,6 +19,30 @@
         "updatedAt": "2026-10-24T03:42:33.423Z"
       }
     },
+    "awesome-design-md": {
+      "fingerprint": "1da311b162274f8105d431069f200bacc56259ddbe8bc45839993dda1250077a",
+      "archiveSha256": "f868088ecf51fae43c972747bef0b15492af7a04ae29cd2fab800f92c02baa28",
+      "archivePath": "skill-cabinet/archives/awesome-design-md-f868088ecf51fae43c972747bef0b15492af7a04ae29cd2fab800f92c02baa28.zip",
+      "metadata": {
+        "id": "awesome-design-md-seed",
+        "name": "DESIGN.md · 网站设计风格库",
+        "slug": "awesome-design-md",
+        "description": "一个 Skill 内收录 84 份成熟网站的 DESIGN.md 设计规范。用户可指定参考风格，也可让 AI 根据网站需求推荐并询问选择；附离线检索与单份规范导出工具，支持配色、排版、组件和响应式设计。",
+        "category": "图像与设计",
+        "tags": [
+          "网站设计",
+          "设计规范",
+          "风格选型",
+          "DESIGN.md",
+          "离线参考"
+        ],
+        "version": "1.0.0",
+        "author": "个人整理 · 来源 VoltAgent / getdesign.md",
+        "favorite": false,
+        "createdAt": "2026-10-26T08:49:03.164Z",
+        "updatedAt": "2026-10-26T08:49:03.164Z"
+      }
+    },
     "buffett-letters-skill": {
       "fingerprint": "de396a16a77c09e40e6876a0e20c7ecc77293811021745249d7d74c5cb02fadd",
       "archiveSha256": "bae8654acfcf44f325a86ca3a69c962972b52a89a021b2a39d06929bba437ebd",
@@ -81,6 +105,30 @@
         "favorite": false,
         "createdAt": "2026-10-21T09:13:12.372Z",
         "updatedAt": "2026-10-21T09:13:12.372Z"
+      }
+    },
+    "claude-design": {
+      "fingerprint": "f7454771e5c8b1e36ab8d66e97175d7dde06c9a0edbee7914abc64c6a6759fc5",
+      "archiveSha256": "be30a35a9598548334529a2fcae321c0bdfa4d94c7d7ae5b6791008c2d072c10",
+      "archivePath": "skill-cabinet/archives/claude-design-be30a35a9598548334529a2fcae321c0bdfa4d94c7d7ae5b6791008c2d072c10.zip",
+      "metadata": {
+        "id": "claude-design-seed",
+        "name": "克劳德设计",
+        "slug": "claude-design",
+        "description": "参考 Claude 官网的奶油底、陶土色强调、衬线标题与深色产品演示，为自有品牌设计网站。含完整原始设计分析、中文排版与可访问性适配、语义色值和 CSS 起点。",
+        "category": "图像与设计",
+        "tags": [
+          "网站设计",
+          "Claude风格",
+          "暖白纸面",
+          "陶土色",
+          "衬线排版"
+        ],
+        "version": "1.0.0",
+        "author": "个人整理 · 来源 VoltAgent / getdesign.md",
+        "favorite": false,
+        "createdAt": "2026-10-26T08:49:03.412Z",
+        "updatedAt": "2026-10-26T08:49:51.289Z"
       }
     },
     "daily-60s-image": {
@@ -373,6 +421,31 @@
         "updatedAt": "2026-10-21T09:19:22.449Z"
       }
     },
+    "ui-ux-pro-max": {
+      "fingerprint": "905d3f5bb0a3b5d66dc20141509c8ff3fa243869134f8725260b64d3692c0612",
+      "archiveSha256": "45bd941a6ab00cdcfcef83e9d8025698198bb3246f0ee0559176b3c57715a741",
+      "archivePath": "skill-cabinet/archives/ui-ux-pro-max-45bd941a6ab00cdcfcef83e9d8025698198bb3246f0ee0559176b3c57715a741.zip",
+      "metadata": {
+        "id": "ui-ux-pro-max-seed",
+        "name": "UI/UX Pro Max · 网站设计",
+        "slug": "ui-ux-pro-max",
+        "description": "专注网站与界面设计的 UI/UX 技能，支持落地页、后台、仪表盘和组件设计；提供风格检索、配色、字体搭配、响应式布局、交互与无障碍建议，可按需求生成设计系统。附完整本地设计数据、检索脚本与多技术栈指南。",
+        "category": "图像与设计",
+        "tags": [
+          "网站设计",
+          "UI/UX",
+          "设计系统",
+          "响应式布局",
+          "配色排版",
+          "无障碍"
+        ],
+        "version": "2.15.0",
+        "author": "NextLevelBuilder",
+        "favorite": false,
+        "createdAt": "2026-10-26T08:31:37.914Z",
+        "updatedAt": "2026-10-26T08:31:37.914Z"
+      }
+    },
     "warm-paper-editorial": {
       "fingerprint": "f8ebeca91c4eba25b84bf863bc00622d82329230e58d62977febb915794a3fc7",
       "archiveSha256": "c68616a49c223efcfcc79b69cb11fc8f5935bd296157a19f322d4b0893fc1f22",
@@ -396,79 +469,6 @@
         "createdAt": "2026-10-21T09:09:06.173Z",
         "updatedAt": "2026-10-21T09:09:06.173Z"
       }
-    },
-    "ui-ux-pro-max": {
-      "fingerprint": "905d3f5bb0a3b5d66dc20141509c8ff3fa243869134f8725260b64d3692c0612",
-      "archiveSha256": "45bd941a6ab00cdcfcef83e9d8025698198bb3246f0ee0559176b3c57715a741",
-      "archivePath": "skill-cabinet/archives/ui-ux-pro-max-45bd941a6ab00cdcfcef83e9d8025698198bb3246f0ee0559176b3c57715a741.zip",
-      "metadata": {
-        "name": "UI/UX Pro Max · 网站设计",
-        "slug": "ui-ux-pro-max",
-        "description": "专注网站与界面设计的 UI/UX 技能，支持落地页、后台、仪表盘和组件设计；提供风格检索、配色、字体搭配、响应式布局、交互与无障碍建议，可按需求生成设计系统。附完整本地设计数据、检索脚本与多技术栈指南。",
-        "category": "图像与设计",
-        "version": "2.15.0",
-        "author": "NextLevelBuilder",
-        "tags": [
-          "网站设计",
-          "UI/UX",
-          "设计系统",
-          "响应式布局",
-          "配色排版",
-          "无障碍"
-        ],
-        "id": "ui-ux-pro-max-seed",
-        "favorite": false,
-        "createdAt": "2026-10-26T08:31:37.914Z",
-        "updatedAt": "2026-10-26T08:31:37.914Z"
-      }
-    },
-    "awesome-design-md": {
-      "fingerprint": "1da311b162274f8105d431069f200bacc56259ddbe8bc45839993dda1250077a",
-      "archiveSha256": "f868088ecf51fae43c972747bef0b15492af7a04ae29cd2fab800f92c02baa28",
-      "archivePath": "skill-cabinet/archives/awesome-design-md-f868088ecf51fae43c972747bef0b15492af7a04ae29cd2fab800f92c02baa28.zip",
-      "metadata": {
-        "name": "DESIGN.md · 网站设计风格库",
-        "slug": "awesome-design-md",
-        "description": "一个 Skill 内收录 84 份成熟网站的 DESIGN.md 设计规范。用户可指定参考风格，也可让 AI 根据网站需求推荐并询问选择；附离线检索与单份规范导出工具，支持配色、排版、组件和响应式设计。",
-        "category": "图像与设计",
-        "version": "1.0.0",
-        "author": "个人整理 · 来源 VoltAgent / getdesign.md",
-        "tags": [
-          "网站设计",
-          "设计规范",
-          "风格选型",
-          "DESIGN.md",
-          "离线参考"
-        ],
-        "id": "awesome-design-md-seed",
-        "favorite": false,
-        "createdAt": "2026-10-26T08:49:03.164Z",
-        "updatedAt": "2026-10-26T08:49:03.164Z"
-      }
-    },
-    "claude-design": {
-      "fingerprint": "f7454771e5c8b1e36ab8d66e97175d7dde06c9a0edbee7914abc64c6a6759fc5",
-      "archiveSha256": "be30a35a9598548334529a2fcae321c0bdfa4d94c7d7ae5b6791008c2d072c10",
-      "archivePath": "skill-cabinet/archives/claude-design-be30a35a9598548334529a2fcae321c0bdfa4d94c7d7ae5b6791008c2d072c10.zip",
-      "metadata": {
-        "name": "克劳德设计",
-        "slug": "claude-design",
-        "description": "参考 Claude 官网的奶油底、陶土色强调、衬线标题与深色产品演示，为自有品牌设计网站。含完整原始设计分析、中文排版与可访问性适配、语义色值和 CSS 起点。",
-        "category": "图像与设计",
-        "version": "1.0.0",
-        "author": "个人整理 · 来源 VoltAgent / getdesign.md",
-        "tags": [
-          "网站设计",
-          "Claude风格",
-          "暖白纸面",
-          "陶土色",
-          "衬线排版"
-        ],
-        "id": "claude-design-seed",
-        "favorite": false,
-        "createdAt": "2026-10-26T08:49:03.412Z",
-        "updatedAt": "2026-10-26T08:49:51.289Z"
-      }
     }
   },
   "categories": [
@@ -480,6 +480,38 @@
     "新闻日报"
   ],
   "projects": {
+    "heygen-com/hyperframes": {
+      "fingerprint": "a5397cf288561fc53b6c31224783684d2b310d34e1a787a57d0e4eb83acabc61",
+      "record": {
+        "owner": "heygen-com",
+        "repo": "hyperframes",
+        "id": "heygen-com/hyperframes",
+        "url": "https://github.com/heygen-com/hyperframes",
+        "name": "面向 AI 编程助手的视频制作框架",
+        "description": "利用 Claude、Codex 等 AI 编程助手生成视频。",
+        "category": "设计与创作",
+        "tags": [
+          "视频生成",
+          "AI编程",
+          "Claude",
+          "Codex",
+          "HTML",
+          "TypeScript"
+        ],
+        "language": "TypeScript",
+        "stars": 72500,
+        "forks": 6547,
+        "license": "Apache-2.0",
+        "homepage": "https://hyperframes.heygen.com/",
+        "readmeExcerpt": "Write HTML. Render video. Built for agents.\n\nStudio |\n  Quickstart |\n  Showcase |\n  Playground |\n  Catalog |\n  Docs |\n  Discord\n\nHyperFrames is an open-source framework for turning HTML, CSS, media, and seekable animations into deterministic MP4 videos. Use it locally with the CLI, from AI coding agents with skills, or as the rendering core behind hosted authoring workflows.\n\nUsing Claude Code, Codex, Cursor, or another coding agent? Run npx hyperframes skills update once, then ask your agent to make a video.\n\nFor Claude Code, install the versioned plugin:",
+        "readmeStatus": "read",
+        "repositoryUpdatedAt": "2026-10-26T08:55:28Z",
+        "archived": false,
+        "favorite": false,
+        "createdAt": "2026-10-26T08:57:01.864Z",
+        "updatedAt": "2026-10-26T08:57:01.864Z"
+      }
+    },
     "lemomo-ai/lemo-opuscar": {
       "fingerprint": "105fbad5cceeb3c88d66531a17d83f815e305c917d59edf3539531910ad65b38",
       "record": {
@@ -536,6 +568,38 @@
         "favorite": false,
         "createdAt": "2026-10-21T15:13:39.845Z",
         "updatedAt": "2026-10-21T15:13:39.845Z"
+      }
+    },
+    "remotion-dev/remotion": {
+      "fingerprint": "2b32fb5b8e82107d4c79c6177307cd36b6b3d843caff702a661b917ecce520ba",
+      "record": {
+        "owner": "remotion-dev",
+        "repo": "remotion",
+        "id": "remotion-dev/remotion",
+        "url": "https://github.com/remotion-dev/remotion",
+        "name": "Remotion · React 视频制作框架",
+        "description": "用 React 和 TypeScript 通过代码制作视频，支持动画、字幕、转场、数据驱动内容和批量渲染，可嵌入播放器或搭建视频编辑应用，并提供 AI 编程助手工作流。",
+        "category": "设计与创作",
+        "tags": [
+          "视频制作",
+          "React",
+          "TypeScript",
+          "视频渲染",
+          "动画",
+          "视频自动化"
+        ],
+        "language": "TypeScript",
+        "stars": 67643,
+        "forks": 5467,
+        "license": "Remotion License",
+        "homepage": "https://remotion.dev/",
+        "readmeExcerpt": "Remotion 使用 React 代码描述视频内容，支持通过编程、交互编辑或编码智能体创建视频。提供动画、字幕、转场、播放器和编辑器相关组件，以及 Node.js、云端和浏览器渲染入口，可用于批量生成视频及构建视频应用。\n\n项目采用 Remotion 专用许可证，授权详情见仓库 LICENSE.md。",
+        "readmeStatus": "read",
+        "repositoryUpdatedAt": "2026-10-25T17:03:50Z",
+        "archived": false,
+        "favorite": false,
+        "createdAt": "2026-10-26T10:56:14.883Z",
+        "updatedAt": "2026-10-26T10:56:14.883Z"
       }
     },
     "tunai-0511/meme67-art-history": {
@@ -596,70 +660,6 @@
         "favorite": false,
         "createdAt": "2026-10-21T15:13:40.307Z",
         "updatedAt": "2026-10-21T15:13:40.307Z"
-      }
-    },
-    "heygen-com/hyperframes": {
-      "fingerprint": "a5397cf288561fc53b6c31224783684d2b310d34e1a787a57d0e4eb83acabc61",
-      "record": {
-        "owner": "heygen-com",
-        "repo": "hyperframes",
-        "id": "heygen-com/hyperframes",
-        "url": "https://github.com/heygen-com/hyperframes",
-        "name": "面向 AI 编程助手的视频制作框架",
-        "description": "利用 Claude、Codex 等 AI 编程助手生成视频。",
-        "category": "设计与创作",
-        "tags": [
-          "视频生成",
-          "AI编程",
-          "Claude",
-          "Codex",
-          "HTML",
-          "TypeScript"
-        ],
-        "language": "TypeScript",
-        "stars": 72500,
-        "forks": 6547,
-        "license": "Apache-2.0",
-        "homepage": "https://hyperframes.heygen.com/",
-        "readmeExcerpt": "Write HTML. Render video. Built for agents.\n\nStudio |\n  Quickstart |\n  Showcase |\n  Playground |\n  Catalog |\n  Docs |\n  Discord\n\nHyperFrames is an open-source framework for turning HTML, CSS, media, and seekable animations into deterministic MP4 videos. Use it locally with the CLI, from AI coding agents with skills, or as the rendering core behind hosted authoring workflows.\n\nUsing Claude Code, Codex, Cursor, or another coding agent? Run npx hyperframes skills update once, then ask your agent to make a video.\n\nFor Claude Code, install the versioned plugin:",
-        "readmeStatus": "read",
-        "repositoryUpdatedAt": "2026-10-26T08:55:28Z",
-        "archived": false,
-        "favorite": false,
-        "createdAt": "2026-10-26T08:57:01.864Z",
-        "updatedAt": "2026-10-26T08:57:01.864Z"
-      }
-    },
-    "remotion-dev/remotion": {
-      "fingerprint": "2b32fb5b8e82107d4c79c6177307cd36b6b3d843caff702a661b917ecce520ba",
-      "record": {
-        "owner": "remotion-dev",
-        "repo": "remotion",
-        "id": "remotion-dev/remotion",
-        "url": "https://github.com/remotion-dev/remotion",
-        "name": "Remotion · React 视频制作框架",
-        "description": "用 React 和 TypeScript 通过代码制作视频，支持动画、字幕、转场、数据驱动内容和批量渲染，可嵌入播放器或搭建视频编辑应用，并提供 AI 编程助手工作流。",
-        "category": "设计与创作",
-        "tags": [
-          "视频制作",
-          "React",
-          "TypeScript",
-          "视频渲染",
-          "动画",
-          "视频自动化"
-        ],
-        "language": "TypeScript",
-        "stars": 67643,
-        "forks": 5467,
-        "license": "Remotion License",
-        "homepage": "https://remotion.dev/",
-        "readmeExcerpt": "Remotion 使用 React 代码描述视频内容，支持通过编程、交互编辑或编码智能体创建视频。提供动画、字幕、转场、播放器和编辑器相关组件，以及 Node.js、云端和浏览器渲染入口，可用于批量生成视频及构建视频应用。\n\n项目采用 Remotion 专用许可证，授权详情见仓库 LICENSE.md。",
-        "readmeStatus": "read",
-        "repositoryUpdatedAt": "2026-10-25T17:03:50Z",
-        "archived": false,
-        "favorite": false,
-        "createdAt": "2026-10-26T10:56:14.883Z",
-        "updatedAt": "2026-10-26T10:56:14.883Z"
       }
     }
   }
