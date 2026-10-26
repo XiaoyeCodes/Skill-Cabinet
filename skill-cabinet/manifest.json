@@ -506,13 +506,13 @@
   ],
   "projects": {
     "heygen-com/hyperframes": {
-      "fingerprint": "a5397cf288561fc53b6c31224783684d2b310d34e1a787a57d0e4eb83acabc61",
+      "fingerprint": "20acfb0dc7a1a160cda3428d1322db5b09e9f34a87d04045d2fdfe4da524c9ab",
       "record": {
         "owner": "heygen-com",
         "repo": "hyperframes",
         "id": "heygen-com/hyperframes",
         "url": "https://github.com/heygen-com/hyperframes",
-        "name": "面向 AI 编程助手的视频制作框架",
+        "name": "Hyperframes面向 AI 编程助手的视频制作框架",
         "description": "利用 Claude、Codex 等 AI 编程助手生成视频。",
         "category": "设计与创作",
         "tags": [
@@ -534,7 +534,7 @@
         "archived": false,
         "favorite": false,
         "createdAt": "2026-10-26T08:57:01.864Z",
-        "updatedAt": "2026-10-26T08:57:01.864Z"
+        "updatedAt": "2026-10-26T13:45:40.747Z"
       }
     },
     "lemomo-ai/lemo-opuscar": {
@@ -596,13 +596,13 @@
       }
     },
     "remotion-dev/remotion": {
-      "fingerprint": "2b32fb5b8e82107d4c79c6177307cd36b6b3d843caff702a661b917ecce520ba",
+      "fingerprint": "cb7aeb2ca728792001f83cf279891ff554cada2a1ccdf5ad56dfed2693fa351b",
       "record": {
         "owner": "remotion-dev",
         "repo": "remotion",
         "id": "remotion-dev/remotion",
         "url": "https://github.com/remotion-dev/remotion",
-        "name": "Remotion · React 视频制作框架",
+        "name": "Remotion · React Ai视频制作软件",
         "description": "用 React 和 TypeScript 通过代码制作视频，支持动画、字幕、转场、数据驱动内容和批量渲染，可嵌入播放器或搭建视频编辑应用，并提供 AI 编程助手工作流。",
         "category": "设计与创作",
         "tags": [
@@ -624,7 +624,7 @@
         "archived": false,
         "favorite": false,
         "createdAt": "2026-10-26T10:56:14.883Z",
-        "updatedAt": "2026-10-26T10:56:14.883Z"
+        "updatedAt": "2026-10-26T13:45:15.639Z"
       }
     },
     "tunai-0511/meme67-art-history": {
