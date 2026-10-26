@@ -80,7 +80,7 @@ cd Skill-Cabinet
 npm start
 ```
 
-打开 [http://localhost:4173](http://localhost:4173)。本地服务会直接读取仓库的 `skill-cabinet/manifest.json` 和完整 ZIP，当前包含二十一份 Skill / 技能集，覆盖设计、产品、写作、研究、新闻与投资金融。无需填写 GitHub Token，也无需手动导入备份；已经只保存了一份 Skill 的旧浏览器也会自动补齐。
+打开 [http://localhost:4173](http://localhost:4173)。本地服务会直接读取仓库的 `skill-cabinet/manifest.json` 和完整 ZIP，当前包含二十二份 Skill / 技能集，覆盖设计、视频、产品、写作、研究、新闻与投资金融。无需填写 GitHub Token，也无需手动导入备份；已经只保存了一份 Skill 的旧浏览器也会自动补齐。
 
 「Huashu Design · 花叔设计」归于「图像与设计」，版本为 3.0.0，来自 [alchaincyf/huashu-design](https://github.com/alchaincyf/huashu-design/tree/798c4235ebff03d5c45e3c8affdf5e9d18f9dfa7)。完整技能包保留上游 389 个文件及 MIT 许可证，另附使用说明和原始 `SKILL.md` 副本；素材、参考文档、脚本与演示均包含在内。
 
@@ -99,6 +99,8 @@ npm start
 2026-10-22 同步了浏览器中更新的三份新闻 Skill：「AIBase 日报 · V7」（`aibase-daily`，18 个文件）、「每日60秒文字日报」（`generate-daily60-digest`，36 个文件）和「金十财经早餐」（`build-jin10-breakfast`，53 个文件）。正文、使用说明、完整附件与收藏状态随仓库保存。每日60秒和金十早餐使用新的技能标识，旧标识保留删除记录，避免换设备后重新出现旧条目；仓库仍为 17 个有效条目。下方「技能收藏」中的三份 ZIP 是原始初始包，当前内容以同步清单为准。
 
 2026-10-23 新增「资深产品经理」（`senior-product-manager`），沿用上传时的「开发与工具」分类。完整包保留指令、Agent 配置、澄清与决策参考、产品设计书结构与质量标准，以及导出的使用说明，共 5 个文件；用于需求梳理、方案取舍和 PRD 交付。
+
+2026-10-26 收录本机上传的「趣味科普动画视频」（`animated-explainer-video`），归于「图像与设计」。原始 `animated-explainer-video-skill.zip` 完整保存在同步归档中，SHA-256 为 `babafbe671d301b39ed0aa68ae7157161783664e626b6a8143b6794d0557a335`。包内共 41 个文件，保留土豆历史横屏案例、通用横竖屏模板、MoviePy/Pillow/NumPy 与 FFmpeg 制作脚本、Noto Sans SC 中文字体及 OFL 许可、19 段配音缓存和完整参考文档。用于制作带中文配音、字幕、配乐和原创动画的科普 MP4，并交付封面、分镜、SRT 与可编辑源码；实际制作需 Python、FFmpeg，生成新配音还需联网使用 edge-tts。
 
 后续在项目目录执行 `git pull`，打开的页面会在约 **5 秒内**自动检查并显示新的技能数据；切回页面或点击「刷新本机仓库」也会立即检查并显示检查结果。这个按钮只读取本机已经拉取的技能内容，不会执行 `git pull` 或上传浏览器里的修改。**与 GitHub 云端交换数据请点击「同步到 GitHub」**，未连接时会打开设置。服务按请求读取磁盘文件，技能数据更新无需重启；修改前端代码后刷新页面，更新 `server.mjs` 等服务端代码后需重新运行 `npm start`。
 

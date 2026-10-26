@@ -469,6 +469,31 @@
         "createdAt": "2026-10-21T09:09:06.173Z",
         "updatedAt": "2026-10-21T09:09:06.173Z"
       }
+    },
+    "animated-explainer-video": {
+      "fingerprint": "f737fa3ac4d561c240cd3c866f7c8dd247b79db6601280dce9581a47238c05c7",
+      "archiveSha256": "babafbe671d301b39ed0aa68ae7157161783664e626b6a8143b6794d0557a335",
+      "archivePath": "skill-cabinet/archives/animated-explainer-video-babafbe671d301b39ed0aa68ae7157161783664e626b6a8143b6794d0557a335.zip",
+      "metadata": {
+        "id": "98df50a3-a1f4-44d0-a238-f1bd76f7ad7b",
+        "name": "趣味科普动画视频",
+        "slug": "animated-explainer-video",
+        "description": "从主题制作带中文配音、字幕、配乐与原创卡通动画的科普视频，交付 MP4、封面、分镜、SRT 和可编辑源码；包含土豆历史横屏案例、通用横竖屏模板、中文字体及配音缓存。",
+        "category": "图像与设计",
+        "tags": [
+          "科普视频",
+          "动画制作",
+          "中文配音",
+          "字幕",
+          "MoviePy",
+          "FFmpeg"
+        ],
+        "version": "1.0.0",
+        "author": "",
+        "favorite": false,
+        "createdAt": "2026-10-26T13:31:17.709Z",
+        "updatedAt": "2026-10-26T13:31:17.709Z"
+      }
     }
   },
   "categories": [
