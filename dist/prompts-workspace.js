@@ -1,4 +1,5 @@
 import { PROMPTS_KEY, PROMPT_CATEGORIES, PromptStore, PromptRepository } from './prompts.js';
+import { isStaticHosting } from './hosting.js';
 
 const $ = (selector, root = document) => root.querySelector(selector);
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -7,20 +8,22 @@ const variables = content => [...new Set([...content.matchAll(/\{\{\s*([^{}\n]{1
 const drawing = `<svg viewBox="0 0 320 240" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path fill="#ebe7db" d="m74 46 138-11 14 156-138 11z"/><path fill="#faf8f2" d="m100 38 138 13-15 153-138-13z"/><path d="m116 65 86 8m-89 16 94 9m-97 11 68 6m-71 17 95 9m-97 12 74 7m-42 33 63 6"/><path d="M130 96c-8-1-11 4-12 10l-1 8 9 1 1-9-5-.5m28-7c-8-1-11 4-12 10l-1 8 9 1 1-9-5-.5" stroke="#bf6b50" stroke-width="2"/><path fill="#c87457" d="m231 163 37-77 9 4-37 77-9 9z"/><path d="m233 159 8 4m24-71 8 4M45 211h233M56 192h8m-4-4v8M266 43v23m-11-12h23m-19-8 15 16m-16 0 16-16"/><circle cx="62" cy="70" r="3" fill="#9b987f" stroke="none"/></g><text x="87" y="232" fill="currentColor" font-size="8" font-family="Georgia,serif" letter-spacing="2.3">GOOD WORDS, WELL KEPT.</text></svg>`;
 
 export function initializePromptsWorkspace({ icon, hydrateIcons, toast }) {
+  const staticHosting = isStaticHosting();
   const content = document.createElement('div'); content.id = 'prompts-content'; content.className = 'page-content'; content.hidden = true;
   content.innerHTML = `
     <section class="prompt-hero"><div><div class="eyebrow"><span></span>A NOTEBOOK FOR YOUR BEST WORDS</div><h1>把好提示，<br>留给下一次<span class="hero-accent">灵感。</span></h1><p>收录一句好指令，积累一种好方法。<br>让每次反复打磨的表达，都能再次派上用场。</p><div class="hero-buttons"><button class="primary-btn" id="prompt-new">${icon('plus')}收录提示词</button><button class="outline-btn" id="prompt-import">${icon('upload')}导入备份</button></div></div><div class="prompt-hero-art">${drawing}</div></section>
     <section class="prompt-library" aria-labelledby="prompt-library-title"><div class="library-heading"><div class="section-title"><h2 id="prompt-library-title">我的提示词库</h2><span id="prompt-count">0 条提示词</span></div><span class="shelf-label">CAPTURE. POLISH. REUSE.</span></div>
-    <div class="prompt-save-bar"><span id="prompt-save-status" role="status">正在读取提示词…</span><button class="text-btn" id="prompt-refresh">刷新本机仓库</button></div>
+    <div class="prompt-save-bar"><span id="prompt-save-status" role="status">正在读取提示词…</span><button class="text-btn" id="prompt-refresh">${staticHosting ? '检查线上更新' : '刷新本机仓库'}</button></div>
     <div class="prompt-conflict" id="prompt-conflict" hidden><p id="prompt-conflict-message"></p><div><button class="outline-btn" id="prompt-keep-local">保留本页版本</button><button class="outline-btn" id="prompt-use-remote">使用仓库版本</button><button class="text-btn" id="prompt-conflict-backup">先导出本页备份</button></div></div>
     <div class="toolbar"><div class="search-wrap">${icon('search')}<input type="search" id="prompt-search" placeholder="搜索标题、正文或标签…" aria-label="搜索提示词"><kbd>/</kbd></div><div class="toolbar-controls"><select id="prompt-sort" aria-label="提示词排序"><option value="updated">最近更新</option><option value="created">最近收录</option><option value="title">标题 A–Z</option></select><button class="quiet-btn" id="prompt-undo" hidden>撤销上次移除</button></div></div>
     <div class="filter-row"><div class="filter-chips" id="prompt-filters"></div><button class="text-btn" id="prompt-reset" hidden>清除筛选</button></div><div id="prompt-grid" class="prompt-grid" aria-live="polite"></div>
-    <p class="prompt-storage-note">自动保存到本机项目，也可导出 JSON 备份。提交到 GitHub 后，其他设备拉取即可查看。</p></section>
+    <p class="prompt-storage-note">${staticHosting ? '本页修改保存在当前浏览器，可导出 JSON 备份。仓库提示词随网站发布更新。' : '自动保存到本机项目，也可导出 JSON 备份。提交到 GitHub 后，其他设备拉取即可查看。'}</p></section>
     <footer class="page-footer"><span><span class="footer-mark">✳</span> 好的表达，也值得拥有自己的书架。</span><span>YOUR WORDS. YOUR NEXT POSSIBILITY.</span></footer><input type="file" id="prompt-backup-input" accept=".json,application/json" hidden>`;
   $('main').append(content);
   const exportButton = document.createElement('button'); exportButton.id = 'prompts-export'; exportButton.className = 'quiet-btn'; exportButton.hidden = true; exportButton.innerHTML = `${icon('download')}<span>导出提示词</span>`; $('.top-actions').append(exportButton);
   const label = document.createElement('strong'); label.id = 'prompts-page-label'; label.hidden = true; $('#page-label').after(label);
   const help = document.createElement('div'); help.innerHTML = '<span>05</span><h3>收好每一句提示词</h3><p>在「提示词收录」中保存正文、用途、分类、标签和来源。使用 {{变量名}} 标记可替换内容，在详情中填好后一键复制。提示词会写入本机项目文件，支持 JSON 备份与恢复；提交代码后，其他设备拉取即可读取。</p>'; $('.help-steps').append(help);
+  if (staticHosting) help.querySelector('p').textContent = '在「提示词收录」中保存正文、用途、分类、标签和来源。使用 {{变量名}} 标记可替换内容。本页修改保存在当前浏览器；可导出 JSON 备份，在本地项目恢复后提交发布。';
   const makeDialog = (id, className) => { const node = document.createElement('dialog'); node.id = id; node.className = `modal ${className}`; document.body.append(node); return node; };
   const editor = makeDialog('prompt-editor', 'prompt-editor'), detail = makeDialog('prompt-detail', 'prompt-detail'), categoryDialog = makeDialog('prompt-category-dialog', 'confirm-modal'), confirm = makeDialog('prompt-confirm', 'confirm-modal');
   const closeButton = `<button type="button" class="icon-btn" data-prompt-close aria-label="关闭">${icon('x')}</button>`;
@@ -56,7 +59,7 @@ export function initializePromptsWorkspace({ icon, hydrateIcons, toast }) {
         status.textContent = result.stale ? '内容刚有新修改，请根据最新差异重新选择版本。' : '检测到版本差异，两个版本均已保留。';
         $('#prompt-conflict-message').textContent = `以下提示词在本页和项目仓库都有修改：${result.conflicts.map(item => item.title).join('、')}。请选择冲突项使用哪个版本；其他修改会自动合并。`;
       } else {
-        status.textContent = result.pending ? '浏览器已保存 · 正在写入最新修改…' : '已保存到本机项目 · 拉取代码后自动读取更新';
+        status.textContent = result.readOnly ? '已加载线上提示词库 · 本页修改保存在当前浏览器，可导出备份' : result.pending ? '浏览器已保存 · 正在写入最新修改…' : '已保存到本机项目 · 拉取代码后自动读取更新';
         if (result.pending) setTimeout(() => { void refresh(); }, 0);
       }
       status.removeAttribute('data-error');
@@ -66,7 +69,7 @@ export function initializePromptsWorkspace({ icon, hydrateIcons, toast }) {
       }
     } catch (error) { status.textContent = error.message; status.dataset.error = 'true'; }
   }
-  function changed(message) { reload(); toast(message); $('#prompt-save-status').textContent = '浏览器已保存 · 正在写入本机项目…'; void refresh(); }
+  function changed(message) { reload(); toast(message); $('#prompt-save-status').textContent = staticHosting ? '已保存到当前浏览器 · 可导出备份' : '浏览器已保存 · 正在写入本机项目…'; void refresh(); }
   async function copy(text) {
     let timer;
     try {

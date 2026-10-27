@@ -1,0 +1,16 @@
+{
+  "name": "skill-cabinet",
+  "buildCommand": "npm run build",
+  "installCommand": "node --version",
+  "outputDirectory": "build/site",
+  "nodeVersion": "22.11.0",
+  "headers": [
+    {
+      "source": "/*",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-cache" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" }
+      ]
+    }
+  ]
+}

@@ -5,6 +5,7 @@ import { initializeGitHubWorkspace } from './github-workspace.js';
 import { syncBadge } from './sync-status.js';
 import { initializePromptsWorkspace } from './prompts-workspace.js';
 import { restoreWorkspace } from './workspaces.js';
+import { isStaticHosting } from './hosting.js';
 
 const $ = (s,root=document)=>root.querySelector(s);
 const $$ = (s,root=document)=>[...root.querySelectorAll(s)];
@@ -136,7 +137,7 @@ async function checkRepository({ manual = false } = {}) {
   checkingRepository = true;
   const status = $('#repository-status'), button = $('#repository-refresh');
   button.disabled = true;
-  if (manual) { button.textContent = '正在检查…'; status.textContent = '正在读取本机仓库中的技能清单…'; }
+  if (manual) { button.textContent = '正在检查…'; status.textContent = isStaticHosting() ? '正在检查线上技能库更新…' : '正在读取本机仓库中的技能清单…'; }
   try {
     const result = await repositoryLibrary.refresh();
     if (!result.available) {
@@ -144,12 +145,12 @@ async function checkRepository({ manual = false } = {}) {
       status.textContent = '当前使用内置技能库；自动检查仓库更新';
       await refreshLibraryView();
     } else {
-      status.textContent = `本地仓库 ${result.count} 个 Skill · 每 5 秒检查更新${result.preserved.length ? ` · 已保留 ${result.preserved.length} 项本地差异` : ''}${result.categoriesOnDisk ? ' · 自定义分类已保存到仓库' : ' · 分类仅在浏览器保存，可连接 GitHub 同步'}`;
-      status.title = result.preserved.length ? `以下技能保留了浏览器中的修改或删除：${result.preserved.join('、')}` : 'git pull 后自动读取仓库的新内容，无需连接 GitHub。';
+      status.textContent = `${result.readOnly ? '线上技能库' : '本地仓库'} ${result.count} 个 Skill · 每 5 秒检查更新${result.preserved.length ? ` · 已保留 ${result.preserved.length} 项本地差异` : ''}${result.categoriesOnDisk ? ' · 自定义分类已保存到仓库' : ' · 本页修改在浏览器保存，可连接 GitHub 同步'}`;
+      status.title = result.preserved.length ? `以下技能保留了浏览器中的修改或删除：${result.preserved.join('、')}` : result.readOnly ? 'GitHub 发布新版本后自动读取更新；本页修改保存在当前浏览器。' : 'git pull 后自动读取仓库的新内容，无需连接 GitHub。';
       if (result.changed) await refreshLibraryView();
     }
     status.removeAttribute('data-error');
-    if (manual) toast(result.changed ? '本机仓库的新内容已加载；上传修改请点击「同步到 GitHub」' : '已检查本机仓库，没有新的变化；此按钮不会拉取 GitHub');
+    if (manual) toast(result.readOnly ? result.changed ? '线上技能库的新内容已加载' : '已检查线上技能库，没有新的变化' : result.changed ? '本机仓库的新内容已加载；上传修改请点击「同步到 GitHub」' : '已检查本机仓库，没有新的变化；此按钮不会拉取 GitHub');
   } catch (error) {
     await refreshLibraryView();
     status.textContent = `${error.message || '读取仓库失败'} 将自动重试。`;
@@ -157,7 +158,7 @@ async function checkRepository({ manual = false } = {}) {
     if (manual) toast(error.message || '读取本机仓库失败', true);
   } finally {
     checkingRepository = false;
-    button.disabled = false; button.textContent = '刷新本机仓库';
+    button.disabled = false; button.textContent = isStaticHosting() ? '检查线上更新' : '刷新本机仓库';
   }
 }
 try {

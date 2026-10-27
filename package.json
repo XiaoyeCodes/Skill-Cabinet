@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "node server.mjs",
-    "test": "node --test tests/storage.test.mjs tests/sync.test.mjs tests/repository.test.mjs tests/github-projects.test.mjs tests/prompts.test.mjs tests/design-skills.test.mjs"
+    "build": "node scripts/build-site.mjs",
+    "test": "node --test tests/storage.test.mjs tests/sync.test.mjs tests/repository.test.mjs tests/github-projects.test.mjs tests/prompts.test.mjs tests/design-skills.test.mjs tests/deployment.test.mjs"
   }
 }

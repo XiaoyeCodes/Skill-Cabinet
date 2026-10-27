@@ -118,3 +118,28 @@ test('an invalid repository file never replaces local data', async t => {
   const repository = new PromptRepository(store, request);
   await assert.rejects(repository.refresh()); assert.equal(store.list().length, 1);
 });
+
+test('static hosting loads published prompts and merges browser edits without attempting writes', async () => {
+  const store = new PromptStore(memory());
+  let remote = catalog(record('one', '发布内容')), reads = 0;
+  const repository = new PromptRepository(store, async (url, options) => {
+    assert.equal(url, './skill-cabinet/prompts.json');
+    assert.equal(options.method, undefined);
+    reads++;
+    return new Response(JSON.stringify(remote));
+  }, { readOnly: true });
+  assert.equal((await repository.refresh()).readOnly, true);
+  const current = store.list()[0];
+  store.save({ ...current, description: '浏览器备注' }, current);
+  const edited = await repository.refresh();
+  assert.equal(edited.saved, false);
+  assert.equal(edited.pending, false);
+  assert.equal(edited.localChanges, true);
+  remote = catalog(record('one', 'GitHub 更新后的正文'), record('two', '新增'));
+  assert.equal((await repository.refresh()).conflicts.length, 1);
+  await repository.refresh('remote');
+  assert.equal(store.list().length, 2);
+  assert.equal(store.list().find(item => item.id === 'one').content, 'GitHub 更新后的正文');
+  assert.equal(store.read().recovery.prompts[0].description, '浏览器备注');
+  assert.equal(reads, 4);
+});

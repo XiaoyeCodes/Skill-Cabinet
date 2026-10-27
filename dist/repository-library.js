@@ -2,6 +2,7 @@ import * as localStorage from './storage.js';
 import { validateManifest, sha256, MAX_ARCHIVE_BYTES } from './github-client.js';
 import { fingerprintSkill } from './sync-engine.js';
 import { mergeCategories } from './categories.js';
+import { isStaticHosting, readRepositoryArchive } from './hosting.js';
 
 const BASELINE = 'repository-library:v1';
 const fingerprint = entry => entry && !entry.deleted ? entry.fingerprint : null;
@@ -9,9 +10,10 @@ const fingerprint = entry => entry && !entry.deleted ? entry.fingerprint : null;
 // Loads checkout data and mirrors custom categories to its tracked manifest.
 // Git commits and pushes remain explicit user actions.
 export class RepositoryLibrary {
-  constructor({ storage = localStorage, fetchImpl = (...args) => fetch(...args) } = {}) {
+  constructor({ storage = localStorage, fetchImpl = (...args) => fetch(...args), readOnly = isStaticHosting() } = {}) {
     this.storage = storage;
     this.fetchImpl = fetchImpl;
+    this.readOnly = readOnly;
     this.running = null;
   }
 
@@ -32,7 +34,9 @@ export class RepositoryLibrary {
       return { available: false };
     }
     if (!response.ok) throw new Error(`读取仓库技能失败（${response.status}），本地数据已保留。`);
-    const manifest = validateManifest(await response.json());
+    const document = await response.json();
+    const manifest = validateManifest(document);
+    const readOnly = this.readOnly;
     const localCategories = await this.storage.listCategories();
     const categories = mergeCategories(localCategories, manifest.categories || []);
     const signature = JSON.stringify([manifest, localCategories]);
@@ -60,9 +64,7 @@ export class RepositoryLibrary {
         continue;
       }
       if (!remoteFP) { if (record) deletions.push(slug); continue; }
-      const archive = await this.read(entry.archivePath);
-      if (!archive.ok) throw new Error(`仓库技能包「${entry.metadata.name}」无法读取，稍后会自动重试。`);
-      const bytes = await archive.arrayBuffer();
+      const bytes = await readRepositoryArchive(entry, document.hosting, path => this.read(path));
       if (bytes.byteLength > MAX_ARCHIVE_BYTES || await sha256(bytes) !== entry.archiveSha256) throw new Error(`仓库技能包「${entry.metadata.name}」校验失败，本地数据已保留。`);
       const decoded = await storage.decodeSkillArchive(bytes);
       if (decoded.length !== 1) throw new Error('仓库技能包必须只包含一个 Skill。');
@@ -72,8 +74,8 @@ export class RepositoryLibrary {
     }
     // Data and baseline commit together; concurrent edits cause a retry, not an overwrite.
     await storage.applySyncChanges(upserts, deletions, { expectedRecords: records, expectedCategories: localCategories, categories, metaKey: BASELINE, metaValue: next });
-    let categoriesOnDisk = true;
-    if (JSON.stringify(categories) !== JSON.stringify(manifest.categories || [])) {
+    let categoriesOnDisk = !readOnly;
+    if (!readOnly && JSON.stringify(categories) !== JSON.stringify(manifest.categories || [])) {
       const saved = await this.fetchImpl('./api/categories', { method: 'PUT', headers: { 'Content-Type':'application/json' }, body: JSON.stringify({ categories }), signal: AbortSignal.timeout(15000) });
       // A static host has no local write API; connected GitHub sync still carries categories.
       if ([404, 405].includes(saved.status)) categoriesOnDisk = false;
@@ -81,7 +83,7 @@ export class RepositoryLibrary {
       else await storage.saveCategories((await saved.json()).categories, { source: 'remote' });
     }
     this.lastManifest = JSON.stringify([manifest, categories]);
-    this.lastResult = { available: true, changed: Boolean(upserts.length || deletions.length || JSON.stringify(localCategories) !== JSON.stringify(categories)), count: Object.values(manifest.entries).filter(fingerprint).length, preserved, categoriesOnDisk };
+    this.lastResult = { available: true, changed: Boolean(upserts.length || deletions.length || JSON.stringify(localCategories) !== JSON.stringify(categories)), count: Object.values(manifest.entries).filter(fingerprint).length, preserved, categoriesOnDisk, readOnly };
     return this.lastResult;
   }
 }

@@ -1,3 +1,5 @@
+import { isStaticHosting } from './hosting.js';
+
 const $ = selector => document.querySelector(selector);
 let originalNote, originalCaption;
 
@@ -16,7 +18,7 @@ export function switchWorkspace(value) {
   for (const [id, owner] of Object.entries({ 'page-label': 'skills', 'github-page-label': 'github', 'prompts-page-label': 'prompts', 'backup-button': 'skills', 'project-export': 'github', 'prompts-export': 'prompts' })) {
     const node = $(`#${id}`); if (node) node.hidden = owner !== workspace;
   }
-  note.innerHTML = workspace === 'prompts' ? '自动保存到本机项目<br>随代码提交，让灵感随你同行。' : workspace === 'github' ? '项目先保存到本机<br>连接 GitHub，两个空间一起同步。' : originalNote;
+  note.innerHTML = workspace === 'prompts' ? isStaticHosting() ? '本页修改保存在当前浏览器<br>仓库内容随网站发布更新。' : '自动保存到本机项目<br>随代码提交，让灵感随你同行。' : workspace === 'github' ? '项目先保存到本机<br>连接 GitHub，两个空间一起同步。' : originalNote;
   caption.textContent = workspace === 'prompts' ? '你的表达，值得好好收藏。' : workspace === 'github' ? '你的项目，值得好好收藏。' : originalCaption;
   $('.breadcrumb > span:not(.slash)').textContent = names[workspace];
   for (const button of document.querySelectorAll('[data-workspace]')) {

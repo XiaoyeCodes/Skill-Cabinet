@@ -156,6 +156,10 @@ npm test
 
 ## 如何使用
 
+**部署到 EdgeOne Makers：** 项目已提供 [edgeone.json](edgeone.json) 与完整发布构建。在 Makers 中选择「导入 Git 仓库」，连接 `XiaoyeCodes/Skill-Cabinet`，生产分支使用 `main`，构建命令 `npm run build`，输出目录 `build/site`。推送到部署分支后会自动构建发布，具体操作见 [EdgeOne 部署说明](docs/edgeone-deployment.md)。
+
+发布包包含全部当前技能、分类、GitHub 项目目录和已提交的提示词；超过 25 MB 的技能包自动分片，浏览器合并后按原始 SHA-256 校验。线上页面的个人修改保存在当前浏览器，技能和项目仍可通过现有「GitHub 云同步」上传；提示词可导出备份后在本地导入、提交，再随网站发布更新。线上静态站点不向服务器开放匿名写入接口。
+
 **导入** → 点击「导入 Skill」，或把完整 ZIP / SKILL.md 拖进页面。完整包中的图片和脚本会一起保存。
 
 一个 Skill 内的 `examples/` 等子目录即使包含 `SKILL.md`，也会作为该 Skill 的完整附件保留；ZIP 中多个并列、互不包含的 Skill 文件夹仍会分别导入。

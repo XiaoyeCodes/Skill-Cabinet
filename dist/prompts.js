@@ -1,3 +1,5 @@
+import { isStaticHosting } from './hosting.js';
+
 export const PROMPTS_KEY = 'skill-cabinet-prompts-v1';
 export const PROMPT_CATEGORIES = ['写作与内容', '图像与设计', '开发与工具', '效率与工作', '学习与研究'];
 export const emptyCatalog = () => ({ schemaVersion: 1, categories: [], prompts: [] });
@@ -90,14 +92,16 @@ export class PromptStore {
 }
 
 export class PromptRepository {
-  constructor(store, fetchImpl = (...args) => fetch(...args)) { this.store = store; this.fetch = fetchImpl; this.busy = false; }
+  constructor(store, fetchImpl = (...args) => fetch(...args), { readOnly = isStaticHosting() } = {}) { this.store = store; this.fetch = fetchImpl; this.busy = false; this.readOnly = readOnly; }
   async refresh(choice) {
     if (this.busy) return { busy: true };
     this.busy = true;
     try {
-      const response = await this.fetch('./api/prompts', { cache: 'no-store', signal: AbortSignal.timeout(10000) });
-      if (!response.ok) throw Error('本机仓库暂不可用，提示词仍保存在浏览器；可导出备份。');
-      const remote = await response.json(), catalog = validateCatalog(remote.catalog), state = this.store.read();
+      const response = await this.fetch(this.readOnly ? './skill-cabinet/prompts.json' : './api/prompts', { cache: 'no-store', signal: AbortSignal.timeout(10000) });
+      if (!response.ok) throw Error(`${this.readOnly ? '线上提示词库' : '本机仓库'}暂不可用，提示词仍保存在浏览器；可导出备份。`);
+      const value = await response.json();
+      const catalog = validateCatalog(this.readOnly ? value : value.catalog);
+      const remote = this.readOnly ? { revision: JSON.stringify(catalog) } : value, state = this.store.read();
       const merged = mergeCatalog(state.base, state.catalog, catalog, choice);
       const conflictVersion = JSON.stringify([state.base, state.catalog, remote.revision]);
       if (merged.conflicts.length && (!['local', 'remote'].includes(choice) || this.conflictVersion !== conflictVersion)) {
@@ -108,7 +112,7 @@ export class PromptRepository {
       if (merged.conflicts.length) state.recovery = state.catalog;
       // Save fetched content before writing; unsent edits survive network errors and reloads.
       this.store.write({ ...state, catalog: merged.catalog, base: catalog, revision: remote.revision });
-      if (!equal(merged.catalog, catalog)) {
+      if (!this.readOnly && !equal(merged.catalog, catalog)) {
         const expected = JSON.stringify(this.store.read());
         const saved = await this.fetch('./api/prompts', { method: 'PUT', signal: AbortSignal.timeout(10000), headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ catalog: merged.catalog, expectedRevision: remote.revision }) });
         if (saved.status === 409) throw Error('仓库刚有新修改，稍后会重新比较，当前内容已保留。');
@@ -119,7 +123,7 @@ export class PromptRepository {
           catalog: JSON.stringify(latest) === expected ? validateCatalog(result.catalog) : latest.catalog });
       }
       const latest = this.store.read();
-      return { saved: true, pending: !equal(latest.catalog, latest.base) };
+      return { saved: !this.readOnly, readOnly: this.readOnly, pending: !this.readOnly && !equal(latest.catalog, latest.base), localChanges: !equal(latest.catalog, latest.base) };
     } finally { this.busy = false; }
   }
 }

@@ -65,6 +65,20 @@ function checkout() {
 }
 const library = (storage, source) => new RepositoryLibrary({ storage, fetchImpl: source.fetch.bind(source) });
 
+test('static hosting preserves custom categories without calling a local write API', async () => {
+  const source = checkout(), storage = memoryStorage([], ['浏览器分类']);
+  await source.add(skill());
+  const client = new RepositoryLibrary({ storage, readOnly: true, fetchImpl: async (url, options) => {
+    assert.equal(options.method, undefined);
+    return source.fetch(url, options);
+  } });
+  const result = await client.refresh();
+  assert.equal(result.readOnly, true);
+  assert.equal(result.categoriesOnDisk, false);
+  assert.ok((await storage.listCategories()).includes('浏览器分类'));
+  assert.equal((await storage.listSkills()).length, 1);
+});
+
 test('a fresh checkout loads all bundled real archives and migrates a one-skill browser without credentials', async t => {
   const server = createServer();
   await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
