@@ -116,8 +116,8 @@ test('the requested GitHub projects load once with complete names, purposes and 
   const { readFile } = await import('node:fs/promises');
   const catalog = JSON.parse(await readFile(new URL('../dist/assets/github-projects.json', import.meta.url), 'utf8'));
   const storage = memoryStorage(), store = new ProjectStore(storage);
-  assert.equal(store.seedCatalog(catalog), 7);
-  assert.deepEqual(new Set(store.list().map(item => item.id)), new Set(['mexicat/pdoom-video', 'tunai-0511/meme67-art-history', 'vincentwei1021/mg-styles-15', 'lemomo-ai/lemo-opuscar', 'heygen-com/hyperframes', 'remotion-dev/remotion', 'debpalash/voicestudio']));
+  assert.equal(store.seedCatalog(catalog), 8);
+  assert.deepEqual(new Set(store.list().map(item => item.id)), new Set(['mexicat/pdoom-video', 'tunai-0511/meme67-art-history', 'vincentwei1021/mg-styles-15', 'lemomo-ai/lemo-opuscar', 'heygen-com/hyperframes', 'remotion-dev/remotion', 'debpalash/voicestudio', 'null0526/dario-genesis']));
   assert.ok(store.list().every(item => item.description.length > 0 && item.readmeStatus === 'read'));
   assert.ok(store.list().filter(item => item.id !== 'debpalash/voicestudio').every(item => item.category === '设计与创作'));
   const hyperframes = store.list().find(item => item.id === 'heygen-com/hyperframes');
@@ -137,6 +137,11 @@ test('the requested GitHub projects load once with complete names, purposes and 
   assert.equal(voiceStudio.category, 'AI 与智能体');
   assert.deepEqual(manifest.projects[voiceStudio.id].record, voiceStudio);
   assert.equal(manifest.projects[voiceStudio.id].fingerprint, await fingerprintProject(voiceStudio));
+  const darioGenesis = store.list().find(item => item.id === 'null0526/dario-genesis');
+  assert.equal(darioGenesis.name, '达里奥创世录 · 代码生成短片');
+  assert.equal(darioGenesis.category, '设计与创作');
+  assert.deepEqual(manifest.projects[darioGenesis.id].record, darioGenesis);
+  assert.equal(manifest.projects[darioGenesis.id].fingerprint, await fingerprintProject(darioGenesis));
   const before = storage.getItem(PROJECTS_KEY);
   assert.equal(store.seedCatalog(catalog), 0);
   assert.equal(storage.getItem(PROJECTS_KEY), before);

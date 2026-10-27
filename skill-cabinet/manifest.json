@@ -866,6 +866,40 @@
         "createdAt": "2026-10-26T14:57:18.880Z",
         "updatedAt": "2026-10-26T14:57:18.880Z"
       }
+    },
+    "null0526/dario-genesis": {
+      "fingerprint": "f975eddcc3a6e112b16fd5183c7fde2f9dd55d435cacf56890f9b1ba0e188850",
+      "record": {
+        "owner": "null0526",
+        "repo": "dario-genesis",
+        "id": "null0526/dario-genesis",
+        "url": "https://github.com/null0526/dario-genesis",
+        "name": "达里奥创世录 · 代码生成短片",
+        "description": "以 WebGL、Canvas 和 Python 代码制作叙事短片，收录《达里奥创世录》的四个代表镜头、程序合成配乐、旁白时码、75 秒最小示例和多模型协作复盘，可用于学习和改编代码视频制作流程。",
+        "category": "设计与创作",
+        "tags": [
+          "代码视频",
+          "WebGL",
+          "Canvas",
+          "声音合成",
+          "AI协作",
+          "Python",
+          "FFmpeg",
+          "短片制作"
+        ],
+        "language": "Python",
+        "stars": 92,
+        "forks": 7,
+        "license": "MIT / CC BY 4.0 / CC BY-NC-SA 4.0",
+        "homepage": "",
+        "readmeExcerpt": "《达里奥创世录》是一部 11 分 40 秒的代码生成短片。仓库公开 Python 声音合成器与五章作曲脚本、四个 WebGL / Canvas 代表镜头、旁白逐字时码、75 秒番外最小示例，以及多模型分工制作的方法和复盘。\n\n公开内容是制作工程的精选部分；完整成片约四十个镜头，其时钟重映射、胶片颗粒与拼接调色等脚本未包含，不能一键重现整部影片。旁白生成需自行调用 TTS；镜头渲染需要 Python、Chromium 与 FFmpeg。\n\n代码采用 MIT；视频、封面和旁白文稿采用 CC BY-NC-SA 4.0；其余文档采用 CC BY 4.0，详见仓库 LICENSE.md。",
+        "readmeStatus": "read",
+        "repositoryUpdatedAt": "2026-10-24T09:08:57Z",
+        "archived": false,
+        "favorite": false,
+        "createdAt": "2026-10-27T15:04:47.291Z",
+        "updatedAt": "2026-10-27T15:04:47.291Z"
+      }
     }
   }
 }

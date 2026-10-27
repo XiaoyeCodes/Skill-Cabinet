@@ -36,7 +36,7 @@ test('production output includes every current skill and catalog, preserves hash
   assert.match(await readFile(path.join(built.output, 'index.html'), 'utf8'), /<meta name="skill-cabinet-hosting" content="static">/);
   assert.deepEqual(JSON.parse(await readFile(path.join(built.output, 'skill-cabinet/prompts.json'), 'utf8')), JSON.parse(await readFile(path.join(root, 'skill-cabinet/prompts.json'), 'utf8')));
   const projects = JSON.parse(await readFile(path.join(built.output, 'assets/github-projects.json'), 'utf8'));
-  assert.equal(projects.projects.length, 7);
+  assert.equal(projects.projects.length, 8);
   const names = (await files(built.output)).map(file => path.relative(built.output, file).replaceAll('\\', '/'));
   assert.ok(names.every(name => !/^(.git\/|test-results\/|skills\/|server\.mjs$|\.env)/.test(name)));
   const activeNames = new Set(Object.values(deployed.entries).filter(entry => !entry.deleted).flatMap(entry => deployed.hosting.archiveParts[entry.archivePath] || [entry.archivePath]));

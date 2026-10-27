@@ -72,6 +72,8 @@ GitHub 项目收藏先保存在当前浏览器，**现已与 Skills 共用 GitHu
 
 已收录 [VoiceStudio](https://github.com/debpalash/VoiceStudio)，名称为「VoiceStudio · 本地 AI 语音工作站」，归于「AI 与智能体」。用途涵盖语音克隆、音色设计、视频配音、听写、转写和有声书制作，并提供本地模型管理、API 与 MCP 集成；同样保存在初始项目目录与云同步清单中。
 
+已收录 [null0526/dario-genesis](https://github.com/null0526/dario-genesis)，名称为「达里奥创世录 · 代码生成短片」，归于「设计与创作」。用于学习和改编 WebGL / Canvas 镜头、Python 声音合成、旁白时码对齐与多模型协作制作流程，包含四个代表镜头和 75 秒最小示例。仓库公开的是制作工程的精选部分；代码、作品内容与文档分别采用不同许可，详情见项目说明。收藏资料同时保存在初始项目目录与云同步清单中。
+
 ## 快速开始
 
 需要 **Node.js 20 或更新版本**。
