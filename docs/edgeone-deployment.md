@@ -1,5 +1,13 @@
 # EdgeOne Makers GitHub 自动部署
 
+## 已部署的项目
+
+- 项目名称：`skill-cabinet`。
+- GitHub 来源：`XiaoyeCodes/Skill-Cabinet`，生产分支 `main`。
+- 加速区域：全球可用区（不含中国大陆）。
+- 首次部署于 2026-10-27 成功，平台构建日志确认发布 26 个技能、7 个项目与当前提示词目录，两个超限技能包已分片。
+- 平台生成的预览域名为 `skill-cabinet-wtdhqkyq.edgeone.dev`，应通过控制台「预览」获取带校验信息的限时链接；不要把预览校验参数提交到仓库。长期访问请配置自定义域名。
+
 ## 控制台配置
 
 1. 登录腾讯云 [EdgeOne Makers 控制台](https://console.cloud.tencent.com/edgeone/makers)，选择免费版的「导入 Git 仓库」。
