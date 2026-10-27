@@ -76,10 +76,10 @@ test('a fresh checkout loads all bundled real archives and migrates a one-skill 
   const storage = memoryStorage([{ ...decoded, ...seeds[0], files: decoded.files, id: 'legacy-browser-id' }]);
   const client = new RepositoryLibrary({ storage, fetchImpl: (url, options) => fetch(new URL(url, base), options) });
   const result = await client.refresh();
-  assert.equal(result.count, 23);
+  assert.equal(result.count, 26);
   assert.deepEqual(result.preserved, []);
   const records = await storage.listSkills();
-  assert.deepEqual(records.map(record => record.slug).sort(), ['aibase-daily', 'animated-explainer-video', 'awesome-design-md', 'buffett-letters-skill', 'build-jin10-breakfast', 'cangjie-skill', 'claude-design', 'fupeng-macro-framework', 'generate-daily60-digest', 'huangzhizhong-communication', 'huashu-design', 'huashu-motion', 'huashu-nuwa', 'jin10-financial-daily', 'poor-charlies-almanack-skill', 'qinxiaoming-finance-thinking', 'ray-dalio-framework', 'senior-product-manager', 'shiguang-atlas', 'soros-reflexivity-framework', 'ui-ux-pro-max', 'vibe-knowledge-film', 'warm-paper-editorial']);
+  assert.deepEqual(records.map(record => record.slug).sort(), ['aibase-daily', 'animated-explainer-video', 'anthropic-skills', 'awesome-design-md', 'buffett-letters-skill', 'build-jin10-breakfast', 'cangjie-skill', 'claude-design', 'frontend-design', 'fupeng-macro-framework', 'generate-daily60-digest', 'huangzhizhong-communication', 'huashu-design', 'huashu-motion', 'huashu-nuwa', 'impeccable', 'jin10-financial-daily', 'poor-charlies-almanack-skill', 'qinxiaoming-finance-thinking', 'ray-dalio-framework', 'senior-product-manager', 'shiguang-atlas', 'soros-reflexivity-framework', 'ui-ux-pro-max', 'vibe-knowledge-film', 'warm-paper-editorial']);
   assert.equal(records.find(record => record.slug === 'shiguang-atlas').id, 'legacy-browser-id');
   assert.ok(records.every(record => record.content && record.files.length > 0));
   const vibe = records.find(record => record.slug === 'vibe-knowledge-film');
@@ -113,14 +113,45 @@ test('a fresh checkout loads all bundled real archives and migrates a one-skill 
   assert.equal(claudeDesign.category, '图像与设计');
   assert.equal(claudeDesign.files.length, 8);
   const websiteDesign = records.find(record => record.slug === 'ui-ux-pro-max');
-  assert.equal(websiteDesign.name, 'UI/UX Pro Max · 网站设计');
+  assert.equal(websiteDesign.name, 'UI/UX Pro Max -网页设计');
   assert.equal(websiteDesign.category, '图像与设计');
   assert.equal(websiteDesign.version, '2.15.0');
   assert.equal(websiteDesign.files.length, 80);
   for (const file of ['scripts/search.py', 'scripts/core.py', 'scripts/design_system.py', 'data/styles.csv', 'data/colors.csv', 'data/typography.csv', 'data/stacks/nextjs.csv', 'references/quick-reference.md', 'references/pro-rules.md', 'LICENSE', 'upstream/SKILL.original.md', 'upstream/source.json', '使用说明.md']) assert.ok(websiteDesign.files.some(item => item.path === file), file);
   const source = JSON.parse(await websiteDesign.files.find(item => item.path === 'upstream/source.json').data.text());
   assert.equal(source.repository, 'https://github.com/nextlevelbuilder/ui-ux-pro-max-skill');
-  assert.equal(source.commit, '1f8857914da3c723d58dab1d609dd0d55a86bf51');
+  assert.equal(source.commit, '28b3b8dee8c976df4fa3e94aed4e092ad43fcb03');
+  const official = records.find(record => record.slug === 'anthropic-skills');
+  assert.equal(official.name, 'Anthropic Skills -办公与开发技能合集');
+  assert.equal(official.files.length, 263);
+  const officialCatalog = JSON.parse(await official.files.find(file => file.path === 'catalog.json').data.text());
+  assert.equal(officialCatalog.skills.length, 19);
+  assert.equal(officialCatalog.skills.filter(skill => skill.availability === 'bundled').length, 14);
+  assert.equal(officialCatalog.skills.filter(skill => skill.availability === 'official-link').length, 5);
+  assert.deepEqual(officialCatalog.skills.filter(skill => skill.availability === 'official-link').map(skill => skill.id).sort(), ['doc-coauthoring', 'docx', 'pdf', 'pptx', 'xlsx']);
+  for (const skill of officialCatalog.skills) {
+    if (skill.availability === 'bundled') {
+      assert(official.files.some(file => file.path === skill.path), skill.id);
+      assert.match(await official.files.find(file => file.path === `library/${skill.id}/LICENSE.txt`).data.text(), /Apache License/);
+    } else assert(!official.files.some(file => file.path.startsWith(`library/${skill.id}/`)), skill.id);
+  }
+  const impeccable = records.find(record => record.slug === 'impeccable');
+  assert.equal(impeccable.name, 'Impeccable -网页设计优化');
+  assert.equal(impeccable.version, '4.8.0');
+  assert.equal(impeccable.files.length, 68);
+  for (const filename of ['reference/craft-floor.md', 'reference/routing.md', 'scripts/impeccable', 'scripts/impeccable.cmd', 'scripts/engine-checksums.txt', 'scripts/VERSION']) assert(impeccable.files.some(file => file.path === filename), filename);
+  const officialFrontend = records.find(record => record.slug === 'frontend-design');
+  assert.equal(officialFrontend.name, 'Anthropic Frontend Design -网页设计');
+  assert.equal(officialFrontend.files.length, 5);
+  for (const record of [official, officialFrontend, impeccable, websiteDesign]) {
+    const provenance = JSON.parse(await record.files.find(file => file.path === 'upstream/source.json').data.text());
+    const actual = new Map(record.files.map(file => [file.path, file.data]));
+    for (const file of provenance.sourceFiles) {
+      assert(actual.has(file.packagedPath), file.packagedPath);
+      const bytes = new Uint8Array(await actual.get(file.packagedPath).arrayBuffer());
+      assert.equal(createHash('sha1').update(`blob ${bytes.byteLength}\0`).update(bytes).digest('hex'), file.sha, file.packagedPath);
+    }
+  }
   const productManager = records.find(record => record.slug === 'senior-product-manager');
   assert.equal(productManager.name, '资深产品经理');
   assert.equal(productManager.category, '开发与工具');

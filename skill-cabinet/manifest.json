@@ -45,15 +45,16 @@
       }
     },
     "awesome-design-md": {
-      "fingerprint": "1da311b162274f8105d431069f200bacc56259ddbe8bc45839993dda1250077a",
-      "archiveSha256": "f868088ecf51fae43c972747bef0b15492af7a04ae29cd2fab800f92c02baa28",
-      "archivePath": "skill-cabinet/archives/awesome-design-md-f868088ecf51fae43c972747bef0b15492af7a04ae29cd2fab800f92c02baa28.zip",
+      "fingerprint": "336f93908ca1f325a3f166426b18adf2c546a1d47050f165daed389bf4ba4479",
+      "archiveSha256": "9a8a373eb8fcdc4d4a298907e2428d57c9cd8c26d3aa3c1cef2576159bece20a",
+      "archivePath": "skill-cabinet/archives/awesome-design-md-9a8a373eb8fcdc4d4a298907e2428d57c9cd8c26d3aa3c1cef2576159bece20a.zip",
       "metadata": {
-        "id": "awesome-design-md-seed",
-        "name": "DESIGN.md · 网站设计风格库",
+        "name": "Awesome DESIGN.md -网页设计风格库",
         "slug": "awesome-design-md",
         "description": "一个 Skill 内收录 84 份成熟网站的 DESIGN.md 设计规范。用户可指定参考风格，也可让 AI 根据网站需求推荐并询问选择；附离线检索与单份规范导出工具，支持配色、排版、组件和响应式设计。",
         "category": "图像与设计",
+        "version": "1.0.0",
+        "author": "个人整理 · 来源 VoltAgent / getdesign.md",
         "tags": [
           "网站设计",
           "设计规范",
@@ -61,11 +62,10 @@
           "DESIGN.md",
           "离线参考"
         ],
-        "version": "1.0.0",
-        "author": "个人整理 · 来源 VoltAgent / getdesign.md",
+        "id": "awesome-design-md-seed",
         "favorite": false,
         "createdAt": "2026-10-26T08:49:03.164Z",
-        "updatedAt": "2026-10-26T08:49:03.164Z"
+        "updatedAt": "2026-10-27T08:38:24.369Z"
       }
     },
     "buffett-letters-skill": {
@@ -447,15 +447,16 @@
       }
     },
     "ui-ux-pro-max": {
-      "fingerprint": "905d3f5bb0a3b5d66dc20141509c8ff3fa243869134f8725260b64d3692c0612",
-      "archiveSha256": "45bd941a6ab00cdcfcef83e9d8025698198bb3246f0ee0559176b3c57715a741",
-      "archivePath": "skill-cabinet/archives/ui-ux-pro-max-45bd941a6ab00cdcfcef83e9d8025698198bb3246f0ee0559176b3c57715a741.zip",
+      "fingerprint": "fa21bdc486f456a9e92d9cbfe5c1d41ff07667689e377db9de73e14eff3b805c",
+      "archiveSha256": "598f80e5c909ae0dc82200c601601f695660a28555df022b8fbd2ce83326af1e",
+      "archivePath": "skill-cabinet/archives/ui-ux-pro-max-598f80e5c909ae0dc82200c601601f695660a28555df022b8fbd2ce83326af1e.zip",
       "metadata": {
-        "id": "ui-ux-pro-max-seed",
-        "name": "UI/UX Pro Max · 网站设计",
+        "name": "UI/UX Pro Max -网页设计",
         "slug": "ui-ux-pro-max",
         "description": "专注网站与界面设计的 UI/UX 技能，支持落地页、后台、仪表盘和组件设计；提供风格检索、配色、字体搭配、响应式布局、交互与无障碍建议，可按需求生成设计系统。附完整本地设计数据、检索脚本与多技术栈指南。",
         "category": "图像与设计",
+        "version": "2.15.0",
+        "author": "NextLevelBuilder",
         "tags": [
           "网站设计",
           "UI/UX",
@@ -464,11 +465,10 @@
           "配色排版",
           "无障碍"
         ],
-        "version": "2.15.0",
-        "author": "NextLevelBuilder",
+        "id": "ui-ux-pro-max-seed",
         "favorite": false,
         "createdAt": "2026-10-26T08:31:37.914Z",
-        "updatedAt": "2026-10-26T08:31:37.914Z"
+        "updatedAt": "2026-10-27T08:38:24.164Z"
       }
     },
     "warm-paper-editorial": {
@@ -518,6 +518,78 @@
         "favorite": false,
         "createdAt": "2026-10-26T15:04:06.156Z",
         "updatedAt": "2026-10-26T15:04:06.156Z"
+      }
+    },
+    "impeccable": {
+      "fingerprint": "108f7921e6004392ce3d5ab1cf4692243a22a119dcb24665dfefe8b2b3c69ebf",
+      "archiveSha256": "965a3a6d7a936d38baf4d6fb34919d06581c4e0acf1b26dcded360f72ddc703d",
+      "archivePath": "skill-cabinet/archives/impeccable-965a3a6d7a936d38baf4d6fb34919d06581c4e0acf1b26dcded360f72ddc703d.zip",
+      "metadata": {
+        "name": "Impeccable -网页设计优化",
+        "slug": "impeccable",
+        "description": "为网站和前端界面提供设计、审查与打磨指导，内含 24 个命令，覆盖排版、配色、交互、响应式、无障碍和界面质量优化；附完整参考资料与原版启动器。",
+        "category": "图像与设计",
+        "version": "4.8.0",
+        "author": "Paul Bakaus",
+        "tags": [
+          "网页设计",
+          "界面优化",
+          "设计评审",
+          "排版",
+          "无障碍"
+        ],
+        "id": "impeccable-seed",
+        "createdAt": "2026-10-27T08:38:22.115Z",
+        "updatedAt": "2026-10-27T08:38:22.115Z",
+        "favorite": false
+      }
+    },
+    "anthropic-skills": {
+      "fingerprint": "cb055c19302264a077c4e381b1c097c8096b327d0fe16c1cf010bb6e3bc01d12",
+      "archiveSha256": "610a32d6107201afcacb00d6f4d2bfee578f27adafb093247da994c49c1203c6",
+      "archivePath": "skill-cabinet/archives/anthropic-skills-610a32d6107201afcacb00d6f4d2bfee578f27adafb093247da994c49c1203c6.zip",
+      "metadata": {
+        "name": "Anthropic Skills -办公与开发技能合集",
+        "slug": "anthropic-skills",
+        "description": "Anthropic 官方 19 项技能的统一目录与选择入口，覆盖网页设计、视觉、开发测试和办公任务。14 项可分发技能随包保存；Word、PDF、PPT、Excel 等受限或未明确授权条目仅保留官方入口。",
+        "category": "开发与工具",
+        "version": "1.0.0",
+        "author": "Anthropic · 个人整理入口",
+        "tags": [
+          "官方合集",
+          "网页设计",
+          "开发工具",
+          "办公",
+          "技能目录"
+        ],
+        "id": "anthropic-skills-seed",
+        "createdAt": "2026-10-27T08:38:22.930Z",
+        "updatedAt": "2026-10-27T08:38:22.930Z",
+        "favorite": false
+      }
+    },
+    "frontend-design": {
+      "fingerprint": "76e4c6e26e360565b6ebf3c3908963b33c3e2027edf104080122bc69eb6f8e2f",
+      "archiveSha256": "1ad473ec9230e80c479b54bd86e918b1c6d55bdc031cf45ebe7e1d1116944ccb",
+      "archivePath": "skill-cabinet/archives/frontend-design-1ad473ec9230e80c479b54bd86e918b1c6d55bdc031cf45ebe7e1d1116944ccb.zip",
+      "metadata": {
+        "name": "Anthropic Frontend Design -网页设计",
+        "slug": "frontend-design",
+        "description": "Anthropic 官方前端设计技能，围绕产品内容确定视觉方向、排版、配色和布局，制作或改进有辨识度的网页与界面；从官方合集独立收录，可单独使用。",
+        "category": "图像与设计",
+        "version": "1.0.0",
+        "author": "Anthropic",
+        "tags": [
+          "网页设计",
+          "前端界面",
+          "视觉设计",
+          "排版",
+          "官方技能"
+        ],
+        "id": "frontend-design-seed",
+        "createdAt": "2026-10-27T08:38:23.881Z",
+        "updatedAt": "2026-10-27T08:38:23.881Z",
+        "favorite": false
       }
     }
   },

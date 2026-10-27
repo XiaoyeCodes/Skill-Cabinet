@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "repository": "https://github.com/anthropics/skills",
+  "commit": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+  "root": "skills/frontend-design/",
+  "license": "Apache-2.0",
+  "sourceFiles": [
+    {
+      "path": "skills/frontend-design/LICENSE.txt",
+      "packagedPath": "LICENSE.txt",
+      "sha": "f433b1a53f5b830a205fd2df78e2b34974656c7b",
+      "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+    },
+    {
+      "path": "skills/frontend-design/SKILL.md",
+      "packagedPath": "upstream/SKILL.original.md",
+      "sha": "a5333457c414d20d625f307df945842c0952ecc3",
+      "sha256": "d91970639e9f5c37682ac7ab60094d35f1c7c1f38d731bd56396563aee10c1d3"
+    }
+  ],
+  "importedAt": "2026-10-27T08:38:23.881Z"
+}

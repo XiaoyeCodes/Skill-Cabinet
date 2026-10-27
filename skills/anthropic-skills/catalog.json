@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "total": 19,
+  "bundled": 14,
+  "officialLinks": 5,
+  "skills": [
+    {
+      "id": "academy-guide",
+      "name": "Anthropic Academy",
+      "purpose": "Claude 学习与课程引导",
+      "availability": "bundled",
+      "path": "library/academy-guide/SKILL.md",
+      "license": "Apache-2.0",
+      "source": "https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/academy-guide",
+      "licenseUrl": "https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/academy-guide/LICENSE.txt"
+    },
+    {
+      "id": "algorithmic-art",
+      "name": "Algorithmic Art",
+      "purpose": "生成式与算法艺术",
+      "availability": "bundled",
+      "path": "library/algorithmic-art/SKILL.md",
+      "license": "Apache-2.0",
+      "source": "https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/algorithmic-art",
+      "licenseUrl": "https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/algorithmic-art/LICENSE.txt"
+    },
+    {
+      "id": "brand-guidelines",
+      "name": "Brand Guidelines",
+      "purpose": "品牌视觉规范",
+      "availability": "bundled",
+      "path": "library/brand-guidelines/SKILL.md",
+      "license": "Apache-2.0",
+      "source": "https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/brand-guidelines",
+      "licenseUrl": "https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/brand-guidelines/LICENSE.txt"
+    },
+    {
+      "id": "canvas-design",
+      "name": "Canvas Design",
+      "purpose": "海报与静态视觉设计",
+      "availability": "bundled",
+      "path": "library/canvas-design/SKILL.md",
+      "license": "Apache-2.0",
+      "source": "https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/canvas-design",
+      "licenseUrl": "https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/canvas-design/LICENSE.txt"
+    },
+    {
+      "id": "claude-api",
+      "name": "Claude API",
+      "purpose": "Claude API 应用开发",
+      "availability": "bundled",
+      "path": "library/claude-api/SKILL.md",
+      "license": "Apache-2.0",
+      "source": "https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/claude-api",
+      "licenseUrl": "https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/claude-api/LICENSE.txt"
+    },
+    {
+      "id": "discernment-nudge",
+      "name": "Discernment Nudge",
+      "purpose": "提升判断与思考质量",
+      "availability": "bundled",
+      "path": "library/discernment-nudge/SKILL.md",
+      "license": "Apache-2.0",
+      "source": "https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/discernment-nudge",
+      "licenseUrl": "https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/discernment-nudge/LICENSE.txt"
+    },
+    {
+      "id": "doc-coauthoring",
+      "name": "Doc Coauthoring",
+      "purpose": "协作撰写文档",
+      "availability": "official-link",
+      "license": "No per-skill license in this snapshot",
+      "source": "https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/doc-coauthoring",
+      "licenseUrl": "https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/doc-coauthoring"
+    },
+    {
+      "id": "docx",
+      "name": "Word / DOCX",
+      "purpose": "Word 文档处理",
+      "availability": "official-link",
+      "license": "Anthropic service terms; redistribution restricted",
+      "source": "https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/docx",
+      "licenseUrl": "https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/docx/LICENSE.txt"
+    },
+    {
+      "id": "frontend-design",
+      "name": "Frontend Design",
+      "purpose": "网页与界面设计",
+      "availability": "bundled",
+      "path": "library/frontend-design/SKILL.md",
+      "license": "Apache-2.0",
+      "source": "https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/frontend-design",
+      "licenseUrl": "https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/frontend-design/LICENSE.txt"
+    },
+    {
+      "id": "internal-comms",
+      "name": "Internal Comms",
+      "purpose": "组织内部沟通材料",
+      "availability": "bundled",
+      "path": "library/internal-comms/SKILL.md",
+      "license": "Apache-2.0",
+      "source": "https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/internal-comms",
+      "licenseUrl": "https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/internal-comms/LICENSE.txt"
+    },
+    {
+      "id": "mcp-builder",
+      "name": "MCP Builder",
+      "purpose": "MCP 服务开发",
+      "availability": "bundled",
+      "path": "library/mcp-builder/SKILL.md",
+      "license": "Apache-2.0",
+      "source": "https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/mcp-builder",
+      "licenseUrl": "https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/mcp-builder/LICENSE.txt"
+    },
+    {
+      "id": "pdf",
+      "name": "PDF",
+      "purpose": "PDF 文档处理",
+      "availability": "official-link",
+      "license": "Anthropic service terms; redistribution restricted",
+      "source": "https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/pdf",
+      "licenseUrl": "https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/pdf/LICENSE.txt"
+    },
+    {
+      "id": "pptx",
+      "name": "PowerPoint / PPTX",
+      "purpose": "幻灯片处理",
+      "availability": "official-link",
+      "license": "Anthropic service terms; redistribution restricted",
+      "source": "https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/pptx",
+      "licenseUrl": "https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/pptx/LICENSE.txt"
+    },
+    {
+      "id": "skill-creator",
+      "name": "Skill Creator",
+      "purpose": "创建与改进技能",
+      "availability": "bundled",
+      "path": "library/skill-creator/SKILL.md",
+      "license": "Apache-2.0",
+      "source": "https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/skill-creator",
+      "licenseUrl": "https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/skill-creator/LICENSE.txt"
+    },
+    {
+      "id": "slack-gif-creator",
+      "name": "Slack GIF Creator",
+      "purpose": "制作 Slack 动图",
+      "availability": "bundled",
+      "path": "library/slack-gif-creator/SKILL.md",
+      "license": "Apache-2.0",
+      "source": "https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/slack-gif-creator",
+      "licenseUrl": "https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/slack-gif-creator/LICENSE.txt"
+    },
+    {
+      "id": "theme-factory",
+      "name": "Theme Factory",
+      "purpose": "主题配色与字体方案",
+      "availability": "bundled",
+      "path": "library/theme-factory/SKILL.md",
+      "license": "Apache-2.0",
+      "source": "https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/theme-factory",
+      "licenseUrl": "https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/theme-factory/LICENSE.txt"
+    },
+    {
+      "id": "web-artifacts-builder",
+      "name": "Web Artifacts Builder",
+      "purpose": "交互式网页作品",
+      "availability": "bundled",
+      "path": "library/web-artifacts-builder/SKILL.md",
+      "license": "Apache-2.0",
+      "source": "https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/web-artifacts-builder",
+      "licenseUrl": "https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/web-artifacts-builder/LICENSE.txt"
+    },
+    {
+      "id": "webapp-testing",
+      "name": "Webapp Testing",
+      "purpose": "网页应用行为测试",
+      "availability": "bundled",
+      "path": "library/webapp-testing/SKILL.md",
+      "license": "Apache-2.0",
+      "source": "https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/webapp-testing",
+      "licenseUrl": "https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/webapp-testing/LICENSE.txt"
+    },
+    {
+      "id": "xlsx",
+      "name": "Excel / XLSX",
+      "purpose": "电子表格处理",
+      "availability": "official-link",
+      "license": "Anthropic service terms; redistribution restricted",
+      "source": "https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/xlsx",
+      "licenseUrl": "https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/xlsx/LICENSE.txt"
+    }
+  ]
+}

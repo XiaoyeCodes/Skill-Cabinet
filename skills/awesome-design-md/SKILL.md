@@ -7,7 +7,7 @@ metadata:
   source: https://github.com/VoltAgent/awesome-design-md
 ---
 
-# DESIGN.md · 网站设计风格库
+# Awesome DESIGN.md -网页设计风格库
 
 将 VoltAgent 的设计分析库转为可执行的选型与实现流程。规范位于 `library/<id>/DESIGN.md`，这是第三方对公开网站的分析快照，不代表品牌的官方规范或持续更新的线上状态。
 

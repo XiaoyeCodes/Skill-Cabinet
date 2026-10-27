@@ -82,7 +82,7 @@ cd Skill-Cabinet
 npm start
 ```
 
-打开 [http://localhost:4173](http://localhost:4173)。本地服务会直接读取仓库的 `skill-cabinet/manifest.json` 和完整 ZIP，当前包含二十三份 Skill / 技能集，覆盖设计、视频、产品、写作、研究、新闻与投资金融。无需填写 GitHub Token，也无需手动导入备份；已经只保存了一份 Skill 的旧浏览器也会自动补齐。
+打开 [http://localhost:4173](http://localhost:4173)。本地服务会直接读取仓库的 `skill-cabinet/manifest.json` 和完整 ZIP，当前包含二十六份 Skill / 技能集，覆盖设计、视频、产品、写作、研究、新闻与投资金融。无需填写 GitHub Token，也无需手动导入备份；已经只保存了一份 Skill 的旧浏览器也会自动补齐。
 
 「Huashu Design · 花叔设计」归于「图像与设计」，版本为 3.0.0，已同步至 [alchaincyf/huashu-design 的 4fc7bfd 提交](https://github.com/alchaincyf/huashu-design/tree/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1)。本次更新 3.0 发布案例、双语 README 和作者资料。完整技能包保留上游 389 个文件及 MIT 许可证，另附使用说明、原始 `SKILL.md` 副本与逐文件来源校验记录，共 392 个文件；素材、参考文档、脚本与演示均包含在内。
 
@@ -133,11 +133,21 @@ npm test
 
 原始 ZIP 保持原样；`skills/` 中的可读版本同步了展示名称和分类。压缩包外层的使用说明、测试记录和样例也保留在对应目录中。原始文件校验值见 [技能目录清单](docs/skill-catalog.json)。
 
-**新收录：[UI/UX Pro Max · 网站设计](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)**（v2.15.0，图像与设计）。用于网站、落地页、后台与组件的 UI/UX 设计，覆盖设计系统、风格、配色、字体、响应式布局、交互及无障碍检查。[下载完整技能包](skill-cabinet/archives/ui-ux-pro-max-45bd941a6ab00cdcfcef83e9d8025698198bb3246f0ee0559176b3c57715a741.zip)，共 80 个文件，含上游核心技能的全部 73 个文件，以及许可证、说明和来源记录。来源提交为 `1f8857914da3c723d58dab1d609dd0d55a86bf51`；包内保留原始指令，浏览器仅作保存、预览与导出。
+**[UI/UX Pro Max -网页设计](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)**（v2.15.0，图像与设计）。用于网站、落地页、后台与组件的 UI/UX 设计，覆盖设计系统、风格、配色、字体、响应式布局、交互及无障碍检查。[下载完整技能包](skill-cabinet/archives/ui-ux-pro-max-598f80e5c909ae0dc82200c601601f695660a28555df022b8fbd2ce83326af1e.zip)，共 80 个文件，含上游核心技能的全部 73 个文件，以及许可证、说明和来源记录。来源提交为 `28b3b8dee8c976df4fa3e94aed4e092ad43fcb03`，已同步技术栈检索中数字被误识别为版本号的修复；包内保留原始指令，浏览器仅作保存、预览与导出。
+
+新增三个独立条目，名称后缀直接说明用途：
+
+| Skill | 分类 | 内容与使用 |
+| :--- | :--- | :--- |
+| **[Impeccable -网页设计优化](skills/impeccable/SKILL.md)** | 图像与设计 | [上游项目](https://github.com/pbakaus/impeccable) v4.8.0 的设计指导与 24 个命令，用于检查、优化和完善网页；保留完整技能资源与运行器。[下载技能包](skill-cabinet/archives/impeccable-965a3a6d7a936d38baf4d6fb34919d06581c4e0acf1b26dcded360f72ddc703d.zip)。首次实际运行命令可能需要联网获取引擎。 |
+| **[Anthropic Skills -办公与开发技能合集](skills/anthropic-skills/SKILL.md)** | 开发与工具 | [官方仓库](https://github.com/anthropics/skills)以一个合集条目收录，通过目录按任务选择内部技能；共 19 项目录，14 项 Apache-2.0 技能保留本地文件，5 项提供官方链接。[下载合集](skill-cabinet/archives/anthropic-skills-610a32d6107201afcacb00d6f4d2bfee578f27adafb093247da994c49c1203c6.zip)。 |
+| **[Anthropic Frontend Design -网页设计](skills/frontend-design/SKILL.md)** | 图像与设计 | 单独收录官方 frontend-design，方便直接调用，也保留在官方合集内。[下载技能包](skill-cabinet/archives/frontend-design-1ad473ec9230e80c479b54bd86e918b1c6d55bdc031cf45ebe7e1d1116944ccb.zip)。 |
+
+官方合集中的 docx、pdf、pptx、xlsx 不允许再分发，doc-coauthoring 未声明单独许可，因此这五项只保留用途说明与官方来源入口，不附源文件。具体许可与调用方式见合集内的 [RIGHTS.md](skills/anthropic-skills/RIGHTS.md)。
 
 以下两个设计 Skill 均归入「图像与设计」，各自是一个独立条目：
 
-- **[DESIGN.md · 网站设计风格库](skills/awesome-design-md/SKILL.md)**：把 [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md) 包装为一个 Skill，84 份完整设计规范收在包内参考目录。用户可指定风格；未指定时，由 AI 询问用户或推荐 2–3 个候选后选择。附离线检索及不覆盖已有文件的导出工具。[下载完整包](skill-cabinet/archives/awesome-design-md-f868088ecf51fae43c972747bef0b15492af7a04ae29cd2fab800f92c02baa28.zip)。
+- **[Awesome DESIGN.md -网页设计风格库](skills/awesome-design-md/SKILL.md)**：把 [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md) 包装为一个 Skill，84 份完整设计规范收在包内参考目录。用户可指定风格；未指定时，由 AI 询问用户或推荐 2–3 个候选后选择。附离线检索及不覆盖已有文件的导出工具。[下载完整包](skill-cabinet/archives/awesome-design-md-9a8a373eb8fcdc4d4a298907e2428d57c9cd8c26d3aa3c1cef2576159bece20a.zip)。
 - **[克劳德设计](skills/claude-design/SKILL.md)**：基于 [getdesign.md 的 Claude 设计分析](https://getdesign.md/claude/design-md)，将奶油底、陶土强调、衬线标题与深色产品区域用于自有网站。随包保留原文，并提供中文字体回退、可访问色值与命名空间 CSS，不依赖安装其他 Skill。[下载完整包](skill-cabinet/archives/claude-design-be30a35a9598548334529a2fcae321c0bdfa4d94c7d7ae5b6791008c2d072c10.zip)。
 
 这两份 Skill 的可编辑来源保存在 `skills/`，上游快照提交为 `3b605329240ce735b510037cca322f1831fdd7f8`，来源和校验值见各包 `source.json`。它们使用 MIT 许可的第三方分析资料，不代表参考品牌的官方规范；实际网页使用用户自己的内容、标识与可用字体。
