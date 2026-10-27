@@ -1,0 +1,196 @@
+{
+  "schemaVersion": 1,
+  "repository": "https://github.com/sickn33/agentic-awesome-skills",
+  "commit": "0f1aef1eb17611d3219c713ea615ecdc7080896c",
+  "capturedAt": "2026-10-27T11:52:14.912536+00:00",
+  "version": "20.1.0",
+  "license": "MIT code; CC BY 4.0 original content; per-skill exceptions retained",
+  "upstreamSkillCount": 2872,
+  "upstreamSkillFileCount": 8979,
+  "upstreamSnapshotFileCount": 8993,
+  "upstreamSkillBytes": 95719867,
+  "note": "All skills/ blobs retained byte-for-byte in a nested tar.xz archive to respect the application 3000-entry and 45 MiB sync limits. Two broken upstream symlink aliases retain their original link text and symlink attributes. The website, CI, release tooling and npm installer are not included.",
+  "archive": {
+    "path": "library/agentic-skills.tar.xz",
+    "bytes": 36405476,
+    "sha256": "f1ff3c2cb66e04ad7085a6fb796293dc26c8a06ea3584a81321c88983a78e952",
+    "fileManifest": "UPSTREAM_FILES.json",
+    "fileManifestSha256": "bc08fb91e2b6c455b9fe97b0f817ae12ef0338f8f61670ee57cdc1b568de9834"
+  },
+  "aliases": [
+    {
+      "path": "skills/pdf",
+      "target": "pdf-official",
+      "targetPresentUpstream": false
+    },
+    {
+      "path": "skills/xlsx",
+      "target": "xlsx-official",
+      "targetPresentUpstream": false
+    }
+  ],
+  "files": [
+    {
+      "sourcePath": "CATALOG.md",
+      "path": "upstream/CATALOG.md",
+      "bytes": 950678,
+      "gitBlobSha": "b9985ef51db20e9a3462dceb7444881bfa19198d",
+      "sha256": "c56d0a8eff94f2a8dab4d850abcec81255710e744e4096439964e0d0eb5164c2"
+    },
+    {
+      "sourcePath": "LICENSE",
+      "path": "LICENSE",
+      "bytes": 1073,
+      "gitBlobSha": "dc38cfd7ab732a67b0f14997cfa8c9ec740a1889",
+      "sha256": "af98370a7edc0f00ec46979d049517833c9a7fa2ba74e3cf8cc42f7db557299d"
+    },
+    {
+      "sourcePath": "LICENSE-CONTENT",
+      "path": "LICENSE-CONTENT",
+      "bytes": 652,
+      "gitBlobSha": "e9f6e9443d4a5e17375377208e3ed77dea428825",
+      "sha256": "deae07ece522fbca65ab33f0c18ca9630b1077a8f3f233c0af445235b3fb6fcf"
+    },
+    {
+      "sourcePath": "README.md",
+      "path": "upstream/README.md",
+      "bytes": 123338,
+      "gitBlobSha": "5cbe71993caff931ea947c31b74c00f13a41ea56",
+      "sha256": "81746e7898fbbe124073532918fcf15b1ad435002023b183246a96d29aac29a7"
+    },
+    {
+      "sourcePath": "docs/sources/LICENSE-MICROSOFT",
+      "path": "upstream/docs/sources/LICENSE-MICROSOFT",
+      "bytes": 1140,
+      "gitBlobSha": "79656060de00aa4659ad2c276d5be8830664d544",
+      "sha256": "d9a1b1e30d633d5732ea18e3cba9538d293ebc53e1a9e4e96ab739e0c5c4f1cb"
+    },
+    {
+      "sourcePath": "docs/sources/microsoft-skills-attribution.json",
+      "path": "upstream/docs/sources/microsoft-skills-attribution.json",
+      "bytes": 21481,
+      "gitBlobSha": "e633a5630253834f2b109959cfff6804d395c448",
+      "sha256": "52aac77f6b2d1d7543a85cb895b525b8bf0732c37a8459fc2ae190fde96e24c5"
+    },
+    {
+      "sourcePath": "docs/sources/sources.md",
+      "path": "upstream/docs/sources/sources.md",
+      "bytes": 28898,
+      "gitBlobSha": "fa92cd0e4f441054b024820289074dbdbfb5e74b",
+      "sha256": "eb14c61610fabfe02a7adc3ddf65961436983b6d2a0470c6244c52d90c4e3f62"
+    },
+    {
+      "sourcePath": "docs/users/aas-core.md",
+      "path": "upstream/docs/users/aas-core.md",
+      "bytes": 27579,
+      "gitBlobSha": "95e05456c17fbc2e568d1ae79ca917ba9b7b9a60",
+      "sha256": "b9fff1811f3bedc72956f98de44e3df43cd383693d980db3f9e7a1a00dc0ea39"
+    },
+    {
+      "sourcePath": "docs/users/claude-code-skills.md",
+      "path": "upstream/docs/users/claude-code-skills.md",
+      "bytes": 11248,
+      "gitBlobSha": "753bcb4dfbbf7d2a136e29d6d15f4fc42feb552a",
+      "sha256": "1093d6f1135e12717b6617dced67bef3b5609a822989c2b7cbb1a155792e417a"
+    },
+    {
+      "sourcePath": "docs/users/codex-cli-skills.md",
+      "path": "upstream/docs/users/codex-cli-skills.md",
+      "bytes": 11266,
+      "gitBlobSha": "9219d98ad4b9206b96d80e1b57acfa05fe5deff9",
+      "sha256": "e9f1b1fc4b5c90ff23f9eb1c9e813e93f5617fc13eeb573fc4e145f92a94d879"
+    },
+    {
+      "sourcePath": "docs/users/getting-started.md",
+      "path": "upstream/docs/users/getting-started.md",
+      "bytes": 15371,
+      "gitBlobSha": "2f95c665f327ef4a6f6c46678dfc295b77d7a4d0",
+      "sha256": "fbbc42f4f93b9afd2a28fc66a31c05dbdc38839af515b5d968b92f39f9c3ae56"
+    },
+    {
+      "sourcePath": "docs/users/security-and-antivirus.md",
+      "path": "upstream/docs/users/security-and-antivirus.md",
+      "bytes": 3223,
+      "gitBlobSha": "c07177d5bd2a0bd0abdf61c72501b59ebe7b7477",
+      "sha256": "ef6e72d8b1c06ea90eb22bb8fe6c205553490b36abe45b0170b629503eff6cf4"
+    },
+    {
+      "sourcePath": "package.json",
+      "path": "upstream/package.json",
+      "bytes": 8901,
+      "gitBlobSha": "8ee54bb3837689bf47e81fb313af19b3e0e9f443",
+      "sha256": "6e61a7870e4b471da80eaff1df54c63965a8d0dc4410860bb94ac86ba95023b6"
+    },
+    {
+      "sourcePath": "skills_index.json",
+      "path": "catalog.json",
+      "bytes": 2180100,
+      "gitBlobSha": "0b2b21b1401d978d2e97c1590bfe791971cda9bf",
+      "sha256": "cce49f398d93f943583843ea635a471edaa86f13c798ddf2f4565c4ea724d44a"
+    }
+  ],
+  "review": {
+    "scope": "Read all archived bytes; verify Git blob hashes, catalog paths, archive paths and internal alias targets; scan every UTF-8 file for the listed patterns. No upstream scripts, installers or skills executed. This is an archive review, not a safety certification of each skill.",
+    "findings": {
+      "credential-or-session-references": {
+        "fileCount": 568,
+        "examples": [
+          "CATALOG.md",
+          "skills/007/references/api-security-patterns.md",
+          "skills/007/references/stride-pasta-guide.md",
+          "skills/007/scripts/config.py",
+          "skills/007/scripts/scanners/secrets_scanner.py",
+          "skills/2slides-ppt-generator/SKILL.md",
+          "skills/2slides-ppt-generator/references/api-reference.md",
+          "skills/2slides-ppt-generator/references/detailed-guide.md"
+        ]
+      },
+      "elevated-or-destructive-command-examples": {
+        "fileCount": 203,
+        "examples": [
+          "CATALOG.md",
+          "README.md",
+          "skills/agentic-actions-auditor/SKILL.md",
+          "skills/ai-agent-security/SKILL.md",
+          "skills/ai-agent-security/references/details.md",
+          "skills/ai-coding-agent-guardrails/SKILL.md",
+          "skills/apple-container/references/commands.md",
+          "skills/apple-container/references/concepts.md"
+        ]
+      },
+      "encoded-or-dynamic-code-examples": {
+        "fileCount": 234,
+        "examples": [
+          "README.md",
+          "skills/007/references/detailed-guide.md",
+          "skills/007/references/owasp-checklists.md",
+          "skills/007/scripts/full_audit.py",
+          "skills/007/scripts/scanners/injection_scanner.py",
+          "skills/007/scripts/scanners/secrets_scanner.py",
+          "skills/agent-evaluation/references/architecture-sketches.md",
+          "skills/agent-memory-systems/references/detailed-guide.md"
+        ]
+      },
+      "remote-shell-examples": {
+        "fileCount": 7,
+        "examples": [
+          "skills/007/scripts/scanners/dependency_scanner.py",
+          "skills/apk-reverse/SKILL.md",
+          "skills/pentest-tools/src-hunter/references/payloader/by-category/web/rce远程代码执行.md",
+          "skills/pentest-tools/src-hunter/references/payloader/by-category/web/供应链攻击.md",
+          "skills/pentest-tools/src-hunter/references/playbooks/llm-prompt-injection.md",
+          "skills/pentest-tools/src-hunter/references/playbooks/rce.md",
+          "skills/reverse-engineering/references/nonpe-format-cookbook.md"
+        ]
+      }
+    },
+    "upstreamRiskLabels": {
+      "safe": 1082,
+      "critical": 1541,
+      "none": 79,
+      "offensive": 151,
+      "unknown": 19
+    },
+    "verdict": "Retained as inert reference data; review an individual skill before installing or running it."
+  }
+}

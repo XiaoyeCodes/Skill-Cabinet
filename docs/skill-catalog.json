@@ -216,6 +216,224 @@
           "sha256": "59be57147f287591e16d7dde0301a32a0e31743ab40688847cc975af7d4485a1"
         }
       ]
+    },
+    {
+      "slug": "threejs-skills",
+      "name": "Three.js · 3D 开发技能集",
+      "category": "开发与工具",
+      "originalFileCount": 19,
+      "originalArchiveSha256": "8fd5bba103eb3323953311ce863b2cfe90ba8a4a42247fb10bb7e6f688a604cc",
+      "archive": "skill-cabinet/archives/threejs-skills-8fd5bba103eb3323953311ce863b2cfe90ba8a4a42247fb10bb7e6f688a604cc.zip",
+      "source": {
+        "repository": "https://github.com/CloudAI-X/threejs-skills",
+        "commit": "0e181866f095b5f06d005133876e926515390d95"
+      },
+      "files": [
+        {
+          "path": "使用说明.md",
+          "bytes": 1027,
+          "sha256": "32f7edfe13ce7c013df08add6a9ac504bfd6d273e866aaa5f7c913d2271bd159"
+        },
+        {
+          "path": "CABINET_SOURCE.json",
+          "bytes": 5005,
+          "sha256": "5a7959c359e47eb6c3e0923b820f98791e323db8d52c45fe0be51da82385b1d0"
+        },
+        {
+          "path": "catalog.json",
+          "bytes": 6565,
+          "sha256": "e38efe56ec3680048410b849eb21c7dcd46fdffc9f8015f82bb1498c1bc3d503"
+        },
+        {
+          "path": "library/threejs-animation/SKILL.md",
+          "bytes": 21367,
+          "sha256": "0ab1b79cb977a1b5b03b247f9ef677acc76c3ee80d42904afb1b66838a19c481"
+        },
+        {
+          "path": "library/threejs-asset-pipeline/SKILL.md",
+          "bytes": 18013,
+          "sha256": "25ca0a26ce01a1151c6757757569ef7bea56bc1af77b216c386c136060e5952d"
+        },
+        {
+          "path": "library/threejs-fundamentals/SKILL.md",
+          "bytes": 23598,
+          "sha256": "cb6a0db8f05bb7d8196cad0ca6ae245e2baec53da4675e1b94be4fa735ed8a09"
+        },
+        {
+          "path": "library/threejs-geometry/SKILL.md",
+          "bytes": 25372,
+          "sha256": "c29c1568cb56e902999b6a50316cd5079c53ee620138148897d269e9716e8da7"
+        },
+        {
+          "path": "library/threejs-interaction/SKILL.md",
+          "bytes": 22313,
+          "sha256": "46f60f3235aa11f2b89320cc2fb5b0adc167f3e8f0c717ba60ad1b006b41621f"
+        },
+        {
+          "path": "library/threejs-lighting/SKILL.md",
+          "bytes": 23467,
+          "sha256": "f12faf79625a7f42952124a5456d338e8399a65e16326c1a6a3239aa8e5ce489"
+        },
+        {
+          "path": "library/threejs-loaders/SKILL.md",
+          "bytes": 22165,
+          "sha256": "ddf6ed2d7dfc809ce722482541fe88af7d349cd8066a4617fabaea865a2a831d"
+        },
+        {
+          "path": "library/threejs-materials/SKILL.md",
+          "bytes": 26722,
+          "sha256": "7d17cefac80196f3dd5068e2042e66244073925d24a55b7ca77534d594c5bc81"
+        },
+        {
+          "path": "library/threejs-performance/SKILL.md",
+          "bytes": 25315,
+          "sha256": "dacbf6a43ed280bdfcda2ce9fcf7a3f0ae54c25ed264e62f6e9a0117d6534285"
+        },
+        {
+          "path": "library/threejs-postprocessing/SKILL.md",
+          "bytes": 27097,
+          "sha256": "0063f5f544215748ed666d878f1d69112094e662792228445a3ab9a56d209fb1"
+        },
+        {
+          "path": "library/threejs-react-three-fiber/SKILL.md",
+          "bytes": 30002,
+          "sha256": "07c0f09516dce50c91c3d23c5baca83c35d161e1abe3d8460782aba56e9476fa"
+        },
+        {
+          "path": "library/threejs-shaders/SKILL.md",
+          "bytes": 26503,
+          "sha256": "8dc55ed6cc348abaad60851ae9f3f5ebcc6e3027dd7f7a55acc1832c73f11bca"
+        },
+        {
+          "path": "library/threejs-textures/SKILL.md",
+          "bytes": 22589,
+          "sha256": "43b4fde95cf9fe42b05f38fe6a6c6d5f36eb062cb15b3fd21a0eed376a5d1d9b"
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 1066,
+          "sha256": "d26f12fa1a0e03fd5aa4d3cbf05262a9f1c684672d0864abac78b3bbb12b268c"
+        },
+        {
+          "path": "SKILL.md",
+          "bytes": 2629,
+          "sha256": "bb2d6700a5aec2d420f305ec6e33f10ba668bdaaa472135af8190ca1bbb33291"
+        },
+        {
+          "path": "upstream/README.md",
+          "bytes": 5302,
+          "sha256": "e068ef3b64df1fbfd82e4f078f868abc3a3d011520e86e40c5eda3707086d6ad"
+        }
+      ]
+    },
+    {
+      "slug": "agentic-awesome-skills",
+      "name": "Agentic Awesome Skills · 智能体技能库",
+      "category": "开发与工具",
+      "originalFileCount": 19,
+      "originalArchiveSha256": "095aa2171cc87ed7f2890501ad485c5a982b502ec9b5e512399c99302652b29a",
+      "archive": "skill-cabinet/archives/agentic-awesome-skills-095aa2171cc87ed7f2890501ad485c5a982b502ec9b5e512399c99302652b29a.zip",
+      "source": {
+        "repository": "https://github.com/sickn33/agentic-awesome-skills",
+        "commit": "0f1aef1eb17611d3219c713ea615ecdc7080896c"
+      },
+      "files": [
+        {
+          "path": "使用说明.md",
+          "bytes": 2152,
+          "sha256": "0578c073a3a79da6e5ce70436efcccdfc3dcf9edc3c61c2705d1013fcf05fa93"
+        },
+        {
+          "path": "CABINET_SOURCE.json",
+          "bytes": 8005,
+          "sha256": "c9b39c1d494ab19734188646e944794457d55931c95c3dbe3ff608d548dff1f6"
+        },
+        {
+          "path": "catalog.json",
+          "bytes": 2180100,
+          "sha256": "cce49f398d93f943583843ea635a471edaa86f13c798ddf2f4565c4ea724d44a"
+        },
+        {
+          "path": "library/agentic-skills.tar.xz",
+          "bytes": 36405476,
+          "sha256": "f1ff3c2cb66e04ad7085a6fb796293dc26c8a06ea3584a81321c88983a78e952"
+        },
+        {
+          "path": "LICENSE",
+          "bytes": 1073,
+          "sha256": "af98370a7edc0f00ec46979d049517833c9a7fa2ba74e3cf8cc42f7db557299d"
+        },
+        {
+          "path": "LICENSE-CONTENT",
+          "bytes": 652,
+          "sha256": "deae07ece522fbca65ab33f0c18ca9630b1077a8f3f233c0af445235b3fb6fcf"
+        },
+        {
+          "path": "SKILL.md",
+          "bytes": 2768,
+          "sha256": "ca60a87e479e82bc202fb534a8f5939497578bb2dc4ec35261fafc9606cdec71"
+        },
+        {
+          "path": "upstream/CATALOG.md",
+          "bytes": 950678,
+          "sha256": "c56d0a8eff94f2a8dab4d850abcec81255710e744e4096439964e0d0eb5164c2"
+        },
+        {
+          "path": "upstream/docs/sources/LICENSE-MICROSOFT",
+          "bytes": 1140,
+          "sha256": "d9a1b1e30d633d5732ea18e3cba9538d293ebc53e1a9e4e96ab739e0c5c4f1cb"
+        },
+        {
+          "path": "upstream/docs/sources/microsoft-skills-attribution.json",
+          "bytes": 21481,
+          "sha256": "52aac77f6b2d1d7543a85cb895b525b8bf0732c37a8459fc2ae190fde96e24c5"
+        },
+        {
+          "path": "upstream/docs/sources/sources.md",
+          "bytes": 28898,
+          "sha256": "eb14c61610fabfe02a7adc3ddf65961436983b6d2a0470c6244c52d90c4e3f62"
+        },
+        {
+          "path": "upstream/docs/users/aas-core.md",
+          "bytes": 27579,
+          "sha256": "b9fff1811f3bedc72956f98de44e3df43cd383693d980db3f9e7a1a00dc0ea39"
+        },
+        {
+          "path": "upstream/docs/users/claude-code-skills.md",
+          "bytes": 11248,
+          "sha256": "1093d6f1135e12717b6617dced67bef3b5609a822989c2b7cbb1a155792e417a"
+        },
+        {
+          "path": "upstream/docs/users/codex-cli-skills.md",
+          "bytes": 11266,
+          "sha256": "e9f1b1fc4b5c90ff23f9eb1c9e813e93f5617fc13eeb573fc4e145f92a94d879"
+        },
+        {
+          "path": "upstream/docs/users/getting-started.md",
+          "bytes": 15371,
+          "sha256": "fbbc42f4f93b9afd2a28fc66a31c05dbdc38839af515b5d968b92f39f9c3ae56"
+        },
+        {
+          "path": "upstream/docs/users/security-and-antivirus.md",
+          "bytes": 3223,
+          "sha256": "ef6e72d8b1c06ea90eb22bb8fe6c205553490b36abe45b0170b629503eff6cf4"
+        },
+        {
+          "path": "upstream/package.json",
+          "bytes": 8901,
+          "sha256": "6e61a7870e4b471da80eaff1df54c63965a8d0dc4410860bb94ac86ba95023b6"
+        },
+        {
+          "path": "upstream/README.md",
+          "bytes": 123338,
+          "sha256": "81746e7898fbbe124073532918fcf15b1ad435002023b183246a96d29aac29a7"
+        },
+        {
+          "path": "VETTING.md",
+          "bytes": 2183,
+          "sha256": "b758a4145888a6fe24be614032fd568b3cfc022ede484743a11146e77b84ccdc"
+        }
+      ]
     }
   ]
 }

@@ -82,7 +82,14 @@ cd Skill-Cabinet
 npm start
 ```
 
-打开 [http://localhost:4173](http://localhost:4173)。本地服务会直接读取仓库的 `skill-cabinet/manifest.json` 和完整 ZIP，当前包含二十六份 Skill / 技能集，覆盖设计、视频、产品、写作、研究、新闻与投资金融。无需填写 GitHub Token，也无需手动导入备份；已经只保存了一份 Skill 的旧浏览器也会自动补齐。
+打开 [http://localhost:4173](http://localhost:4173)。本地服务会直接读取仓库的 `skill-cabinet/manifest.json` 和完整 ZIP，当前包含二十八份 Skill / 技能集，覆盖设计、视频、产品、写作、研究、新闻与投资金融。无需填写 GitHub Token，也无需手动导入备份；已经只保存了一份 Skill 的旧浏览器也会自动补齐。
+
+2026-10-27 新收录两个独立技能集，均归于「开发与工具」：
+
+- **[Three.js · 3D 开发技能集](skills/threejs-skills/SKILL.md)**：来自 [CloudAI-X/threejs-skills](https://github.com/CloudAI-X/threejs-skills/tree/0e181866f095b5f06d005133876e926515390d95)，完整保留 13 份技能，覆盖 Three.js 场景、材质、动画、WebGPU、性能、React Three Fiber 与资产管线。上游 15 个文件逐字节保留，另附集合入口、中文说明、目录及来源记录，共 19 个文件。[下载完整包](skill-cabinet/archives/threejs-skills-8fd5bba103eb3323953311ce863b2cfe90ba8a4a42247fb10bb7e6f688a604cc.zip)。
+- **[Agentic Awesome Skills · 智能体技能库](skills/agentic-awesome-skills/SKILL.md)**：来自 [sickn33/agentic-awesome-skills](https://github.com/sickn33/agentic-awesome-skills/tree/0f1aef1eb17611d3219c713ea615ecdc7080896c)，版本 20.1.0，含 2,872 份技能及完整附件。上游 `skills/` 的 8,979 个文件条目保存在内嵌 `library/agentic-skills.tar.xz`，逐项核对 Git blob 摘要；外层提供可阅读目录、上游说明、来源署名、许可、静态检查记录与中文解压说明，共 19 个文件。[下载完整包](skill-cabinet/archives/agentic-awesome-skills-095aa2171cc87ed7f2890501ad485c5a982b502ec9b5e512399c99302652b29a.zip)。
+
+两个集合各显示为一张技能卡片。大型技能库使用内嵌 tar.xz 保持完整内容并符合现有 3,000 条目、45 MiB 同步限制；导出外层 ZIP 后按包内说明解压。收藏本身不会运行或安装上游技能。
 
 「Huashu Design · 花叔设计」归于「图像与设计」，版本为 3.0.0，已同步至 [alchaincyf/huashu-design 的 4fc7bfd 提交](https://github.com/alchaincyf/huashu-design/tree/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1)。本次更新 3.0 发布案例、双语 README 和作者资料。完整技能包保留上游 389 个文件及 MIT 许可证，另附使用说明、原始 `SKILL.md` 副本与逐文件来源校验记录，共 392 个文件；素材、参考文档、脚本与演示均包含在内。
 

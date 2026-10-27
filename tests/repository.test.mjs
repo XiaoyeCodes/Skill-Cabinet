@@ -90,12 +90,36 @@ test('a fresh checkout loads all bundled real archives and migrates a one-skill 
   const storage = memoryStorage([{ ...decoded, ...seeds[0], files: decoded.files, id: 'legacy-browser-id' }]);
   const client = new RepositoryLibrary({ storage, fetchImpl: (url, options) => fetch(new URL(url, base), options) });
   const result = await client.refresh();
-  assert.equal(result.count, 26);
+  assert.equal(result.count, 28);
   assert.deepEqual(result.preserved, []);
   const records = await storage.listSkills();
-  assert.deepEqual(records.map(record => record.slug).sort(), ['aibase-daily', 'animated-explainer-video', 'anthropic-skills', 'awesome-design-md', 'buffett-letters-skill', 'build-jin10-breakfast', 'cangjie-skill', 'claude-design', 'frontend-design', 'fupeng-macro-framework', 'generate-daily60-digest', 'huangzhizhong-communication', 'huashu-design', 'huashu-motion', 'huashu-nuwa', 'impeccable', 'jin10-financial-daily', 'poor-charlies-almanack-skill', 'qinxiaoming-finance-thinking', 'ray-dalio-framework', 'senior-product-manager', 'shiguang-atlas', 'soros-reflexivity-framework', 'ui-ux-pro-max', 'vibe-knowledge-film', 'warm-paper-editorial']);
+  assert.deepEqual(records.map(record => record.slug).sort(), ['agentic-awesome-skills', 'aibase-daily', 'animated-explainer-video', 'anthropic-skills', 'awesome-design-md', 'buffett-letters-skill', 'build-jin10-breakfast', 'cangjie-skill', 'claude-design', 'frontend-design', 'fupeng-macro-framework', 'generate-daily60-digest', 'huangzhizhong-communication', 'huashu-design', 'huashu-motion', 'huashu-nuwa', 'impeccable', 'jin10-financial-daily', 'poor-charlies-almanack-skill', 'qinxiaoming-finance-thinking', 'ray-dalio-framework', 'senior-product-manager', 'shiguang-atlas', 'soros-reflexivity-framework', 'threejs-skills', 'ui-ux-pro-max', 'vibe-knowledge-film', 'warm-paper-editorial']);
   assert.equal(records.find(record => record.slug === 'shiguang-atlas').id, 'legacy-browser-id');
   assert.ok(records.every(record => record.content && record.files.length > 0));
+  for (const [slug, name, count] of [['threejs-skills', 'Three.js · 3D 开发技能集', 13], ['agentic-awesome-skills', 'Agentic Awesome Skills · 智能体技能库', 2872]]) {
+    const collection = records.find(record => record.slug === slug);
+    assert.equal(collection.name, name);
+    assert.equal(collection.category, '开发与工具');
+    assert.equal(collection.files.length, 19);
+    const files = new Map(collection.files.map(file => [file.path, file.data]));
+    const source = JSON.parse(await files.get('CABINET_SOURCE.json').text());
+    assert.equal(source.upstreamSkillCount, count);
+    const catalog = JSON.parse(await files.get('catalog.json').text());
+    assert.equal((catalog.skills || catalog).length, count);
+    for (const file of source.files) assert.equal(await sha256(files.get(file.path)), file.sha256, `${slug}/${file.path}`);
+    if (slug === 'threejs-skills') {
+      assert.equal(source.upstreamFileCount, 15);
+      assert.equal(collection.files.filter(file => /^library\/[^/]+\/SKILL\.md$/.test(file.path)).length, 13);
+      for (const item of catalog.skills) assert(files.has(item.path), item.path);
+    } else {
+      assert.equal(collection.version, '20.1.0');
+      assert.equal(source.upstreamSkillFileCount, 8979);
+      assert.equal(await sha256(files.get(source.archive.path)), source.archive.sha256);
+      assert(files.has('LICENSE-CONTENT'));
+      assert(files.has('upstream/docs/sources/sources.md'));
+    }
+    assert.equal(await fingerprintSkill({ ...collection, ...manifest.entries[slug].metadata }), manifest.entries[slug].fingerprint);
+  }
   const vibe = records.find(record => record.slug === 'vibe-knowledge-film');
   assert.equal(vibe.name, 'Vibe 知识短片 · 无旁白科普');
   assert.equal(vibe.category, '图像与设计');

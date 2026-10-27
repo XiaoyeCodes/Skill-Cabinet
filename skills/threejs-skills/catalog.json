@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "repository": "https://github.com/CloudAI-X/threejs-skills",
+  "commit": "0e181866f095b5f06d005133876e926515390d95",
+  "skills": [
+    {
+      "id": "threejs-animation",
+      "description": "Keyframe, skeletal and morph-target animation, procedural motion and clip blending, on WebGL or with WebGPU and TSL. Use when animating objects, playing glTF animations, posing bones, driving morph targets, or mixing and crossfading clips.",
+      "path": "library/threejs-animation/SKILL.md",
+      "sha256": "0ab1b79cb977a1b5b03b247f9ef677acc76c3ee80d42904afb1b66838a19c481"
+    },
+    {
+      "id": "threejs-asset-pipeline",
+      "description": "Shrinking glTF assets for three.js with gltf-transform: inspect, validate and optimize commands, Draco, meshopt and quantization, KTX2, WebP and AVIF textures, the loader setup each output needs, and gltfjsx for React. Use when compressing, optimizing or validating 3D models before loading them.",
+      "path": "library/threejs-asset-pipeline/SKILL.md",
+      "sha256": "25ca0a26ce01a1151c6757757569ef7bea56bc1af77b216c386c136060e5952d"
+    },
+    {
+      "id": "threejs-fundamentals",
+      "description": "Three.js scene setup: scenes and fog, cameras, the renderer and tone mapping, the animation loop, object hierarchies, transforms, core math and cleanup, on WebGL or with WebGPU and TSL. Use when creating a scene from scratch, configuring a camera or renderer, handling resize, or arranging objects.",
+      "path": "library/threejs-fundamentals/SKILL.md",
+      "sha256": "cb6a0db8f05bb7d8196cad0ca6ae245e2baec53da4675e1b94be4fa735ed8a09"
+    },
+    {
+      "id": "threejs-geometry",
+      "description": "Creating and shaping three.js geometry: built-in shapes, 3D text, vertex buffers and attributes, merging, instancing, batching, point clouds and lines, on WebGL or with WebGPU and TSL. Use when building 3D shapes or text, custom vertex data, custom meshes, instanced meshes, or point clouds.",
+      "path": "library/threejs-geometry/SKILL.md",
+      "sha256": "c29c1568cb56e902999b6a50316cd5079c53ee620138148897d269e9716e8da7"
+    },
+    {
+      "id": "threejs-interaction",
+      "description": "Picking with raycasting, camera controls, transform gizmos, drag, hover and box selection for three.js, identical under WebGL and WebGPU. Use when handling mouse, touch or keyboard input, detecting clicks on 3D objects, adding camera controls, or making scene objects interactive.",
+      "path": "library/threejs-interaction/SKILL.md",
+      "sha256": "46f60f3235aa11f2b89320cc2fb5b0adc167f3e8f0c717ba60ad1b006b41621f"
+    },
+    {
+      "id": "threejs-lighting",
+      "description": "Light types and physical units, shadow maps, HDR environment lighting, light probes, and lighting performance, on WebGL or with WebGPU and TSL. Use when adding or tuning lights, fixing shadow acne, setting up image-based lighting, or dimming an environment map.",
+      "path": "library/threejs-lighting/SKILL.md",
+      "sha256": "f12faf79625a7f42952124a5456d338e8399a65e16326c1a6a3239aa8e5ce489"
+    },
+    {
+      "id": "threejs-loaders",
+      "description": "Loading three.js assets: glTF with Draco, meshopt and KTX2 compression, other model formats, textures, HDR and EXR environments, progress, caching, cloning and disposal. Use when loading 3D models, textures or environment maps, or managing loading progress, on WebGL or with WebGPU and TSL.",
+      "path": "library/threejs-loaders/SKILL.md",
+      "sha256": "ddf6ed2d7dfc809ce722482541fe88af7d349cd8066a4617fabaea865a2a831d"
+    },
+    {
+      "id": "threejs-materials",
+      "description": "Choosing and configuring three.js materials - unlit, diffuse, specular, PBR, toon, point and line materials - shared properties like blending and stencil, environment response, and the WebGPU node-material and TSL equivalents. Use when styling meshes or tuning material behavior.",
+      "path": "library/threejs-materials/SKILL.md",
+      "sha256": "7d17cefac80196f3dd5068e2042e66244073925d24a55b7ca77534d594c5bc81"
+    },
+    {
+      "id": "threejs-performance",
+      "description": "Measuring and optimizing three.js speed: render statistics, memory counters, fewer draw calls via merging, instancing, batching and LOD, fill rate, shadows, CPU work per frame, shader stalls and GPU compute for particles, WebGL or WebGPU with TSL. Use when a scene is slow, janks or exceeds memory.",
+      "path": "library/threejs-performance/SKILL.md",
+      "sha256": "dacbf6a43ed280bdfcda2ce9fcf7a3f0ae54c25ed264e62f6e9a0117d6534285"
+    },
+    {
+      "id": "threejs-postprocessing",
+      "description": "Three.js post-processing: composer pass chains, built-in renderer effects, and the WebGPU/TSL node pipeline — bloom, depth of field, ambient occlusion, custom screen effects. Use when adding visual effects, color grading, blur, glow, or screen-space shaders, on WebGL or with WebGPU and TSL.",
+      "path": "library/threejs-postprocessing/SKILL.md",
+      "sha256": "0063f5f544215748ed666d878f1d69112094e662792228445a3ab9a56d209fb1"
+    },
+    {
+      "id": "threejs-react-three-fiber",
+      "description": "Building three.js scenes from React with React Three Fiber and drei: renderer setup, the scene graph as JSX, frame-loop, state and loading hooks, pointer events, and adaptive performance, on WebGL or with WebGPU and TSL. Use when writing React components that render three.js.",
+      "path": "library/threejs-react-three-fiber/SKILL.md",
+      "sha256": "07c0f09516dce50c91c3d23c5baca83c35d161e1abe3d8460782aba56e9476fa"
+    },
+    {
+      "id": "threejs-shaders",
+      "description": "Custom GLSL vertex and fragment shaders: uniforms, varyings, shader chunks, extending built-in materials, instanced attributes, plus the same effects as node materials with TSL on WebGPU. Use when writing a shader, a custom material or effect, moving vertices in a shader, or porting GLSL to TSL.",
+      "path": "library/threejs-shaders/SKILL.md",
+      "sha256": "8dc55ed6cc348abaad60851ae9f3f5ebcc6e3027dd7f7a55acc1832c73f11bca"
+    },
+    {
+      "id": "threejs-textures",
+      "description": "Three.js textures: image loading, color spaces, UV channels and transforms, texture types from canvas to HDR and KTX2, render targets, texture memory. Use when working with images on materials, UV coordinates, cubemaps, render targets or texture optimization; on WebGL or with WebGPU and TSL.",
+      "path": "library/threejs-textures/SKILL.md",
+      "sha256": "43b4fde95cf9fe42b05f38fe6a6c6d5f36eb062cb15b3fd21a0eed376a5d1d9b"
+    }
+  ]
+}

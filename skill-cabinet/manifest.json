@@ -591,6 +591,55 @@
         "updatedAt": "2026-10-27T08:38:23.881Z",
         "favorite": false
       }
+    },
+    "threejs-skills": {
+      "metadata": {
+        "id": "threejs-skills-seed",
+        "name": "Three.js · 3D 开发技能集",
+        "slug": "threejs-skills",
+        "description": "Three.js 三维场景开发技能集，覆盖场景、几何、材质、灯光、纹理、动画、模型加载、着色器、后期处理、交互、性能、React Three Fiber 与资产管线；按任务选择包内 13 份完整参考技能。",
+        "category": "开发与工具",
+        "tags": [
+          "Three.js",
+          "3D",
+          "WebGL",
+          "WebGPU",
+          "React Three Fiber"
+        ],
+        "version": "1.0.0",
+        "author": "CloudAI-X",
+        "favorite": false,
+        "createdAt": "2026-10-27T11:55:18.681Z",
+        "updatedAt": "2026-10-27T11:55:18.681Z"
+      },
+      "fingerprint": "4dfc4f22a11ef30d9ac730e6708f78a96666775ab9f0ffcc166b836a42393263",
+      "archiveSha256": "8fd5bba103eb3323953311ce863b2cfe90ba8a4a42247fb10bb7e6f688a604cc",
+      "archivePath": "skill-cabinet/archives/threejs-skills-8fd5bba103eb3323953311ce863b2cfe90ba8a4a42247fb10bb7e6f688a604cc.zip"
+    },
+    "agentic-awesome-skills": {
+      "metadata": {
+        "id": "agentic-awesome-skills-seed",
+        "name": "Agentic Awesome Skills · 智能体技能库",
+        "slug": "agentic-awesome-skills",
+        "description": "收录 Agentic Awesome Skills 的 2,872 份技能与完整附件，覆盖开发、设计、智能体、数据、自动化、测试和运维；先检索目录、检查完整技能文件，再按任务选用。完整上游技能目录保存在内嵌 tar.xz 中。",
+        "category": "开发与工具",
+        "tags": [
+          "智能体",
+          "技能库",
+          "开发",
+          "自动化",
+          "Codex",
+          "Claude Code"
+        ],
+        "version": "20.1.0",
+        "author": "sickn33 与社区贡献者",
+        "favorite": false,
+        "createdAt": "2026-10-27T11:55:18.737Z",
+        "updatedAt": "2026-10-27T11:55:18.737Z"
+      },
+      "fingerprint": "16643dfb6fd433a1b4078efc72608797674fc462197e7604e190a1fa2f444746",
+      "archiveSha256": "095aa2171cc87ed7f2890501ad485c5a982b502ec9b5e512399c99302652b29a",
+      "archivePath": "skill-cabinet/archives/agentic-awesome-skills-095aa2171cc87ed7f2890501ad485c5a982b502ec9b5e512399c99302652b29a.zip"
     }
   },
   "categories": [
