@@ -225,9 +225,9 @@
       }
     },
     "huashu-design": {
-      "fingerprint": "131ee657ebac2a889a93a4b75e67dd928a3f93f00522c94d817c9a48ae2ae872",
-      "archiveSha256": "a2dca6b71a5a4ea2a4ad4a011a59af2a26e81ce85c88a2af70525de21cf130cb",
-      "archivePath": "skill-cabinet/archives/huashu-design-a2dca6b71a5a4ea2a4ad4a011a59af2a26e81ce85c88a2af70525de21cf130cb.zip",
+      "fingerprint": "e407406cc5b313a98df859667669ab3085f9eb4e1578c9e50787822fa82e2054",
+      "archiveSha256": "dfacf91a9e181150c5a29dadd925f8b7563130a13cbd9fd776c0041d1e062ead",
+      "archivePath": "skill-cabinet/archives/huashu-design-dfacf91a9e181150c5a29dadd925f8b7563130a13cbd9fd776c0041d1e062ead.zip",
       "metadata": {
         "id": "0d75f482-412e-4463-aed0-d23b9f4cb7df",
         "name": "Huashu Design · 花叔设计",
@@ -244,13 +244,13 @@
         "author": "花叔",
         "favorite": false,
         "createdAt": "2026-10-21T07:42:49.043Z",
-        "updatedAt": "2026-10-21T07:42:49.043Z"
+        "updatedAt": "2026-10-27T03:34:12.199Z"
       }
     },
     "huashu-motion": {
-      "fingerprint": "6e3eeed604a34265c226d3ac4eec8eb8722bf0fcba4a2a615b8f5f4becffd495",
-      "archiveSha256": "b70e306632ad0d084f7f7f1d872970fa9ec7437c77d4c1dc0524688c3492fa42",
-      "archivePath": "skill-cabinet/archives/huashu-motion-b70e306632ad0d084f7f7f1d872970fa9ec7437c77d4c1dc0524688c3492fa42.zip",
+      "fingerprint": "aabb03c2fef1712c9241137d07c0310f96ce6a441a4ce5d441295a10f55549e8",
+      "archiveSha256": "b219d2aab39f6296f0122387b1336b3976c9e69079b642ac221f5345a1ae78bf",
+      "archivePath": "skill-cabinet/archives/huashu-motion-b219d2aab39f6296f0122387b1336b3976c9e69079b642ac221f5345a1ae78bf.zip",
       "metadata": {
         "id": "5412cea9-99b5-486b-913a-74da90571198",
         "name": "Huashu Motion · 花叔动画",
@@ -263,11 +263,11 @@
           "视频制作",
           "配乐音效"
         ],
-        "version": "0.1.1",
+        "version": "0.3.1",
         "author": "花叔",
         "favorite": false,
         "createdAt": "2026-10-21T08:12:54.153Z",
-        "updatedAt": "2026-10-21T08:12:54.153Z"
+        "updatedAt": "2026-10-27T03:34:17.676Z"
       }
     },
     "huashu-nuwa": {

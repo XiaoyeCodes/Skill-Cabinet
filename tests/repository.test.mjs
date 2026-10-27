@@ -139,7 +139,7 @@ test('a fresh checkout loads all bundled real archives and migrates a one-skill 
   assert.equal(design.category, '图像与设计');
   assert.equal(design.version, '3.0.0');
   assert.equal(design.author, '花叔');
-  assert.equal(design.files.length, 391);
+  assert.equal(design.files.length, 392);
   const paths = new Set(design.files.map(file => file.path));
   for (const file of ['LICENSE', 'README.md', 'package.json', 'assets/design_canvas.jsx', 'references/workflow.md', 'scripts/verify.py', 'demos/c1-ios-prototype.html', 'upstream/SKILL.original.md']) assert.ok(paths.has(file), file);
   assert.match(await design.files.find(file => file.path === 'LICENSE').data.text(), /MIT License/);
@@ -151,13 +151,28 @@ test('a fresh checkout loads all bundled real archives and migrates a one-skill 
   for (const file of ['LICENSE', 'references/extraction-framework.md', 'scripts/quality_check.py', 'examples/feynman-perspective/SKILL.md', 'upstream/SKILL.original.md']) assert.ok(nuwa.files.some(item => item.path === file), file);
   const motion = records.find(record => record.slug === 'huashu-motion');
   assert.equal(motion.category, '图像与设计');
-  assert.equal(motion.version, '0.1.1');
-  assert.equal(motion.files.length, 327);
+  assert.equal(motion.version, '0.3.1');
+  assert.equal(motion.files.length, 355);
   const motionFiles = new Map(motion.files.map(file => [file.path, file.data]));
   for (const file of ['LICENSE', 'THIRD_PARTY.md', 'cli/om.js', 'runtime/om-engine.js', 'fonts/LICENSES.md', 'templates/blank/index.html', 'skills/huashu-motion/SKILL.md', 'references/director.md', 'bin/om', 'bin/om.cmd']) assert.ok(motionFiles.has(file), file);
   assert.equal(await motionFiles.get('references/director.md').text(), await motionFiles.get('skills/huashu-motion/references/director.md').text());
   assert.match(await motionFiles.get('bin/om').text(), /DIR\/\.\.\/cli\/om\.js/);
   assert.match(await motionFiles.get('bin/om.cmd').text(), /cli\\om\.js/);
+  for (const [record, commit, sourceCount] of [[design, '4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1', 389], [motion, '52467f99c602b76ba86d511d37acdfe93fa1e16e', 306]]) {
+    const provenance = JSON.parse(await record.files.find(file => file.path === 'upstream/source.json').data.text());
+    assert.equal(provenance.commit, commit);
+    assert.equal(provenance.version, record.version);
+    assert.equal(provenance.sourceFiles.length, sourceCount);
+    const archived = new Map(record.files.map(file => [file.path, file.data]));
+    for (const original of provenance.sourceFiles) {
+      const filename = original.path === 'SKILL.md' ? 'upstream/SKILL.original.md' : original.path;
+      assert(archived.has(filename), filename);
+      const bytes = new Uint8Array(await archived.get(filename).arrayBuffer());
+      assert.equal(createHash('sha1').update(`blob ${bytes.byteLength}\0`).update(bytes).digest('hex'), original.sha, filename);
+    }
+  }
+  for (const filename of ['cli/lib/grab.js', 'cli/lib/share.js', 'runtime/three/three.min.js', 'runtime/three/LICENSE', 'references/depth.md', 'references/music.md', 'templates/object-3d/index.html', 'templates/ui-space/index.html']) assert(motionFiles.has(filename), filename);
+  for (const filename of ['depth.md', 'music.md']) assert.equal(await motionFiles.get(`references/${filename}`).text(), await motionFiles.get(`skills/huashu-motion/references/${filename}`).text());
   const paper = records.find(record => record.slug === 'warm-paper-editorial');
   assert.equal(paper.name, '暖纸编辑设计');
   assert.equal(paper.category, '图像与设计');

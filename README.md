@@ -84,11 +84,11 @@ npm start
 
 打开 [http://localhost:4173](http://localhost:4173)。本地服务会直接读取仓库的 `skill-cabinet/manifest.json` 和完整 ZIP，当前包含二十三份 Skill / 技能集，覆盖设计、视频、产品、写作、研究、新闻与投资金融。无需填写 GitHub Token，也无需手动导入备份；已经只保存了一份 Skill 的旧浏览器也会自动补齐。
 
-「Huashu Design · 花叔设计」归于「图像与设计」，版本为 3.0.0，来自 [alchaincyf/huashu-design](https://github.com/alchaincyf/huashu-design/tree/798c4235ebff03d5c45e3c8affdf5e9d18f9dfa7)。完整技能包保留上游 389 个文件及 MIT 许可证，另附使用说明和原始 `SKILL.md` 副本；素材、参考文档、脚本与演示均包含在内。
+「Huashu Design · 花叔设计」归于「图像与设计」，版本为 3.0.0，已同步至 [alchaincyf/huashu-design 的 4fc7bfd 提交](https://github.com/alchaincyf/huashu-design/tree/4fc7bfdbd5ec3fa2d43ce7a6433de60976a5e4b1)。本次更新 3.0 发布案例、双语 README 和作者资料。完整技能包保留上游 389 个文件及 MIT 许可证，另附使用说明、原始 `SKILL.md` 副本与逐文件来源校验记录，共 392 个文件；素材、参考文档、脚本与演示均包含在内。
 
 「女娲 · Skill造人术」归于「学习与研究」，版本为 1.0.0，来自 [alchaincyf/nuwa-skill](https://github.com/alchaincyf/nuwa-skill/tree/7812110bf7e5a2b01b6aa5a738568044121bbfa2)。完整技能包保留上游 162 个文件、15 份人物示例及 MIT 许可证，另附使用说明和原始 `SKILL.md` 副本。
 
-「Huashu Motion · 花叔动画」归于「图像与设计」，版本为 0.1.1，来自 [alchaincyf/huashu-motion](https://github.com/alchaincyf/huashu-motion/tree/5f2608c2e12abcf518f74dde86093b19f7f88603)。技能包保留 282 个上游文件，包含 CLI、运行时、编辑器、字体、模板、示例及全部许可文件；另将 Skill 的参考文档和启动入口整理到包根目录，提供 Windows 启动入口与使用说明。8 个官网宣传 GIF 保留在原始克隆中，避免超过同步单包限制。实际执行需要 Node.js 22+、Chrome/Chromium/Edge 与 FFmpeg；第三方组件及演示角色的许可见包内 `THIRD_PARTY.md`。
+「Huashu Motion · 花叔动画」归于「图像与设计」，已从 0.1.1 升级到 0.3.1，来自 [alchaincyf/huashu-motion 的 52467f9 提交](https://github.com/alchaincyf/huashu-motion/tree/52467f99c602b76ba86d511d37acdfe93fa1e16e)。更新包含产品素材抓取、分享 GIF、配乐指南、Three.js 深度场景和新模板，以及运行时和检查工具修正。技能包保留 306 个上游文件，包含 CLI、运行时、编辑器、字体、模板、示例、测试及许可；另将参考文档和启动入口整理到包根目录，提供 Windows 入口、说明与来源校验记录，共 355 个文件。仅沿用旧包对官网宣传 GIF 的排除，当前 9 个文件的路径和理由记录在 `upstream/source.json`，可在上游仓库查看。实际执行需要 Node.js 22+、Chrome/Chromium/Edge 与 FFmpeg；第三方组件及演示角色的许可见包内 `THIRD_PARTY.md`、`fonts/LICENSES.md` 与 `runtime/three/LICENSE`。
 
 「暖纸编辑设计」归于「图像与设计」，版本为 1.0.0，是个人的跨媒介设计 Skill，适用于网页、图片、Word 和 PDF。完整包包含配色与排版规范、CSS、原创 SVG 线稿与标记、用户参考图、图像提示词指南和对比度检查脚本；另附使用说明及原始指令副本，共 16 个文件。
 
