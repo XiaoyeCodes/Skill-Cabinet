@@ -123,7 +123,9 @@ hydrateIcons();
 const githubWorkspace = initializeGitHubWorkspace({ icon, hydrateIcons, toast, getToken: () => githubSync?.getReadToken() || '' });
 initializePromptsWorkspace({ icon, hydrateIcons, toast });
 restoreWorkspace();
-const repositoryLibrary = new RepositoryLibrary();
+const repositoryLibrary = new RepositoryLibrary({ onProgress: ({ name, completed, total }) => {
+  $('#repository-status').textContent = `正在加载技能包 ${completed + 1}/${total}：${name} · 首次加载包含完整附件，请稍候…`;
+} });
 let checkingRepository = false;
 async function refreshLibraryView() {
   await refresh();

@@ -10,10 +10,11 @@ const fingerprint = entry => entry && !entry.deleted ? entry.fingerprint : null;
 // Loads checkout data and mirrors custom categories to its tracked manifest.
 // Git commits and pushes remain explicit user actions.
 export class RepositoryLibrary {
-  constructor({ storage = localStorage, fetchImpl = (...args) => fetch(...args), readOnly = isStaticHosting() } = {}) {
+  constructor({ storage = localStorage, fetchImpl = (...args) => fetch(...args), readOnly = isStaticHosting(), onProgress = () => {} } = {}) {
     this.storage = storage;
     this.fetchImpl = fetchImpl;
     this.readOnly = readOnly;
+    this.onProgress = onProgress;
     this.running = null;
   }
 
@@ -23,7 +24,7 @@ export class RepositoryLibrary {
   }
 
   async read(path) {
-    return this.fetchImpl(`./${path}`, { cache: 'no-store', redirect: 'error', signal: AbortSignal.timeout(15000) });
+    return this.fetchImpl(`./${path}`, { cache: 'no-store', redirect: 'error', signal: AbortSignal.timeout(this.readOnly ? 120000 : 15000) });
   }
 
   async performRefresh() {
@@ -48,6 +49,7 @@ export class RepositoryLibrary {
     const baseline = await storage.getSyncMeta(BASELINE) || { entries: {} };
     const next = { entries: Object.create(null) };
     const upserts = [], deletions = [], preserved = [];
+    const total = Object.values(manifest.entries).filter(fingerprint).length;
     const slugs = new Set([...Object.keys(baseline.entries), ...Object.keys(manifest.entries)]);
     for (const slug of slugs) {
       const entry = manifest.entries[slug];
@@ -64,7 +66,10 @@ export class RepositoryLibrary {
         continue;
       }
       if (!remoteFP) { if (record) deletions.push(slug); continue; }
-      const bytes = await readRepositoryArchive(entry, document.hosting, path => this.read(path));
+      this.onProgress({ name: entry.metadata.name, completed: upserts.length, total });
+      let bytes;
+      try { bytes = await readRepositoryArchive(entry, document.hosting, path => this.read(path)); }
+      catch (error) { throw new Error(`技能「${entry.metadata.name}」下载未完成，将自动重试：${error.message}`, { cause: error }); }
       if (bytes.byteLength > MAX_ARCHIVE_BYTES || await sha256(bytes) !== entry.archiveSha256) throw new Error(`仓库技能包「${entry.metadata.name}」校验失败，本地数据已保留。`);
       const decoded = await storage.decodeSkillArchive(bytes);
       if (decoded.length !== 1) throw new Error('仓库技能包必须只包含一个 Skill。');
