@@ -2,7 +2,7 @@ import * as localStorage from './storage.js';
 import { validateManifest, sha256, MAX_ARCHIVE_BYTES } from './github-client.js';
 import { fingerprintSkill } from './sync-engine.js';
 import { mergeCategories } from './categories.js';
-import { isStaticHosting, readRepositoryArchive } from './hosting.js';
+import { isStaticHosting, readRepositoryArchive, createArchiveCache } from './hosting.js';
 
 const BASELINE = 'repository-library:v1';
 const fingerprint = entry => entry && !entry.deleted ? entry.fingerprint : null;
@@ -10,11 +10,12 @@ const fingerprint = entry => entry && !entry.deleted ? entry.fingerprint : null;
 // Loads checkout data and mirrors custom categories to its tracked manifest.
 // Git commits and pushes remain explicit user actions.
 export class RepositoryLibrary {
-  constructor({ storage = localStorage, fetchImpl = (...args) => fetch(...args), readOnly = isStaticHosting(), onProgress = () => {} } = {}) {
+  constructor({ storage = localStorage, fetchImpl = (...args) => fetch(...args), readOnly = isStaticHosting(), onProgress = () => {}, archiveCache = readOnly ? createArchiveCache() : null } = {}) {
     this.storage = storage;
     this.fetchImpl = fetchImpl;
     this.readOnly = readOnly;
     this.onProgress = onProgress;
+    this.archiveCache = archiveCache;
     this.running = null;
   }
 
@@ -23,8 +24,8 @@ export class RepositoryLibrary {
     return this.running;
   }
 
-  async read(path) {
-    return this.fetchImpl(`./${path}`, { cache: 'no-store', redirect: 'error', signal: AbortSignal.timeout(this.readOnly ? 120000 : 15000) });
+  async read(path, { signal = AbortSignal.timeout(this.readOnly ? 120000 : 15000) } = {}) {
+    return this.fetchImpl(`./${path}`, { cache: 'no-store', redirect: 'error', signal });
   }
 
   async performRefresh() {
@@ -51,9 +52,12 @@ export class RepositoryLibrary {
     const upserts = [], deletions = [], preserved = [];
     const total = Object.values(manifest.entries).filter(fingerprint).length;
     const slugs = new Set([...Object.keys(baseline.entries), ...Object.keys(manifest.entries)]);
+    let visited = 0;
     for (const slug of slugs) {
       const entry = manifest.entries[slug];
       const remoteFP = fingerprint(entry);
+      const completed = visited;
+      if (remoteFP) visited++;
       const record = local.get(slug);
       const localFP = record ? await fingerprintSkill(record) : null;
       const tracked = Object.hasOwn(baseline.entries, slug);
@@ -66,9 +70,10 @@ export class RepositoryLibrary {
         continue;
       }
       if (!remoteFP) { if (record) deletions.push(slug); continue; }
-      this.onProgress({ name: entry.metadata.name, completed: upserts.length, total });
+      const progress = event => this.onProgress({ name: entry.metadata.name, completed, total, ...event });
+      progress({});
       let bytes;
-      try { bytes = await readRepositoryArchive(entry, document.hosting, path => this.read(path)); }
+      try { bytes = await readRepositoryArchive(entry, document.hosting, (path, options) => this.read(path, options), { cache: this.archiveCache, attempts: readOnly ? 3 : 1, onProgress: progress }); }
       catch (error) { throw new Error(`技能「${entry.metadata.name}」下载未完成，将自动重试：${error.message}`, { cause: error }); }
       if (bytes.byteLength > MAX_ARCHIVE_BYTES || await sha256(bytes) !== entry.archiveSha256) throw new Error(`仓库技能包「${entry.metadata.name}」校验失败，本地数据已保留。`);
       const decoded = await storage.decodeSkillArchive(bytes);

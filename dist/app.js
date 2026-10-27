@@ -123,8 +123,10 @@ hydrateIcons();
 const githubWorkspace = initializeGitHubWorkspace({ icon, hydrateIcons, toast, getToken: () => githubSync?.getReadToken() || '' });
 initializePromptsWorkspace({ icon, hydrateIcons, toast });
 restoreWorkspace();
-const repositoryLibrary = new RepositoryLibrary({ onProgress: ({ name, completed, total }) => {
-  $('#repository-status').textContent = `正在加载技能包 ${completed + 1}/${total}：${name} · 首次加载包含完整附件，请稍候…`;
+const repositoryLibrary = new RepositoryLibrary({ onProgress: ({ name, completed, total, loaded, totalBytes, attempt, cached }) => {
+  const bytes = loaded === undefined ? '' : ` · ${formatBytes(loaded)}${totalBytes ? ` / ${formatBytes(totalBytes)}` : ''}`;
+  $('#repository-status').removeAttribute('data-error');
+  $('#repository-status').textContent = `正在加载技能包 ${completed + 1}/${total}：${name}${bytes}${attempt > 1 ? ` · 第 ${attempt} 次尝试` : cached ? ' · 继续已下载进度' : ''} · 首次加载包含完整附件，请稍候…`;
 } });
 let checkingRepository = false;
 async function refreshLibraryView() {

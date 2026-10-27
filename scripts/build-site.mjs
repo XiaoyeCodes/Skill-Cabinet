@@ -7,7 +7,7 @@ import { readPrompts } from '../repository-prompts.mjs';
 
 const root = path.resolve(fileURLToPath(new URL('../', import.meta.url)));
 const MAX_FILE_BYTES = 25_000_000;
-const CHUNK_BYTES = 20_000_000;
+const CHUNK_BYTES = 2_000_000;
 
 async function checkAssets(directory) {
   for (const item of await readdir(directory, { withFileTypes: true })) {
@@ -38,20 +38,23 @@ export async function buildSite(repositoryRoot = root) {
   await rm(output, { recursive: true, force: true });
   await cp(path.join(base, 'dist'), output, { recursive: true });
   await mkdir(path.join(output, 'skill-cabinet/archives'), { recursive: true });
-  const archiveParts = {};
+  const archiveParts = {}, archivePartHashes = {}, archiveSizes = {};
   for (const { entry, bytes } of archives) {
-    if (bytes.length <= MAX_FILE_BYTES) await writeFile(path.join(output, entry.archivePath), bytes);
+    archiveSizes[entry.archivePath] = bytes.length;
+    if (bytes.length <= CHUNK_BYTES) await writeFile(path.join(output, entry.archivePath), bytes);
     else {
       const parts = [];
       for (let start = 0, index = 0; start < bytes.length; start += CHUNK_BYTES, index++) {
         const name = `${entry.archivePath}.part-${index}`;
-        await writeFile(path.join(output, name), bytes.subarray(start, start + CHUNK_BYTES));
+        const part = bytes.subarray(start, start + CHUNK_BYTES);
+        await writeFile(path.join(output, name), part);
+        archivePartHashes[name] = createHash('sha256').update(part).digest('hex');
         parts.push(name);
       }
       archiveParts[entry.archivePath] = parts;
     }
   }
-  await writeFile(path.join(output, 'skill-cabinet/manifest.json'), JSON.stringify({ ...manifest, hosting: { archiveParts } }, null, 2) + '\n');
+  await writeFile(path.join(output, 'skill-cabinet/manifest.json'), JSON.stringify({ ...manifest, hosting: { archiveParts, archivePartHashes, archiveSizes } }, null, 2) + '\n');
   await writeFile(path.join(output, 'skill-cabinet/prompts.json'), JSON.stringify(prompts.catalog, null, 2) + '\n');
   if (manifest.projects) {
     await writeFile(path.join(output, 'assets/github-projects.json'), JSON.stringify({ schemaVersion: 1, projects: Object.values(manifest.projects).filter(entry => !entry.deleted).map(entry => entry.record) }, null, 2) + '\n');

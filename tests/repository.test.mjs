@@ -336,6 +336,32 @@ test('static hosting falls back on first use, but an existing repository never r
   assert.equal((await storage.listSkills()).length, 1);
 });
 
+test('a fresh static library resumes verified archives after a later download fails without partial imports', async () => {
+  const source = checkout(), storage = memoryStorage(), cached = new Map(), reads = new Map();
+  await source.add(skill('First', { slug: 'first' }));
+  await source.add(skill('Second', { slug: 'second' }));
+  const cache = { get: async key => cached.get(key), put: async (key, bytes) => cached.set(key, bytes), delete: async key => cached.delete(key) };
+  let offline = true;
+  const fetchImpl = async (url, options) => {
+    if (url.endsWith('.zip')) {
+      reads.set(url, (reads.get(url) || 0) + 1);
+      if (url.includes('/second-') && offline) return new Response('', { status: 404 });
+    }
+    return source.fetch(url, options);
+  };
+  await assert.rejects(new RepositoryLibrary({ storage, fetchImpl, readOnly: true, archiveCache: cache }).refresh(), /无法读取/);
+  assert.equal((await storage.listSkills()).length, 0);
+  assert.equal(await storage.getSyncMeta('repository-library:v1'), undefined);
+  offline = false;
+  const progress = [];
+  const fresh = new RepositoryLibrary({ storage, fetchImpl, readOnly: true, archiveCache: cache, onProgress: event => progress.push(event) });
+  assert.equal((await fresh.refresh()).count, 2);
+  assert.equal((await storage.listSkills()).length, 2);
+  assert.equal(reads.get(`./${source.manifest.entries.first.archivePath}`), 1);
+  assert.ok(progress.some(event => event.cached));
+  assert.equal(progress.at(-1).completed, 1);
+});
+
 test('edits during archive reads reject the stale transaction and survive retry', async () => {
   const source = checkout(), storage = memoryStorage(); await source.add(skill());
   let edit = true;
