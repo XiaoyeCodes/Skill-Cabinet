@@ -640,6 +640,96 @@
       "fingerprint": "16643dfb6fd433a1b4078efc72608797674fc462197e7604e190a1fa2f444746",
       "archiveSha256": "095aa2171cc87ed7f2890501ad485c5a982b502ec9b5e512399c99302652b29a",
       "archivePath": "skill-cabinet/archives/agentic-awesome-skills-095aa2171cc87ed7f2890501ad485c5a982b502ec9b5e512399c99302652b29a.zip"
+    },
+    "halftone-satire-video": {
+      "fingerprint": "0f701d718606b36a1e701947af1ad42fe119855c465bfae7861f682d45a38300",
+      "archiveSha256": "9d1823178d62c86909c7880e05975452bc78fc4c3c0c08669a37e940df721cb7",
+      "archivePath": "skill-cabinet/archives/halftone-satire-video-9d1823178d62c86909c7880e05975452bc78fc4c3c0c08669a37e940df721cb7.zip",
+      "metadata": {
+        "id": "cfe5c080-638e-43db-b657-9da7546f6de6",
+        "name": "复古案卷喜剧视频",
+        "slug": "halftone-satire-video",
+        "description": "制作“胖橘受审／胖橘案卷”同类的复古半调案卷喜剧短视频，适用于“帮我做一个调侃 Claude 封号的视频”、会员吐槽、产品讽刺和荒诞审判动画。自动完成故事、冷面配音、角色动画、印章、卡点剪辑、配乐音效、检查及 MP4 交付。用户只要脚本、制作或修改 skill 时，按该范围工作，不启动视频生产。",
+        "category": "图像与设计",
+        "tags": [],
+        "version": "1.0.0",
+        "author": "",
+        "favorite": false,
+        "createdAt": "2026-10-28T09:15:21.855Z",
+        "updatedAt": "2026-10-28T09:15:21.855Z"
+      }
+    },
+    "code-video-director": {
+      "fingerprint": "88b542451e7b9a480cc7b499425bb9fd7a270be120d4e4897a8e96879d7751c7",
+      "archiveSha256": "9333f65e8d248066c1e31208f2976107913cac00bc5921b92db5182455cf7221",
+      "archivePath": "skill-cabinet/archives/code-video-director-9333f65e8d248066c1e31208f2976107913cac00bc5921b92db5182455cf7221.zip",
+      "metadata": {
+        "id": "21324ea4-e8ff-481e-b1d3-5fbee3ea98a0",
+        "name": "代码视频导演",
+        "slug": "code-video-director",
+        "description": "制作或改编可编辑的代码动画视频，用于产品演示、活体录屏、动态排版、知识讲解和数据动画；通过统一时间轴编排镜头、界面、角色、字幕与音效并渲染成片。适合要求复用视频中的运镜和动效方法，而非仅下载视频或只编写文案的请求。",
+        "category": "图像与设计",
+        "tags": [],
+        "version": "1.0.0",
+        "author": "",
+        "favorite": false,
+        "createdAt": "2026-10-28T09:15:21.865Z",
+        "updatedAt": "2026-10-28T09:15:21.865Z"
+      }
+    },
+    "philosophy-video-studio": {
+      "fingerprint": "5c249c7e9c0132db9a512e45d3cfdee803d34ebbebc4cbc8a3e45c88f030e426",
+      "archiveSha256": "3173252037e1653f3d9a703a7c93aae78c2b8cf98419612f3edf8a81c8a90a55",
+      "archivePath": "skill-cabinet/archives/philosophy-video-studio-3173252037e1653f3d9a703a7c93aae78c2b8cf98419612f3edf8a81c8a90a55.zip",
+      "metadata": {
+        "id": "151b0430-9091-48c6-957d-e38ac501b304",
+        "name": "哲学暗房视频工作室",
+        "slug": "philosophy-video-studio",
+        "description": "Create original Chinese philosophy explainer films with dark illustrated interiors, silhouette figures, symbolic lighting, timed narration, subtitles and music. Use for making similar philosophy videos, turning a philosophical topic into narrated animation, or reusing this local code-driven production workflow. Not a generic live-action or AI-video-generation skill.",
+        "category": "图像与设计",
+        "tags": [],
+        "version": "1.0.0",
+        "author": "",
+        "favorite": false,
+        "createdAt": "2026-10-28T09:15:21.870Z",
+        "updatedAt": "2026-10-28T09:15:21.870Z"
+      }
+    },
+    "direct-motion-video": {
+      "fingerprint": "2c1153ac1ea91ce63361f7cee9803d61e1978299b2904ead80ce1c3bb3716f14",
+      "archiveSha256": "5f5b7036c9d91460d89dcc92480febc38a71c2e5f01469b76473a6b8968fee69",
+      "archivePath": "skill-cabinet/archives/direct-motion-video-5f5b7036c9d91460d89dcc92480febc38a71c2e5f01469b76473a6b8968fee69.zip",
+      "metadata": {
+        "id": "29c67dea-717c-48fb-a219-f2d7ff90b43a",
+        "name": "导演式知识动画",
+        "slug": "direct-motion-video",
+        "description": "Direct and produce editable motion-graphics videos from a topic, script, dataset, or reference style, including storyboards, narration, original or supplied audio, animated diagrams, and verified MP4 delivery. Use for knowledge explainers, history, product introductions, data stories, and similar code-rendered films.",
+        "category": "图像与设计",
+        "tags": [],
+        "version": "1.0.0",
+        "author": "",
+        "favorite": false,
+        "createdAt": "2026-10-28T09:15:21.878Z",
+        "updatedAt": "2026-10-28T09:15:21.878Z"
+      }
+    },
+    "procedural-video-director": {
+      "fingerprint": "af0c8de02ec81f9bbdd66323ca5e05dc20360c86d37370af98685a009ca296ab",
+      "archiveSha256": "fff590027f08bddd194f10f4a9e9b6c229639b241bc438056e398e3e95446c28",
+      "archivePath": "skill-cabinet/archives/procedural-video-director-fff590027f08bddd194f10f4a9e9b6c229639b241bc438056e398e3e95446c28.zip",
+      "metadata": {
+        "id": "5be88c2b-ab00-4b8b-9a01-98acec56c63d",
+        "name": "程序动效视频导演",
+        "slug": "procedural-video-director",
+        "description": "制作可编辑、可复现的代码动效视频：WebGL 光场、Canvas 纸墨、动态图解、程序音效与旁白时码。适用于类似《达里奥创世录》的制作技术，以及科普、历史、数据、产品、寓言和讽刺类原创短片。用户只咨询方法、制作 skill 或只要脚本时，按该范围交付，不启动整片生产。",
+        "category": "图像与设计",
+        "tags": [],
+        "version": "1.0.0",
+        "author": "",
+        "favorite": false,
+        "createdAt": "2026-10-28T09:15:21.885Z",
+        "updatedAt": "2026-10-28T09:15:21.885Z"
+      }
     }
   },
   "categories": [

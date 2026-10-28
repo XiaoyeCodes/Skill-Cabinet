@@ -26,7 +26,7 @@ test('production output includes every current skill and catalog, preserves hash
   assert.deepEqual(deployed.entries, original.entries);
   assert.deepEqual(deployed.categories, original.categories);
   assert.equal(built.skills, Object.values(original.entries).filter(entry => !entry.deleted).length);
-  assert.equal(built.skills, 28);
+  assert.equal(built.skills, 33);
   assert.equal(built.splitArchives, 7);
   for (const entry of Object.values(deployed.entries)) {
     if (entry.deleted) continue;

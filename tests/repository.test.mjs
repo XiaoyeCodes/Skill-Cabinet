@@ -90,10 +90,16 @@ test('a fresh checkout loads all bundled real archives and migrates a one-skill 
   const storage = memoryStorage([{ ...decoded, ...seeds[0], files: decoded.files, id: 'legacy-browser-id' }]);
   const client = new RepositoryLibrary({ storage, fetchImpl: (url, options) => fetch(new URL(url, base), options) });
   const result = await client.refresh();
-  assert.equal(result.count, 28);
+  assert.equal(result.count, 33);
   assert.deepEqual(result.preserved, []);
   const records = await storage.listSkills();
-  assert.deepEqual(records.map(record => record.slug).sort(), ['agentic-awesome-skills', 'aibase-daily', 'animated-explainer-video', 'anthropic-skills', 'awesome-design-md', 'buffett-letters-skill', 'build-jin10-breakfast', 'cangjie-skill', 'claude-design', 'frontend-design', 'fupeng-macro-framework', 'generate-daily60-digest', 'huangzhizhong-communication', 'huashu-design', 'huashu-motion', 'huashu-nuwa', 'impeccable', 'jin10-financial-daily', 'poor-charlies-almanack-skill', 'qinxiaoming-finance-thinking', 'ray-dalio-framework', 'senior-product-manager', 'shiguang-atlas', 'soros-reflexivity-framework', 'threejs-skills', 'ui-ux-pro-max', 'vibe-knowledge-film', 'warm-paper-editorial']);
+  assert.deepEqual(records.map(record => record.slug).sort(), ['agentic-awesome-skills', 'aibase-daily', 'animated-explainer-video', 'anthropic-skills', 'awesome-design-md', 'buffett-letters-skill', 'build-jin10-breakfast', 'cangjie-skill', 'claude-design', 'code-video-director', 'direct-motion-video', 'frontend-design', 'fupeng-macro-framework', 'generate-daily60-digest', 'halftone-satire-video', 'huangzhizhong-communication', 'huashu-design', 'huashu-motion', 'huashu-nuwa', 'impeccable', 'jin10-financial-daily', 'philosophy-video-studio', 'poor-charlies-almanack-skill', 'procedural-video-director', 'qinxiaoming-finance-thinking', 'ray-dalio-framework', 'senior-product-manager', 'shiguang-atlas', 'soros-reflexivity-framework', 'threejs-skills', 'ui-ux-pro-max', 'vibe-knowledge-film', 'warm-paper-editorial']);
+  for (const [slug, count] of [['halftone-satire-video',30], ['code-video-director',17], ['philosophy-video-studio',17], ['direct-motion-video',23], ['procedural-video-director',22]]) {
+    const record = records.find(item => item.slug === slug);
+    assert.equal(record.category, '图像与设计');
+    assert.equal(record.files.length, count);
+    assert.ok(record.files.some(file => file.path === 'SKILL.md'));
+  }
   assert.equal(records.find(record => record.slug === 'shiguang-atlas').id, 'legacy-browser-id');
   assert.ok(records.every(record => record.content && record.files.length > 0));
   for (const [slug, name, count] of [['threejs-skills', 'Three.js · 3D 开发技能集', 13], ['agentic-awesome-skills', 'Agentic Awesome Skills · 智能体技能库', 2872]]) {
