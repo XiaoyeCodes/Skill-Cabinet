@@ -226,6 +226,34 @@
       "favorite": false,
       "createdAt": "2026-10-27T15:04:47.291Z",
       "updatedAt": "2026-10-27T15:04:47.291Z"
+    },
+    {
+      "owner": "morluto",
+      "repo": "rea",
+      "id": "morluto/rea",
+      "url": "https://github.com/morluto/rea",
+      "name": "REA · AI 智能体逆向分析工具",
+      "description": "通过 MCP 和命令行辅助智能体分析应用行为、程序代码和原生二进制，提供证据支持的代码追踪，并可基于录制的 Web API 构建智能体测试环境。",
+      "category": "AI 与智能体",
+      "tags": [
+        "逆向工程",
+        "AI Agent",
+        "MCP",
+        "二进制分析",
+        "开发工具"
+      ],
+      "language": "",
+      "stars": 0,
+      "forks": 0,
+      "license": "MIT",
+      "homepage": "https://rea.tools/",
+      "readmeExcerpt": "REA 通过 MCP 或命令行提供应用与二进制分析能力；原生代码深度分析可配合 Ghidra、Hopper 或 IDA。支持从录制的 Web API 构建智能体环境。",
+      "readmeStatus": "read",
+      "repositoryUpdatedAt": "2026-10-28T03:38:36.638Z",
+      "archived": false,
+      "favorite": false,
+      "createdAt": "2026-10-28T03:38:36.638Z",
+      "updatedAt": "2026-10-28T03:38:36.638Z"
     }
   ]
 }

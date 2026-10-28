@@ -116,10 +116,10 @@ test('the requested GitHub projects load once with complete names, purposes and 
   const { readFile } = await import('node:fs/promises');
   const catalog = JSON.parse(await readFile(new URL('../dist/assets/github-projects.json', import.meta.url), 'utf8'));
   const storage = memoryStorage(), store = new ProjectStore(storage);
-  assert.equal(store.seedCatalog(catalog), 8);
-  assert.deepEqual(new Set(store.list().map(item => item.id)), new Set(['mexicat/pdoom-video', 'tunai-0511/meme67-art-history', 'vincentwei1021/mg-styles-15', 'lemomo-ai/lemo-opuscar', 'heygen-com/hyperframes', 'remotion-dev/remotion', 'debpalash/voicestudio', 'null0526/dario-genesis']));
+  assert.equal(store.seedCatalog(catalog), 9);
+  assert.deepEqual(new Set(store.list().map(item => item.id)), new Set(['mexicat/pdoom-video', 'tunai-0511/meme67-art-history', 'vincentwei1021/mg-styles-15', 'lemomo-ai/lemo-opuscar', 'heygen-com/hyperframes', 'remotion-dev/remotion', 'debpalash/voicestudio', 'null0526/dario-genesis', 'morluto/rea']));
   assert.ok(store.list().every(item => item.description.length > 0 && item.readmeStatus === 'read'));
-  assert.ok(store.list().filter(item => item.id !== 'debpalash/voicestudio').every(item => item.category === '设计与创作'));
+  assert.ok(store.list().filter(item => !['debpalash/voicestudio', 'morluto/rea'].includes(item.id)).every(item => item.category === '设计与创作'));
   const hyperframes = store.list().find(item => item.id === 'heygen-com/hyperframes');
   assert.equal(hyperframes.name, '面向 AI 编程助手的视频制作框架');
   assert.equal(hyperframes.description, '利用 Claude、Codex 等 AI 编程助手生成视频。');
@@ -137,6 +137,10 @@ test('the requested GitHub projects load once with complete names, purposes and 
   assert.equal(voiceStudio.category, 'AI 与智能体');
   assert.deepEqual(manifest.projects[voiceStudio.id].record, voiceStudio);
   assert.equal(manifest.projects[voiceStudio.id].fingerprint, await fingerprintProject(voiceStudio));
+  const rea = store.list().find(item => item.id === 'morluto/rea');
+  assert.equal(rea.category, 'AI 与智能体');
+  assert.deepEqual(manifest.projects[rea.id].record, rea);
+  assert.equal(manifest.projects[rea.id].fingerprint, await fingerprintProject(rea));
   const darioGenesis = store.list().find(item => item.id === 'null0526/dario-genesis');
   assert.equal(darioGenesis.name, '达里奥创世录 · 代码生成短片');
   assert.equal(darioGenesis.category, '设计与创作');
