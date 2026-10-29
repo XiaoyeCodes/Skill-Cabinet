@@ -92,22 +92,8 @@
       }
     },
     "build-jin10-breakfast": {
-      "fingerprint": "30d6c50d599116c1b108f6d5f78c7689298d700c203648a352ef18533898156e",
-      "archiveSha256": "25cfc3f75cb25d77c8f5e84c2f7e9401c380031b3600c7cb546d11cdff5bd81d",
-      "archivePath": "skill-cabinet/archives/build-jin10-breakfast-25cfc3f75cb25d77c8f5e84c2f7e9401c380031b3600c7cb546d11cdff5bd81d.zip",
-      "metadata": {
-        "id": "6bb6f1ac-8829-4132-81eb-fa1d12432683",
-        "name": "每日财经日报HTML版",
-        "slug": "build-jin10-breakfast",
-        "description": "生成金十财经早餐完整原文与九项核验行情，沿用浅米色邮件排版和无衬线数字，输出独立HTML、邮件HTML、TXT和审计JSON，可选导出中文文本PDF。用于按当天源文生成或显式历史演示，不负责发邮件或创建定时任务。",
-        "category": "新闻日报",
-        "tags": [],
-        "version": "1.0.0",
-        "author": "",
-        "favorite": true,
-        "createdAt": "2026-10-22T06:07:33.927Z",
-        "updatedAt": "2026-10-24T03:43:24.924Z"
-      }
+      "deleted": true,
+      "updatedAt": "2026-10-29T09:08:20.277Z"
     },
     "cangjie-skill": {
       "fingerprint": "cc7d6f450ed98c34b75b17bbba9ade5e81e6e5ec67ab4c6a857cb572a160bba6",
@@ -297,12 +283,12 @@
       "updatedAt": "2026-10-22T06:08:12.526Z"
     },
     "jin10-financial-daily": {
-      "fingerprint": "ed062f28c4a00b3aa9b841dc9437a8768985cbd13db88945f51b2e0cd1fd8e27",
-      "archiveSha256": "f30c7c87ca19a373b5de6a88e2666faaea43997ef23f9656974977dab2573faf",
-      "archivePath": "skill-cabinet/archives/jin10-financial-daily-f30c7c87ca19a373b5de6a88e2666faaea43997ef23f9656974977dab2573faf.zip",
+      "fingerprint": "806678c92b6f042ef105bd024f0494419331924e380dc8f85d90bd109785aa68",
+      "archiveSha256": "132d45da57ef7eec1968013c76d1fef46063d0ef8487ff5af698027401a32988",
+      "archivePath": "skill-cabinet/archives/jin10-financial-daily-132d45da57ef7eec1968013c76d1fef46063d0ef8487ff5af698027401a32988.zip",
       "metadata": {
         "id": "4770d520-a1d2-4555-a223-3f3853b2c750",
-        "name": "每日财经日报PDF报纸版",
+        "name": "金十财经日报-PDF报纸版",
         "slug": "jin10-financial-daily",
         "description": "从金十财经早餐栏目抓取最新一期原文，配合九项市场行情，生成暖白线条刊头、双栏正文的每日财经PDF。用于生成或重排这套财经日报、测试抓取与排版、维护其每日08:00推送；不用于AI日报或投资建议。",
         "category": "新闻日报",
@@ -311,7 +297,7 @@
         "author": "",
         "favorite": false,
         "createdAt": "2026-10-21T07:05:05.296Z",
-        "updatedAt": "2026-10-24T03:26:17.124Z"
+        "updatedAt": "2026-10-29T09:06:45.719Z"
       }
     },
     "poor-charlies-almanack-skill": {
@@ -729,6 +715,24 @@
         "favorite": false,
         "createdAt": "2026-10-28T09:15:21.885Z",
         "updatedAt": "2026-10-28T09:15:21.885Z"
+      }
+    },
+    "jin10-breakfast-market-watch": {
+      "fingerprint": "ce97854571dd3bc6ee87dfbaf6f28e9a33dd38ae3256acb66fd74cdd62efd14b",
+      "archiveSha256": "70ff26bfdd4aab3da163a91b0b2ae90300f199d4fae8e05ddb11e48cb7cd3019",
+      "archivePath": "skill-cabinet/archives/jin10-breakfast-market-watch-70ff26bfdd4aab3da163a91b0b2ae90300f199d4fae8e05ddb11e48cb7cd3019.zip",
+      "metadata": {
+        "id": "08ba8791-869b-4c2a-9102-08b247080c63",
+        "name": "金十财经日报 - HTML日报版",
+        "slug": "jin10-breakfast-market-watch",
+        "description": "生成金十财经早餐原文与十项已核验市场行情的同款 HTML 日报，支持可选 PDF 导出；适用于临时或每日生成，不包含邮件发送与定时任务。",
+        "category": "新闻日报",
+        "tags": [],
+        "version": "1.0.0",
+        "author": "",
+        "favorite": true,
+        "createdAt": "2026-10-29T09:04:16.613Z",
+        "updatedAt": "2026-10-29T09:07:05.143Z"
       }
     }
   },

@@ -93,7 +93,7 @@ test('a fresh checkout loads all bundled real archives and migrates a one-skill 
   assert.equal(result.count, 33);
   assert.deepEqual(result.preserved, []);
   const records = await storage.listSkills();
-  assert.deepEqual(records.map(record => record.slug).sort(), ['agentic-awesome-skills', 'aibase-daily', 'animated-explainer-video', 'anthropic-skills', 'awesome-design-md', 'buffett-letters-skill', 'build-jin10-breakfast', 'cangjie-skill', 'claude-design', 'code-video-director', 'direct-motion-video', 'frontend-design', 'fupeng-macro-framework', 'generate-daily60-digest', 'halftone-satire-video', 'huangzhizhong-communication', 'huashu-design', 'huashu-motion', 'huashu-nuwa', 'impeccable', 'jin10-financial-daily', 'philosophy-video-studio', 'poor-charlies-almanack-skill', 'procedural-video-director', 'qinxiaoming-finance-thinking', 'ray-dalio-framework', 'senior-product-manager', 'shiguang-atlas', 'soros-reflexivity-framework', 'threejs-skills', 'ui-ux-pro-max', 'vibe-knowledge-film', 'warm-paper-editorial']);
+  assert.deepEqual(records.map(record => record.slug).sort(), ['agentic-awesome-skills', 'aibase-daily', 'animated-explainer-video', 'anthropic-skills', 'awesome-design-md', 'buffett-letters-skill', 'cangjie-skill', 'claude-design', 'code-video-director', 'direct-motion-video', 'frontend-design', 'fupeng-macro-framework', 'generate-daily60-digest', 'halftone-satire-video', 'huangzhizhong-communication', 'huashu-design', 'huashu-motion', 'huashu-nuwa', 'impeccable', 'jin10-breakfast-market-watch', 'jin10-financial-daily', 'philosophy-video-studio', 'poor-charlies-almanack-skill', 'procedural-video-director', 'qinxiaoming-finance-thinking', 'ray-dalio-framework', 'senior-product-manager', 'shiguang-atlas', 'soros-reflexivity-framework', 'threejs-skills', 'ui-ux-pro-max', 'vibe-knowledge-film', 'warm-paper-editorial']);
   for (const [slug, count] of [['halftone-satire-video',30], ['code-video-director',17], ['philosophy-video-studio',17], ['direct-motion-video',23], ['procedural-video-director',22]]) {
     const record = records.find(item => item.slug === slug);
     assert.equal(record.category, '图像与设计');
@@ -202,7 +202,7 @@ test('a fresh checkout loads all bundled real archives and migrates a one-skill 
   assert.equal(productManager.files.length, 5);
   for (const file of ['agents/openai.yaml', 'references/clarification.md', 'references/product-design-book.md', '使用说明.md']) assert.ok(productManager.files.some(item => item.path === file), file);
   assert.ok((await storage.listCategories()).includes('开发与工具'));
-  for (const [slug, fileCount] of [['aibase-daily', 18], ['generate-daily60-digest', 36], ['build-jin10-breakfast', 53]]) {
+  for (const [slug, fileCount] of [['aibase-daily', 18], ['generate-daily60-digest', 36], ['jin10-breakfast-market-watch', 23]]) {
     const news = records.find(record => record.slug === slug);
     // Display names can be edited and synced independently of the stable slug.
     assert.equal(news.name, manifest.entries[slug].metadata.name);
@@ -468,3 +468,4 @@ test('category write failures preserve browser additions and retry on the next r
   await client.refresh();
   assert.ok(JSON.parse(await readFile(source.manifestPath, 'utf8')).categories.includes('待写入'));
 });
+
