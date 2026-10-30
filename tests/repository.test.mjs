@@ -90,10 +90,10 @@ test('a fresh checkout loads all bundled real archives and migrates a one-skill 
   const storage = memoryStorage([{ ...decoded, ...seeds[0], files: decoded.files, id: 'legacy-browser-id' }]);
   const client = new RepositoryLibrary({ storage, fetchImpl: (url, options) => fetch(new URL(url, base), options) });
   const result = await client.refresh();
-  assert.equal(result.count, 33);
+  assert.equal(result.count, 34);
   assert.deepEqual(result.preserved, []);
   const records = await storage.listSkills();
-  assert.deepEqual(records.map(record => record.slug).sort(), ['agentic-awesome-skills', 'aibase-daily', 'animated-explainer-video', 'anthropic-skills', 'awesome-design-md', 'buffett-letters-skill', 'cangjie-skill', 'claude-design', 'code-video-director', 'direct-motion-video', 'frontend-design', 'fupeng-macro-framework', 'generate-daily60-digest', 'halftone-satire-video', 'huangzhizhong-communication', 'huashu-design', 'huashu-motion', 'huashu-nuwa', 'impeccable', 'jin10-breakfast-market-watch', 'jin10-financial-daily', 'philosophy-video-studio', 'poor-charlies-almanack-skill', 'procedural-video-director', 'qinxiaoming-finance-thinking', 'ray-dalio-framework', 'senior-product-manager', 'shiguang-atlas', 'soros-reflexivity-framework', 'threejs-skills', 'ui-ux-pro-max', 'vibe-knowledge-film', 'warm-paper-editorial']);
+  assert.deepEqual(records.map(record => record.slug).sort(), ['agentic-awesome-skills', 'aibase-daily', 'animated-explainer-video', 'anthropic-skills', 'awesome-design-md', 'buffett-letters-skill', 'cangjie-skill', 'claude-design', 'code-video-director', 'direct-motion-video', 'frontend-design', 'fupeng-macro-framework', 'generate-daily60-digest', 'halftone-satire-video', 'huangzhizhong-communication', 'huashu-art-motion', 'huashu-design', 'huashu-motion', 'huashu-nuwa', 'impeccable', 'jin10-breakfast-market-watch', 'jin10-financial-daily', 'philosophy-video-studio', 'poor-charlies-almanack-skill', 'procedural-video-director', 'qinxiaoming-finance-thinking', 'ray-dalio-framework', 'senior-product-manager', 'shiguang-atlas', 'soros-reflexivity-framework', 'threejs-skills', 'ui-ux-pro-max', 'vibe-knowledge-film', 'warm-paper-editorial']);
   for (const [slug, count] of [['halftone-satire-video',30], ['code-video-director',17], ['philosophy-video-studio',17], ['direct-motion-video',23], ['procedural-video-director',22]]) {
     const record = records.find(item => item.slug === slug);
     assert.equal(record.category, '图像与设计');
@@ -140,6 +140,29 @@ test('a fresh checkout loads all bundled real archives and migrates a one-skill 
     assert.equal(createHash('sha1').update(`blob ${data.byteLength}\0`).update(data).digest('hex'), vibeSource.sourceFiles.find(item => item.path === file).sha, file);
   }
   assert.match(await vibe.files.find(file => file.path === 'references/analysis.md').data.text(), /不复制该材料/);
+  const artMotion = records.find(record => record.slug === 'huashu-art-motion');
+  assert.equal(artMotion.name, 'Huashu Art Motion · 花叔艺术动画');
+  assert.equal(artMotion.category, '图像与设计');
+  assert.equal(artMotion.version, '1.2.0');
+  assert.equal(artMotion.files.length, 503);
+  const artFiles = new Map(artMotion.files.map(file => [file.path, file.data]));
+  const artSource = JSON.parse(await artFiles.get('CABINET_SOURCE.json').text());
+  assert.equal(artSource.commit, '8a0d7d72ca65fcce6f8ba82c4a6c8dfe35b8422c');
+  assert.equal(artSource.retainedUpstreamFileCount, 500);
+  assert.equal(artSource.excludedFiles.length, 9);
+  assert.equal(artSource.styleRecipeCount, 53);
+  assert.equal(artSource.grammarCount, 9);
+  for (const file of artSource.files) {
+    const bytes = new Uint8Array(await artFiles.get(file.path).arrayBuffer());
+    assert.equal(createHash('sha1').update(`blob ${bytes.byteLength}\0`).update(bytes).digest('hex'), file.gitBlobSha, file.path);
+  }
+  for (const file of artSource.excludedFiles) {
+    assert.match(file.path, /^assets\/showcase\/.+\.gif$/);
+    assert.ok(file.url.startsWith(`https://github.com/alchaincyf/huashu-art-motion/blob/${artSource.commit}/`));
+    assert.ok(!artFiles.has(file.path));
+  }
+  for (const filename of ['scripts/engine/render.py', 'scripts/deliver.py', 'scripts/film_gate.py', 'scripts/qa.py', 'scripts/capabilities.py', 'scripts/images.py', 'scripts/engine/lib/fonts/LICENSES.md', 'scripts/engine/lib/THREE_LICENSE.txt', 'scripts/engine/reference_films/spacex/spacex_wb/assets/strokes.js', 'upstream/SKILL.original.md', 'LICENSE', '使用说明.md']) assert.ok(artFiles.has(filename), filename);
+  assert.equal(await fingerprintSkill(artMotion), manifest.entries['huashu-art-motion'].fingerprint);
   const animated = records.find(record => record.slug === 'animated-explainer-video');
   assert.equal(animated.name, '趣味科普动画视频');
   assert.equal(animated.category, '图像与设计');

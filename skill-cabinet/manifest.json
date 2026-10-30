@@ -734,6 +734,33 @@
         "createdAt": "2026-10-29T09:04:16.613Z",
         "updatedAt": "2026-10-29T09:07:05.143Z"
       }
+    },
+    "huashu-art-motion": {
+      "fingerprint": "c0c5123b9e893f0def65d8ddfd540d19a34f77a5c2bb11b46770e2f101afd85a",
+      "archiveSha256": "7ae9ef86489508213e49a333a06b1bc0fe5c8995092e4ec6f3062768fc7f1a99",
+      "archivePath": "skill-cabinet/archives/huashu-art-motion-7ae9ef86489508213e49a333a06b1bc0fe5c8995092e4ec6f3062768fc7f1a99.zip",
+      "metadata": {
+        "id": "huashu-art-motion-seed",
+        "name": "Huashu Art Motion · 花叔艺术动画",
+        "slug": "huashu-art-motion",
+        "description": "用代码制作艺术风格动画、解说视频片段和长卷穿越，含 53 张风格配方、53 个场景、9 种解说语法，以及动画拆解、程序配乐、渲染与成片检查工具；语音与图片能力可按需配置。",
+        "category": "图像与设计",
+        "tags": [
+          "艺术动画",
+          "视频制作",
+          "Canvas",
+          "风格配方",
+          "解说视频",
+          "动画语法",
+          "Python",
+          "FFmpeg"
+        ],
+        "version": "1.2.0",
+        "author": "花叔",
+        "favorite": false,
+        "createdAt": "2026-10-30T09:45:29.000Z",
+        "updatedAt": "2026-10-30T09:45:29.000Z"
+      }
     }
   },
   "categories": [

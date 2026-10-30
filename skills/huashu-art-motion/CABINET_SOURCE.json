@@ -1,0 +1,4102 @@
+{
+  "schemaVersion": 1,
+  "repository": "https://github.com/alchaincyf/huashu-art-motion",
+  "commit": "8a0d7d72ca65fcce6f8ba82c4a6c8dfe35b8422c",
+  "version": "1.2.0",
+  "capturedAt": "2026-10-30T09:43:53.907631+00:00",
+  "license": "MIT code and documentation; bundled fonts and stroke data retain their own licenses; Huashu character and Clawd demo imagery retain upstream restrictions.",
+  "upstreamFileCount": 509,
+  "retainedUpstreamFileCount": 500,
+  "styleRecipeCount": 53,
+  "sceneCount": 53,
+  "grammarCount": 9,
+  "note": "All retained upstream files are byte-identical. Original SKILL.md is mapped to upstream/SKILL.original.md; the import copy adds display metadata. Usage guide and source record are local additions. Nine promotional GIFs are link-only; no executable dependencies were removed.",
+  "files": [
+    {
+      "sourcePath": ".github/workflows/tests.yml",
+      "path": ".github/workflows/tests.yml",
+      "mode": "100644",
+      "bytes": 1414,
+      "gitBlobSha": "b1f4db143d63a9a38270b277efaef900c399305a",
+      "sha256": "91b5797ea6f59b6e31e53de2a846194e33ab1dbe24b2efb8c0ed4367324f8fbe"
+    },
+    {
+      "sourcePath": ".gitignore",
+      "path": ".gitignore",
+      "mode": "100644",
+      "bytes": 388,
+      "gitBlobSha": "b8f8fa40a91d2714418a03cd1be0512c9e84044c",
+      "sha256": "28b7c75378a153807b8127362ba5e627b91870edf5170b7b3847fb19acf3d8a9"
+    },
+    {
+      "sourcePath": "CHANGELOG.md",
+      "path": "CHANGELOG.md",
+      "mode": "100644",
+      "bytes": 15673,
+      "gitBlobSha": "9403eedcdd5635576fcc821f7feb3e022dc9ca30",
+      "sha256": "a3ad116f8641235915ab7d6379a6e8cc54cd95a4a98b0196e17dec4376f26a13"
+    },
+    {
+      "sourcePath": "CONTRIBUTING.md",
+      "path": "CONTRIBUTING.md",
+      "mode": "100644",
+      "bytes": 2209,
+      "gitBlobSha": "4cf71c00a98f54dea72a0cbc5ad44b556d2dce3d",
+      "sha256": "742a1a6071f6be25e82f0524a520fd6d09961be3f87d7a85940cd816ce7309a1"
+    },
+    {
+      "sourcePath": "LICENSE",
+      "path": "LICENSE",
+      "mode": "100644",
+      "bytes": 1086,
+      "gitBlobSha": "ed67368a2a79ed7be97b2a4852330cdac5b8b12a",
+      "sha256": "6d6a2a9caf2e6d2b76974050427053b2892d8aa4c33fd168ce63a537fcee9d96"
+    },
+    {
+      "sourcePath": "README.en.md",
+      "path": "README.en.md",
+      "mode": "100644",
+      "bytes": 19397,
+      "gitBlobSha": "cc7256b605dcfbabc391f36c1a87012f729998a9",
+      "sha256": "1e8469f9df9e9676edd0a5193b177430c23b3483265035fd10b163ce9c0321e4"
+    },
+    {
+      "sourcePath": "README.md",
+      "path": "README.md",
+      "mode": "100644",
+      "bytes": 19153,
+      "gitBlobSha": "dd4c850be3822567ee5445963bb59ee039dcfa17",
+      "sha256": "c20ffc9dc918f3b565fe1fd22a806b0b75e3a38f366a86a33b3a75f3fe42cd1e"
+    },
+    {
+      "sourcePath": "SKILL.md",
+      "path": "upstream/SKILL.original.md",
+      "mode": "100644",
+      "bytes": 24220,
+      "gitBlobSha": "73f2248675f92a2b1928fa0d35e8369a3ea2292a",
+      "sha256": "df73e57c621425a82670ea74c68e8516d02553cf77cfe41c5f55883c542afb0a"
+    },
+    {
+      "sourcePath": "assets/showcase/clawd-clips.md",
+      "path": "assets/showcase/clawd-clips.md",
+      "mode": "100644",
+      "bytes": 1703,
+      "gitBlobSha": "056af58ced26610a25c4a45443132fb06a3fe0a1",
+      "sha256": "e986e40a1a8bfccdcf745a3afad0c5c40889f4263eaa6afaedd089dea23cd7fb"
+    },
+    {
+      "sourcePath": "assets/showcase/hero.png",
+      "path": "assets/showcase/hero.png",
+      "mode": "100644",
+      "bytes": 1668625,
+      "gitBlobSha": "1caac91f2de63bdba028aeb2695e02a1fa8f35d4",
+      "sha256": "3b6b42bfb00f84925aebe2a10f85052dc6b4efb492e86f581f21f652b6686407"
+    },
+    {
+      "sourcePath": "assets/showcase/mario-clips.md",
+      "path": "assets/showcase/mario-clips.md",
+      "mode": "100644",
+      "bytes": 1112,
+      "gitBlobSha": "b7f7df7fce8f9a29bf2f2265c1fff6eab977a095",
+      "sha256": "e29421cc252a439a33c81f26c18fb89c1c5584e3ec9bb278e469ffc772b61f6e"
+    },
+    {
+      "sourcePath": "assets/全风格总览.jpg",
+      "path": "assets/全风格总览.jpg",
+      "mode": "100644",
+      "bytes": 1615447,
+      "gitBlobSha": "9f834ab2eb4a6f99680765114fe057b734e28556",
+      "sha256": "99512979c3ffd709ace498647cca95b4a31e45ebe435c0ce77f9522470f93f7e"
+    },
+    {
+      "sourcePath": "assets/动画语法/t1_3b1b_总览.jpg",
+      "path": "assets/动画语法/t1_3b1b_总览.jpg",
+      "mode": "100644",
+      "bytes": 229006,
+      "gitBlobSha": "822f07d52d2a7af536a481946aec8aca7cd2f367",
+      "sha256": "eeb77f3fb238b503612ad0075b17fa2a1315c629457eecdfd8f043e33ebc410a"
+    },
+    {
+      "sourcePath": "assets/动画语法/t2_keynote_ui_总览.jpg",
+      "path": "assets/动画语法/t2_keynote_ui_总览.jpg",
+      "mode": "100644",
+      "bytes": 202632,
+      "gitBlobSha": "2db960251fb00bc8d33f5ccc1f93f9c9b754f0f4",
+      "sha256": "2f7cb8e070512210ca4f1fccb7e86742658946f33af90fd17b84e997cb9785b9"
+    },
+    {
+      "sourcePath": "assets/动画语法/t3_finance_chart_总览.jpg",
+      "path": "assets/动画语法/t3_finance_chart_总览.jpg",
+      "mode": "100644",
+      "bytes": 185012,
+      "gitBlobSha": "8ae77d02479d189782885f29ab7949875bda427b",
+      "sha256": "4a761592ff73623cba1a1c065ba98a9f6fa46ff016735671f82fb3cb22ec7ee0"
+    },
+    {
+      "sourcePath": "assets/动画语法/y1_kurzgesagt_总览.jpg",
+      "path": "assets/动画语法/y1_kurzgesagt_总览.jpg",
+      "mode": "100644",
+      "bytes": 176587,
+      "gitBlobSha": "df0f5dea278bffeccc6e3b42fc723d22d7c45597",
+      "sha256": "c76e685e90dc1b99e741d126c495086006e1393be4f8a16145677af457e05235"
+    },
+    {
+      "sourcePath": "assets/动画语法/y2_vox_总览.jpg",
+      "path": "assets/动画语法/y2_vox_总览.jpg",
+      "mode": "100644",
+      "bytes": 318800,
+      "gitBlobSha": "92f6230119af65813eafb808a27571b3a207302b",
+      "sha256": "f70957fa84faf280eb29c4231d4bfddc0c43b07a23155b2d64ce83493359c765"
+    },
+    {
+      "sourcePath": "assets/动画语法/y3_whiteboard_总览.jpg",
+      "path": "assets/动画语法/y3_whiteboard_总览.jpg",
+      "mode": "100644",
+      "bytes": 143612,
+      "gitBlobSha": "0e19c2cb4605da1b140c9600bd9d3205d90cb610",
+      "sha256": "cc28d7e021d8bc094387f4e65627ad940417459250502e586e3f2fe9603ae841"
+    },
+    {
+      "sourcePath": "assets/动画语法/y4_storytime_总览.jpg",
+      "path": "assets/动画语法/y4_storytime_总览.jpg",
+      "mode": "100644",
+      "bytes": 152838,
+      "gitBlobSha": "b2d9dedbc8677869b86bcdbe749853e39039e041",
+      "sha256": "6cc308bee5624a6e11f063185af67bb1625332a44aabedb22f1329b1f60cfdc5"
+    },
+    {
+      "sourcePath": "assets/动画语法/y5_kinetic_type_总览.jpg",
+      "path": "assets/动画语法/y5_kinetic_type_总览.jpg",
+      "mode": "100644",
+      "bytes": 135213,
+      "gitBlobSha": "b1a547c25039f489a2594b683fb7659b3e3e6671",
+      "sha256": "fbc1612a831eeaa05f03bdef32b477dc459769834f57ad6331517ebfb92651b9"
+    },
+    {
+      "sourcePath": "assets/新风格v2_证据/38_giotto.jpg",
+      "path": "assets/新风格v2_证据/38_giotto.jpg",
+      "mode": "100644",
+      "bytes": 399772,
+      "gitBlobSha": "a2c4d42555097591351d32deaa22e5cc098d858a",
+      "sha256": "85f6911b2ae64b6dbb945c22d76f1fb4dddf8c0cb6e77f7b09ca56e0b245f127"
+    },
+    {
+      "sourcePath": "assets/新风格v2_证据/40_raphael.jpg",
+      "path": "assets/新风格v2_证据/40_raphael.jpg",
+      "mode": "100644",
+      "bytes": 511721,
+      "gitBlobSha": "24b37de5cedd73017a11983cc0b759a8e9df79b8",
+      "sha256": "570f368fd51286ac880f35c229a5f3785820b3036c45e723adb41a963ef395b0"
+    },
+    {
+      "sourcePath": "assets/新风格v2_证据/41_michelangelo.jpg",
+      "path": "assets/新风格v2_证据/41_michelangelo.jpg",
+      "mode": "100644",
+      "bytes": 306909,
+      "gitBlobSha": "8f833f4a8f58d952bd482fdca88b859883522405",
+      "sha256": "916b9dfe205d1e4c83a2f8110cc55d5f41f36b3ed7e7cf2f35af341da675b304"
+    },
+    {
+      "sourcePath": "assets/新风格v2_证据/43_lorenzetti.jpg",
+      "path": "assets/新风格v2_证据/43_lorenzetti.jpg",
+      "mode": "100644",
+      "bytes": 458294,
+      "gitBlobSha": "7ba37029c0a6c7b151b9f21bf81a4e621d908efb",
+      "sha256": "564cde057ef731861b67ba944af499fd76931229124269718c2f894f6ae19626"
+    },
+    {
+      "sourcePath": "assets/新风格v2_证据/44_cortona.jpg",
+      "path": "assets/新风格v2_证据/44_cortona.jpg",
+      "mode": "100644",
+      "bytes": 323199,
+      "gitBlobSha": "2d54093e6a1b7bdb92fda78f6a5c4f5a693406e8",
+      "sha256": "63fc0338750cfd012d63b9e987877d5a39f0cc69655e34edba88c212e450e989"
+    },
+    {
+      "sourcePath": "assets/新风格v2_证据/46_pissarro.jpg",
+      "path": "assets/新风格v2_证据/46_pissarro.jpg",
+      "mode": "100644",
+      "bytes": 501444,
+      "gitBlobSha": "b9a4ae6036ca4e0b014020e56ad62be530d181e2",
+      "sha256": "1832c57ba66d57c48971dc1b7166c7ca5f9840bc7744dd5b54179d15c341389d"
+    },
+    {
+      "sourcePath": "assets/新风格v2_证据/47_sisley.jpg",
+      "path": "assets/新风格v2_证据/47_sisley.jpg",
+      "mode": "100644",
+      "bytes": 363684,
+      "gitBlobSha": "8d553e83b900911e27eae4df4ed9342acd43dfe0",
+      "sha256": "7c46c04642f629a48d8289228c6084b5ce0b839110ea251dbc11d69afd9551b3"
+    },
+    {
+      "sourcePath": "assets/新风格v2_证据/48_gauguin.jpg",
+      "path": "assets/新风格v2_证据/48_gauguin.jpg",
+      "mode": "100644",
+      "bytes": 455536,
+      "gitBlobSha": "b0b4aefdc8d6068570f97fcb0f2270b2c57f9db5",
+      "sha256": "0a1095b4d34b0e49b408be6091dcdefa25455b12f9aeccfa54f900f444fbd159"
+    },
+    {
+      "sourcePath": "assets/新风格v2_证据/50_ma_yuan.jpg",
+      "path": "assets/新风格v2_证据/50_ma_yuan.jpg",
+      "mode": "100644",
+      "bytes": 369048,
+      "gitBlobSha": "8ebe70225f3512892b1d6b1c36cd289a2c449823",
+      "sha256": "31e7ddc85bd3db1a2e2ead25f6d25d98092da68a2c3b1ecc0b6a7eeb518be2f8"
+    },
+    {
+      "sourcePath": "assets/新风格v2_证据/51_persian_miniature.jpg",
+      "path": "assets/新风格v2_证据/51_persian_miniature.jpg",
+      "mode": "100644",
+      "bytes": 391204,
+      "gitBlobSha": "477988a7c4e30c6355906e41b117fba0925d5234",
+      "sha256": "de1a2b6c472da7163207dd7974e241732213c3fb73c8c1727075bdb2fd421222"
+    },
+    {
+      "sourcePath": "assets/新风格v2_证据/总览.jpg",
+      "path": "assets/新风格v2_证据/总览.jpg",
+      "mode": "100644",
+      "bytes": 587345,
+      "gitBlobSha": "42845352791fa88f27399b91b371b656e55ae870",
+      "sha256": "966ab7f6f423081edfb14509d165f2989a8d1a3cc440b0c3650b52d03e648156"
+    },
+    {
+      "sourcePath": "assets/角色/花叔形象_对比.jpg",
+      "path": "assets/角色/花叔形象_对比.jpg",
+      "mode": "100644",
+      "bytes": 298446,
+      "gitBlobSha": "5460db2eb48e87ae288b1cec3c8260821aaf80c4",
+      "sha256": "e2dd1082f5a6d6c66182b27b16a71ad9b6426e567ff4b406e4ebec007e044615"
+    },
+    {
+      "sourcePath": "assets/长卷穿越_总览.jpg",
+      "path": "assets/长卷穿越_总览.jpg",
+      "mode": "100644",
+      "bytes": 483780,
+      "gitBlobSha": "26c83738d1eceb34859fc12b7b17a0a21ccd93ab",
+      "sha256": "3f925f5637553c2b5bc57052f65f8065dbd14837c9881bb5d8e2bb898f29dba4"
+    },
+    {
+      "sourcePath": "defaults/media.json",
+      "path": "defaults/media.json",
+      "mode": "100644",
+      "bytes": 916,
+      "gitBlobSha": "a04ecc4dc9f0d2121a68d7edb080c88ef66812f8",
+      "sha256": "8e1c98a9b5b8195f66c4060e05e5dded9bb95b797164a8b9c587bdfa5df4e0b4"
+    },
+    {
+      "sourcePath": "references/01-拆解.md",
+      "path": "references/01-拆解.md",
+      "mode": "100644",
+      "bytes": 4692,
+      "gitBlobSha": "0133872dddf70e4a428a1e567455aba233a9e6ad",
+      "sha256": "83dd492d5b1f616a6e45302b630a7fbcaa65a16120a8df443185df2ee615cb32"
+    },
+    {
+      "sourcePath": "references/02-机制.md",
+      "path": "references/02-机制.md",
+      "mode": "100644",
+      "bytes": 5087,
+      "gitBlobSha": "316567657b107b1af2dffbb91e88ec9d7acce5a4",
+      "sha256": "ce0646784363c54e7299b5817aa86953d37b4ae0a245bf1b30aebc5a621ec94b"
+    },
+    {
+      "sourcePath": "references/03-一帧先行四条路线.md",
+      "path": "references/03-一帧先行四条路线.md",
+      "mode": "100644",
+      "bytes": 4671,
+      "gitBlobSha": "e459acd1fc7647d9f8e03cd64c99bca81c932c1f",
+      "sha256": "cfc167ff5c13ed29f03fa967be4e775494e2f2d0a1879dfb8473cf2ea432c2d7"
+    },
+    {
+      "sourcePath": "references/04-纯代码绘制.md",
+      "path": "references/04-纯代码绘制.md",
+      "mode": "100644",
+      "bytes": 11302,
+      "gitBlobSha": "832d59eddb107a1197c6ac27a62f962a11ddc8c0",
+      "sha256": "7d234b7fb904626cc99af0cb687d3bb7104263c089b3ee2cda59408dc5dfc0eb"
+    },
+    {
+      "sourcePath": "references/05-节奏与配乐.md",
+      "path": "references/05-节奏与配乐.md",
+      "mode": "100644",
+      "bytes": 1495,
+      "gitBlobSha": "27b893f68b791fba84de07ef069dd41243e40be8",
+      "sha256": "1086c15ea216548777d2fa5552cd5c874ff89df2da84f9ffa160737930e3d98f"
+    },
+    {
+      "sourcePath": "references/06-口播驱动的艺术短片.md",
+      "path": "references/06-口播驱动的艺术短片.md",
+      "mode": "100644",
+      "bytes": 2786,
+      "gitBlobSha": "d575b989ab3cb7aa42618316120945ad984bbc2b",
+      "sha256": "9275abd6451831515ed9aed24724062bf47dda5e5d2d804baa8313c137236bc8"
+    },
+    {
+      "sourcePath": "references/07-正面经验.md",
+      "path": "references/07-正面经验.md",
+      "mode": "100644",
+      "bytes": 21682,
+      "gitBlobSha": "8740be767957e0db7a64fb46b4a3c1e957e9cc3a",
+      "sha256": "b151c1cc6932a3cbc66b03d847e8a1b547073dc5a28d836a05da5ae9a11cb79b"
+    },
+    {
+      "sourcePath": "references/08-风格作者规范.md",
+      "path": "references/08-风格作者规范.md",
+      "mode": "100644",
+      "bytes": 5711,
+      "gitBlobSha": "88a1f31b770b4e3165e2d930aff99313510e0354",
+      "sha256": "b7db67c8418410dec8313b7212e2aa52f9db8d8395b26cc0b72c19ab1a376728"
+    },
+    {
+      "sourcePath": "references/09-视频动画语法.md",
+      "path": "references/09-视频动画语法.md",
+      "mode": "100644",
+      "bytes": 54763,
+      "gitBlobSha": "0ecd580c1667a0ad6cbf2bec97d3b28230a76257",
+      "sha256": "2a2e3256fc5dd2ba1e0c96312e0fa63299ff3a5f0bb9d1bcf84539af902a26e1"
+    },
+    {
+      "sourcePath": "references/10-角色.md",
+      "path": "references/10-角色.md",
+      "mode": "100644",
+      "bytes": 3819,
+      "gitBlobSha": "f6bd1a94d8ce2723f181c759866319f174819cf5",
+      "sha256": "d0c90c6c82b9acba9a43b8f0f4231ae4aa2f316a39608af90e06e5462c736605"
+    },
+    {
+      "sourcePath": "references/11-长卷穿越片.md",
+      "path": "references/11-长卷穿越片.md",
+      "mode": "100644",
+      "bytes": 4250,
+      "gitBlobSha": "f1c22d0dab835a874e9fc89df2e2d304a454546a",
+      "sha256": "42f2e441687116c8d2dd789b187ada572390e242976996727a209959163a6ad6"
+    },
+    {
+      "sourcePath": "references/12-口播整片与经验回流.md",
+      "path": "references/12-口播整片与经验回流.md",
+      "mode": "100644",
+      "bytes": 2224,
+      "gitBlobSha": "0ad71ec640a57f6e1934fe68b087f46f40aa605e",
+      "sha256": "b85f6e8b665c13a5d98ea461c10af340679a6949101ee31dd64eee7e88aed415"
+    },
+    {
+      "sourcePath": "references/13-口播与语音复刻.md",
+      "path": "references/13-口播与语音复刻.md",
+      "mode": "100644",
+      "bytes": 587,
+      "gitBlobSha": "56fc1521502ca3f9e13d4609f00c9a0d2dc13042",
+      "sha256": "cb12d2002f9c7a8a41b9abd711bd44a99f9929bcd66351015232cea2eda024a6"
+    },
+    {
+      "sourcePath": "references/15-跨场景风格提炼.md",
+      "path": "references/15-跨场景风格提炼.md",
+      "mode": "100644",
+      "bytes": 4996,
+      "gitBlobSha": "0d5b0cb60beeb3929fc7133b0922b8378daab5be",
+      "sha256": "377920a1eb20da5d90bfd7af3f31fc2183b193cac2558d3f828afbf6bc5ad645"
+    },
+    {
+      "sourcePath": "references/16-风格演示95分协议.md",
+      "path": "references/16-风格演示95分协议.md",
+      "mode": "100644",
+      "bytes": 8981,
+      "gitBlobSha": "1dffc895f5924d0e96099fd79e02172ebe72e25e",
+      "sha256": "bfb400c87ec844fb04450b453c502c47455c5b4b90cf9e2800283886d7ee61ea"
+    },
+    {
+      "sourcePath": "references/about-author.md",
+      "path": "references/about-author.md",
+      "mode": "100644",
+      "bytes": 9941,
+      "gitBlobSha": "171ab35fc0ae4c8aa42248416168106b8892c71c",
+      "sha256": "4bb3dd5b67560d039762abf695b92701348fbdfd488f4f5428cd8383b2c107c5"
+    },
+    {
+      "sourcePath": "references/capabilities.md",
+      "path": "references/capabilities.md",
+      "mode": "100644",
+      "bytes": 7346,
+      "gitBlobSha": "35a8872afe414d6dc5ed456600251487ffba3731",
+      "sha256": "8d0577a8128d661711a3ca26f1b60a1e3d06cc5b6191b7007326dccd0e35d2ed"
+    },
+    {
+      "sourcePath": "references/compatibility.md",
+      "path": "references/compatibility.md",
+      "mode": "100644",
+      "bytes": 3011,
+      "gitBlobSha": "9d0d9e3268b549285e14838d24c505d2af1a0302",
+      "sha256": "c5665580fab722a3ed784a71f5cca725fc56cebf8c8c3ad66219b24b6b97bb0e"
+    },
+    {
+      "sourcePath": "references/images.md",
+      "path": "references/images.md",
+      "mode": "100644",
+      "bytes": 5788,
+      "gitBlobSha": "78fbb82b06b696752b0a4ba6bb2f7238e5dcff72",
+      "sha256": "313bee677064eb46ee13c88c74effeecdb536579d7e8a25e23ddf9a2a06357e3"
+    },
+    {
+      "sourcePath": "references/voice-model-review.md",
+      "path": "references/voice-model-review.md",
+      "mode": "100644",
+      "bytes": 2084,
+      "gitBlobSha": "01a3dc174cb7aedb2b0a600a3472f93e35118238",
+      "sha256": "e8559c64b39ca361909d8a9ba4e31bcad4c273213aa075000908f1cbeaf8e790"
+    },
+    {
+      "sourcePath": "references/动画语法/t1_3b1b.md",
+      "path": "references/动画语法/t1_3b1b.md",
+      "mode": "100644",
+      "bytes": 14138,
+      "gitBlobSha": "9d65e7586641c3b4ce929aa99078d37bea43c9e1",
+      "sha256": "23fc11ea77a5f14b34768398f61240787e459debeac8f3fd5109f6ea5e43d827"
+    },
+    {
+      "sourcePath": "references/动画语法/t2_keynote_ui.md",
+      "path": "references/动画语法/t2_keynote_ui.md",
+      "mode": "100644",
+      "bytes": 14824,
+      "gitBlobSha": "d923fd02db4ae0d8de50f6c20a7cd353746bd8ca",
+      "sha256": "0e2779a2e755f0513a8ac025482e542a4d873b02f0b00f0e908216e26d5a9625"
+    },
+    {
+      "sourcePath": "references/动画语法/t3_finance_chart.md",
+      "path": "references/动画语法/t3_finance_chart.md",
+      "mode": "100644",
+      "bytes": 13534,
+      "gitBlobSha": "e340c36a81af2721bbd1799330416dd42237ad18",
+      "sha256": "ea1e21c49b50653ad48d0bd4ab0d1b1e88a698ccfbfd8e257c7e8f767adf2c20"
+    },
+    {
+      "sourcePath": "references/动画语法/y1_kurzgesagt.md",
+      "path": "references/动画语法/y1_kurzgesagt.md",
+      "mode": "100644",
+      "bytes": 17571,
+      "gitBlobSha": "facfc8228b10cca1c4cb24b3c412de578db04a17",
+      "sha256": "a859f871f717c0017b4e4520f4c2760a7719784b54d92de37afb12e1967717a8"
+    },
+    {
+      "sourcePath": "references/动画语法/y2_vox.md",
+      "path": "references/动画语法/y2_vox.md",
+      "mode": "100644",
+      "bytes": 16708,
+      "gitBlobSha": "ffcdb0c8a7047452aa4289263c43bebd4787a726",
+      "sha256": "9d651c95263c2cf42a63350b42a4e887efb0cded06f697c3498484e294e26ad4"
+    },
+    {
+      "sourcePath": "references/动画语法/y3_whiteboard.md",
+      "path": "references/动画语法/y3_whiteboard.md",
+      "mode": "100644",
+      "bytes": 15286,
+      "gitBlobSha": "1ceef5f8176276b57e434e1c3a85f487d09357d4",
+      "sha256": "f2fda7768034d94928982193965f225a3c85a850eaf28f3f28459e85dbe0773d"
+    },
+    {
+      "sourcePath": "references/动画语法/y4_storytime.md",
+      "path": "references/动画语法/y4_storytime.md",
+      "mode": "100644",
+      "bytes": 18371,
+      "gitBlobSha": "6e99470145c510ceee4f28b4cba96474345d082b",
+      "sha256": "b3c7ed7af47734bc5ca8465082ef3aa1e55d0d64c225d21cca34180e0dd000ae"
+    },
+    {
+      "sourcePath": "references/动画语法/y5_kinetic_type.md",
+      "path": "references/动画语法/y5_kinetic_type.md",
+      "mode": "100644",
+      "bytes": 17165,
+      "gitBlobSha": "5583e154912cfd3d07bd37bd8e8439ce239adc93",
+      "sha256": "97b200e68231d71cd10cf3f1027b4db36e99ce9a06004891d644994883bb15e2"
+    },
+    {
+      "sourcePath": "references/动画语法/y6_presenter_explainer.md",
+      "path": "references/动画语法/y6_presenter_explainer.md",
+      "mode": "100644",
+      "bytes": 1899,
+      "gitBlobSha": "94a88fcbc122bec2d8abf0daa553394ec683c7bc",
+      "sha256": "405318fc5aac9ce03cbc374af9633ec7d652dc8206ad3810919abdb174eff273"
+    },
+    {
+      "sourcePath": "references/口播API.md",
+      "path": "references/口播API.md",
+      "mode": "100644",
+      "bytes": 5603,
+      "gitBlobSha": "c3177bd8c791495c02e9de8ad10e29375b439d7e",
+      "sha256": "a9d2775fc97bf92f46cf0a6531f1921ccdcf195dd79475c575bf8f188ca5801e"
+    },
+    {
+      "sourcePath": "references/色板.md",
+      "path": "references/色板.md",
+      "mode": "100644",
+      "bytes": 3422,
+      "gitBlobSha": "78e7759a5c67d38c39b76ee8c2837d4cf844f202",
+      "sha256": "3a1588ded19aba078131423b22f97fb8835f1656c1c5643afbba505ff8f6f8ae"
+    },
+    {
+      "sourcePath": "references/角色精细度.md",
+      "path": "references/角色精细度.md",
+      "mode": "100644",
+      "bytes": 5338,
+      "gitBlobSha": "8a7222d074c6582e9d943ef99739481cedd01e4a",
+      "sha256": "15d1607771c5553942cba89edd22a8e8af0f8dfdb16977fd180b7babe5a2dbb6"
+    },
+    {
+      "sourcePath": "references/镜头表模板.md",
+      "path": "references/镜头表模板.md",
+      "mode": "100644",
+      "bytes": 9530,
+      "gitBlobSha": "e0e565b817ac5c75ad97fc5aba222216981fae37",
+      "sha256": "aef6aae50eaae318f1090a8135640bebb36974f6bbc537bc34253959d3523cae"
+    },
+    {
+      "sourcePath": "references/镜头语言.md",
+      "path": "references/镜头语言.md",
+      "mode": "100644",
+      "bytes": 10583,
+      "gitBlobSha": "8d6d7e7ccd5cc8106bc0e683c8e9d4f19095416d",
+      "sha256": "7afbf9266b4e530a183e7c682ffb55166645a3cd9e628f1b5ace4ebb22d8d2eb"
+    },
+    {
+      "sourcePath": "references/风格配方/01_cave.md",
+      "path": "references/风格配方/01_cave.md",
+      "mode": "100644",
+      "bytes": 7125,
+      "gitBlobSha": "281849af2ec23f0dfe9379bd4382c479602be848",
+      "sha256": "ebdb5fc8f9a57d947ef3a325bfdaf275cbd906e36010945e05c7d2e7ef1f4d2c"
+    },
+    {
+      "sourcePath": "references/风格配方/02_egypt.md",
+      "path": "references/风格配方/02_egypt.md",
+      "mode": "100644",
+      "bytes": 8952,
+      "gitBlobSha": "0816d71077f573a2194c75abbc738bfee336d84a",
+      "sha256": "a3097d1936d0e482a56a9745e31f3ba9a508aa2db50fbbefba4d97cc4d481ebb"
+    },
+    {
+      "sourcePath": "references/风格配方/03_greek.md",
+      "path": "references/风格配方/03_greek.md",
+      "mode": "100644",
+      "bytes": 8933,
+      "gitBlobSha": "a4b3e6c7fd1ec88d5c2c28da1b80cc5b9539982a",
+      "sha256": "0caa761151cd76d1a31390f602dc6bc131dba745c6244a2b12ba037697077b50"
+    },
+    {
+      "sourcePath": "references/风格配方/04_roman.md",
+      "path": "references/风格配方/04_roman.md",
+      "mode": "100644",
+      "bytes": 12334,
+      "gitBlobSha": "7131869ee44abd191680a23d4e6b6f70a57b7a47",
+      "sha256": "4066fc1b3edfaa7ad4494646df5c6bef0a79d77cb0326d7487b2f833fbb2a81d"
+    },
+    {
+      "sourcePath": "references/风格配方/05_gothic.md",
+      "path": "references/风格配方/05_gothic.md",
+      "mode": "100644",
+      "bytes": 4211,
+      "gitBlobSha": "0ed79e239d6edf7da7e1fd8259149ed5c1971f25",
+      "sha256": "2c33750ee754673f87828f1755c14d4c893cd0483e96ceb02fe8f0f33c3a440b"
+    },
+    {
+      "sourcePath": "references/风格配方/06_renaissance.md",
+      "path": "references/风格配方/06_renaissance.md",
+      "mode": "100644",
+      "bytes": 4144,
+      "gitBlobSha": "8405bcd6bea31e56be7dc6929cf402c25bceae9a",
+      "sha256": "2fd2589f538747b7c2a178def2441e432a3ecc7bc5aee8e3a1f82c7a79792cc6"
+    },
+    {
+      "sourcePath": "references/风格配方/08_impressionism.md",
+      "path": "references/风格配方/08_impressionism.md",
+      "mode": "100644",
+      "bytes": 4210,
+      "gitBlobSha": "a2593e5103152fe2af2dac0f10f28e9b80acaa9a",
+      "sha256": "dd353d6e2ff550c3601a20bd529c8908118b4453d12b009e1e82761aa1822b65"
+    },
+    {
+      "sourcePath": "references/风格配方/09_postimp.md",
+      "path": "references/风格配方/09_postimp.md",
+      "mode": "100644",
+      "bytes": 1507,
+      "gitBlobSha": "50d7c8d8711fd19c46cd101742d36fc071f92457",
+      "sha256": "20aebeaf193cb1ac960c73e70a289e52f6a939949ce558ec06f7d816311fdd0a"
+    },
+    {
+      "sourcePath": "references/风格配方/10_nouveau.md",
+      "path": "references/风格配方/10_nouveau.md",
+      "mode": "100644",
+      "bytes": 5103,
+      "gitBlobSha": "71ac0d6a18dc0f248821e7e749c450c1fafd7795",
+      "sha256": "ed5a38a201c7d4c69473a662d2e17b8a7081d09cdd2fcbeb57575da7bef3cc64"
+    },
+    {
+      "sourcePath": "references/风格配方/11_cubism.md",
+      "path": "references/风格配方/11_cubism.md",
+      "mode": "100644",
+      "bytes": 5405,
+      "gitBlobSha": "40a647b8cc1a2980517fb9bea319f8166f47f2d4",
+      "sha256": "0ab951ff470aa6bf6a001fe4bdd51d02367f03754a94f0dc443d27351a9aa6ba"
+    },
+    {
+      "sourcePath": "references/风格配方/12_bauhaus.md",
+      "path": "references/风格配方/12_bauhaus.md",
+      "mode": "100644",
+      "bytes": 4435,
+      "gitBlobSha": "cbc2298776594978409e539b321d1ee35f08a667",
+      "sha256": "729623cbc414f11d1c1629dcae0d1e64452acd7fdfc5c07bd41f44149f13c59d"
+    },
+    {
+      "sourcePath": "references/风格配方/13_pop.md",
+      "path": "references/风格配方/13_pop.md",
+      "mode": "100644",
+      "bytes": 4293,
+      "gitBlobSha": "a940e8512e82383be22f0605f3950adbfa378a72",
+      "sha256": "01e334a4b76ebfd0c71fa6997acafc6d02929498998f99e4544689bd5fb43913"
+    },
+    {
+      "sourcePath": "references/风格配方/14_8bit.md",
+      "path": "references/风格配方/14_8bit.md",
+      "mode": "100644",
+      "bytes": 2831,
+      "gitBlobSha": "042c11185a9d4007572ff0a0b4a3ef83364de95e",
+      "sha256": "fa237f81d76cea3dae16929093814b92399829e33175aae3d26bd4cec39b6569"
+    },
+    {
+      "sourcePath": "references/风格配方/15_raytrace.md",
+      "path": "references/风格配方/15_raytrace.md",
+      "mode": "100644",
+      "bytes": 3206,
+      "gitBlobSha": "2a1638c282defbd8c089ee382d553b143c8d28a5",
+      "sha256": "44498145e8b99156b2ee36446444424322f0ed6ee2e0384f34ff242fe89f68b1"
+    },
+    {
+      "sourcePath": "references/风格配方/16_2026.md",
+      "path": "references/风格配方/16_2026.md",
+      "mode": "100644",
+      "bytes": 5808,
+      "gitBlobSha": "e092f569a849dc774fd7cd37d4e8a96f2f6ac3b4",
+      "sha256": "4dfc199bdb1ed0b1fdc3ed9108bd5eb2e8078fdbb4de0e0bb5d00c6ba73f31f1"
+    },
+    {
+      "sourcePath": "references/风格配方/17_ink.md",
+      "path": "references/风格配方/17_ink.md",
+      "mode": "100644",
+      "bytes": 4442,
+      "gitBlobSha": "6a8e4c4188211cb16c0a71205f42cf08250f994b",
+      "sha256": "67f396530a9032b523151f649d0d8398562ff9f6acede3ef4aab85c831d2c032"
+    },
+    {
+      "sourcePath": "references/风格配方/18_klimt.md",
+      "path": "references/风格配方/18_klimt.md",
+      "mode": "100644",
+      "bytes": 2845,
+      "gitBlobSha": "29178ca219f622ea7cbf06db0b29f8d768397d50",
+      "sha256": "c4e96a0f531b8157e05592379a152a85a41acf2718f77883ce872e04865dfef9"
+    },
+    {
+      "sourcePath": "references/风格配方/19_munch.md",
+      "path": "references/风格配方/19_munch.md",
+      "mode": "100644",
+      "bytes": 2838,
+      "gitBlobSha": "09111285f852c039616afdf081c46fc8b6e71faa",
+      "sha256": "8c629e8bd02fb82c3355c37fe040c863f067827fde269d91ac7ab97bc118939e"
+    },
+    {
+      "sourcePath": "references/风格配方/20_dunhuang.md",
+      "path": "references/风格配方/20_dunhuang.md",
+      "mode": "100644",
+      "bytes": 3072,
+      "gitBlobSha": "cd301f2fab6d9b817daeddee9cde9ea8a708584d",
+      "sha256": "3a5911346899c0f19cc5bee74bc4e8b4b1ffc9ae1c603a8a48b8277596057568"
+    },
+    {
+      "sourcePath": "references/风格配方/21_kusama.md",
+      "path": "references/风格配方/21_kusama.md",
+      "mode": "100644",
+      "bytes": 2268,
+      "gitBlobSha": "b95a193aa1b64e88e6631bc444420a892c4d9454",
+      "sha256": "f39173eb8e80dba26fcdf822a60bb5cd0da2678d8efa4a8b2d19cbb2e1468a4a"
+    },
+    {
+      "sourcePath": "references/风格配方/22_constructivism.md",
+      "path": "references/风格配方/22_constructivism.md",
+      "mode": "100644",
+      "bytes": 3959,
+      "gitBlobSha": "ea5e95da0a2d2f35a450ed5670501bf81fbf963b",
+      "sha256": "ff4adc806f0bf39d86136d805ef8e2cc48026fbcec3731fae22477fdafac846d"
+    },
+    {
+      "sourcePath": "references/风格配方/23_dali.md",
+      "path": "references/风格配方/23_dali.md",
+      "mode": "100644",
+      "bytes": 3479,
+      "gitBlobSha": "4b4a54a86479e30c6f8d85fca80e55a04961f0af",
+      "sha256": "facf3f033d5dbe42ab663860490a32920423fc5950ddcabf5f44bf81b49b3f2f"
+    },
+    {
+      "sourcePath": "references/风格配方/24_hopper.md",
+      "path": "references/风格配方/24_hopper.md",
+      "mode": "100644",
+      "bytes": 2865,
+      "gitBlobSha": "b48b743d9a5dd73c948a9e15b83e0ac7c19eb605",
+      "sha256": "fd19a530f9e0544d74e7eee40a88c01fa7f675ae94d9cacf2e5af4e214c64c63"
+    },
+    {
+      "sourcePath": "references/风格配方/25_ghibli.md",
+      "path": "references/风格配方/25_ghibli.md",
+      "mode": "100644",
+      "bytes": 6769,
+      "gitBlobSha": "b7af3b709818dbfd24c1e887a857714d4246d209",
+      "sha256": "d094be1b497fd9635ef802f1997878696db98cfbc07ff81dd7bbc50442bf0a17"
+    },
+    {
+      "sourcePath": "references/风格配方/26_vaporwave.md",
+      "path": "references/风格配方/26_vaporwave.md",
+      "mode": "100644",
+      "bytes": 3140,
+      "gitBlobSha": "1087ae6cf953930c875229296c5f28a31bf6bfd0",
+      "sha256": "30cf8e825125ff74f02bff93b975a74c96ceae9df09fae06fd7ef887fb64ec44"
+    },
+    {
+      "sourcePath": "references/风格配方/27_kirby.md",
+      "path": "references/风格配方/27_kirby.md",
+      "mode": "100644",
+      "bytes": 3396,
+      "gitBlobSha": "d213d6e2eadb60dad124a8ed8e5cab299daf88c6",
+      "sha256": "e64b8a69ce706311b1e81aa7d0756c7d7390b2b3f84a17f18b67c3193bce2408"
+    },
+    {
+      "sourcePath": "references/风格配方/28_monet.md",
+      "path": "references/风格配方/28_monet.md",
+      "mode": "100644",
+      "bytes": 2837,
+      "gitBlobSha": "cef93afef28257b46fadf2963b672ca180cea615",
+      "sha256": "61b2bf9da6044e44ea0fa4758b3c380be8e60cfb72e2907e5afbbaa0c00d3513"
+    },
+    {
+      "sourcePath": "references/风格配方/29_seurat.md",
+      "path": "references/风格配方/29_seurat.md",
+      "mode": "100644",
+      "bytes": 2963,
+      "gitBlobSha": "5b5cf9405b6f1967379fcd07c1e979021bf59ec4",
+      "sha256": "2c50cfb11d3bcb83b50b946126e1c0ba76f9fc3b94eab055023eea2880440f84"
+    },
+    {
+      "sourcePath": "references/风格配方/30_matisse.md",
+      "path": "references/风格配方/30_matisse.md",
+      "mode": "100644",
+      "bytes": 2509,
+      "gitBlobSha": "2f9ada95b11f46fe98cacbe4970c5e93c74d0ea7",
+      "sha256": "4da4fb6d6828fa529e2827d20bf0c4e45822427348db42b7016ca4bdc336c60b"
+    },
+    {
+      "sourcePath": "references/风格配方/31_haring.md",
+      "path": "references/风格配方/31_haring.md",
+      "mode": "100644",
+      "bytes": 1994,
+      "gitBlobSha": "147e6969b8c1a93139b9c64e41f99ed60f0df005",
+      "sha256": "adcf02ce8c7dd9446e79e3393f61c411335c6f1734d584f3389f64283c5ab30b"
+    },
+    {
+      "sourcePath": "references/风格配方/32_rembrandt.md",
+      "path": "references/风格配方/32_rembrandt.md",
+      "mode": "100644",
+      "bytes": 2900,
+      "gitBlobSha": "80793558e729c97b7290f733a01ab6287e78345c",
+      "sha256": "383f5953f5b61249c5735fef4e31f0ed05148a7ec038f580bf39ddf7dc6ba7f7"
+    },
+    {
+      "sourcePath": "references/风格配方/33_rubberhose.md",
+      "path": "references/风格配方/33_rubberhose.md",
+      "mode": "100644",
+      "bytes": 2483,
+      "gitBlobSha": "a2e4c90725a2ff06e221b8aedeb9cb1c85dc044d",
+      "sha256": "c99886da03aa74351d78695641b403c92f5f9ab4b242feb2be45d8b8a7da9617"
+    },
+    {
+      "sourcePath": "references/风格配方/34_shadowpuppet.md",
+      "path": "references/风格配方/34_shadowpuppet.md",
+      "mode": "100644",
+      "bytes": 3133,
+      "gitBlobSha": "2fe632891b668d13354893a9767029943c8c647b",
+      "sha256": "6cd4f9a090bff6d325695e8e4656ad041871f2ff0418b4eab1a46d51bd7d7609"
+    },
+    {
+      "sourcePath": "references/风格配方/35_shinkai.md",
+      "path": "references/风格配方/35_shinkai.md",
+      "mode": "100644",
+      "bytes": 3345,
+      "gitBlobSha": "584b6c653e83651f87885347b2af6e54a2d6b380",
+      "sha256": "b327bf36ef2edc246576cbfb8f1f1857c52600691adbd651efbb1eeb75e7a554"
+    },
+    {
+      "sourcePath": "references/风格配方/36_picasso_blue.md",
+      "path": "references/风格配方/36_picasso_blue.md",
+      "mode": "100644",
+      "bytes": 2739,
+      "gitBlobSha": "fa017a3cb04a4ba54fb13bcfb0ad83eb0abef41a",
+      "sha256": "7578a99b0dc416414eb2cfd5c6aa9055ded387531bfde65fd5c1f17f22e4404a"
+    },
+    {
+      "sourcePath": "references/风格配方/37_rick_morty.md",
+      "path": "references/风格配方/37_rick_morty.md",
+      "mode": "100644",
+      "bytes": 4654,
+      "gitBlobSha": "6dccdb9dfbc7dde13a946aa06e29be12d3baee59",
+      "sha256": "321e3009c33faf400cf3242d87377d1777544a2ab2f59c9de8da11a141c3aed7"
+    },
+    {
+      "sourcePath": "references/风格配方/38_giotto.md",
+      "path": "references/风格配方/38_giotto.md",
+      "mode": "100644",
+      "bytes": 5255,
+      "gitBlobSha": "53a0568f2ec5fee019ecbde859a036db10a7aa21",
+      "sha256": "591e4412ba5c0ef7568f1ccec0400c32bda1f7e31fda693d2397cb46b946ca2b"
+    },
+    {
+      "sourcePath": "references/风格配方/39_piero.md",
+      "path": "references/风格配方/39_piero.md",
+      "mode": "100644",
+      "bytes": 3982,
+      "gitBlobSha": "0c5f6291c195c6b6e99e5a8ae31bda561e98b978",
+      "sha256": "a722bd0b3ba3168620d3d0bd13d1b6b576fe3a38c48995ad98d0155651a6ef14"
+    },
+    {
+      "sourcePath": "references/风格配方/40_raphael.md",
+      "path": "references/风格配方/40_raphael.md",
+      "mode": "100644",
+      "bytes": 4671,
+      "gitBlobSha": "7a546c9f1d06aa9d0fca90b5705688bf9ddbb6c2",
+      "sha256": "fcd0352a413ccbe7a7baf9fceb7153fc70807fbdff534ac0bcb55e2129e82db9"
+    },
+    {
+      "sourcePath": "references/风格配方/41_michelangelo.md",
+      "path": "references/风格配方/41_michelangelo.md",
+      "mode": "100644",
+      "bytes": 4938,
+      "gitBlobSha": "8517df15c3d0412ad8c8253a5b73b841f1280b6c",
+      "sha256": "d902c85020ac27b74e94ff4658529bd4fb32e5092a1d723234fa4f39eee33645"
+    },
+    {
+      "sourcePath": "references/风格配方/42_guardi.md",
+      "path": "references/风格配方/42_guardi.md",
+      "mode": "100644",
+      "bytes": 4418,
+      "gitBlobSha": "015c11990f7887917949f280ca173ef91c5b4d60",
+      "sha256": "2ebe3d12fa81b0a84367f49ac955590d8a9b1daf78675ddab9badac15e44aa9a"
+    },
+    {
+      "sourcePath": "references/风格配方/43_lorenzetti.md",
+      "path": "references/风格配方/43_lorenzetti.md",
+      "mode": "100644",
+      "bytes": 5101,
+      "gitBlobSha": "9541f2a8fb089f6fb20bb4cefdda7c47d535b1e7",
+      "sha256": "d3e42f457027a2670b6e7d10798d55fa9fc42536e5cf68f90442a2c3b7405bbe"
+    },
+    {
+      "sourcePath": "references/风格配方/44_cortona.md",
+      "path": "references/风格配方/44_cortona.md",
+      "mode": "100644",
+      "bytes": 4892,
+      "gitBlobSha": "1f3d66ffafce88b428ebd44b97a912bbb86c7741",
+      "sha256": "9fb3935cd7d853ca9c0da0c18e6c5dbbe591e1ab54f5259b59b6f79654f75819"
+    },
+    {
+      "sourcePath": "references/风格配方/45_renoir.md",
+      "path": "references/风格配方/45_renoir.md",
+      "mode": "100644",
+      "bytes": 4894,
+      "gitBlobSha": "7f87cc6a77a2bd518c38062bbb016b313d450b6c",
+      "sha256": "b85f06fc351343902929c1ee6bfaad936d36b3fdafae0f1af95e66dbd36b14d3"
+    },
+    {
+      "sourcePath": "references/风格配方/46_pissarro.md",
+      "path": "references/风格配方/46_pissarro.md",
+      "mode": "100644",
+      "bytes": 4609,
+      "gitBlobSha": "c2fffa92ff4549e781a1f251237b9f0101e990f7",
+      "sha256": "9cd428ac8276c9b7134c04b9ecd49530c3c9989b7e6cc087de312f1d2faa372c"
+    },
+    {
+      "sourcePath": "references/风格配方/47_sisley.md",
+      "path": "references/风格配方/47_sisley.md",
+      "mode": "100644",
+      "bytes": 4586,
+      "gitBlobSha": "2c227901c701006bab039017cadf65749f2d66a6",
+      "sha256": "787eb8a787b01e810ca369032ba8524fc425087c0c2fa2c36b09b7e290e0a576"
+    },
+    {
+      "sourcePath": "references/风格配方/48_gauguin.md",
+      "path": "references/风格配方/48_gauguin.md",
+      "mode": "100644",
+      "bytes": 4445,
+      "gitBlobSha": "781e1022b40f70558bb4c8663400e41d8e53b678",
+      "sha256": "5e785b76ff0e1d4b976ff7b80559d3faf9ad84a3bcb97de4d0148d45f118b37b"
+    },
+    {
+      "sourcePath": "references/风格配方/49_chagall.md",
+      "path": "references/风格配方/49_chagall.md",
+      "mode": "100644",
+      "bytes": 3909,
+      "gitBlobSha": "5a668e8f8917d9079143c85f1ceeef86c41ffff4",
+      "sha256": "2fca334d05347c1dcfbaaf7bfdd525c749ec175c076c5657bca9faa61f3bcde8"
+    },
+    {
+      "sourcePath": "references/风格配方/50_ma_yuan.md",
+      "path": "references/风格配方/50_ma_yuan.md",
+      "mode": "100644",
+      "bytes": 5092,
+      "gitBlobSha": "d94b1343ee902a58d525486de0cfef9162a1fa45",
+      "sha256": "962b0d5b23727646cd36e3083f2b263be0b589ae1186da7856760cf232ec2ed5"
+    },
+    {
+      "sourcePath": "references/风格配方/51_persian_miniature.md",
+      "path": "references/风格配方/51_persian_miniature.md",
+      "mode": "100644",
+      "bytes": 4818,
+      "gitBlobSha": "f70e8334aa1016f7f07f393bfab2c12582fb9192",
+      "sha256": "619741242ba640ca931d5dda6bbb8d1b9d5a456e056dc7db956a1051090a818b"
+    },
+    {
+      "sourcePath": "references/风格配方/52_south_park.md",
+      "path": "references/风格配方/52_south_park.md",
+      "mode": "100644",
+      "bytes": 4708,
+      "gitBlobSha": "9e22a52e302522cdacb21718352ab53acb801394",
+      "sha256": "639b0b2e5fb0894dc3b44a4da67cac3ed986dc043ded886153abd2fec75ea9d8"
+    },
+    {
+      "sourcePath": "references/风格配方/53_pixar.md",
+      "path": "references/风格配方/53_pixar.md",
+      "mode": "100644",
+      "bytes": 4545,
+      "gitBlobSha": "d5c33cee0588ce94959a135a1c5c85e111657ea3",
+      "sha256": "c6b0eea92294aa08e53ed71a6068f96a6cccd29e679aa2bcf0df9478ef100aa2"
+    },
+    {
+      "sourcePath": "references/风格配方/55_dunhuang.md",
+      "path": "references/风格配方/55_dunhuang.md",
+      "mode": "100644",
+      "bytes": 3489,
+      "gitBlobSha": "d25e3f27c1a49d8bd6f61d11ad30f0d52c79d2ad",
+      "sha256": "ebf193ac4995dff6f146cf54ff62def57da5f8794ab2bdb8e7d0f18714af35f6"
+    },
+    {
+      "sourcePath": "references/风格配方/INDEX.md",
+      "path": "references/风格配方/INDEX.md",
+      "mode": "100644",
+      "bytes": 13399,
+      "gitBlobSha": "6d0b8906c24cc334c52cb2be3dc35bf0737499ab",
+      "sha256": "3a79ab6eed9ddc93c08ecdd529103d9a7ade77c1d23aa36eb236215ad0ef9cea"
+    },
+    {
+      "sourcePath": "references/风格配方/_转场_迁移测试.md",
+      "path": "references/风格配方/_转场_迁移测试.md",
+      "mode": "100644",
+      "bytes": 7063,
+      "gitBlobSha": "4f05627ad08f882241adebe304a7b6e7c3d1a616",
+      "sha256": "16e901fb8c6bb2b9ff6596bec30209471227b74440dc9d5f3ba7931c99238677"
+    },
+    {
+      "sourcePath": "references/风格配方/_重做进度.md",
+      "path": "references/风格配方/_重做进度.md",
+      "mode": "100644",
+      "bytes": 4832,
+      "gitBlobSha": "9ceff0130cd15a79b0ae3e27637cf564a57a7ba3",
+      "sha256": "2f83dabb5b810ce2b95b5012e15321d6dc2565a3bfff77f35a679683ea0bc82a"
+    },
+    {
+      "sourcePath": "references/风格配方/_音轨_艺术史速通.md",
+      "path": "references/风格配方/_音轨_艺术史速通.md",
+      "mode": "100644",
+      "bytes": 11844,
+      "gitBlobSha": "070a0fe0f88bf1e49beaefd25318a543f2a811b0",
+      "sha256": "f9c360503ec366bf0833687fd00eb2a276f1c8dc5e02ab93651e676195d10d60"
+    },
+    {
+      "sourcePath": "release-manifest.json",
+      "path": "release-manifest.json",
+      "mode": "100644",
+      "bytes": 59909,
+      "gitBlobSha": "33994a4b473e47bbec643b28114da592ab7dff4e",
+      "sha256": "b1564eb14659beeb059c5008d5a0a694b90b2b67d2ec1de9bfb9e784f5d96455"
+    },
+    {
+      "sourcePath": "schemas/media.schema.json",
+      "path": "schemas/media.schema.json",
+      "mode": "100644",
+      "bytes": 4916,
+      "gitBlobSha": "7b88da369cb85d67ede377bf6afa4c13616dbc67",
+      "sha256": "4b7d93ebb7edf5fa6219891f28325f68fc51f090eee756bc4cc3a3c746d48bda"
+    },
+    {
+      "sourcePath": "scripts/analyze/breakdown.py",
+      "path": "scripts/analyze/breakdown.py",
+      "mode": "100644",
+      "bytes": 6457,
+      "gitBlobSha": "ed52b8eb857f002abc30dd9afbb7ef39d1aaff41",
+      "sha256": "5badcd4e3f5694f5b8c5a6d7d353f830e972ae5c8a6f24ed75af634411eb75f3"
+    },
+    {
+      "sourcePath": "scripts/analyze/fetch_reference.py",
+      "path": "scripts/analyze/fetch_reference.py",
+      "mode": "100644",
+      "bytes": 4911,
+      "gitBlobSha": "ef0f05969a85794e9b057260dea6009562299b46",
+      "sha256": "97c63efc636d38c7a4e341478bed9e3e575cd539249f878648ed42d777d393cc"
+    },
+    {
+      "sourcePath": "scripts/analyze/regress_clips.py",
+      "path": "scripts/analyze/regress_clips.py",
+      "mode": "100644",
+      "bytes": 4152,
+      "gitBlobSha": "9f9cca78b3d5e532d38a902a2ff9c088c899048c",
+      "sha256": "a54b50d424ab2be6398ce2b0ad799cf7d6d621c0214be81c961e1e54672b3b67"
+    },
+    {
+      "sourcePath": "scripts/analyze/side_by_side.py",
+      "path": "scripts/analyze/side_by_side.py",
+      "mode": "100644",
+      "bytes": 2261,
+      "gitBlobSha": "71dec5dc2bf7ca150533a18f59ec13b3d69a53a8",
+      "sha256": "7d809f5ced7167e03ed2ed65fab7ff6a2ad0d2d237c8aacf55cf91ab58b54ee0"
+    },
+    {
+      "sourcePath": "scripts/analyze/stress_clip.py",
+      "path": "scripts/analyze/stress_clip.py",
+      "mode": "100644",
+      "bytes": 4783,
+      "gitBlobSha": "c902ac1e0159d378bfcb3f40faf501e6c9568adf",
+      "sha256": "8c9e32f3ba45dc86ca4b2617cafdd974fdfa42b338e811fb6ce2e860dbfa091d"
+    },
+    {
+      "sourcePath": "scripts/audio/synth_艺术史速通.py",
+      "path": "scripts/audio/synth_艺术史速通.py",
+      "mode": "100644",
+      "bytes": 31431,
+      "gitBlobSha": "4a987fa9241f0c4b765b534e2ea56d66ad3977df",
+      "sha256": "6476605af684b477d47b7f47c3c987059277de36b97bff5d77d167c27efdb40d"
+    },
+    {
+      "sourcePath": "scripts/capabilities.py",
+      "path": "scripts/capabilities.py",
+      "mode": "100644",
+      "bytes": 22788,
+      "gitBlobSha": "00df4f64d2de35afe5158f097060b56c6c9e8ed0",
+      "sha256": "fe688fd612841824e126b8ddaea1eea4bc8c31111f15422a3c60d98a9463ad83"
+    },
+    {
+      "sourcePath": "scripts/check_release.py",
+      "path": "scripts/check_release.py",
+      "mode": "100644",
+      "bytes": 6159,
+      "gitBlobSha": "a44e47eff084eafa351865ff61332cba81056224",
+      "sha256": "508388bdcfe87d97d486de7d76fec87b893469779af14cc75e4b72b4c17ecc60"
+    },
+    {
+      "sourcePath": "scripts/clip_lint.py",
+      "path": "scripts/clip_lint.py",
+      "mode": "100644",
+      "bytes": 5872,
+      "gitBlobSha": "d07cf00332623d2901aadf66c6b3ec63033a7e85",
+      "sha256": "b17bdb832a82826e27c379c24e673538439c80b88371b15b67a43731d3a4393b"
+    },
+    {
+      "sourcePath": "scripts/deliver.py",
+      "path": "scripts/deliver.py",
+      "mode": "100644",
+      "bytes": 12431,
+      "gitBlobSha": "19b46010824d2ba7d0b2a6fefcc60d1552d3e82d",
+      "sha256": "dbd1cd2495816b09257cec544e1b43bb2fa2530639ff11cff64526e065e178ae"
+    },
+    {
+      "sourcePath": "scripts/engine/audit_clip.py",
+      "path": "scripts/engine/audit_clip.py",
+      "mode": "100644",
+      "bytes": 3871,
+      "gitBlobSha": "86531fb9729e263aea18ff3c1f2087645285a220",
+      "sha256": "aaa925c5fbfeff284be6e4a4d21516497780052b84807ef0db8abd4522adb042"
+    },
+    {
+      "sourcePath": "scripts/engine/clip.html",
+      "path": "scripts/engine/clip.html",
+      "mode": "100644",
+      "bytes": 1299,
+      "gitBlobSha": "cfe53e3700fe0d9a17a54550bebf1b195920197d",
+      "sha256": "15b9ab6f7e3e29dddf8a0f8a181239f94f60c7b1c2e3defc05bdd57f0705dfd3"
+    },
+    {
+      "sourcePath": "scripts/engine/clip.js",
+      "path": "scripts/engine/clip.js",
+      "mode": "100644",
+      "bytes": 10907,
+      "gitBlobSha": "e0536dab8c0d1f5ce86669f15b2833b694389a11",
+      "sha256": "4be7a02d636b1e6ebf864822fec54c8e925ce415be2e2f1be1098ffb7a7b8799"
+    },
+    {
+      "sourcePath": "scripts/engine/clip_schema.json",
+      "path": "scripts/engine/clip_schema.json",
+      "mode": "100644",
+      "bytes": 2869,
+      "gitBlobSha": "b16e7e7aa087f9b29c9960f8b5e5eca0d016d20b",
+      "sha256": "7f0a41e9c257901c6905c3c8d3ca9ff12058400f8738bf116c0d22638cad3898"
+    },
+    {
+      "sourcePath": "scripts/engine/clips/t1_3b1b.js",
+      "path": "scripts/engine/clips/t1_3b1b.js",
+      "mode": "100644",
+      "bytes": 18940,
+      "gitBlobSha": "4bc656b603a341f080708c8dea2d2110c079bfa5",
+      "sha256": "84ed102301a066410aca1b0d06ba0459f7d5da09ae4831edf58a27f2152a6e7a"
+    },
+    {
+      "sourcePath": "scripts/engine/clips/t2_keynote_ui.js",
+      "path": "scripts/engine/clips/t2_keynote_ui.js",
+      "mode": "100644",
+      "bytes": 36870,
+      "gitBlobSha": "2a37bd961b5fed20e62c127294bcf47e3daa4300",
+      "sha256": "31c59a08e39f5799e1f59017fafa0c7d07f40a360e27737fcdefa69b2fae5e56"
+    },
+    {
+      "sourcePath": "scripts/engine/clips/t3_finance_chart.js",
+      "path": "scripts/engine/clips/t3_finance_chart.js",
+      "mode": "100644",
+      "bytes": 21116,
+      "gitBlobSha": "67a378620483b762aaee1f31d6ef4383b3b2b782",
+      "sha256": "f175d45ea92e0a680fea9e08ce9270a59a63a5b4bb3d00db5a894848e2407b36"
+    },
+    {
+      "sourcePath": "scripts/engine/clips/y1_kurzgesagt.js",
+      "path": "scripts/engine/clips/y1_kurzgesagt.js",
+      "mode": "100644",
+      "bytes": 20497,
+      "gitBlobSha": "c9d322f3fe5e4458aecae132b4f96783f9f536e6",
+      "sha256": "5f507ef90222f335048cb167535f910fda789d7cd2fba1fc8695c0c4a1f4c6b6"
+    },
+    {
+      "sourcePath": "scripts/engine/clips/y2_vox.js",
+      "path": "scripts/engine/clips/y2_vox.js",
+      "mode": "100644",
+      "bytes": 14618,
+      "gitBlobSha": "86c516af2a2fc750187d9edddb0595e06016f26a",
+      "sha256": "6c00ac3e587595b94732750a191827674a818c5f143d2ecfd328c9e4059bc589"
+    },
+    {
+      "sourcePath": "scripts/engine/clips/y3_whiteboard.js",
+      "path": "scripts/engine/clips/y3_whiteboard.js",
+      "mode": "100644",
+      "bytes": 21759,
+      "gitBlobSha": "a489f3ad4a69693eb6ce7fceafac307ceaa6f357",
+      "sha256": "1536d7a276580edd44fab6199b69671aecbae30b39b5f89921d08e43a738ff2d"
+    },
+    {
+      "sourcePath": "scripts/engine/clips/y4_storytime.js",
+      "path": "scripts/engine/clips/y4_storytime.js",
+      "mode": "100644",
+      "bytes": 22039,
+      "gitBlobSha": "4d30c1f2368bc88bbdf66133e97701e57251dc17",
+      "sha256": "2ba8c7a05296c489b948c1b2f050a479dcef5a7a19bb1550aca07478f97e25d6"
+    },
+    {
+      "sourcePath": "scripts/engine/clips/y5_kinetic_type.js",
+      "path": "scripts/engine/clips/y5_kinetic_type.js",
+      "mode": "100644",
+      "bytes": 13321,
+      "gitBlobSha": "23d421c5cbbb432ec87e2864c776e1302009b598",
+      "sha256": "2f46bd3710920d1f3496b6496680116cca8188987c5d82643da9eb1a0c45bbd9"
+    },
+    {
+      "sourcePath": "scripts/engine/compare.py",
+      "path": "scripts/engine/compare.py",
+      "mode": "100644",
+      "bytes": 1304,
+      "gitBlobSha": "13c27ea81afff69c88775c814cbc01f31ca69219",
+      "sha256": "7bf1d5ae2926de09f69431435e93ffa4c5357532b543217cd66bdc57e00256aa"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/_shared/hero.js",
+      "path": "scripts/engine/demos/_shared/hero.js",
+      "mode": "100644",
+      "bytes": 8115,
+      "gitBlobSha": "80ee1925127970f3fe16860e90d117674416bc1e",
+      "sha256": "96e9e520d1139aa617be7ad01901f6a9b6c31c7948f73b33ddd8d646c6cdf967"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/_shared/hero/c1_0.png",
+      "path": "scripts/engine/demos/_shared/hero/c1_0.png",
+      "mode": "100644",
+      "bytes": 264291,
+      "gitBlobSha": "47c62308a8081c74ff61b779e1c27a013fda3749",
+      "sha256": "827032c6aa741f9895895224a67f81538d70ef970b10da6c3ee93e8deece3018"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/_shared/hero/c1_1.png",
+      "path": "scripts/engine/demos/_shared/hero/c1_1.png",
+      "mode": "100644",
+      "bytes": 263450,
+      "gitBlobSha": "86ec86c47fb1479585c9e6fd50f8ff59889dc4e5",
+      "sha256": "9ab883b0af1460fae56970739ee82bdb8f59717ae2d3f11b56ca0b5088876c5e"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/_shared/hero/c1_2.png",
+      "path": "scripts/engine/demos/_shared/hero/c1_2.png",
+      "mode": "100644",
+      "bytes": 285087,
+      "gitBlobSha": "a576008ac1d7fc6a072056581245368b2e808a4b",
+      "sha256": "94882c9cbb1cc7ea82afb736412d388bfb06e30b08ffec861192443b9fb1c28c"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/_shared/hero/c3_line.png",
+      "path": "scripts/engine/demos/_shared/hero/c3_line.png",
+      "mode": "100644",
+      "bytes": 1022467,
+      "gitBlobSha": "45ae5035c2d11a471b5d09cb81d96d33a669eda5",
+      "sha256": "b98528a02ccdfc1c7570e7a907990421d53d14e7f77068a31ba9ccfeb397a0da"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/eras.js",
+      "path": "scripts/engine/demos/long_scroll/eras.js",
+      "mode": "100644",
+      "bytes": 2375,
+      "gitBlobSha": "6c4b39a5568ae43d08a5d943efb0688e08151a1b",
+      "sha256": "4c35e6e800f7d01a11f796fe052c11ca957c6c46665fd2b23927a8390357f617"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/8bit_act/01.png",
+      "path": "scripts/engine/demos/long_scroll/frames/8bit_act/01.png",
+      "mode": "100644",
+      "bytes": 24169,
+      "gitBlobSha": "3ffb186c4c8deaae62511e31041a8644d958c123",
+      "sha256": "74d6834868571bd257bffa91022aa649f0a80802d5b678ff59590539c99f7cf0"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/8bit_act/02.png",
+      "path": "scripts/engine/demos/long_scroll/frames/8bit_act/02.png",
+      "mode": "100644",
+      "bytes": 23024,
+      "gitBlobSha": "f4fc4d8b948352107ad921aa6b3263764f549d27",
+      "sha256": "19806884da80aba0b271556b529934359587b7e4a69bd6da7b57ccfd69bbeba6"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/8bit_act/03.png",
+      "path": "scripts/engine/demos/long_scroll/frames/8bit_act/03.png",
+      "mode": "100644",
+      "bytes": 27450,
+      "gitBlobSha": "b7e595902959f400001b91062acf9f180f65e120",
+      "sha256": "598557fa4ba263ecd000398614e552f2afe04a148f957ef020bd05d32cccf2f3"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/8bit_act/04.png",
+      "path": "scripts/engine/demos/long_scroll/frames/8bit_act/04.png",
+      "mode": "100644",
+      "bytes": 28052,
+      "gitBlobSha": "9ff1e99bbeb648088bec44346aeaf54ca125aa11",
+      "sha256": "fa08801ea3d6b79acafaa451ac697a060b059747ffd89c0375e6ee1b0901dbb3"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/8bit_act/05.png",
+      "path": "scripts/engine/demos/long_scroll/frames/8bit_act/05.png",
+      "mode": "100644",
+      "bytes": 29165,
+      "gitBlobSha": "f12d09d7b63e40f07319a18b51d7001deb158aea",
+      "sha256": "469a75afeab1a7c9602f27a7f5f9fe74ae4c88227f22ba8977c1a72cb2beaab0"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/8bit_act/06.png",
+      "path": "scripts/engine/demos/long_scroll/frames/8bit_act/06.png",
+      "mode": "100644",
+      "bytes": 23646,
+      "gitBlobSha": "cb8c3074c785fff766f009a965961331430d1ead",
+      "sha256": "1d26ed214328655a20233ec2b09e6181f431e1a4b40a2f308e4a03a8ac02f1b7"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/8bit_act/07.png",
+      "path": "scripts/engine/demos/long_scroll/frames/8bit_act/07.png",
+      "mode": "100644",
+      "bytes": 24834,
+      "gitBlobSha": "800875a88f21f294aed0c834955efba2d078fa19",
+      "sha256": "867c900356062c27187298641969dfce81a1fbebed7808692759fba3fa74c4cb"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/8bit_act/08.png",
+      "path": "scripts/engine/demos/long_scroll/frames/8bit_act/08.png",
+      "mode": "100644",
+      "bytes": 29374,
+      "gitBlobSha": "b33ac72e30b5b2ea4364af19e33ada4acb4b8942",
+      "sha256": "ae74efabbd91cca2570d51c141672d991f6e895796dc01e81dc62099568d2f74"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/8bit_act/meta.json",
+      "path": "scripts/engine/demos/long_scroll/frames/8bit_act/meta.json",
+      "mode": "100644",
+      "bytes": 839,
+      "gitBlobSha": "af6de690c64170414ebe6c62c308f204cad49840",
+      "sha256": "80dbaba87b9237958c392562338ac324687c50220ddb0c1572a8371f92131ff8"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/8bit_walk/01.png",
+      "path": "scripts/engine/demos/long_scroll/frames/8bit_walk/01.png",
+      "mode": "100644",
+      "bytes": 28692,
+      "gitBlobSha": "82a071c1fd45d24e30b86f7676de6c088995955c",
+      "sha256": "422152e3831b1df4fd5e2889b413ca6c84d1646b84dca704a9f7312cc4da6bf0"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/8bit_walk/02.png",
+      "path": "scripts/engine/demos/long_scroll/frames/8bit_walk/02.png",
+      "mode": "100644",
+      "bytes": 27408,
+      "gitBlobSha": "31a98062b284b3f661927c2f83428e372429437c",
+      "sha256": "b5bcf6a167397e8b3c06a0f8570b2abccc55d5498390d9439b3a9f5f4c792ec4"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/8bit_walk/03.png",
+      "path": "scripts/engine/demos/long_scroll/frames/8bit_walk/03.png",
+      "mode": "100644",
+      "bytes": 27940,
+      "gitBlobSha": "73c02cfe1becb0bcfdfe8f1a4082b91a9bc869f5",
+      "sha256": "2d3670bc129660ef46836ec9091ec08162119e7925825734821f3aed8f470700"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/8bit_walk/04.png",
+      "path": "scripts/engine/demos/long_scroll/frames/8bit_walk/04.png",
+      "mode": "100644",
+      "bytes": 27401,
+      "gitBlobSha": "395e4072b4212adc2b48b1f0c02d946fee1b1f6a",
+      "sha256": "fed712a2565ddde80c82f829bd6eeddc96eaa53193b0bfd21398460f21cb558a"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/8bit_walk/05.png",
+      "path": "scripts/engine/demos/long_scroll/frames/8bit_walk/05.png",
+      "mode": "100644",
+      "bytes": 28635,
+      "gitBlobSha": "e60019f5959f5b07b04aa795ebe64c49b6a1c703",
+      "sha256": "b5a663297f578133699fa6d345b9c2d36634722ecb1bc5e3a642be5b85cf6b24"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/8bit_walk/06.png",
+      "path": "scripts/engine/demos/long_scroll/frames/8bit_walk/06.png",
+      "mode": "100644",
+      "bytes": 27057,
+      "gitBlobSha": "99a872edc266adcec16a8ba785fe04d27bae1d5b",
+      "sha256": "5ae2393b76809bb3dbc929d3def67802fd2889ab12799faaceb68077e471c3d2"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/8bit_walk/07.png",
+      "path": "scripts/engine/demos/long_scroll/frames/8bit_walk/07.png",
+      "mode": "100644",
+      "bytes": 28038,
+      "gitBlobSha": "e762a2e6efc7230bf2eac7340cf294ec71a89f91",
+      "sha256": "69a61db4c6910896790bf93b4d661a4860928cdb52cdccbfd4d5a94055f9b81e"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/8bit_walk/08.png",
+      "path": "scripts/engine/demos/long_scroll/frames/8bit_walk/08.png",
+      "mode": "100644",
+      "bytes": 27144,
+      "gitBlobSha": "28d75bc79cbe258e77b59cd30893689db41f0543",
+      "sha256": "62afb8496eebe9c0f58790d85835ebc9a0502a341c2a5c92fc81a90ee4cde0a6"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/8bit_walk/meta.json",
+      "path": "scripts/engine/demos/long_scroll/frames/8bit_walk/meta.json",
+      "mode": "100644",
+      "bytes": 835,
+      "gitBlobSha": "2181be41b069f3126fce576bba0a9a72f435e55f",
+      "sha256": "3391931eb00392c13c9d6d555292c5c6ed62ee1761a74160bc0b791669784891"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/egypt_dodge/01.png",
+      "path": "scripts/engine/demos/long_scroll/frames/egypt_dodge/01.png",
+      "mode": "100644",
+      "bytes": 30890,
+      "gitBlobSha": "3a03ebf0b8b6ab656fb18c087176be7d802271ae",
+      "sha256": "298d124a5201b9a6c2d2957471163ab9ead605690f14e1d0737f566a37d5ff0b"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/egypt_dodge/02.png",
+      "path": "scripts/engine/demos/long_scroll/frames/egypt_dodge/02.png",
+      "mode": "100644",
+      "bytes": 35408,
+      "gitBlobSha": "99def0989c87d509f4c1cc5d405cf7a409eb6c1e",
+      "sha256": "d7849492606178176783bebb932a593a8b84fa1d68e1669c1fd801e1f9646426"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/egypt_dodge/03.png",
+      "path": "scripts/engine/demos/long_scroll/frames/egypt_dodge/03.png",
+      "mode": "100644",
+      "bytes": 33549,
+      "gitBlobSha": "f1e7f5184f1f57cdc19a79157314cc6e7a520750",
+      "sha256": "282257c1b3f10db6813428e19e2cd118ad1367dd2ee119edd103908930a8bfe0"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/egypt_dodge/04.png",
+      "path": "scripts/engine/demos/long_scroll/frames/egypt_dodge/04.png",
+      "mode": "100644",
+      "bytes": 36543,
+      "gitBlobSha": "d275318fbf77259d157e993ecd08d84f8e4013d7",
+      "sha256": "277517af7b758bb9ffc2d45267de6cdf5a405bb80aee1aa5569298248414a0b1"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/egypt_dodge/05.png",
+      "path": "scripts/engine/demos/long_scroll/frames/egypt_dodge/05.png",
+      "mode": "100644",
+      "bytes": 36224,
+      "gitBlobSha": "93081fbed63baf388485f9914ed6486d4424db67",
+      "sha256": "d3dbc34b29655a57cb26ea7886067b1539d97f317aef3cc29ab9c88e8018ee71"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/egypt_dodge/06.png",
+      "path": "scripts/engine/demos/long_scroll/frames/egypt_dodge/06.png",
+      "mode": "100644",
+      "bytes": 33737,
+      "gitBlobSha": "7e26cef3977cc0373447cd179aa7067f93757bc2",
+      "sha256": "0a50ce8323e4adb48c06ea493d5c6ee471a80c2028670b82b6266b5bd8451fa8"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/egypt_dodge/07.png",
+      "path": "scripts/engine/demos/long_scroll/frames/egypt_dodge/07.png",
+      "mode": "100644",
+      "bytes": 30857,
+      "gitBlobSha": "11ab597c6ade99cc4c07b5e1ed5ceb53cbcc48bd",
+      "sha256": "114f1aaaf3c157d0aa6ea6437261888e40b224cf3a4b9bff47a4b8e19e382177"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/egypt_dodge/08.png",
+      "path": "scripts/engine/demos/long_scroll/frames/egypt_dodge/08.png",
+      "mode": "100644",
+      "bytes": 32654,
+      "gitBlobSha": "90f53c0bd6d7c40831ef1792606e29704949d2bc",
+      "sha256": "1716833fa180c6d3aac3ffd4b884a8fe0029438f676619cd5194a820d9ed083e"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/egypt_dodge/meta.json",
+      "path": "scripts/engine/demos/long_scroll/frames/egypt_dodge/meta.json",
+      "mode": "100644",
+      "bytes": 837,
+      "gitBlobSha": "464923c365f6438042be2964671d6165b790a033",
+      "sha256": "7706f4d79fa8c336e31d7c2570b47d29d3b90b2e11ac9905323df1912493e8b5"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/egypt_walk8/01.png",
+      "path": "scripts/engine/demos/long_scroll/frames/egypt_walk8/01.png",
+      "mode": "100644",
+      "bytes": 35765,
+      "gitBlobSha": "029228ec696c29e69ab79a506ec987f77bd746c3",
+      "sha256": "7500fb8df1c49afde25c8f7ff0d082de925373f4548679ab6a9788b405aa17a4"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/egypt_walk8/02.png",
+      "path": "scripts/engine/demos/long_scroll/frames/egypt_walk8/02.png",
+      "mode": "100644",
+      "bytes": 33656,
+      "gitBlobSha": "9e3460e13f50ffb568becd478902c52a3f3f4788",
+      "sha256": "7e9b5b0f6b6c78a6f4562f0c753663e909e7a0b8324fd17cb4bf0ff4d151f90a"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/egypt_walk8/03.png",
+      "path": "scripts/engine/demos/long_scroll/frames/egypt_walk8/03.png",
+      "mode": "100644",
+      "bytes": 33987,
+      "gitBlobSha": "06aaf9957cbc2fb69bdda16a8f533f7df057f4c0",
+      "sha256": "a0cfc27ca9b366ee07af25bfdcb2b030702945bd7ad039f9d0333d77cc3998a8"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/egypt_walk8/04.png",
+      "path": "scripts/engine/demos/long_scroll/frames/egypt_walk8/04.png",
+      "mode": "100644",
+      "bytes": 36599,
+      "gitBlobSha": "008e226d49ce38052af76684036652505a68154a",
+      "sha256": "234955761a0485643b4310d646ab23d02c0afda2f9cae98f1e83c5384eea7ab4"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/egypt_walk8/05.png",
+      "path": "scripts/engine/demos/long_scroll/frames/egypt_walk8/05.png",
+      "mode": "100644",
+      "bytes": 35190,
+      "gitBlobSha": "f7cd5d996ac8a85fac45a163a6a8c0d41ed13739",
+      "sha256": "977c7a00b05e1394391d17e74a9aa312f5a8d1f524f3b938ec1373948099e4df"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/egypt_walk8/06.png",
+      "path": "scripts/engine/demos/long_scroll/frames/egypt_walk8/06.png",
+      "mode": "100644",
+      "bytes": 32390,
+      "gitBlobSha": "5a78c8d4e50c8cc130b8ef18dd7f890b0f98f967",
+      "sha256": "c09db144378ffc255e2ec1b3d8bdf1936e7e18f4f2496cad61d4138d5d5b7304"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/egypt_walk8/07.png",
+      "path": "scripts/engine/demos/long_scroll/frames/egypt_walk8/07.png",
+      "mode": "100644",
+      "bytes": 34317,
+      "gitBlobSha": "f565793114c35977da90901718f9e47ef53a3f0a",
+      "sha256": "1e6286142b4457fbd35014b813742da0bd42771524823067142186cc280a1725"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/egypt_walk8/08.png",
+      "path": "scripts/engine/demos/long_scroll/frames/egypt_walk8/08.png",
+      "mode": "100644",
+      "bytes": 35166,
+      "gitBlobSha": "79248351ee3697bdf96f3b4b156ada5ac65608ac",
+      "sha256": "46dccbe4ede8a6c0620ad0ca96b4413ded56d7033cbbeffb8985588257c2d842"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/egypt_walk8/meta.json",
+      "path": "scripts/engine/demos/long_scroll/frames/egypt_walk8/meta.json",
+      "mode": "100644",
+      "bytes": 835,
+      "gitBlobSha": "ec779b459e70509228437dd4bb2e5c4af7bdb5fb",
+      "sha256": "9df61edb22b06ad111462082881fca88427909c0540f33aeef71ccbd44dff3d6"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/monet_throw/01.png",
+      "path": "scripts/engine/demos/long_scroll/frames/monet_throw/01.png",
+      "mode": "100644",
+      "bytes": 56420,
+      "gitBlobSha": "e8daefbc39e39dead00740b3a4b4dbcb1a90cbad",
+      "sha256": "6777d07ffceee31b1f0a2da4e9b68f74f74bf648282dae517fe4b2aecd244553"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/monet_throw/02.png",
+      "path": "scripts/engine/demos/long_scroll/frames/monet_throw/02.png",
+      "mode": "100644",
+      "bytes": 61815,
+      "gitBlobSha": "57e6f820273124bfe2b7dc2472e63b4ba0add232",
+      "sha256": "f594484eeaa48fe388986f78e940ecaf896a3fb3a21b2fd9cf05449dca04e923"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/monet_throw/03.png",
+      "path": "scripts/engine/demos/long_scroll/frames/monet_throw/03.png",
+      "mode": "100644",
+      "bytes": 57115,
+      "gitBlobSha": "7a6fee67fa28c18fa56fc23db45e0795b312225a",
+      "sha256": "2490009faffca1452c7b2cecd5d4525b8f2921b60d46dd85b18dd50c0ffd7433"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/monet_throw/04.png",
+      "path": "scripts/engine/demos/long_scroll/frames/monet_throw/04.png",
+      "mode": "100644",
+      "bytes": 58886,
+      "gitBlobSha": "d2462d60091aec4896a910b63b40b12ce335f479",
+      "sha256": "150ef0221b74b27fcf7a9873df41df4a11a3ab2bfec21b7fd3964a596427481c"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/monet_throw/05.png",
+      "path": "scripts/engine/demos/long_scroll/frames/monet_throw/05.png",
+      "mode": "100644",
+      "bytes": 58946,
+      "gitBlobSha": "fd7f6e52b2aef3f9dc0a4755c100315c2072ba78",
+      "sha256": "5aabc6f6164b99063eb8a8bd27cbc77de062f415179ec14fc8c44bb264e380af"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/monet_throw/06.png",
+      "path": "scripts/engine/demos/long_scroll/frames/monet_throw/06.png",
+      "mode": "100644",
+      "bytes": 58014,
+      "gitBlobSha": "17d345f571e817a47fde499214bb95853e891c58",
+      "sha256": "175c1ee674743544b28dd2e04ad8dd26ea89a1f664cd31706c7270442a68368d"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/monet_throw/07.png",
+      "path": "scripts/engine/demos/long_scroll/frames/monet_throw/07.png",
+      "mode": "100644",
+      "bytes": 57998,
+      "gitBlobSha": "8eae301018ef92b929c6647248f0e138948ea67b",
+      "sha256": "adb52ccb864ded668d02c17aa9d21acabc4c6c695561f5c7e221fee8fd8d711f"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/monet_throw/08.png",
+      "path": "scripts/engine/demos/long_scroll/frames/monet_throw/08.png",
+      "mode": "100644",
+      "bytes": 58969,
+      "gitBlobSha": "4ae33446bc859559de7d59b714cf1e549d5090ff",
+      "sha256": "a5befb97ddc1c17962011fd1b366c6c087c2fdc5ea4104f00f01ad0fb83a7fe8"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/monet_throw/meta.json",
+      "path": "scripts/engine/demos/long_scroll/frames/monet_throw/meta.json",
+      "mode": "100644",
+      "bytes": 873,
+      "gitBlobSha": "311c66442ba925be5feeb2a3af290c66608bb7c0",
+      "sha256": "01db607f2fa4e10998628a4f2b1c1ba184915d76070be2b9e92051527cd2d5cc"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/monet_walk/01.png",
+      "path": "scripts/engine/demos/long_scroll/frames/monet_walk/01.png",
+      "mode": "100644",
+      "bytes": 53133,
+      "gitBlobSha": "b291311bc60aac67cb8d0a856b88ba67b5a2ec44",
+      "sha256": "0e58b3f88bddb5d2488f59846a844f4bcf62f94e860eea7598e4e011de6ab9d9"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/monet_walk/02.png",
+      "path": "scripts/engine/demos/long_scroll/frames/monet_walk/02.png",
+      "mode": "100644",
+      "bytes": 51650,
+      "gitBlobSha": "acbe8f6290b49afcf2fb9bf74547dfd801a9e783",
+      "sha256": "30ee4cf8e6e594115a8e13dca65728936d70fefdc189fec970bdd96c3635c618"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/monet_walk/03.png",
+      "path": "scripts/engine/demos/long_scroll/frames/monet_walk/03.png",
+      "mode": "100644",
+      "bytes": 51494,
+      "gitBlobSha": "743ad169976631cb266126c6a7dc5d612ddd969a",
+      "sha256": "cff12f6a7fca6a001c995ea01d1fc194318856de38c97464dcd4a1b216d32986"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/monet_walk/04.png",
+      "path": "scripts/engine/demos/long_scroll/frames/monet_walk/04.png",
+      "mode": "100644",
+      "bytes": 49533,
+      "gitBlobSha": "83400e0c7ccc0f5af4042150c5b9e9a8b996b817",
+      "sha256": "588a7a28307b1684522ecd3d7e39a3ab4d8ea42dfc0c8596236286a084f883c0"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/monet_walk/05.png",
+      "path": "scripts/engine/demos/long_scroll/frames/monet_walk/05.png",
+      "mode": "100644",
+      "bytes": 53114,
+      "gitBlobSha": "cb83696aed33cb912177aaf33b015de42499ed9a",
+      "sha256": "7f0828088ba1dfde2821c3cd6d4b3c2f3435cc3176c3713b683ea1a4004d29b9"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/monet_walk/06.png",
+      "path": "scripts/engine/demos/long_scroll/frames/monet_walk/06.png",
+      "mode": "100644",
+      "bytes": 52009,
+      "gitBlobSha": "d5704949fc141af4a1fe56188f0ae949cad878ac",
+      "sha256": "d66fac1d04408e301dd9cf65eff68e0e7c6d3147103e9f775a413854ae0afeeb"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/monet_walk/07.png",
+      "path": "scripts/engine/demos/long_scroll/frames/monet_walk/07.png",
+      "mode": "100644",
+      "bytes": 51289,
+      "gitBlobSha": "99a7aa57ac6d63f68c4e6d969b133191fa568d42",
+      "sha256": "75f1e003de49fa658f0b74f7d0e916503993ae838d02cb99f0b04d0286821477"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/monet_walk/08.png",
+      "path": "scripts/engine/demos/long_scroll/frames/monet_walk/08.png",
+      "mode": "100644",
+      "bytes": 49630,
+      "gitBlobSha": "1a119c1dc429d4d251b75b4fb7ed293caa8db6fd",
+      "sha256": "4924bafb390350414c100c52043942b6ca7e2978dd9e20446b2ae65ca0d37392"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/frames/monet_walk/meta.json",
+      "path": "scripts/engine/demos/long_scroll/frames/monet_walk/meta.json",
+      "mode": "100644",
+      "bytes": 873,
+      "gitBlobSha": "7f522f7bdfc579dcda40967f8f14c703baa2ba52",
+      "sha256": "fef96b1af712cb3f09b9ee3f987b6e97ae24bac2366e78878796045dd60856e8"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/lib/acts.js",
+      "path": "scripts/engine/demos/long_scroll/lib/acts.js",
+      "mode": "100644",
+      "bytes": 7665,
+      "gitBlobSha": "65e5de2549f9f2ede8de0d717a33b8ae368a5b1c",
+      "sha256": "db003703801f1ecead3552e38c7083d646aac1f669d907832e48173865095e02"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/lib/crossing.js",
+      "path": "scripts/engine/demos/long_scroll/lib/crossing.js",
+      "mode": "100644",
+      "bytes": 46063,
+      "gitBlobSha": "dbb44eb1fa99f37a63520e4dea75c38b1f17ab2d",
+      "sha256": "18853b65e3fbc8badc1cc8100d577241faab340d4d2e685a10667fdda78cd802"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/lib/world.js",
+      "path": "scripts/engine/demos/long_scroll/lib/world.js",
+      "mode": "100644",
+      "bytes": 11814,
+      "gitBlobSha": "44d28d9203eb1ce4024c411b3f977eecae0242ff",
+      "sha256": "ba39f30231bcd510947c9dc32a1801f9e2cd0ba68a41a6aafccf2e8fb9bfa642"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/lib/xing2_ding.js",
+      "path": "scripts/engine/demos/long_scroll/lib/xing2_ding.js",
+      "mode": "100644",
+      "bytes": 3423,
+      "gitBlobSha": "ae09e166392cd0aa3c1b0d459d44907c0d469d6f",
+      "sha256": "685a341d785f211b999cfd493d41cdb2b84df99f7b640b19b3f1e09848cab21e"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/lib/xing2_jia.js",
+      "path": "scripts/engine/demos/long_scroll/lib/xing2_jia.js",
+      "mode": "100644",
+      "bytes": 10243,
+      "gitBlobSha": "4ad47350f2ccfc73d24b728c17aebe0aa3291b01",
+      "sha256": "d58e9e8a23152eb95854861ae35f871267820e20407a6e01eccdb2f9239278b5"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/lib/xing2_yi.js",
+      "path": "scripts/engine/demos/long_scroll/lib/xing2_yi.js",
+      "mode": "100644",
+      "bytes": 12966,
+      "gitBlobSha": "03644346ded6af91442b6a44e062939403a00d88",
+      "sha256": "7913d931861847aac8028ce47ff003d8fde9b60638ecfa08e6a9159fd808e412"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/segments/02_egypt.js",
+      "path": "scripts/engine/demos/long_scroll/segments/02_egypt.js",
+      "mode": "100644",
+      "bytes": 26396,
+      "gitBlobSha": "aeda459bc4f4dff04edb17318fd42067d6ca6f1c",
+      "sha256": "85d22b9c9dee0a0772a85ca2d3437fbe2c7af073be6ff2cb79a62763d11c3646"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/segments/14_8bit.js",
+      "path": "scripts/engine/demos/long_scroll/segments/14_8bit.js",
+      "mode": "100644",
+      "bytes": 13608,
+      "gitBlobSha": "f0714ec58c97f5020c381f139fcbec6c699a4ead",
+      "sha256": "cd1d348d8096b0bcf28ca946c75f3a64759f1158ce634571baf2024a97752b87"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/long_scroll/segments/28_monet.js",
+      "path": "scripts/engine/demos/long_scroll/segments/28_monet.js",
+      "mode": "100644",
+      "bytes": 9223,
+      "gitBlobSha": "71a733f955ef0c2fd77ce838ccaa6c7473f2608a",
+      "sha256": "c7e7542792a36695f07e60e90e118e566cde9b55c007fe42162e27ff25b1023b"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/t1_3b1b/eras.js",
+      "path": "scripts/engine/demos/t1_3b1b/eras.js",
+      "mode": "100644",
+      "bytes": 864,
+      "gitBlobSha": "704a31b8d49f70d0882b7dfff6d87283ef2a373e",
+      "sha256": "448e7293cf5a0e724b2cfa4cab1bc7148f8027ecc0ddfc6a04ade2817acb2216"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/t1_3b1b/t1_s1.js",
+      "path": "scripts/engine/demos/t1_3b1b/t1_s1.js",
+      "mode": "100644",
+      "bytes": 6281,
+      "gitBlobSha": "b5d0c35c211fbd766a4aef11a76f5f2a28deb33f",
+      "sha256": "10f1e0b82dae1c55f53f59ae6fbae8d976773d822c749171f924121214d47b3a"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/t1_3b1b/t1_s2.js",
+      "path": "scripts/engine/demos/t1_3b1b/t1_s2.js",
+      "mode": "100644",
+      "bytes": 5606,
+      "gitBlobSha": "ea22ea60d26087442be248e504c954784d7d948e",
+      "sha256": "686b2c620be37ede852c92c3952f624dfbaf5724927328e9ab45d8bc7569922f"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/t1_3b1b/t1_s3.js",
+      "path": "scripts/engine/demos/t1_3b1b/t1_s3.js",
+      "mode": "100644",
+      "bytes": 5186,
+      "gitBlobSha": "7dae1a437489ae1746bbcd1113e6351081965f14",
+      "sha256": "042794b3c2257cae2d8616955eabdb2ec2af761e43ec4d8604d937faeb693d7b"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/t2_keynote_ui/eras.js",
+      "path": "scripts/engine/demos/t2_keynote_ui/eras.js",
+      "mode": "100644",
+      "bytes": 772,
+      "gitBlobSha": "212b967ad16069a4910e03e52f0eb17c6e46bc29",
+      "sha256": "dff467d0c0bb90bb864707192cb7ee0b5771c3793448f4a9ffe04b579818e23a"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/t2_keynote_ui/t2_s1.js",
+      "path": "scripts/engine/demos/t2_keynote_ui/t2_s1.js",
+      "mode": "100644",
+      "bytes": 3846,
+      "gitBlobSha": "5ffed95a2d0ab252983858995e1dad5f9137bc2d",
+      "sha256": "03ad91437ccad3d7da0135c0f85e5ea152a0f386061b003422f0d8ab2fb64118"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/t2_keynote_ui/t2_s2.js",
+      "path": "scripts/engine/demos/t2_keynote_ui/t2_s2.js",
+      "mode": "100644",
+      "bytes": 4962,
+      "gitBlobSha": "8d68008d1617de268ab06908d99d401fddd1e489",
+      "sha256": "58d26b8329b9596180447046b22742c290780dd75283de1b655fead0383cf3e5"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/t2_keynote_ui/t2_s3.js",
+      "path": "scripts/engine/demos/t2_keynote_ui/t2_s3.js",
+      "mode": "100644",
+      "bytes": 4939,
+      "gitBlobSha": "37086e031372bf1f04f212c7b13595763a9345fe",
+      "sha256": "9e2e574f158350de3d1d5da50d296ebe87fd1a18b12be3b53391895a0155220d"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/t3_finance_chart/eras.js",
+      "path": "scripts/engine/demos/t3_finance_chart/eras.js",
+      "mode": "100644",
+      "bytes": 907,
+      "gitBlobSha": "0bb6853c8fa6e160d32e586b6e2003684259c435",
+      "sha256": "7d8bcb0c7f1aa6e13ec6e565925ab6689541e12e5643a555b037b8d611963ab6"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/t3_finance_chart/t3_s1.js",
+      "path": "scripts/engine/demos/t3_finance_chart/t3_s1.js",
+      "mode": "100644",
+      "bytes": 4313,
+      "gitBlobSha": "fddcf7ff08761e34375664ae6a4f079ce5d1edbe",
+      "sha256": "a1ba20f354638ff97df547d3f352416850d17370f8af41169ec1b6f902fd2936"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/t3_finance_chart/t3_s2.js",
+      "path": "scripts/engine/demos/t3_finance_chart/t3_s2.js",
+      "mode": "100644",
+      "bytes": 3433,
+      "gitBlobSha": "614bb2472a06cd1224ae42209068b5125bcbc436",
+      "sha256": "a50e8b705ade4b22515851c904c8035c8c8479d712594fb0a6c5e08688a871c2"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/t3_finance_chart/t3_s3.js",
+      "path": "scripts/engine/demos/t3_finance_chart/t3_s3.js",
+      "mode": "100644",
+      "bytes": 4151,
+      "gitBlobSha": "50260994769b1e293244ec664062e5089990f248",
+      "sha256": "45d1cd1cb0e8edf0b4b07229f9ee0ff9e4c3b4b52ec3d5e980fd23cc897a5c3e"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/y1_kurzgesagt/eras.js",
+      "path": "scripts/engine/demos/y1_kurzgesagt/eras.js",
+      "mode": "100644",
+      "bytes": 1049,
+      "gitBlobSha": "720affa52118fd7818c073facc09307115aec512",
+      "sha256": "0ae30c83af4116e3a2b9cc74eef918638ff49f33f43e31e499def6ae66eed098"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/y1_kurzgesagt/kurzgesagt.js",
+      "path": "scripts/engine/demos/y1_kurzgesagt/kurzgesagt.js",
+      "mode": "100644",
+      "bytes": 30396,
+      "gitBlobSha": "c75083c4c140fa3d122c0e60201c1d039d701c91",
+      "sha256": "4620f12ad924a865f7bdc74e72bbc87be4f5375ac8fa7ea415aabff9179b7630"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/y2_vox/eras.js",
+      "path": "scripts/engine/demos/y2_vox/eras.js",
+      "mode": "100644",
+      "bytes": 909,
+      "gitBlobSha": "b0d34b5a39e8f3cb7fb9e78c7f4aba1bba88fcf5",
+      "sha256": "5ff129a2d4bcfefe6d1c7602bdff9faa55f408256c6429c755e37a63249c3bce"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/y2_vox/vox.js",
+      "path": "scripts/engine/demos/y2_vox/vox.js",
+      "mode": "100644",
+      "bytes": 20625,
+      "gitBlobSha": "b7effb124309b64fe065f6dbf8e619b18fc2f5b4",
+      "sha256": "d288cca5eee2aee08e803025ab41dd73096f44ab50845bdde2cc8ed7e9e07ec4"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/y3_whiteboard/eras.js",
+      "path": "scripts/engine/demos/y3_whiteboard/eras.js",
+      "mode": "100644",
+      "bytes": 936,
+      "gitBlobSha": "a42fec27845e8fb7687dfeca5d98cea3c9230a5c",
+      "sha256": "e073e6936000acc885e4ec8588e3ace496c25530dc6c03a4c5e2c1543b84278f"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/y3_whiteboard/whiteboard.js",
+      "path": "scripts/engine/demos/y3_whiteboard/whiteboard.js",
+      "mode": "100644",
+      "bytes": 12143,
+      "gitBlobSha": "ea9ab4a7b353661b39677cb70449ee319e264650",
+      "sha256": "24921e56f9b3d6c1c94d77e1102c907f36882f6e812dbdc1c01a2bac094fae5d"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/y4_storytime/eras.js",
+      "path": "scripts/engine/demos/y4_storytime/eras.js",
+      "mode": "100644",
+      "bytes": 1356,
+      "gitBlobSha": "f7b1e4a9213f248f6db3429670dd4c0a68ae6989",
+      "sha256": "c3cf9816bb94b08d6065f1b5c67d71bf9ad23b1f6b398345e27ecb0f40af396c"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/y4_storytime/s1_desk.js",
+      "path": "scripts/engine/demos/y4_storytime/s1_desk.js",
+      "mode": "100644",
+      "bytes": 1179,
+      "gitBlobSha": "6b55722c398529fb93e4815decc59853cee27611",
+      "sha256": "e687991b4127e99efd0c73339670a30a968708817a2ec32345b2931bf7105d45"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/y4_storytime/s2_screen.js",
+      "path": "scripts/engine/demos/y4_storytime/s2_screen.js",
+      "mode": "100644",
+      "bytes": 7495,
+      "gitBlobSha": "89e79326b18fb8f5da3b37e4bdd618afd91243e1",
+      "sha256": "414ebc1df2fa078fea7b0cb2dcc633d20a84ce9eda1f9fd331190b0ecd42c0da"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/y4_storytime/s3_react.js",
+      "path": "scripts/engine/demos/y4_storytime/s3_react.js",
+      "mode": "100644",
+      "bytes": 2681,
+      "gitBlobSha": "db2857227cc6259d7f54c794ba0b8aa7881e64ab",
+      "sha256": "16ff4d5b624f57c84eac0f4bfca95d318635588fc362e89024b098483b7951bb"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/y4_storytime/s4_wide.js",
+      "path": "scripts/engine/demos/y4_storytime/s4_wide.js",
+      "mode": "100644",
+      "bytes": 974,
+      "gitBlobSha": "f091cebe4ab09aa3fb51cbee80fdd9f73aeffdcb",
+      "sha256": "a238d9accd8d789104be7f4d0984922698e371c38fb3780d457e907540c36602"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/y4_storytime/s5_close.js",
+      "path": "scripts/engine/demos/y4_storytime/s5_close.js",
+      "mode": "100644",
+      "bytes": 1187,
+      "gitBlobSha": "382abe057bef576466497db4469fbc0224743897",
+      "sha256": "62323752eaf8c997d700e92f5900c2a8d86365d528534338e7a0ca8bf392eb19"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/y4_storytime/story.js",
+      "path": "scripts/engine/demos/y4_storytime/story.js",
+      "mode": "100644",
+      "bytes": 1796,
+      "gitBlobSha": "2c96caf62af7381f79497d78fed170c5156d1117",
+      "sha256": "945e7171975fbdfbd95c91cfca070e64f9c2a4f6ae8fc034468f1adcd9dec3e1"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/y4_storytime/vo_env.js",
+      "path": "scripts/engine/demos/y4_storytime/vo_env.js",
+      "mode": "100644",
+      "bytes": 3238,
+      "gitBlobSha": "3d6a60938f164a390c632d669c6e861a12ab7b10",
+      "sha256": "04739a58e5bbce262ef1f2d3c1f7988d85d2fe07139a64bee7fc2318d50bd98d"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/y4_storytime/world.js",
+      "path": "scripts/engine/demos/y4_storytime/world.js",
+      "mode": "100644",
+      "bytes": 6164,
+      "gitBlobSha": "d51b39da0d110234634c51785f4cfc356386c4de",
+      "sha256": "36f387e9831723ad17249d0891e2c4974414d2061ee89bd696a87aa6c098b715"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/y5_kinetic_type/eras.js",
+      "path": "scripts/engine/demos/y5_kinetic_type/eras.js",
+      "mode": "100644",
+      "bytes": 1306,
+      "gitBlobSha": "87285f334f5fc1e508d8e643c54b050ab573a7df",
+      "sha256": "540e671b8d6e7e85684332c68c079c88da674fab8ba80bc3773a27badb5c4d50"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/y5_kinetic_type/k1_title.js",
+      "path": "scripts/engine/demos/y5_kinetic_type/k1_title.js",
+      "mode": "100644",
+      "bytes": 2542,
+      "gitBlobSha": "e45f67771af0f04c000fbb41a703c9547aab11c9",
+      "sha256": "b1c0d5ee07720e6f4df94dec9e6101bb5781a009e3bf7584d68dc48c413cd215"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/y5_kinetic_type/k2_complete.js",
+      "path": "scripts/engine/demos/y5_kinetic_type/k2_complete.js",
+      "mode": "100644",
+      "bytes": 3989,
+      "gitBlobSha": "1d6fedf02a1622caeadf949561f8904321353bca",
+      "sha256": "3f2d6a463508cecc5ca2327f0a6ae3f7e5b30e90d8ffe48638113244baa25be9"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/y5_kinetic_type/k3_chat.js",
+      "path": "scripts/engine/demos/y5_kinetic_type/k3_chat.js",
+      "mode": "100644",
+      "bytes": 3492,
+      "gitBlobSha": "22c6d53ec528fda63280c7a5c6a082d1597a47a4",
+      "sha256": "c810bb9c4462b7f60ff9e5eeeb8edd0e2a74d73fc42116c8a95a48210fb935a6"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/y5_kinetic_type/k4_agent.js",
+      "path": "scripts/engine/demos/y5_kinetic_type/k4_agent.js",
+      "mode": "100644",
+      "bytes": 3659,
+      "gitBlobSha": "938d458b3e2f84c1daff78bd5908ade553be5a84",
+      "sha256": "368d734da08e17beff2a267b2d664a99f48fc28dd911da637c2e81e295b36e90"
+    },
+    {
+      "sourcePath": "scripts/engine/demos/y5_kinetic_type/kinetic.js",
+      "path": "scripts/engine/demos/y5_kinetic_type/kinetic.js",
+      "mode": "100644",
+      "bytes": 3716,
+      "gitBlobSha": "b8381d918ed91beb792baa3b0208f8b7087b32ae",
+      "sha256": "83b5ada7617db67f715203882eda22f54c846c7655418ab10744a373472a8c84"
+    },
+    {
+      "sourcePath": "scripts/engine/engine.js",
+      "path": "scripts/engine/engine.js",
+      "mode": "100644",
+      "bytes": 17491,
+      "gitBlobSha": "ee2f9dc0b7a4892ab442bf2ecab6027977a24029",
+      "sha256": "04b64953037ced7016ffb211cb12891dc4f1c840378a366e35572db8098fd3cd"
+    },
+    {
+      "sourcePath": "scripts/engine/eras.js",
+      "path": "scripts/engine/eras.js",
+      "mode": "100644",
+      "bytes": 6119,
+      "gitBlobSha": "72e6f9f4416e838a45817acc192038ba750cbf4f",
+      "sha256": "2ccc90bed5e9ef337f8cf3444058705dc720743a78c9315a0e5ee814cd130fc9"
+    },
+    {
+      "sourcePath": "scripts/engine/eras_gallery.js",
+      "path": "scripts/engine/eras_gallery.js",
+      "mode": "100644",
+      "bytes": 14906,
+      "gitBlobSha": "41342810cb0be0fc4aafaf969c83196b604b77f6",
+      "sha256": "6e97dfe281b8360d400a657098a68dd224a1a081299b28b3137a1b1db1a8222a"
+    },
+    {
+      "sourcePath": "scripts/engine/eras_style_studies.js",
+      "path": "scripts/engine/eras_style_studies.js",
+      "mode": "100644",
+      "bytes": 4147,
+      "gitBlobSha": "0b208960645917dea11c9c3557c83a0bec97cb62",
+      "sha256": "bef942e77dfadd9e1d0a5de9e78339c9bb9a8958244dd22f839c2c833937aa2f"
+    },
+    {
+      "sourcePath": "scripts/engine/examples/assets/K线图_横屏.png",
+      "path": "scripts/engine/examples/assets/K线图_横屏.png",
+      "mode": "100644",
+      "bytes": 136588,
+      "gitBlobSha": "9e681fc782734d6ac1e2dc797cbfff11d3e93bf8",
+      "sha256": "04a61f9be80bc4895136cfb168ed102860d96af41edab1957e326d647993cb19"
+    },
+    {
+      "sourcePath": "scripts/engine/examples/assets/终端_for循环求和.png",
+      "path": "scripts/engine/examples/assets/终端_for循环求和.png",
+      "mode": "100644",
+      "bytes": 45181,
+      "gitBlobSha": "b2919580d11c0a3a25eb91dd5be4f7efe1a8c5df",
+      "sha256": "8871dce38e3ce0bc94a2aa22ab5479152df40837b67ced2b87de269a740badc3"
+    },
+    {
+      "sourcePath": "scripts/engine/examples/assets/终端_sum求和.png",
+      "path": "scripts/engine/examples/assets/终端_sum求和.png",
+      "mode": "100644",
+      "bytes": 42757,
+      "gitBlobSha": "4e33931eb947faf1021523c292b06f13f92326a7",
+      "sha256": "2af3cac8b7468c120163c0993d98c8666d75d4814c8f0fbeced8d21db07302bf"
+    },
+    {
+      "sourcePath": "scripts/engine/examples/assets/营收图_竖屏.png",
+      "path": "scripts/engine/examples/assets/营收图_竖屏.png",
+      "mode": "100644",
+      "bytes": 94276,
+      "gitBlobSha": "5735ce105923d990587971456f7b10f492b00bd0",
+      "sha256": "5c3c9207a8ea289347463408547fdd8f19c63e68e1cbcbcdbc5de77b556b1648"
+    },
+    {
+      "sourcePath": "scripts/engine/examples/assets/财经图表_横屏.png",
+      "path": "scripts/engine/examples/assets/财经图表_横屏.png",
+      "mode": "100644",
+      "bytes": 104272,
+      "gitBlobSha": "b001e61fc486f7a148f05c8ee23fd32a1465a685",
+      "sha256": "95c56c106f6eed633cf2c8b6bc46465ecf335aefe5abd9bb8e91563b48c572e1"
+    },
+    {
+      "sourcePath": "scripts/engine/examples/t1_3b1b.json",
+      "path": "scripts/engine/examples/t1_3b1b.json",
+      "mode": "100644",
+      "bytes": 1156,
+      "gitBlobSha": "32ac81b954dcc91eab11227693b2358b7824705e",
+      "sha256": "28fa6f76f6849698f30d3fc69918a00ea0a9e99225614905bea5c505b82673c6"
+    },
+    {
+      "sourcePath": "scripts/engine/examples/t2_fullbleed_pulse.json",
+      "path": "scripts/engine/examples/t2_fullbleed_pulse.json",
+      "mode": "100644",
+      "bytes": 733,
+      "gitBlobSha": "7d4fd72b94e0f4cc8a4ee2162e25d7285ee56350",
+      "sha256": "97d2a492cd3253e4ea0c0b1c499204357254814ce1130e7910bcfd1aaa239f25"
+    },
+    {
+      "sourcePath": "scripts/engine/examples/t2_keynote_ui.json",
+      "path": "scripts/engine/examples/t2_keynote_ui.json",
+      "mode": "100644",
+      "bytes": 752,
+      "gitBlobSha": "c53acf6cf43f281fbfdae703ed2cb62c9a08816e",
+      "sha256": "9643bed1dd75dd4891efb2d364719b80435d55d162859336dba513332c2d81f3"
+    },
+    {
+      "sourcePath": "scripts/engine/examples/t3_finance_chart.json",
+      "path": "scripts/engine/examples/t3_finance_chart.json",
+      "mode": "100644",
+      "bytes": 945,
+      "gitBlobSha": "d4cdc4431c269d4862d026e6ee4e03043a4aabd5",
+      "sha256": "7537ef8c696349daf9005820c2eb02bd34c48482052bc8e30d21ee476b264efe"
+    },
+    {
+      "sourcePath": "scripts/engine/examples/y1_kurzgesagt.json",
+      "path": "scripts/engine/examples/y1_kurzgesagt.json",
+      "mode": "100644",
+      "bytes": 498,
+      "gitBlobSha": "f352ffc9e91336f1c17fb59fbc11c617df3829da",
+      "sha256": "4a28c3ff55fdd4a2b327701b062ff6dd3b571036d2a73ec4426bc050d2ddf34b"
+    },
+    {
+      "sourcePath": "scripts/engine/examples/y2_vox.json",
+      "path": "scripts/engine/examples/y2_vox.json",
+      "mode": "100644",
+      "bytes": 508,
+      "gitBlobSha": "10c2d6548027e38f961ff4b3b6cf55dc7bf66d14",
+      "sha256": "965ca7fc646ddbb6e7b81e356e12246c10694cd797b991a5baac14312641feea"
+    },
+    {
+      "sourcePath": "scripts/engine/examples/y3_whiteboard.json",
+      "path": "scripts/engine/examples/y3_whiteboard.json",
+      "mode": "100644",
+      "bytes": 688,
+      "gitBlobSha": "fd53cae2f13e0f45ff4a327afbde54cd58044f66",
+      "sha256": "9d5b0b6d4fa447a2e28c1db7447874aeafa26b915960a9beed154f9252e72a14"
+    },
+    {
+      "sourcePath": "scripts/engine/examples/y4_storytime.json",
+      "path": "scripts/engine/examples/y4_storytime.json",
+      "mode": "100644",
+      "bytes": 1079,
+      "gitBlobSha": "a448fc6c316ffe1c82de6d860b6a569d417f449c",
+      "sha256": "16a334ee71e47504ec74ca992b26b7f663960298bfa8864c11edd275d23b1d7f"
+    },
+    {
+      "sourcePath": "scripts/engine/examples/y5_kinetic_type.json",
+      "path": "scripts/engine/examples/y5_kinetic_type.json",
+      "mode": "100644",
+      "bytes": 598,
+      "gitBlobSha": "d3a57a2be7e0578a1415ecd7765407b5aeb29683",
+      "sha256": "a17d1f008e68822616560acfaf022304581db2b0fcd0cbc5a6d9c2818b6a9fdb"
+    },
+    {
+      "sourcePath": "scripts/engine/index.html",
+      "path": "scripts/engine/index.html",
+      "mode": "100644",
+      "bytes": 2039,
+      "gitBlobSha": "016a01f0d39b1c2c42b3de74d493c74c1700933b",
+      "sha256": "28a067428f79e16b9f108f296e58b4e7541e466d463c4abbe6de6be4ef90a2d1"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/THREE_LICENSE.txt",
+      "path": "scripts/engine/lib/THREE_LICENSE.txt",
+      "mode": "100644",
+      "bytes": 1081,
+      "gitBlobSha": "d07e209686512b9ac93d7df5481a4a6f622093e7",
+      "sha256": "852e0e8699169bf9f6fdc6bda3e682d078dcbc738b5d33e74df594721bff271d"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/brush.js",
+      "path": "scripts/engine/lib/brush.js",
+      "mode": "100644",
+      "bytes": 11947,
+      "gitBlobSha": "1b993a940952b843cbe7c72ec3ee2e34c3c993e8",
+      "sha256": "e83db04e5fc9fef83237d984d2ceba3c1ec71c0c2a8f8a798ecc939fc8c3b2d4"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/camera.js",
+      "path": "scripts/engine/lib/camera.js",
+      "mode": "100644",
+      "bytes": 9762,
+      "gitBlobSha": "7b50c44db598733264c1b7ecd542d7f896d93b47",
+      "sha256": "53ddc95e972900abfb49bfea704a2b77897b9237836ee653aeed966d39ceeec5"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/chart.js",
+      "path": "scripts/engine/lib/chart.js",
+      "mode": "100644",
+      "bytes": 10870,
+      "gitBlobSha": "e18de00ae35ab951117f9547e6b946d4094ee216",
+      "sha256": "93d3605cba7d7cf0bdda2c2dd8f9797734dd06c1f64fa18ef7a492f8755a8d27"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/collage.js",
+      "path": "scripts/engine/lib/collage.js",
+      "mode": "100644",
+      "bytes": 8972,
+      "gitBlobSha": "f3491e46ac4040ea4951a6215df7ef61e406514a",
+      "sha256": "4dcd3d15f8895dc6e3d4f2e4d82766782a4e77876fb863ded9480320b8959d93"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/diagram.js",
+      "path": "scripts/engine/lib/diagram.js",
+      "mode": "100644",
+      "bytes": 20080,
+      "gitBlobSha": "8baf28f1c084426a886bcffb98225eb13a70d583",
+      "sha256": "98b15ba5f883dd95eca2ff52ba1d768c10a5bea7862bd13aee6d84b875e2b8c5"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/finish.js",
+      "path": "scripts/engine/lib/finish.js",
+      "mode": "100644",
+      "bytes": 5150,
+      "gitBlobSha": "4d711d6b06f02786bcd17f110a164e4fbb2f0a41",
+      "sha256": "a391531aaac53edc5b435067a2210e5a473c955c429d1e11206bc0f8173d5e48"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/fonts.js",
+      "path": "scripts/engine/lib/fonts.js",
+      "mode": "100644",
+      "bytes": 4442,
+      "gitBlobSha": "c96e0f285a9902824a8ff9621db2d6061c00d914",
+      "sha256": "8d5ac65f41bd6df79a0f913adf7f425d46c847cc5d8ed831eccdc80b1c29531d"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/fonts/AlfaSlabOne-400.woff",
+      "path": "scripts/engine/lib/fonts/AlfaSlabOne-400.woff",
+      "mode": "100644",
+      "bytes": 41728,
+      "gitBlobSha": "ed5ca898aee8d6c009883b8e175749c0546d9bc5",
+      "sha256": "2f8b04d3eada32d7047255260a0e81ab74938fada1aad154f5653850a68aebe8"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/fonts/Anton-400.woff",
+      "path": "scripts/engine/lib/fonts/Anton-400.woff",
+      "mode": "100644",
+      "bytes": 61460,
+      "gitBlobSha": "af925c19f8fba07fcedaa246def2ca066de8a0bc",
+      "sha256": "791375bdbed00de4a3aad4811291220ead0e1405d6f8b5bdbf109798c8359ac5"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/fonts/ArchivoBlack-400.woff",
+      "path": "scripts/engine/lib/fonts/ArchivoBlack-400.woff",
+      "mode": "100644",
+      "bytes": 38316,
+      "gitBlobSha": "5273a9c1dd787f49f2c8259b90a14dff9e25b9b8",
+      "sha256": "c029965cfbc3cbb79431babf56d0fee6bc185f366c4fc2a0957817137d374c95"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/fonts/Bangers-400.woff",
+      "path": "scripts/engine/lib/fonts/Bangers-400.woff",
+      "mode": "100644",
+      "bytes": 43808,
+      "gitBlobSha": "46c888483959b08f93521c80a18112b8e6e38358",
+      "sha256": "62f0a30b1d48cc21bb35b084ae5d17ad22135df5dc4c18f3f591fc5443eddf39"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/fonts/Caveat-600.woff",
+      "path": "scripts/engine/lib/fonts/Caveat-600.woff",
+      "mode": "100644",
+      "bytes": 132264,
+      "gitBlobSha": "a9fc847617e47ab384c641e5e1bad555795f0f55",
+      "sha256": "7a101c766f28866c5aa36ebbce5cfedcea2601f2439d3b16694b9c8eee75e9dc"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/fonts/Cinzel-400.woff",
+      "path": "scripts/engine/lib/fonts/Cinzel-400.woff",
+      "mode": "100644",
+      "bytes": 22812,
+      "gitBlobSha": "08649ede82c8d776224a015c55c90a2df4eea9c9",
+      "sha256": "39c4e70ca598e2c0d78d355cd5fbe37017353a5de3008787a03e0d30a2d715ad"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/fonts/Cinzel-700.woff",
+      "path": "scripts/engine/lib/fonts/Cinzel-700.woff",
+      "mode": "100644",
+      "bytes": 24288,
+      "gitBlobSha": "28f02c19e71e75e823715e685ace79c88ffdd307",
+      "sha256": "1bb7ec5b84ee97a9eae36528d5bae3bfeddf035c19842fc1740ce44c09fac4ad"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/fonts/CormorantGaramond-500.woff",
+      "path": "scripts/engine/lib/fonts/CormorantGaramond-500.woff",
+      "mode": "100644",
+      "bytes": 90464,
+      "gitBlobSha": "4dccf368b0e59fb7f6bb4dfc1d38680ef2ffa5a1",
+      "sha256": "f25b87d41579955733df25af8319b168d704b5333d8ac53e991fac442e7a9844"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/fonts/CormorantGaramond-500i.woff",
+      "path": "scripts/engine/lib/fonts/CormorantGaramond-500i.woff",
+      "mode": "100644",
+      "bytes": 93400,
+      "gitBlobSha": "3bc493df4e4581c8dd9b8f88e5c15dfa732b9837",
+      "sha256": "0ab1e72da6037d218386d9a6e148d7f5b0357e1965abf743aef30d641a5e2874"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/fonts/CormorantGaramond-700.woff",
+      "path": "scripts/engine/lib/fonts/CormorantGaramond-700.woff",
+      "mode": "100644",
+      "bytes": 87248,
+      "gitBlobSha": "f1ddbfb1ce61e58120d6955d59d21742d7426872",
+      "sha256": "6417fd78440278f109d84cf00283fbf9b91b6d639fc5afd208a121ae7c636e61"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/fonts/EBGaramond-400.woff",
+      "path": "scripts/engine/lib/fonts/EBGaramond-400.woff",
+      "mode": "100644",
+      "bytes": 162740,
+      "gitBlobSha": "7952db1dbe1b6174b7dea79dacee618c2b1b9e59",
+      "sha256": "61ea4fa656e4ec2c6103483625f0d6a2e1571c2be57015063b73f23392b3ff98"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/fonts/EBGaramond-400i.woff",
+      "path": "scripts/engine/lib/fonts/EBGaramond-400i.woff",
+      "mode": "100644",
+      "bytes": 151904,
+      "gitBlobSha": "f6534947ee5bea1e5d5fc8eb384a84a148c86540",
+      "sha256": "413c5879fa73e5e168dcb59e8e692b24049756c5b961fcd8adee3db2e1624ef4"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/fonts/EBGaramond-600.woff",
+      "path": "scripts/engine/lib/fonts/EBGaramond-600.woff",
+      "mode": "100644",
+      "bytes": 179028,
+      "gitBlobSha": "d30aa9dc3d3acecfeeb3051ef232c30b18ee8ee5",
+      "sha256": "d0ecbbe1d933b68d32ef2629e9a46673ae5eff5ce9c04cd7f4c012504da33a11"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/fonts/Exo2-800i.woff",
+      "path": "scripts/engine/lib/fonts/Exo2-800i.woff",
+      "mode": "100644",
+      "bytes": 60124,
+      "gitBlobSha": "7437aeef4e45b7f321063be69359af60aed680dc",
+      "sha256": "8296afc88a371a81345e07d852a06e45ae401d5793866fd9a7f351daf523740a"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/fonts/GochiHand-400.woff",
+      "path": "scripts/engine/lib/fonts/GochiHand-400.woff",
+      "mode": "100644",
+      "bytes": 23640,
+      "gitBlobSha": "b500d9a883dbb9c829b34c97cc07648a9d65029e",
+      "sha256": "152552ee5c95ec30b75edf3ba42f3406925462ea1a52d4c049d22f550f10167a"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/fonts/IMFellEnglish-400.woff",
+      "path": "scripts/engine/lib/fonts/IMFellEnglish-400.woff",
+      "mode": "100644",
+      "bytes": 108052,
+      "gitBlobSha": "f9b84ad24d7df1c3de1c3ab487fad091320a26c4",
+      "sha256": "b915ee6c7034491df57eed8153ec2a5c3ee1ba55788a96737465d4c3239bd2a0"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/fonts/IMFellEnglish-400i.woff",
+      "path": "scripts/engine/lib/fonts/IMFellEnglish-400i.woff",
+      "mode": "100644",
+      "bytes": 111628,
+      "gitBlobSha": "6c1d5e42240d0210a583386df4e6dc4defe1fefa",
+      "sha256": "7c6064b4e7ca80d131a01b9133ddaf11978d43bc954eb0d1c1dd1391371c56d6"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/fonts/Inter-var.woff",
+      "path": "scripts/engine/lib/fonts/Inter-var.woff",
+      "mode": "100644",
+      "bytes": 126688,
+      "gitBlobSha": "ace36e8017be19b3c1b1bf347f09d6835466e8e6",
+      "sha256": "a54bc9f6ba847df43752bfb35f63aa1599ccc113b58c23bfa07c4dc88976647b"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/fonts/JosefinSans-700.woff",
+      "path": "scripts/engine/lib/fonts/JosefinSans-700.woff",
+      "mode": "100644",
+      "bytes": 26564,
+      "gitBlobSha": "2e2bfbf8407c0b70e348c4155c1481f8f7065fc7",
+      "sha256": "1e9f0aab2caa768ead521a88be3ea118d47c29a3ae052f9b5d0c2af0d6a8eb8d"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/fonts/Kalam-700.woff",
+      "path": "scripts/engine/lib/fonts/Kalam-700.woff",
+      "mode": "100644",
+      "bytes": 186044,
+      "gitBlobSha": "b31a7658b9e2d7978425ecaf1f1816660b7b4e23",
+      "sha256": "53b9c2a4260ba9a1320d2a92c6dbd532fa509bdeda0897580611a9f16f1a2bda"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/fonts/LICENSES.md",
+      "path": "scripts/engine/lib/fonts/LICENSES.md",
+      "mode": "100644",
+      "bytes": 4498,
+      "gitBlobSha": "0533deaf8ce621691fbd791c134a4e4bede9154e",
+      "sha256": "00b5f86c4d5162e6fee6d600b527c052933eb2884a61a5fab0f89fa4d4656ecd"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/fonts/LXGWWenKai-500.woff",
+      "path": "scripts/engine/lib/fonts/LXGWWenKai-500.woff",
+      "mode": "100644",
+      "bytes": 2098296,
+      "gitBlobSha": "4f02c88fd17d3a10936351fef76596440163c805",
+      "sha256": "734bd187392579417ac83effe31d37b9de43c7b290bcb400800456511ed79e8f"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/fonts/LibreBaskerville-400.woff",
+      "path": "scripts/engine/lib/fonts/LibreBaskerville-400.woff",
+      "mode": "100644",
+      "bytes": 46628,
+      "gitBlobSha": "70100bd82e15ce4df8e5e0ef2db7967326268efc",
+      "sha256": "e5134e031d30b4dcc76f3806701cafe92ff4ed5b8b6271d06d63ca3ee7af9bc4"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/fonts/LibreBaskerville-700.woff",
+      "path": "scripts/engine/lib/fonts/LibreBaskerville-700.woff",
+      "mode": "100644",
+      "bytes": 47524,
+      "gitBlobSha": "1ede9e63b750769cce553c85f16215f349798a4b",
+      "sha256": "57b9986d47ab6d7ea1964d5693c56b5e5e97c889e31ba9546815de365d356dab"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/fonts/LilitaOne-400.woff",
+      "path": "scripts/engine/lib/fonts/LilitaOne-400.woff",
+      "mode": "100644",
+      "bytes": 14372,
+      "gitBlobSha": "73646caa4abc54bdbecf865b1cac02e80a0b6d0b",
+      "sha256": "8f4283865fad7cbb92e3b9e8ec6e48ab1225f7fb2eaa9c75741ff46d4f230456"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/fonts/Marcellus-400.woff",
+      "path": "scripts/engine/lib/fonts/Marcellus-400.woff",
+      "mode": "100644",
+      "bytes": 22320,
+      "gitBlobSha": "8d593988566742cb3a8fee262e4aa58743d8dd85",
+      "sha256": "9893ac05a03ff1e80ecf97f73853bff1378edfdec633b6c3a67ae7c33d7018e7"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/fonts/NotoSansSC-500.woff",
+      "path": "scripts/engine/lib/fonts/NotoSansSC-500.woff",
+      "mode": "100644",
+      "bytes": 1416188,
+      "gitBlobSha": "4c7cade7f4d92173af4c3a1b6e3a44919e2636bc",
+      "sha256": "928d841b1ec663ebce82593568cbc19749fe652f88b8ec960723b7d87b551512"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/fonts/NotoSansSC-700.woff",
+      "path": "scripts/engine/lib/fonts/NotoSansSC-700.woff",
+      "mode": "100644",
+      "bytes": 1425340,
+      "gitBlobSha": "4e5c21514f3c9c69f2571c9889390a779843d4fe",
+      "sha256": "dd0d39a9780eb995c499af0c20cca93b1dfdda865da70871a20890b3e406b968"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/fonts/NotoSansSC-800.woff",
+      "path": "scripts/engine/lib/fonts/NotoSansSC-800.woff",
+      "mode": "100644",
+      "bytes": 1426988,
+      "gitBlobSha": "056fba6424656387bd2a4a85efbc9ae3c5db1ef7",
+      "sha256": "b57f9c645b1a4967a3c8914ed41f24d109394a8175e36af08f93e40803e84664"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/fonts/NotoSansSC-900.woff",
+      "path": "scripts/engine/lib/fonts/NotoSansSC-900.woff",
+      "mode": "100644",
+      "bytes": 1394104,
+      "gitBlobSha": "664a8d52cc3924e36c85599f8c26405c12797817",
+      "sha256": "d2d8a42438b18b65b6577434df4e41bb08c6b5051281757849af00ab743bb58f"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/fonts/NotoSansSC-sub.woff",
+      "path": "scripts/engine/lib/fonts/NotoSansSC-sub.woff",
+      "mode": "100644",
+      "bytes": 331188,
+      "gitBlobSha": "972a3b100fd1c74b0aa42eaaae0ab1eb6ee71edf",
+      "sha256": "f29be895b3e7002432e6d94756a163936e9586843864740b1fc172b1859e462d"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/fonts/NotoSerifJP-600.woff",
+      "path": "scripts/engine/lib/fonts/NotoSerifJP-600.woff",
+      "mode": "100644",
+      "bytes": 4415000,
+      "gitBlobSha": "14163512883cb7ab9e075f16033fb7bb209a8ef4",
+      "sha256": "dce02fcc08d8629226ef017472eef25b5bc152d1c32a742075fcda8f351f87d0"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/fonts/NotoSerifSC-sub.woff",
+      "path": "scripts/engine/lib/fonts/NotoSerifSC-sub.woff",
+      "mode": "100644",
+      "bytes": 435560,
+      "gitBlobSha": "62d4bee4dc6e53794846689996fcad1c9b8b33a2",
+      "sha256": "be59f4f630f0fac191dbc6e8d6945da681e5613df7602b2cef8ca7049fa19b66"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/fonts/OFL.txt",
+      "path": "scripts/engine/lib/fonts/OFL.txt",
+      "mode": "100644",
+      "bytes": 4430,
+      "gitBlobSha": "a4670b02de28ecdaa5cafd2356b4a41b629a2e20",
+      "sha256": "67c5d5206b96f8340b95fabd02ae60701e0b20ce2594d976216f1065e5aa3822"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/fonts/PlayfairDisplay-400i.woff",
+      "path": "scripts/engine/lib/fonts/PlayfairDisplay-400i.woff",
+      "mode": "100644",
+      "bytes": 50928,
+      "gitBlobSha": "b1f80d059ff71a3a34356fe311c768946d84d441",
+      "sha256": "30cbe57e84bc719727dc54814f708eb9fa2d05a06f04d8c196b1466ecacb74d8"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/fonts/PlayfairDisplay-700.woff",
+      "path": "scripts/engine/lib/fonts/PlayfairDisplay-700.woff",
+      "mode": "100644",
+      "bytes": 55652,
+      "gitBlobSha": "507012058185ee64b4f0e9a278a3836302b82c66",
+      "sha256": "2644f0e3c7c8f79e9d0c56ad22d246294c7c2b21ea884a7a2b1a10261cb95469"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/fonts/PlayfairDisplay-700i.woff",
+      "path": "scripts/engine/lib/fonts/PlayfairDisplay-700i.woff",
+      "mode": "100644",
+      "bytes": 53612,
+      "gitBlobSha": "95def380ef3b56f5ae599a375c05c914ed5c8956",
+      "sha256": "f263323db61a414618d9cafe489d0e18adf6682cd36baa45239ed804fe26fcf1"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/fonts/Poppins-600.woff",
+      "path": "scripts/engine/lib/fonts/Poppins-600.woff",
+      "mode": "100644",
+      "bytes": 66232,
+      "gitBlobSha": "5035ee775d447b94636e9859d3a570410b553538",
+      "sha256": "952d2591178ef0c2dea37fb2c14f01e18433c8d59db10f6365c9e1ca9e8efe2a"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/fonts/Poppins-700.woff",
+      "path": "scripts/engine/lib/fonts/Poppins-700.woff",
+      "mode": "100644",
+      "bytes": 65616,
+      "gitBlobSha": "64fbbd9ae3c0b5d59a8757662ead23bfa7bfa2fc",
+      "sha256": "282b1ac42689074c38c62378b1412544f5ab11b91ba145ce56c54802496b7d86"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/fonts/Poppins-800.woff",
+      "path": "scripts/engine/lib/fonts/Poppins-800.woff",
+      "mode": "100644",
+      "bytes": 65344,
+      "gitBlobSha": "fe74641c202b0f5f752322389894bc4f2478392b",
+      "sha256": "4c2bd05974d03c8058b14a452b2d0d869420b1671a22c35d52da4d58864e46a6"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/fonts/PressStart2P-400.woff",
+      "path": "scripts/engine/lib/fonts/PressStart2P-400.woff",
+      "mode": "100644",
+      "bytes": 36184,
+      "gitBlobSha": "302418fa53e00fb032203b2be3a64ebee396b8ea",
+      "sha256": "f831461d0239882019837f2b1cfea598743768f89c0b052102a1fd55050f5ca1"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/fonts/Righteous-400.woff",
+      "path": "scripts/engine/lib/fonts/Righteous-400.woff",
+      "mode": "100644",
+      "bytes": 21028,
+      "gitBlobSha": "59c797f127fc0d243f8586c6dbcac1afecc173a0",
+      "sha256": "374317573c47429a8d87b5c862abc96572e90eef1a445439cc329d2768022121"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/fonts/RobotoCondensed-var.woff",
+      "path": "scripts/engine/lib/fonts/RobotoCondensed-var.woff",
+      "mode": "100644",
+      "bytes": 94036,
+      "gitBlobSha": "1196643983d70c8fcfc751c9bd4177981f0a4ddc",
+      "sha256": "d149ef1478076ad3f201676de2f58d11de18257590d9faeee2318fa3bc4b90e6"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/fonts/Rye-400.woff",
+      "path": "scripts/engine/lib/fonts/Rye-400.woff",
+      "mode": "100644",
+      "bytes": 62848,
+      "gitBlobSha": "66c64f2e9616104014d094ab60881e57fc1d2d96",
+      "sha256": "2b6ae29cb40d75d69b547e7544f4ad540c5a641e7268df578a9bbc062376070e"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/fonts/UnifrakturMaguntia-400.woff",
+      "path": "scripts/engine/lib/fonts/UnifrakturMaguntia-400.woff",
+      "mode": "100644",
+      "bytes": 39076,
+      "gitBlobSha": "580bb9bd4e6ed3971a782f6494cb1f4c7a7cb11b",
+      "sha256": "af995e1259780861fd6b8bb3dada5cb1272fc2fd24dbb2ba5b7cc4411ffde566"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/fonts/cmunrm.woff",
+      "path": "scripts/engine/lib/fonts/cmunrm.woff",
+      "mode": "100644",
+      "bytes": 123340,
+      "gitBlobSha": "9efca1264afa69d5f0cd016b8c9f48f5144446f8",
+      "sha256": "32115abbbfb231586813333bfa5a234f4dc7f28b27df7260f42f81146ccd9097"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/fonts/cmunti.woff",
+      "path": "scripts/engine/lib/fonts/cmunti.woff",
+      "mode": "100644",
+      "bytes": 158668,
+      "gitBlobSha": "122340ad48803a8682b363cc83b0e99a00c80e24",
+      "sha256": "d9a02b7b67874c62f47f9c9a0914c115972ab77d43e82a163baf0888eb5d4a2d"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/fonts/index.json",
+      "path": "scripts/engine/lib/fonts/index.json",
+      "mode": "100644",
+      "bytes": 1972,
+      "gitBlobSha": "442742f351a2d1d53520be1ee3962b35ae0d2d92",
+      "sha256": "a0870057845b502a11037acef99b6e9cbc3994fdb5149caf3aac036140dbfbb1"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/kit.js",
+      "path": "scripts/engine/lib/kit.js",
+      "mode": "100644",
+      "bytes": 6639,
+      "gitBlobSha": "e0790d7eeafd1627794d562e81f8ded1dbddf8ef",
+      "sha256": "a066c4d0d4dc7189dd9de7776938b4cbc6025a4bf4a38d2e181a6667744f3024"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/media.js",
+      "path": "scripts/engine/lib/media.js",
+      "mode": "100644",
+      "bytes": 9419,
+      "gitBlobSha": "5e24d18f8d59713ede791f98322f13719d685ec6",
+      "sha256": "65a4d0a17ea194e799538d380d49ea59bc9b23d3118ee4a3bb3ba0c4ad8bac03"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/medium.js",
+      "path": "scripts/engine/lib/medium.js",
+      "mode": "100644",
+      "bytes": 23833,
+      "gitBlobSha": "4b681f5c9382103180f13d428d448855897e9265",
+      "sha256": "da280d244f0d603236976767a8cfdc4a8d9c56c299fbd1eeb48cc3014c656984"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/motion.js",
+      "path": "scripts/engine/lib/motion.js",
+      "mode": "100644",
+      "bytes": 9402,
+      "gitBlobSha": "6ee9cfa1f9ae84be9f812539f9badec574ec0857",
+      "sha256": "22762a3691464b7504da562b3761edc70f7c138721618639697df3a5a93c1b97"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/paint.js",
+      "path": "scripts/engine/lib/paint.js",
+      "mode": "100644",
+      "bytes": 15436,
+      "gitBlobSha": "6fc5bedd62c6497755ccd3c7d05fd5f61c2b4828",
+      "sha256": "95ccd1945a4a19b6e2d89a422d7ea7de96174acdbae1801090ca9ee48131f9a3"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/palettes.js",
+      "path": "scripts/engine/lib/palettes.js",
+      "mode": "100644",
+      "bytes": 4876,
+      "gitBlobSha": "172b2a2d9d3c52cb774603d88813189c2f66a1e2",
+      "sha256": "934acc426ebdada51f613d6e7b1cb693590d615a01d7a66d5461483bf79ff30a"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/post.js",
+      "path": "scripts/engine/lib/post.js",
+      "mode": "100644",
+      "bytes": 10036,
+      "gitBlobSha": "63b4a2c5a6063e7ba60b48e3155a0eaf30ba3a8e",
+      "sha256": "b63ce9e73929083b4e51cb1caa45f606c6556023b3024da45520386a3d5f6129"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/render.js",
+      "path": "scripts/engine/lib/render.js",
+      "mode": "100644",
+      "bytes": 17477,
+      "gitBlobSha": "ae98ce074111733cac6af073f13312c31b70527d",
+      "sha256": "d2855f044ddff579000d9f8b1abadc2b76f84875fc604bea79d10319e3fe92bf"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/rig.js",
+      "path": "scripts/engine/lib/rig.js",
+      "mode": "100644",
+      "bytes": 34246,
+      "gitBlobSha": "01db1550076afef96981f89009534c801213c0f2",
+      "sha256": "62580706e14438c6b57289ce203d040c91d8a427e356f44084a65dfc53a13bbf"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/rig_huashu.js",
+      "path": "scripts/engine/lib/rig_huashu.js",
+      "mode": "100644",
+      "bytes": 13708,
+      "gitBlobSha": "1beff1622066c92195d372bee5f244c9c71121cf",
+      "sha256": "6419306bb314f89848b0adf842db0c305c2f6bc931df34388eb5389f29c1d392"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/three.min.js",
+      "path": "scripts/engine/lib/three.min.js",
+      "mode": "100644",
+      "bytes": 669884,
+      "gitBlobSha": "0c2f4ba351000d47f413873d8bb9c1a2f18cb37a",
+      "sha256": "170c6789f43217c96b3170f4b42fafe135de7f7cd48497a4218f9757ee1d49fa"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/toon.js",
+      "path": "scripts/engine/lib/toon.js",
+      "mode": "100644",
+      "bytes": 16043,
+      "gitBlobSha": "b0eae6595c3382a3afb95b35b56fa83c3118a9aa",
+      "sha256": "54778963a97767742257e5b68890e5b292f2b89ce3fd1a1f9711224573988d8b"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/typo.js",
+      "path": "scripts/engine/lib/typo.js",
+      "mode": "100644",
+      "bytes": 11258,
+      "gitBlobSha": "f00d3675480fe0ba302bfdfe1c1894025103abe4",
+      "sha256": "bfb53350a94bc77c20a5420b694b0ffb7ba913c4a2e3390d86b99cf3fa8c3976"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/ui.js",
+      "path": "scripts/engine/lib/ui.js",
+      "mode": "100644",
+      "bytes": 10548,
+      "gitBlobSha": "8dbf8f16c41dd60ce3a3adad2d691d38ab776cea",
+      "sha256": "2608da0a38bfd429a9fe41c1a93a5d080d54c5fcccea80e7fea764e6ca3a97bf"
+    },
+    {
+      "sourcePath": "scripts/engine/lib/util.js",
+      "path": "scripts/engine/lib/util.js",
+      "mode": "100644",
+      "bytes": 7402,
+      "gitBlobSha": "0b3db4299e12072d033b3e6418e9bdf309c2564f",
+      "sha256": "a2092233bbca337a29b00ce261d81a5c7b6baa020c9e301916ebe4a997450b9d"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/rick_morty/index.html",
+      "path": "scripts/engine/reference_films/rick_morty/index.html",
+      "mode": "100644",
+      "bytes": 1593,
+      "gitBlobSha": "73036ec15a1bf469f6cbbf09ac384dfe0a548779",
+      "sha256": "215c23f93303a180b3f2405454b8652b61032f8874a8ce5bfe0388e1d6b920a9"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/rick_morty/render.py",
+      "path": "scripts/engine/reference_films/rick_morty/render.py",
+      "mode": "100644",
+      "bytes": 3408,
+      "gitBlobSha": "7a391d29d9bcb11416ce36c9c8868a5bc9f8a4b5",
+      "sha256": "72d8726e94cbab93dda053b48e824b5ba3b89cad5b1d936bf3bf8b26c8819334"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/rick_morty/room.js",
+      "path": "scripts/engine/reference_films/rick_morty/room.js",
+      "mode": "100644",
+      "bytes": 14498,
+      "gitBlobSha": "7d9c98d01e429f4be8ff6583908224e2b4b39cac",
+      "sha256": "c314335e551b920f54b5b4e429cae7c1e7f8e8609164d4e2d28d944947d5cc24"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/rick_morty/svg-kit.js",
+      "path": "scripts/engine/reference_films/rick_morty/svg-kit.js",
+      "mode": "100644",
+      "bytes": 6488,
+      "gitBlobSha": "3994f6f203a02752aff760fdee42bf2cc634bc04",
+      "sha256": "921c63cce5dfd045e93f22cc3e2629ae5b3cd13bfca89658889b2da861c9d5d6"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/README.md",
+      "path": "scripts/engine/reference_films/spacex/README.md",
+      "mode": "100644",
+      "bytes": 2422,
+      "gitBlobSha": "3a8abdff7eb16dc2f7f8bd670e7a4caf55c84074",
+      "sha256": "dd19ad3495bc4e6733290af13732a57adafb039ae6a799f3054bd17b520dc353"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/eras_lin.js",
+      "path": "scripts/engine/reference_films/spacex/eras_lin.js",
+      "mode": "100644",
+      "bytes": 787,
+      "gitBlobSha": "17603afb2de654f7e55d2c02b13a111ceb63be40",
+      "sha256": "6605819d67486729d65a36c7cde3c7bd1b631bdf4384473180ac61e01a38c2cf"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/eras_spacex.js",
+      "path": "scripts/engine/reference_films/spacex/eras_spacex.js",
+      "mode": "100644",
+      "bytes": 539,
+      "gitBlobSha": "9b2bac76b3f5ac819767c742698f69c70f35ae7a",
+      "sha256": "0061954a4399c0b13896d7f482777ea2cc813ef7415c5a68c3ee56ae4a903c98"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/eras_vox.js",
+      "path": "scripts/engine/reference_films/spacex/eras_vox.js",
+      "mode": "100644",
+      "bytes": 708,
+      "gitBlobSha": "07c65965e969316274329bf705e66e71ea000cb4",
+      "sha256": "4099fdbba709a42848f2608b77fa8991b9cca43cbe98ef2bea4fe4a7acad2a84"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/eras_wbx.js",
+      "path": "scripts/engine/reference_films/spacex/eras_wbx.js",
+      "mode": "100644",
+      "bytes": 952,
+      "gitBlobSha": "490bc50c05e0ac53c4f86ece0ad0e19fc533a2fb",
+      "sha256": "039cb40eba4483ceb853ece6d23068e72ede0f8cabff38aca1da17127661b4b4"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex/rockets.js",
+      "path": "scripts/engine/reference_films/spacex/spacex/rockets.js",
+      "mode": "100644",
+      "bytes": 11307,
+      "gitBlobSha": "bf827caa4577b4671aa115e166f2cc834e1d96f5",
+      "sha256": "c03146000da38e0999efcd06346956e84b72c0a5aaa2218b753f2558faf778ab"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex/scenes/s01.js",
+      "path": "scripts/engine/reference_films/spacex/spacex/scenes/s01.js",
+      "mode": "100644",
+      "bytes": 13607,
+      "gitBlobSha": "c9cc01ea1c2be7cb3f4c19f6656cb0be1395953d",
+      "sha256": "237ce61de31f9de1bd59856eea4b1993c4cacef4965295d368f25078ad5dc560"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex/scenes/s02.js",
+      "path": "scripts/engine/reference_films/spacex/spacex/scenes/s02.js",
+      "mode": "100644",
+      "bytes": 7510,
+      "gitBlobSha": "b264e0bcd0c070a549175be51c4216a36974e850",
+      "sha256": "65c91538de70d4a7f15e80129a4af54a8ec37e6d8c01d67d5e74f52274e7e28d"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex/scenes/s03.js",
+      "path": "scripts/engine/reference_films/spacex/spacex/scenes/s03.js",
+      "mode": "100644",
+      "bytes": 19757,
+      "gitBlobSha": "d41b7691b6c28ebd32faf241111da1b4e324b740",
+      "sha256": "39004e9f201565a6940cd98ca4703bbb3b5b13629bb972357f6c63829891bdb5"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex/scenes/s04.js",
+      "path": "scripts/engine/reference_films/spacex/spacex/scenes/s04.js",
+      "mode": "100644",
+      "bytes": 20912,
+      "gitBlobSha": "1273dda11e0f8aa7fef7c206381b5379a729dfd4",
+      "sha256": "a59854fc3f5fcc5d97098cb77d266e28ff4dd8229d158576dba60a747465c64f"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex/scenes/s05.js",
+      "path": "scripts/engine/reference_films/spacex/spacex/scenes/s05.js",
+      "mode": "100644",
+      "bytes": 18291,
+      "gitBlobSha": "ddb5e5f9654114abd4fc8c8545dafe3f53256805",
+      "sha256": "33c4e30f049f7fdb3f495f500cc3cf8ffa32913b1268455cacd08364bfb10877"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex/scenes/s06.js",
+      "path": "scripts/engine/reference_films/spacex/spacex/scenes/s06.js",
+      "mode": "100644",
+      "bytes": 17280,
+      "gitBlobSha": "61499bb473f94c8f5bfa03e9633d32785b2c75c2",
+      "sha256": "7b751b39a2eb3bed6ea90119d713cebaebce149af1e2287386cef4072050a944"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex/scenes/s07.js",
+      "path": "scripts/engine/reference_films/spacex/spacex/scenes/s07.js",
+      "mode": "100644",
+      "bytes": 30204,
+      "gitBlobSha": "071d34e8e1e6ec44ab450f75a136827b02500315",
+      "sha256": "42e8a3712d7211391e34b924a2e324db5a70cb28753535362992197ba59a5043"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex/scenes/s08.js",
+      "path": "scripts/engine/reference_films/spacex/spacex/scenes/s08.js",
+      "mode": "100644",
+      "bytes": 12727,
+      "gitBlobSha": "f7d684281901fccb2766e8a502808dfff1a6b32b",
+      "sha256": "23c788cc6367f1a5db8c59d2ee5a839a699fb84c4bfaf9c3b55768d6b78f0a19"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex/scenes/s09.js",
+      "path": "scripts/engine/reference_films/spacex/spacex/scenes/s09.js",
+      "mode": "100644",
+      "bytes": 19544,
+      "gitBlobSha": "0262e7dcf8e28ccbf0ffaf01e447d377a66baef0",
+      "sha256": "7a32c09799906726767e810f3a8ad441ba8fcf055d507a8327aaab28920d92ae"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex/scenes/s10.js",
+      "path": "scripts/engine/reference_films/spacex/spacex/scenes/s10.js",
+      "mode": "100644",
+      "bytes": 21966,
+      "gitBlobSha": "2b9555ed798f8077ecba331f651fd3d6dfbba76c",
+      "sha256": "98dada64b0641e5f284304743c9783261938e6466ab988fce52217f370cfcede"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex/scenes/s11.js",
+      "path": "scripts/engine/reference_films/spacex/spacex/scenes/s11.js",
+      "mode": "100644",
+      "bytes": 27766,
+      "gitBlobSha": "5a2cec6f0bf09e74916910fe4231f5703949e717",
+      "sha256": "a5611386f7703c3ecca95b90beddf8d14a746d58217a1719f0d3d2504ce43d2b"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex/scenes/s12.js",
+      "path": "scripts/engine/reference_films/spacex/spacex/scenes/s12.js",
+      "mode": "100644",
+      "bytes": 26464,
+      "gitBlobSha": "9d86fa906088dd03c15e7a06e15e2e3028db5262",
+      "sha256": "87cb530f65504bfeac1b6c07a96821a28022d7298135a63b34149e582630161c"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex/timing.js",
+      "path": "scripts/engine/reference_films/spacex/spacex/timing.js",
+      "mode": "100644",
+      "bytes": 15196,
+      "gitBlobSha": "aed95b06b1ac4669f121e56878ba272e7688b0a2",
+      "sha256": "00fa0e7dcaa4cd18c7f927ac457fbb8dcbb599dfec7e5dfbe9daf60732d4365b"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex/tm.js",
+      "path": "scripts/engine/reference_films/spacex/spacex/tm.js",
+      "mode": "100644",
+      "bytes": 1038,
+      "gitBlobSha": "a0014191409f5271083943bad0c8d1d3918edf04",
+      "sha256": "49d1198fcf58a4a44f48735c02ffc7443d6959c7938205bac513ddc24784bff9"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex_lin/common.js",
+      "path": "scripts/engine/reference_films/spacex/spacex_lin/common.js",
+      "mode": "100644",
+      "bytes": 41164,
+      "gitBlobSha": "90ff436aeaafb3592414fd1f16e0952808a3f2b1",
+      "sha256": "e0d25c4901c81e985cd591b130bb4b263fcae8da8b5ea8c61fbf46a541f11481"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex_lin/presenter_meta.js",
+      "path": "scripts/engine/reference_films/spacex/spacex_lin/presenter_meta.js",
+      "mode": "100644",
+      "bytes": 6341,
+      "gitBlobSha": "4d4f5362a251c79a05d9b0bb376ea26d28e27848",
+      "sha256": "c4d839c0dcd1d370b8937c10c2f8cc48dd530d81e15c2b9513e624525e8a8a49"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex_lin/scenes/s01.js",
+      "path": "scripts/engine/reference_films/spacex/spacex_lin/scenes/s01.js",
+      "mode": "100644",
+      "bytes": 15145,
+      "gitBlobSha": "5cbd1606961ba5973d3e9542b28ebde009d552ca",
+      "sha256": "1d8db35fca961be9c2ae8861d32c5e10aa0312c54bfa817c415c572000c1424c"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex_lin/scenes/s02.js",
+      "path": "scripts/engine/reference_films/spacex/spacex_lin/scenes/s02.js",
+      "mode": "100644",
+      "bytes": 6637,
+      "gitBlobSha": "44133d041cf60fbf3736bdf567d7bb1a32a209c3",
+      "sha256": "cb812430ad81e957b1efe1a0b990fc61e88f4e0138f34de6ce4ed79d6aede071"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex_lin/scenes/s03.js",
+      "path": "scripts/engine/reference_films/spacex/spacex_lin/scenes/s03.js",
+      "mode": "100644",
+      "bytes": 12056,
+      "gitBlobSha": "8e42c9374656a32257cc83e71bee6d39da393ca5",
+      "sha256": "e305844e95fba4000a728bfd84225d78fcf3163c973409a49bb820356a31374a"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex_lin/scenes/s04.js",
+      "path": "scripts/engine/reference_films/spacex/spacex_lin/scenes/s04.js",
+      "mode": "100644",
+      "bytes": 8281,
+      "gitBlobSha": "51126a8e77ff9c04a184ddb2da8330820091a5fa",
+      "sha256": "8508c6d1df05bc8976249ef6538023a9d5b19e369c89cc612cc97bfb271c92a5"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex_lin/scenes/s05.js",
+      "path": "scripts/engine/reference_films/spacex/spacex_lin/scenes/s05.js",
+      "mode": "100644",
+      "bytes": 12074,
+      "gitBlobSha": "281126f55b04b3add2adae3db0a83faf88351c62",
+      "sha256": "b7eb5e8949b557ed70fbf28d4f77850c513c172aacddfe1a75acf55fd66b8c11"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex_lin/scenes/s06.js",
+      "path": "scripts/engine/reference_films/spacex/spacex_lin/scenes/s06.js",
+      "mode": "100644",
+      "bytes": 6997,
+      "gitBlobSha": "e2d9f28d5444369ce5337a5161f23b878f418b1f",
+      "sha256": "7139a5b052c3c361cc750aeaffea972e43f4025481359d0d61ec6a38add8d243"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex_lin/scenes/s07.js",
+      "path": "scripts/engine/reference_films/spacex/spacex_lin/scenes/s07.js",
+      "mode": "100644",
+      "bytes": 9524,
+      "gitBlobSha": "b7b52991553972df22bd7c6c637ee394c5aa7e55",
+      "sha256": "67f7f39a056e7edab0e89bf0a9829081e4a1f2916221cb214ac153394ffccd2b"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex_lin/scenes/s08.js",
+      "path": "scripts/engine/reference_films/spacex/spacex_lin/scenes/s08.js",
+      "mode": "100644",
+      "bytes": 13954,
+      "gitBlobSha": "d01900b2181f4f48f5b81ce5a6404d3f01f7a78c",
+      "sha256": "641497feea2324ab90bbde461851c5844bc6dd6b7d6febab8ebce60100be49b2"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex_lin/scenes/s09.js",
+      "path": "scripts/engine/reference_films/spacex/spacex_lin/scenes/s09.js",
+      "mode": "100644",
+      "bytes": 9393,
+      "gitBlobSha": "c01b7bbd1875eb12412028f925fa5bde8ed4b222",
+      "sha256": "bfa575443084ca857ec14060262071d72480a99e022e121eb72d3a5fbb55e453"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex_lin/scenes/s10.js",
+      "path": "scripts/engine/reference_films/spacex/spacex_lin/scenes/s10.js",
+      "mode": "100644",
+      "bytes": 11043,
+      "gitBlobSha": "046741d1ad0f11ed117174e4654690e197687b72",
+      "sha256": "7b461f84ec85e1f08867462d5be134b9edc3a4df124753627d0d74d5d939aba2"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex_lin/scenes/s11.js",
+      "path": "scripts/engine/reference_films/spacex/spacex_lin/scenes/s11.js",
+      "mode": "100644",
+      "bytes": 24016,
+      "gitBlobSha": "7ee58fed7c01ec2ffaeced9ed853a34340e910ff",
+      "sha256": "19737e5d99a2c6cfaed9307daa8520745110fc2ac68bfdcb5b6665ee3e653838"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex_lin/scenes/s12.js",
+      "path": "scripts/engine/reference_films/spacex/spacex_lin/scenes/s12.js",
+      "mode": "100644",
+      "bytes": 10956,
+      "gitBlobSha": "6d5221da7d0571597cfe233ce4c8f4f8b20815bf",
+      "sha256": "917705ac8d9b1ab0aa8c27f74c42eb26f554934ee37389328f6bf72c75054332"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex_lin/tools/prep_presenter.py",
+      "path": "scripts/engine/reference_films/spacex/spacex_lin/tools/prep_presenter.py",
+      "mode": "100644",
+      "bytes": 3147,
+      "gitBlobSha": "892ab71d1e1f0769fcd44529e76ef0946c791a45",
+      "sha256": "79bfe683a8311aa20b9a28e2e284eea7c0edfe7084128c3abf4584b6a73b46e4"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex_vox/common.js",
+      "path": "scripts/engine/reference_films/spacex/spacex_vox/common.js",
+      "mode": "100644",
+      "bytes": 37950,
+      "gitBlobSha": "4b09a7be4882e113e7a4376acd22b6dd78aa81ec",
+      "sha256": "8a180bc158e658111c0dd76b13eca1f04f718773e016f4ac4fac2c88755cc280"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex_vox/scenes/s01.js",
+      "path": "scripts/engine/reference_films/spacex/spacex_vox/scenes/s01.js",
+      "mode": "100644",
+      "bytes": 10514,
+      "gitBlobSha": "ee62f128b13c57c000e2de2d6a5d761e1bfafb65",
+      "sha256": "db79f6015d65b62187607f8d182d0a592c5fa84759f00ab0dbdb0a1e6fd5ebc8"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex_vox/scenes/s02.js",
+      "path": "scripts/engine/reference_films/spacex/spacex_vox/scenes/s02.js",
+      "mode": "100644",
+      "bytes": 6000,
+      "gitBlobSha": "f793f04212cbe932ba2f40f054976bc84531cf75",
+      "sha256": "0f400ca0910c5a734aabcc7a5fb97e3b4ae0b6eb917e627203201f48d4c1b39e"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex_vox/scenes/s03.js",
+      "path": "scripts/engine/reference_films/spacex/spacex_vox/scenes/s03.js",
+      "mode": "100644",
+      "bytes": 8153,
+      "gitBlobSha": "53260a25ffc9c3ffc3142e02439e2dcaccd04042",
+      "sha256": "ca6c23aa451bdbd8305c075d8815c1e3d902be766f2e565ce9c7afdbacfb4d58"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex_vox/scenes/s04.js",
+      "path": "scripts/engine/reference_films/spacex/spacex_vox/scenes/s04.js",
+      "mode": "100644",
+      "bytes": 9816,
+      "gitBlobSha": "4de6ccd3a1db5a8788bd00c3816ff6b088fd4fdc",
+      "sha256": "528938e10fd97cb69e7028411a08bae21332ae9f5b07b56ecab0635f1f78c057"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex_vox/scenes/s05.js",
+      "path": "scripts/engine/reference_films/spacex/spacex_vox/scenes/s05.js",
+      "mode": "100644",
+      "bytes": 11097,
+      "gitBlobSha": "2a21c48ac81a3d8bf816cd2bc3e957c8c7d7807d",
+      "sha256": "b171c07b5e742765ef9e21ef262264a4d7d9dcf3713c941f43b0c4dbf28b49cf"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex_vox/scenes/s06.js",
+      "path": "scripts/engine/reference_films/spacex/spacex_vox/scenes/s06.js",
+      "mode": "100644",
+      "bytes": 7485,
+      "gitBlobSha": "785b2fbc35879ae2362dc4fe0843b14c1a018b16",
+      "sha256": "9968153847fb26f19c183df2ae0b1ceea12df4cc132208d99c9c32f897a1fe1d"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex_vox/scenes/s07.js",
+      "path": "scripts/engine/reference_films/spacex/spacex_vox/scenes/s07.js",
+      "mode": "100644",
+      "bytes": 8324,
+      "gitBlobSha": "a770a78dc618cc90a70c4076df0d66cd6860c777",
+      "sha256": "a5ac50564fe721d114dcb70e64ef932ed373c9167c7f128b8e17f52069ddc9a7"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex_vox/scenes/s08.js",
+      "path": "scripts/engine/reference_films/spacex/spacex_vox/scenes/s08.js",
+      "mode": "100644",
+      "bytes": 10058,
+      "gitBlobSha": "2a5fff5b798eea5d679aa41daac6a937fab66d55",
+      "sha256": "9c12be241ac5bcfc95388d62832086cddff0b8e5cc5c7fdec75a76b959f361f2"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex_vox/scenes/s09.js",
+      "path": "scripts/engine/reference_films/spacex/spacex_vox/scenes/s09.js",
+      "mode": "100644",
+      "bytes": 6252,
+      "gitBlobSha": "a9722d1b1f079dec1b3073d8734131bf8d03eadd",
+      "sha256": "95f64afaa6f632ea86a77c38c112e007b2560182d0acace06f7c37757bf80ff8"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex_vox/scenes/s10.js",
+      "path": "scripts/engine/reference_films/spacex/spacex_vox/scenes/s10.js",
+      "mode": "100644",
+      "bytes": 12772,
+      "gitBlobSha": "6ac534e4bd80a27583d1e1da2fd2a6d55bb9bd7d",
+      "sha256": "d186a59c8ccf38889c88baf25e3ac18efd54ac8f8b5e24f940fa2c6ab59f33bf"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex_vox/scenes/s11.js",
+      "path": "scripts/engine/reference_films/spacex/spacex_vox/scenes/s11.js",
+      "mode": "100644",
+      "bytes": 12871,
+      "gitBlobSha": "a3a8426965edbac9f34ece872f57e0c4178adc1d",
+      "sha256": "642d7dd53f3a48ec8596be983739cb7a1e8c679e5fbb3a9595ff802699155cf2"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex_vox/scenes/s12.js",
+      "path": "scripts/engine/reference_films/spacex/spacex_vox/scenes/s12.js",
+      "mode": "100644",
+      "bytes": 10265,
+      "gitBlobSha": "f6210fbbf42ab54f08318bc43144af16794159a0",
+      "sha256": "03804d0e8a0bbdfdddf7b36eab83c93ca7d5a0d7c464abfb3786080e74374b40"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex_wb/assets/ARPHICPL.TXT",
+      "path": "scripts/engine/reference_films/spacex/spacex_wb/assets/ARPHICPL.TXT",
+      "mode": "100644",
+      "bytes": 6900,
+      "gitBlobSha": "de7491ae3d4e485c9667d95bcde031dd54b42392",
+      "sha256": "5590533436c70f10f2f524ee61456238c290175c6662fbe1c700b5f038a6d328"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex_wb/assets/hand_1.png",
+      "path": "scripts/engine/reference_films/spacex/spacex_wb/assets/hand_1.png",
+      "mode": "100644",
+      "bytes": 155292,
+      "gitBlobSha": "a8146eb91ba14439c4dfdd41860a3471c5979576",
+      "sha256": "19761f892b70430e24b8e4780c547c0b1547f584d72b840d5a23fb06bb93c0c7"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex_wb/assets/hand_2.png",
+      "path": "scripts/engine/reference_films/spacex/spacex_wb/assets/hand_2.png",
+      "mode": "100644",
+      "bytes": 157688,
+      "gitBlobSha": "29e942086392bac5e4923f75326813c780a5403a",
+      "sha256": "f404f8d1f597cc4d97e91123e7e57d47c4514278ebf2b897498ba9483e4215c7"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex_wb/assets/hand_3.png",
+      "path": "scripts/engine/reference_films/spacex/spacex_wb/assets/hand_3.png",
+      "mode": "100644",
+      "bytes": 165164,
+      "gitBlobSha": "1a611d7f02d00c5a46ac47a1315aa3dcc286c924",
+      "sha256": "c16036d4a837b88cf977ff0a0910b08497eceef9c605eff80bfeab712e3ef10b"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex_wb/assets/make_hand.py",
+      "path": "scripts/engine/reference_films/spacex/spacex_wb/assets/make_hand.py",
+      "mode": "100644",
+      "bytes": 1628,
+      "gitBlobSha": "81d0b8cb217096055d86a45d35abedb54d3b75ff",
+      "sha256": "5b5cedc474960ffeeff1cfab407e2a926f036a8beab0e43147327957dadf83cb"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex_wb/assets/strokes.js",
+      "path": "scripts/engine/reference_films/spacex/spacex_wb/assets/strokes.js",
+      "mode": "100644",
+      "bytes": 56562,
+      "gitBlobSha": "a449d407a7c858e2b0fa187209c757a72d558d9c",
+      "sha256": "7fd46e149eedf2c1e42becaa19e3279192d2889ea223c8dcbb696653b351a17c"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex_wb/common.js",
+      "path": "scripts/engine/reference_films/spacex/spacex_wb/common.js",
+      "mode": "100644",
+      "bytes": 54226,
+      "gitBlobSha": "007a2636404b146b32852d685883e4a7b456edfe",
+      "sha256": "d416da124e3a7219de49f2d4fe7f9c6a81b01ca47c5d2a0bb4cc0f8d997188bd"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex_wb/scenes/s01.js",
+      "path": "scripts/engine/reference_films/spacex/spacex_wb/scenes/s01.js",
+      "mode": "100644",
+      "bytes": 6837,
+      "gitBlobSha": "643bcf0b09db46d9914ea0343932c82308aeb0f1",
+      "sha256": "a9e1d970d0a4447ce375f8050cc7555c959d0c7be8cc3b0d26b864723973aac7"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex_wb/scenes/s02.js",
+      "path": "scripts/engine/reference_films/spacex/spacex_wb/scenes/s02.js",
+      "mode": "100644",
+      "bytes": 4793,
+      "gitBlobSha": "795e20d7bf5f1f885e4d564dbc03b686018f91a7",
+      "sha256": "949855e8c87174757d3d3ffadd7ac8bfe8cb80663555c3c0eb21b1c451fe86dc"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex_wb/scenes/s03.js",
+      "path": "scripts/engine/reference_films/spacex/spacex_wb/scenes/s03.js",
+      "mode": "100644",
+      "bytes": 7160,
+      "gitBlobSha": "4a1b35e449e7bcd05e489e1d81d635dfc6ddf9a9",
+      "sha256": "468e165e32d68ad46cbf3383b83b457341a200493388e6ebbfa25e202e560218"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex_wb/scenes/s04.js",
+      "path": "scripts/engine/reference_films/spacex/spacex_wb/scenes/s04.js",
+      "mode": "100644",
+      "bytes": 4133,
+      "gitBlobSha": "69f23e823bf73790ee473100990f6bb346d7207a",
+      "sha256": "bba86920a73a29be003fe1ade0f59ffa1e21a2bcd8dd5ad524904c67ce87f961"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex_wb/scenes/s05.js",
+      "path": "scripts/engine/reference_films/spacex/spacex_wb/scenes/s05.js",
+      "mode": "100644",
+      "bytes": 6525,
+      "gitBlobSha": "649bfaf67892ed690a13e1e4ce77e0a4f09567a9",
+      "sha256": "057ac7bbd37ef79aafd43693def08f4225850ab094bab052557218118f430b59"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex_wb/scenes/s06.js",
+      "path": "scripts/engine/reference_films/spacex/spacex_wb/scenes/s06.js",
+      "mode": "100644",
+      "bytes": 4969,
+      "gitBlobSha": "ad08d87324d206b52cb7f8821227bbbd320f2ee0",
+      "sha256": "82c7edb955f010899acf33409ca1745d7b2c43bb9c0f9920d78384e13eae50d5"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex_wb/scenes/s07.js",
+      "path": "scripts/engine/reference_films/spacex/spacex_wb/scenes/s07.js",
+      "mode": "100644",
+      "bytes": 6076,
+      "gitBlobSha": "5f4f13845c476bcd6020a1473f365b962e3d2d9a",
+      "sha256": "6a1af8466ee815c8c6cbe28ba1baf35174feb5f42124dd9428c8dc7cab02dee9"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex_wb/scenes/s08.js",
+      "path": "scripts/engine/reference_films/spacex/spacex_wb/scenes/s08.js",
+      "mode": "100644",
+      "bytes": 8827,
+      "gitBlobSha": "b2a08827fa93c69d8139417c0433d9fbb3d1ceb3",
+      "sha256": "0c997e30d3904d7fc1e641c8171e1cb698f70d4090ae53e5cfbe81cc7f021e66"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex_wb/scenes/s09.js",
+      "path": "scripts/engine/reference_films/spacex/spacex_wb/scenes/s09.js",
+      "mode": "100644",
+      "bytes": 4461,
+      "gitBlobSha": "1d3776fb8203c1538a783f734de27401bce585ff",
+      "sha256": "e9a3b6fbbe19c2ffe3de94470e9d545e69822b19fa0de9d780f1dc314fee4c1b"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex_wb/scenes/s10.js",
+      "path": "scripts/engine/reference_films/spacex/spacex_wb/scenes/s10.js",
+      "mode": "100644",
+      "bytes": 11234,
+      "gitBlobSha": "0b05bb2b7e0a7d8b4e46609bcd124cd712ad882d",
+      "sha256": "9fecdbc75264cd94173710b6d8b0b743cc9108e0cb39c1a207fb725882c4b19c"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex_wb/scenes/s11.js",
+      "path": "scripts/engine/reference_films/spacex/spacex_wb/scenes/s11.js",
+      "mode": "100644",
+      "bytes": 7559,
+      "gitBlobSha": "4996fc9e9dfd99d99672e99fbade047e94d2bdef",
+      "sha256": "080b86e5c76f091ba045d1a96ba875deb84639c0ef9a4e44aa42a58dfb0ab4e2"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/spacex_wb/scenes/s12.js",
+      "path": "scripts/engine/reference_films/spacex/spacex_wb/scenes/s12.js",
+      "mode": "100644",
+      "bytes": 6028,
+      "gitBlobSha": "31616baba7e0d009397d190e7d2b347ae07c5b95",
+      "sha256": "7b24f80e83e2aa209aa77b14bf82f13856bc240d2124af393f5a0e90e181974e"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/transitions/cardFlip.js",
+      "path": "scripts/engine/reference_films/spacex/transitions/cardFlip.js",
+      "mode": "100644",
+      "bytes": 2370,
+      "gitBlobSha": "93a219c60ef43b697bd27db06b47a4d874b0ed13",
+      "sha256": "4044c78947d3e96afcd19c099fc3c3f06e54f6b2534fc842a570ce2d4286285b"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/transitions/deskPullOut.js",
+      "path": "scripts/engine/reference_films/spacex/transitions/deskPullOut.js",
+      "mode": "100644",
+      "bytes": 535,
+      "gitBlobSha": "3f852ea0fe1059f6c430999782427ee89f499fbd",
+      "sha256": "b8d7d3c7c6eca5585f4cb02193b23fe05b88c7615f8d494352c78018387eaa55"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/transitions/kzBloom.js",
+      "path": "scripts/engine/reference_films/spacex/transitions/kzBloom.js",
+      "mode": "100644",
+      "bytes": 1812,
+      "gitBlobSha": "0bf6c095848572e378a358af8bb3a852f1e341de",
+      "sha256": "d16eeaa0aa5dad93df67af66d7116de260690294ab5d325938983643c97e2d2c"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/transitions/lin_page.js",
+      "path": "scripts/engine/reference_films/spacex/transitions/lin_page.js",
+      "mode": "100644",
+      "bytes": 6035,
+      "gitBlobSha": "82a9ed939196746eeec6b8b1b705c8d0f502ba0c",
+      "sha256": "76006697fcca8b11ddd905a104ae9fdd0f2dedd3beedc39eb495feaa50f6addc"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/transitions/paperSlide.js",
+      "path": "scripts/engine/reference_films/spacex/transitions/paperSlide.js",
+      "mode": "100644",
+      "bytes": 1079,
+      "gitBlobSha": "ac12cade7585f9f9f8cf0859508d662f1a6c713b",
+      "sha256": "14eb0b28a2e78a7feeaf158b81d3aef640f9776dd0bb578f21b7e6bfafe40e13"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/transitions/vox_pull.js",
+      "path": "scripts/engine/reference_films/spacex/transitions/vox_pull.js",
+      "mode": "100644",
+      "bytes": 591,
+      "gitBlobSha": "b7580da060f2d143a034449362957a60702ad092",
+      "sha256": "79db9ef00e31a4a44872ef57f9ce9a5a89ed631c1a83d9b7e72129e4a7355959"
+    },
+    {
+      "sourcePath": "scripts/engine/reference_films/spacex/transitions/vox_slap.js",
+      "path": "scripts/engine/reference_films/spacex/transitions/vox_slap.js",
+      "mode": "100644",
+      "bytes": 771,
+      "gitBlobSha": "c4c128ab4a396d0e1f11b590afabd54550674881",
+      "sha256": "78f8fa308a434a33d7007b776c4e006d711fea61d4f4dab9426baeebc6c3d573"
+    },
+    {
+      "sourcePath": "scripts/engine/render.py",
+      "path": "scripts/engine/render.py",
+      "mode": "100644",
+      "bytes": 10543,
+      "gitBlobSha": "1fb5dc1a7bfe2730aa27224a9946730e555059f6",
+      "sha256": "1519ab458d4f0461c3ea028a6d8c8d632a69a6e4cf517f291abbc008ec3056b6"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/01_cave.js",
+      "path": "scripts/engine/scenes/01_cave.js",
+      "mode": "100644",
+      "bytes": 31417,
+      "gitBlobSha": "d9b9dae22060f34edd8cfae1d7f95912b53d0f73",
+      "sha256": "06ff3360279ecf778d78ef5e56fa6d5cd6354a18033079eed32cba6af48dd781"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/02_egypt.js",
+      "path": "scripts/engine/scenes/02_egypt.js",
+      "mode": "100644",
+      "bytes": 50018,
+      "gitBlobSha": "b562fdbdf86780c646cd7295888c05e76ba7de40",
+      "sha256": "ce4acdce7f65f41686f7e5f04336fdf150bfd53a560a20f2a83a3db495a86353"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/03_greek.js",
+      "path": "scripts/engine/scenes/03_greek.js",
+      "mode": "100644",
+      "bytes": 40744,
+      "gitBlobSha": "731f61622246d98cb715024d50164477ef1fb823",
+      "sha256": "58e259062257ebf15d2fb141e10441119df0691e0cc2bd212922a8cffb3be184"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/04_roman.js",
+      "path": "scripts/engine/scenes/04_roman.js",
+      "mode": "100644",
+      "bytes": 47611,
+      "gitBlobSha": "a0c813416a5517a22ef4246cbf59eb2604800552",
+      "sha256": "a5678635c8199b61700785915de9308fcb20abbff34f98a143b50ef740faeaf8"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/05_gothic.js",
+      "path": "scripts/engine/scenes/05_gothic.js",
+      "mode": "100644",
+      "bytes": 40426,
+      "gitBlobSha": "5df30d9435e7f66cc38412834f96cb94942dc354",
+      "sha256": "a5b24f49d1dc01cc5d5eebba9404f6c6ebd6d6de1a61ef6c2eae36c1f591b327"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/06_renaissance.js",
+      "path": "scripts/engine/scenes/06_renaissance.js",
+      "mode": "100644",
+      "bytes": 31437,
+      "gitBlobSha": "d6df5f9eba6320eb588807c3be461aa3b348fcc3",
+      "sha256": "ab7dca1e5f6f5911a55cb132eeea405ab3d0001f2f6ceed01cc624bacbf9279e"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/08_impressionism.js",
+      "path": "scripts/engine/scenes/08_impressionism.js",
+      "mode": "100644",
+      "bytes": 20908,
+      "gitBlobSha": "faaf347a12cd971e769569ccf7a2ea5f53fd7fd9",
+      "sha256": "6d5e4ee5f4329d7551ef84edc7f15d4396effd7b80e7091074c20920dabc7d24"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/09_postimp.js",
+      "path": "scripts/engine/scenes/09_postimp.js",
+      "mode": "100644",
+      "bytes": 16299,
+      "gitBlobSha": "483ecbfc91661c0b047cfc329e8a5d67c46389a3",
+      "sha256": "a1806dd4dfbfe32ed9a18e70174750c0e932a2a2beca832be8dc25708c76277e"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/10_nouveau.js",
+      "path": "scripts/engine/scenes/10_nouveau.js",
+      "mode": "100644",
+      "bytes": 30381,
+      "gitBlobSha": "0cff9a9cb978a32094b6e5cd1f907fdcff429e39",
+      "sha256": "4a390aa2d70b4a6afe0b35862e502ef78f42c36ff960f3ef49482be67320ca39"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/11_cubism.js",
+      "path": "scripts/engine/scenes/11_cubism.js",
+      "mode": "100644",
+      "bytes": 27428,
+      "gitBlobSha": "e26e76a50c7cee2d8bbc88af4ac856f730a2b8a6",
+      "sha256": "dbdd5cba2eb07ecd75445c534d04b40d6206bbb252c28e31ecefeb08a83ee249"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/12_bauhaus.js",
+      "path": "scripts/engine/scenes/12_bauhaus.js",
+      "mode": "100644",
+      "bytes": 17535,
+      "gitBlobSha": "feade9f50aed8055df0d7015720abd666a12ca7f",
+      "sha256": "647e3d52272eda0630150d04ed3f299da095c4e8e564e3fa7c84330c2993efad"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/13_pop.js",
+      "path": "scripts/engine/scenes/13_pop.js",
+      "mode": "100644",
+      "bytes": 24647,
+      "gitBlobSha": "04c1fc844a9cb533a3ddb3066923ab674927e499",
+      "sha256": "80a893a23dc2d0a6350323b0b63a0cf4929e48908391f796422c402aa272935c"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/14_8bit.js",
+      "path": "scripts/engine/scenes/14_8bit.js",
+      "mode": "100644",
+      "bytes": 17139,
+      "gitBlobSha": "8418bef5b6ffbfaba8a1866c7a2c02b2d50c17ec",
+      "sha256": "3351f505bd0f272a623061a8f49993b877339c619dceb2f5e08c05933397b71e"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/15_raytrace.js",
+      "path": "scripts/engine/scenes/15_raytrace.js",
+      "mode": "100644",
+      "bytes": 25794,
+      "gitBlobSha": "11838972b0d5f6b8ff9a5707290b3ff5eafdab44",
+      "sha256": "b77169305a158c5161c6a4f30ed8f00adf0128cbfe837b0c4f37ebbc120213b4"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/16_2026.js",
+      "path": "scripts/engine/scenes/16_2026.js",
+      "mode": "100644",
+      "bytes": 50054,
+      "gitBlobSha": "2d344cc46db931949461c835cf366c7b69eb0036",
+      "sha256": "915ab9a19ee937027ec1f449b8c3d358422df29d21986d237ac7c73169a5e710"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/17_ink.js",
+      "path": "scripts/engine/scenes/17_ink.js",
+      "mode": "100644",
+      "bytes": 22782,
+      "gitBlobSha": "59cc47c3f64100b07af5b13e341189e1fb9cbf6b",
+      "sha256": "0d3360a701f23f6b5978686645b80d4ce69c15bec2be09f017c14e4646f05760"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/18_klimt.js",
+      "path": "scripts/engine/scenes/18_klimt.js",
+      "mode": "100644",
+      "bytes": 20835,
+      "gitBlobSha": "3ebe5dce8b79bd5b014d96bdfbc58bf4c53ea618",
+      "sha256": "dc03848dc98d567f15561f6af4fb709050bac729e61269297c910fc312604244"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/19_munch.js",
+      "path": "scripts/engine/scenes/19_munch.js",
+      "mode": "100644",
+      "bytes": 13393,
+      "gitBlobSha": "c9d35197e3a2a1e7091c1274403a333146cf140c",
+      "sha256": "b415408930826beea0cd512bc5d1002f70478314b3f0357e7f88a40c01bcf0c0"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/20_dunhuang.js",
+      "path": "scripts/engine/scenes/20_dunhuang.js",
+      "mode": "100644",
+      "bytes": 21588,
+      "gitBlobSha": "376bcc52c205e2a253e78ff5ebec5c1c7b89b2ef",
+      "sha256": "33ec1c2c6a062feac415893ba232d227c715107746fd16653a573ad63c7f8780"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/21_kusama.js",
+      "path": "scripts/engine/scenes/21_kusama.js",
+      "mode": "100644",
+      "bytes": 11935,
+      "gitBlobSha": "a0925da636bf4299898c4cee4de20b655e0803a4",
+      "sha256": "1ae771a76fd4b8c128a667f3c87227c243a43c0673d1bf68b1f7a3eba7d6e56d"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/22_constructivism.js",
+      "path": "scripts/engine/scenes/22_constructivism.js",
+      "mode": "100644",
+      "bytes": 16305,
+      "gitBlobSha": "ca468b5cf06de5552e75a50e88e6b1b9c4775198",
+      "sha256": "79e64e9e664886b4c6e70094d161b48e8346be318ab9c84c4859beff98a83ab5"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/23_dali.js",
+      "path": "scripts/engine/scenes/23_dali.js",
+      "mode": "100644",
+      "bytes": 20846,
+      "gitBlobSha": "2b02d6e9eb4414d08faf1c53df55782dd5988bfe",
+      "sha256": "5ff7dd1631b654aa0adc2d7bd27e8efffcbbd4d6f330e6002c60eb89e747fdfa"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/24_hopper.js",
+      "path": "scripts/engine/scenes/24_hopper.js",
+      "mode": "100644",
+      "bytes": 13619,
+      "gitBlobSha": "4f9eb1116d4905747a773c7fc58b18d46895f94c",
+      "sha256": "672605310edebdc93c35e819bd1a2e97dba874e64b025952d24e9b81809000ed"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/25_ghibli.js",
+      "path": "scripts/engine/scenes/25_ghibli.js",
+      "mode": "100644",
+      "bytes": 22700,
+      "gitBlobSha": "bc9255fce34976211ad74ff14e31f327a65035f9",
+      "sha256": "bd0f6b22b6c8cd1ff4e18f207587f4995bc2ea949196b9a85296030c7dc5efd8"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/26_vaporwave.js",
+      "path": "scripts/engine/scenes/26_vaporwave.js",
+      "mode": "100644",
+      "bytes": 17070,
+      "gitBlobSha": "02eb85d089ce592c9c52b920bc712399162440a6",
+      "sha256": "f34aa1cc5ceb0b7cf60ac03adcf804ea7e39c7641446b88db9fb89b179daf02e"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/27_kirby.js",
+      "path": "scripts/engine/scenes/27_kirby.js",
+      "mode": "100644",
+      "bytes": 21894,
+      "gitBlobSha": "16b54bc666f3a391e49e5f31cc12a1f454b02216",
+      "sha256": "d82e039d7d4ba45ca01114f9330b1dcad3ddd516efa8bda7d190e85606487028"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/28_monet.js",
+      "path": "scripts/engine/scenes/28_monet.js",
+      "mode": "100644",
+      "bytes": 17322,
+      "gitBlobSha": "424e9a165c7094f4f0ee07a78095e257800a8d9d",
+      "sha256": "1ea1f0a1c77f7ea14c153b46a62daaf5fe84d3c02e73b5cb2a4a7838c7e14930"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/29_seurat.js",
+      "path": "scripts/engine/scenes/29_seurat.js",
+      "mode": "100644",
+      "bytes": 11060,
+      "gitBlobSha": "3cb8617479c06f05a598796b96422204d90c5208",
+      "sha256": "a026713b9205c6a00c805dece5068722b15071f9bbb691203697c9cd0a33be23"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/30_matisse.js",
+      "path": "scripts/engine/scenes/30_matisse.js",
+      "mode": "100644",
+      "bytes": 13787,
+      "gitBlobSha": "2617fd7b55d3732a4001ac5761e89e0ad59f57e1",
+      "sha256": "09d97003c451d9dbe723a942ea3146213943b75cac3a92ab1648e58279358aa8"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/31_haring.js",
+      "path": "scripts/engine/scenes/31_haring.js",
+      "mode": "100644",
+      "bytes": 10315,
+      "gitBlobSha": "aca68222ae4449e21bcfdd1d94b1eebd463d2f23",
+      "sha256": "5113c0318ed36db84acc7eac6855ec0f0a44511f6cedd3f326b78ba4e921f1ca"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/32_rembrandt.js",
+      "path": "scripts/engine/scenes/32_rembrandt.js",
+      "mode": "100644",
+      "bytes": 20786,
+      "gitBlobSha": "264178b24fc6dd5112f7f7f867adebcdd0572dc1",
+      "sha256": "47883474a7ed9aa7c5bfe39b953748da5003c601c3dcf48e3a2e6e18fd03bf4a"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/33_rubberhose.js",
+      "path": "scripts/engine/scenes/33_rubberhose.js",
+      "mode": "100644",
+      "bytes": 18226,
+      "gitBlobSha": "b434105cc667561ea5abb589db02c8e31458791d",
+      "sha256": "08a1340dd35de98830b81abd7026be6e2361f325215793e55369f5cd1fb50ad8"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/34_shadowpuppet.js",
+      "path": "scripts/engine/scenes/34_shadowpuppet.js",
+      "mode": "100644",
+      "bytes": 18052,
+      "gitBlobSha": "02d9f91148fe7792ffb1008ba28d3f74b3883a7b",
+      "sha256": "08186a1764be2bdc2c27806850dea2fd86761936aeba1299e8ece9bf31f381a8"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/35_shinkai.js",
+      "path": "scripts/engine/scenes/35_shinkai.js",
+      "mode": "100644",
+      "bytes": 22142,
+      "gitBlobSha": "8485c2925e4d24f3dc71ec31a7369cd6fe16d868",
+      "sha256": "8e7f5753a0ce49291ae35bc4f471b5ca62448eb9532403459395d88bc524a736"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/36_picasso_blue.js",
+      "path": "scripts/engine/scenes/36_picasso_blue.js",
+      "mode": "100644",
+      "bytes": 11565,
+      "gitBlobSha": "5db471d78b54483971ca69ec705b7079a465b3ab",
+      "sha256": "10023147e1e31afc162e1cfe51356867ef83595b41bbd5cc824d55532297ce09"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/38_giotto.js",
+      "path": "scripts/engine/scenes/38_giotto.js",
+      "mode": "100644",
+      "bytes": 14558,
+      "gitBlobSha": "6f0c5fd3218187d4866b641b43715163fc815bfa",
+      "sha256": "0e89e9dd26f7a8bb5dfea53f81c96b0bcb68dabb754d37fdcc9e9570ddf830ae"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/39_piero.js",
+      "path": "scripts/engine/scenes/39_piero.js",
+      "mode": "100644",
+      "bytes": 6042,
+      "gitBlobSha": "9d9232b26193f4c4983a5665565316447ed21e32",
+      "sha256": "eb1b11df1942916ec7123c4152c853ec58e75d892ff4e566af58b91ebceb6325"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/40_raphael.js",
+      "path": "scripts/engine/scenes/40_raphael.js",
+      "mode": "100644",
+      "bytes": 11723,
+      "gitBlobSha": "4887be8ca7a8a4056d826b7fd1c5946736a21a20",
+      "sha256": "43467fd90958b77f165141237bc0642de98da8e68dbc4bd6ee34ccf9df60020b"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/41_michelangelo.js",
+      "path": "scripts/engine/scenes/41_michelangelo.js",
+      "mode": "100644",
+      "bytes": 13168,
+      "gitBlobSha": "b23f33f2d8896c9d76908029f7b754e72d361ec1",
+      "sha256": "315ccd5670d22340848ed2e7d89b2fd105d26d6b8dc9fd113032fc9e3b052350"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/42_guardi.js",
+      "path": "scripts/engine/scenes/42_guardi.js",
+      "mode": "100644",
+      "bytes": 8462,
+      "gitBlobSha": "d34ef1e0ea68ca85f94587d9fc7514de3c72d675",
+      "sha256": "41157c0b2216b2d9c45c748fafc71ec1e394319641f51f9e9699a58cc40393c9"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/43_lorenzetti.js",
+      "path": "scripts/engine/scenes/43_lorenzetti.js",
+      "mode": "100644",
+      "bytes": 16651,
+      "gitBlobSha": "7e8ecdf3538357dbda38f687a48b8204e5af5a40",
+      "sha256": "1be12a8e1a9c10f9617735b96093e7c1f427c252729170dc6a9747c7157f9153"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/44_cortona.js",
+      "path": "scripts/engine/scenes/44_cortona.js",
+      "mode": "100644",
+      "bytes": 11362,
+      "gitBlobSha": "96dff0b80553aecd925de20e4f42ef1c974f3af9",
+      "sha256": "56b043573e024d89671f4219cfae67aa03660f9e64cde333903d130f156b5443"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/45_renoir.js",
+      "path": "scripts/engine/scenes/45_renoir.js",
+      "mode": "100644",
+      "bytes": 10562,
+      "gitBlobSha": "20dace328bc0a4efbd4249e11d1fc3bcd2802a08",
+      "sha256": "272fe9812f243d52ed75630cbdb2a17839e35219b5384a6271d7b99305e60d72"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/46_pissarro.js",
+      "path": "scripts/engine/scenes/46_pissarro.js",
+      "mode": "100644",
+      "bytes": 10752,
+      "gitBlobSha": "25a435cf0fcaf86e06aa7d2b6c9d931f1bb92082",
+      "sha256": "092d137061f5a13b576a074bc120f6bd4703df54c2c7540c35a2489eba5042bc"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/47_sisley.js",
+      "path": "scripts/engine/scenes/47_sisley.js",
+      "mode": "100644",
+      "bytes": 11580,
+      "gitBlobSha": "8306dfe282c3202452c49d87d0175552c172db72",
+      "sha256": "1ce1c3f6eed3387e8ee29692b66e8e787faabc0f4655bfa3f2b99b9869efb15c"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/48_gauguin.js",
+      "path": "scripts/engine/scenes/48_gauguin.js",
+      "mode": "100644",
+      "bytes": 13350,
+      "gitBlobSha": "9e2e84c147c29d037cd0f6523b0fe64b626cd227",
+      "sha256": "e5483c4da9686ed0b7c594485c107627493ea876023923c6ad66ffb0a6f13a4a"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/49_chagall.js",
+      "path": "scripts/engine/scenes/49_chagall.js",
+      "mode": "100644",
+      "bytes": 9024,
+      "gitBlobSha": "8df4273d9ebd66e1d7a9c97d9768f8207d1d213a",
+      "sha256": "0cd89ba15d8909bfeff910c50366480c8b48c791d6ae6207698d133f2ca020cb"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/50_ma_yuan.js",
+      "path": "scripts/engine/scenes/50_ma_yuan.js",
+      "mode": "100644",
+      "bytes": 12880,
+      "gitBlobSha": "f23f62f41a5ca0cf2f222dcaa18dd7a9cdab85e4",
+      "sha256": "97838320cf9be562f915885048e50495d394068068835c9ec52fe0e50c3c969c"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/51_persian_miniature.js",
+      "path": "scripts/engine/scenes/51_persian_miniature.js",
+      "mode": "100644",
+      "bytes": 17844,
+      "gitBlobSha": "1be77edb80cfd7908d7a12e48c39c816e4a167f1",
+      "sha256": "3be9436ef96b83471ee2882faafa015947d1714ccff0b47de1189907b17a68c4"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/52_south_park.js",
+      "path": "scripts/engine/scenes/52_south_park.js",
+      "mode": "100644",
+      "bytes": 10629,
+      "gitBlobSha": "367c8b2711a643f85e32864ba5f3ad45f2c7a6a6",
+      "sha256": "9dfeb48dede1d1d6bc9a28a67af1151649392efcbb03ccc1a8849e34d5cdb47c"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/53_pixar.js",
+      "path": "scripts/engine/scenes/53_pixar.js",
+      "mode": "100644",
+      "bytes": 9970,
+      "gitBlobSha": "98b765e2b7798451013455f8d6ab357d2d343280",
+      "sha256": "fc6c8343666445cd551daa923be28c94c01db3c3e25311076a729a8663bc4f5a"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/54_ghibli_lab.js",
+      "path": "scripts/engine/scenes/54_ghibli_lab.js",
+      "mode": "100644",
+      "bytes": 12034,
+      "gitBlobSha": "ec61d94e7ea7f8dd27a36313f5f79356aea770cd",
+      "sha256": "063ae6a409ed8a8e970b3619b7806b9def84013537be2db29824519aba663aab"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/55_dunhuang.js",
+      "path": "scripts/engine/scenes/55_dunhuang.js",
+      "mode": "100644",
+      "bytes": 20713,
+      "gitBlobSha": "29c688d80bda60e0a50ffca155108617233a6a2b",
+      "sha256": "1aa496ddc26a9bddfb0f5e6cb3e3d89f1f35d585acd12e2584d34a94a4781a0f"
+    },
+    {
+      "sourcePath": "scripts/engine/scenes/index.js",
+      "path": "scripts/engine/scenes/index.js",
+      "mode": "100644",
+      "bytes": 2439,
+      "gitBlobSha": "498c2b583c73638b3edf519ab72319dbec210216",
+      "sha256": "22da1210908a8083658eb53289656eeb578026b6deabc666928014d01ddae23e"
+    },
+    {
+      "sourcePath": "scripts/engine/spec_assets.py",
+      "path": "scripts/engine/spec_assets.py",
+      "mode": "100644",
+      "bytes": 3643,
+      "gitBlobSha": "2936dd108e314ee517480427541f7416233c9e3b",
+      "sha256": "d963a9fa80a7c71ed4ff20f4bf5ff692b17d53aa49e8b9b234c4a1a671f60d41"
+    },
+    {
+      "sourcePath": "scripts/engine/transitions.js",
+      "path": "scripts/engine/transitions.js",
+      "mode": "100644",
+      "bytes": 69549,
+      "gitBlobSha": "b3b2520f059815ebbb8084f6ea2da2ba3a14be56",
+      "sha256": "c4bd441cf765db346933e5d18270f532d4c9782c9303b0bcda1ba59a2124b618"
+    },
+    {
+      "sourcePath": "scripts/engine/时代作者规范.md",
+      "path": "scripts/engine/时代作者规范.md",
+      "mode": "100644",
+      "bytes": 4719,
+      "gitBlobSha": "adb4060e051878c0df9360052ca50aca63000eda",
+      "sha256": "4e7661571b60fa0ed776fb5631462aff3a30235c5e6343aa06f9cd23973391fc"
+    },
+    {
+      "sourcePath": "scripts/film_gate.py",
+      "path": "scripts/film_gate.py",
+      "mode": "100644",
+      "bytes": 44401,
+      "gitBlobSha": "45cf2a2cadf0abce1271820531149981246fd90f",
+      "sha256": "2d375cc2bea291e7a1b837d5755b49fbda72f5f75515758c09bf7d83cd269e52"
+    },
+    {
+      "sourcePath": "scripts/font_subset.py",
+      "path": "scripts/font_subset.py",
+      "mode": "100644",
+      "bytes": 7542,
+      "gitBlobSha": "33614ba5b3e7007206df6d972651c07ac2f1cdc4",
+      "sha256": "ed826dffb4b370741602aa79caefd69157fcf6d7f9abd90a9078d4f7208896e0"
+    },
+    {
+      "sourcePath": "scripts/images.py",
+      "path": "scripts/images.py",
+      "mode": "100644",
+      "bytes": 15603,
+      "gitBlobSha": "839c057f7062154f7fb39f5c75a1e9667aa3d83d",
+      "sha256": "a47a2663f251525bfbed5b46533e3d43415c9e10c8a2b8a9f754abf204529535"
+    },
+    {
+      "sourcePath": "scripts/key_green.py",
+      "path": "scripts/key_green.py",
+      "mode": "100644",
+      "bytes": 1930,
+      "gitBlobSha": "e2271d00820784468b1699ddf6fa04b58e6970f7",
+      "sha256": "11ac28bb2508d6b4a240eb37a55b342a0f556943fe29a17962bbc0f93f90d303"
+    },
+    {
+      "sourcePath": "scripts/key_split.py",
+      "path": "scripts/key_split.py",
+      "mode": "100644",
+      "bytes": 1632,
+      "gitBlobSha": "357a4f25dc0f9b02b2a6c8acf0195e9540552a8f",
+      "sha256": "889759cd6b5353b4d48d34faf3878682890e06ca79887c9ade9be401b7359f86"
+    },
+    {
+      "sourcePath": "scripts/koubo.py",
+      "path": "scripts/koubo.py",
+      "mode": "100644",
+      "bytes": 18331,
+      "gitBlobSha": "e6bbe77162b7ca8ab8e0557983dc1d6cf2b6056b",
+      "sha256": "7837507e6bf02b20f8aa63efdc881c8de0d5de775b4bf31a1040bd3824348494"
+    },
+    {
+      "sourcePath": "scripts/qa.py",
+      "path": "scripts/qa.py",
+      "mode": "100644",
+      "bytes": 27060,
+      "gitBlobSha": "98758fc3c7071b584fa40cb09dd76d40332ee344",
+      "sha256": "b243900f0b91c246a297b81509b801c35b2b83c6f9a62b7adb68e3b217c34ee0"
+    },
+    {
+      "sourcePath": "scripts/storyboard_lint.py",
+      "path": "scripts/storyboard_lint.py",
+      "mode": "100644",
+      "bytes": 32309,
+      "gitBlobSha": "07c8e2ede01893336819dcfb4e80e947db65faa2",
+      "sha256": "fadf90d645d45d9584f635a6bb908eddbfa55d5422d615f09efecddae3003d73"
+    },
+    {
+      "sourcePath": "scripts/subzone_gate.py",
+      "path": "scripts/subzone_gate.py",
+      "mode": "100644",
+      "bytes": 1811,
+      "gitBlobSha": "03add14ba71328b9ba3728e4e7d8d2873d726243",
+      "sha256": "8641a3b1b38ac28c1562e454a0e370f36a73d1a0c79cddf36175c7444a9c1598"
+    },
+    {
+      "sourcePath": "scripts/voice_review.py",
+      "path": "scripts/voice_review.py",
+      "mode": "100644",
+      "bytes": 1954,
+      "gitBlobSha": "c85d27c0de52204be601a250508b09ee69667c3b",
+      "sha256": "c7c546079ae4d25682a1f2794fda2fed08206ab2bd708875bfe480ac0b4098b2"
+    },
+    {
+      "sourcePath": "tests/fixtures/y4_storytime_test_frames.json",
+      "path": "tests/fixtures/y4_storytime_test_frames.json",
+      "mode": "100644",
+      "bytes": 985,
+      "gitBlobSha": "f9d1ec4ad69dd3dae74b0a251668d9c7c8979d66",
+      "sha256": "97fe2a512d57afb456dfddd261eefba89731c25f7af0b38383ff70ad6adf8b61"
+    },
+    {
+      "sourcePath": "tests/test_capabilities.py",
+      "path": "tests/test_capabilities.py",
+      "mode": "100644",
+      "bytes": 12435,
+      "gitBlobSha": "ff19beaf94e14bae0fe1dc6eacfa8aa6bfb3eeef",
+      "sha256": "04ce548d5a72a11a87a3bd85c46a98e13f1aabafb096e3c59a6fc7a20bfdf4ad"
+    },
+    {
+      "sourcePath": "tests/test_clip_theme.py",
+      "path": "tests/test_clip_theme.py",
+      "mode": "100644",
+      "bytes": 9382,
+      "gitBlobSha": "450389d12bba79765e4630f6bf9117e8e31cf74e",
+      "sha256": "efb0f2f6f5b7f180676af8d0929b2f19f4f94ef7af82e4b6f75d29fb8eeae9ad"
+    },
+    {
+      "sourcePath": "tests/test_clip_world.py",
+      "path": "tests/test_clip_world.py",
+      "mode": "100644",
+      "bytes": 4219,
+      "gitBlobSha": "e926d10264c3df8ffb9ac4828d6881f09138ac3f",
+      "sha256": "95051d28d2c42c14007059211977822204f13210f6ee06c23b8a0b8a89077d1d"
+    },
+    {
+      "sourcePath": "tests/test_film_gate.py",
+      "path": "tests/test_film_gate.py",
+      "mode": "100644",
+      "bytes": 11354,
+      "gitBlobSha": "d25a80e076e5b3300bd4adef7c738da4b00542e6",
+      "sha256": "5a5a9945166ecea6daa5b58cff9bbacc4cd191f30a4032c3e5d6611987e78dac"
+    },
+    {
+      "sourcePath": "tests/test_film_gate_blank.py",
+      "path": "tests/test_film_gate_blank.py",
+      "mode": "100644",
+      "bytes": 5326,
+      "gitBlobSha": "c4a887b2022fd8ac8952bd57ed07c06e3d569c3f",
+      "sha256": "83a74e62484590ee31b0b68950b67c548e57a13c817da18dca8e708b6ab68528"
+    },
+    {
+      "sourcePath": "tests/test_film_gate_color.py",
+      "path": "tests/test_film_gate_color.py",
+      "mode": "100644",
+      "bytes": 3039,
+      "gitBlobSha": "f8cceeb2c2c7db199556325acf9266c36e34eddb",
+      "sha256": "ad00c79f123575746f6fdf44267394bcfe62f53a4385d921ebc86c6f40502848"
+    },
+    {
+      "sourcePath": "tests/test_images.py",
+      "path": "tests/test_images.py",
+      "mode": "100644",
+      "bytes": 8353,
+      "gitBlobSha": "172b6822372b61e072f544d94a86fbb7600b1346",
+      "sha256": "5fe7533ec25a2644e3685e1677186eaf1554ebbbcc390fcd56a45afbad872040"
+    },
+    {
+      "sourcePath": "tests/test_local_server.py",
+      "path": "tests/test_local_server.py",
+      "mode": "100644",
+      "bytes": 4198,
+      "gitBlobSha": "28e3591e9fdcdcf55946ab021cfd8e412233260c",
+      "sha256": "b775a60c86c4a0914d67c4cfb7cb37256a447db700bfdba146a2db3704ea83ff"
+    },
+    {
+      "sourcePath": "tests/test_release.py",
+      "path": "tests/test_release.py",
+      "mode": "100644",
+      "bytes": 4339,
+      "gitBlobSha": "3e5d6513765d612dcec066826da12a9f90095167",
+      "sha256": "a190d8825e23f6204263f3d00d6728bf709586bc178c980d53244a82ef198b41"
+    },
+    {
+      "sourcePath": "tests/test_storyboard_lint.py",
+      "path": "tests/test_storyboard_lint.py",
+      "mode": "100644",
+      "bytes": 18881,
+      "gitBlobSha": "211ae80fdd3f63802f94f17e3c62f9d86a0e069c",
+      "sha256": "fa22b169d3766852171d3b401366797464e2dd5375bac486f5e1e824cc886096"
+    },
+    {
+      "sourcePath": "tests/test_voice_review.py",
+      "path": "tests/test_voice_review.py",
+      "mode": "100644",
+      "bytes": 1464,
+      "gitBlobSha": "d70ac9d8c0f4a43fcd2535d2d76acf4c653193a4",
+      "sha256": "044576ad2b4d73dd745cbc63336bc7780a08fe5df566dcf69ada2f4a4136db99"
+    }
+  ],
+  "excludedFiles": [
+    {
+      "path": "assets/showcase/clawd-dawn.gif",
+      "bytes": 3410125,
+      "gitBlobSha": "c8d061705d1f8400cc9cd859cb6a0d5460a951e3",
+      "url": "https://github.com/alchaincyf/huashu-art-motion/blob/8a0d7d72ca65fcce6f8ba82c4a6c8dfe35b8422c/assets/showcase/clawd-dawn.gif",
+      "reason": "Promotional preview GIF retained at its original URL to keep the skill ZIP within the 45 MiB sync limit; runtime sources and demo assets remain bundled."
+    },
+    {
+      "path": "assets/showcase/clawd-trex.gif",
+      "bytes": 7498304,
+      "gitBlobSha": "bfd1cae6340dc21e0e4894d020314f8a14dda69d",
+      "url": "https://github.com/alchaincyf/huashu-art-motion/blob/8a0d7d72ca65fcce6f8ba82c4a6c8dfe35b8422c/assets/showcase/clawd-trex.gif",
+      "reason": "Promotional preview GIF retained at its original URL to keep the skill ZIP within the 45 MiB sync limit; runtime sources and demo assets remain bundled."
+    },
+    {
+      "path": "assets/showcase/clawd-vangogh.gif",
+      "bytes": 7699296,
+      "gitBlobSha": "07e25083376cf7fbfb37c02c110c274eec9e1d52",
+      "url": "https://github.com/alchaincyf/huashu-art-motion/blob/8a0d7d72ca65fcce6f8ba82c4a6c8dfe35b8422c/assets/showcase/clawd-vangogh.gif",
+      "reason": "Promotional preview GIF retained at its original URL to keep the skill ZIP within the 45 MiB sync limit; runtime sources and demo assets remain bundled."
+    },
+    {
+      "path": "assets/showcase/egypt.gif",
+      "bytes": 4965668,
+      "gitBlobSha": "fac4f54e69bbd4f0aba510846beb8a29ff910386",
+      "url": "https://github.com/alchaincyf/huashu-art-motion/blob/8a0d7d72ca65fcce6f8ba82c4a6c8dfe35b8422c/assets/showcase/egypt.gif",
+      "reason": "Promotional preview GIF retained at its original URL to keep the skill ZIP within the 45 MiB sync limit; runtime sources and demo assets remain bundled."
+    },
+    {
+      "path": "assets/showcase/mario-claude.gif",
+      "bytes": 2110438,
+      "gitBlobSha": "4d949644aed9e962a12a465342bec0b0dc069023",
+      "url": "https://github.com/alchaincyf/huashu-art-motion/blob/8a0d7d72ca65fcce6f8ba82c4a6c8dfe35b8422c/assets/showcase/mario-claude.gif",
+      "reason": "Promotional preview GIF retained at its original URL to keep the skill ZIP within the 45 MiB sync limit; runtime sources and demo assets remain bundled."
+    },
+    {
+      "path": "assets/showcase/mario-combo.gif",
+      "bytes": 3094450,
+      "gitBlobSha": "331e39379e54b8d83b4e4cda53676477f67ed42c",
+      "url": "https://github.com/alchaincyf/huashu-art-motion/blob/8a0d7d72ca65fcce6f8ba82c4a6c8dfe35b8422c/assets/showcase/mario-combo.gif",
+      "reason": "Promotional preview GIF retained at its original URL to keep the skill ZIP within the 45 MiB sync limit; runtime sources and demo assets remain bundled."
+    },
+    {
+      "path": "assets/showcase/mario-pipe.gif",
+      "bytes": 4054279,
+      "gitBlobSha": "26521430234320d227f4e6ec219ea1f7fd76e808",
+      "url": "https://github.com/alchaincyf/huashu-art-motion/blob/8a0d7d72ca65fcce6f8ba82c4a6c8dfe35b8422c/assets/showcase/mario-pipe.gif",
+      "reason": "Promotional preview GIF retained at its original URL to keep the skill ZIP within the 45 MiB sync limit; runtime sources and demo assets remain bundled."
+    },
+    {
+      "path": "assets/showcase/monet.gif",
+      "bytes": 5351144,
+      "gitBlobSha": "9a70a6f0a2d843f5254eea1bd677a74bc0724f4b",
+      "url": "https://github.com/alchaincyf/huashu-art-motion/blob/8a0d7d72ca65fcce6f8ba82c4a6c8dfe35b8422c/assets/showcase/monet.gif",
+      "reason": "Promotional preview GIF retained at its original URL to keep the skill ZIP within the 45 MiB sync limit; runtime sources and demo assets remain bundled."
+    },
+    {
+      "path": "assets/showcase/pixel.gif",
+      "bytes": 2652588,
+      "gitBlobSha": "1e6568d98df0b3454decabeadcd039fce7fa80d7",
+      "url": "https://github.com/alchaincyf/huashu-art-motion/blob/8a0d7d72ca65fcce6f8ba82c4a6c8dfe35b8422c/assets/showcase/pixel.gif",
+      "reason": "Promotional preview GIF retained at its original URL to keep the skill ZIP within the 45 MiB sync limit; runtime sources and demo assets remain bundled."
+    }
+  ],
+  "review": {
+    "scope": "Read every retained blob, verify Git blob hashes and safe paths, and statically scan all UTF-8 files. No upstream script, installer, rendering, media API or skill was executed or enabled.",
+    "findings": {
+      "credential-or-optional-service-references": {
+        "fileCount": 1,
+        "paths": [
+          "references/口播API.md"
+        ]
+      },
+      "dynamic-execution-examples": {
+        "fileCount": 3,
+        "paths": [
+          "scripts/engine/lib/three.min.js",
+          "scripts/engine/lib/util.js",
+          "tests/test_local_server.py"
+        ]
+      }
+    },
+    "permissions": "Catalog storage and export only. Rendering later requires local output files and declared dependencies; optional voice/image services use separately chosen credentials and permissions.",
+    "verdict": "Retained as inert reference data. Optional capabilities must be reviewed before execution; collection does not certify every upstream script."
+  }
+}
